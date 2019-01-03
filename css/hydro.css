@@ -69,6 +69,9 @@ h1, h2, h3, h4, h5, p, a {
 .navbar a {
     text-decoration: none;
 }
+#navbarResponsive{
+    text-align: center;
+}
 #nav-logo{
     height:75px;
     width:auto;
@@ -268,8 +271,7 @@ footer {
 }
 .footer-logo{
     text-align: center;
-    width: 80%;
-    max-width: 150px;
+    max-width: 100px;
 }
 #copyright {
     font-size: 0.8em;
