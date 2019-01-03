@@ -1,0 +1,305 @@
+/*!
+ * Start Bootstrap - Busines Frontpage (https://startbootstrap.com/template-overviews/business-frontpage)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
+ */
+
+/*BASIC LAYOUT STUFF*/
+body {
+    padding-top: 54px;
+    background-color:#eaefef;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}
+.section {
+    padding-top: 60px;
+    margin-top: -40px;
+    margin-bottom: 20px;
+}
+/*index page*/
+.card {
+    height: 100%;
+}
+/*for some reason this fixes image issues in flex layout on home page in IE */
+/*https://stackoverflow.com/questions/33079325/internet-explorer-flexbox-image-ratio*/
+.card-img-top {
+    min-height: 1px;
+}
+
+/*FONT STUFF - LOADING FONTS FROM cloudtypography ACCOUNT*/
+
+h1, h2, h3, h4, h5, p, a {
+    color:#051f38;
+}
+
+.card-title {
+    font-size:1.3em;
+    color: #051f38;
+}
+
+.cal-header{
+    color:white;
+    background-color:#123e66;
+    padding:6px;
+    box-shadow: 0px 2px 3px #999;
+}
+#cal-events, #news-items{
+    padding-left:20px;
+}
+
+.navbar-brand{
+    font-weight: 500;
+}
+
+.popup {
+    max-width: 200px;
+}
+.fas {
+    margin-left: 20px;
+}
+.navbar a {
+    text-decoration: none;
+}
+#nav-logo{
+    height:75px;
+    width:auto;
+    position: absolute;
+    top:10px;
+    left:10px
+}
+.nav-link{
+    font-size:1.1rem;
+}
+a {text-decoration: underline;}
+
+.a-btn {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.news-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+.news-row > [class*='col-'] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* --- FONT HEADERS*/
+#index-header{
+    font-size:1.9em;
+}
+.page-header {
+    font-size:2.0rem;
+    margin:0 0 8px 0;
+}
+h2{
+    font-size: 1.4rem;
+}
+h3 {
+    font-size: 1.2rem;
+}
+h4 {
+    font-size:1.1rem;
+}
+/*BUTTON STYLING*/
+.btn {
+    font-size:0.9em;
+}
+.btn {
+    background-color: #842932;
+    color: #fff;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
+}
+.otherbtn {
+    background-color: #7fa370;
+    margin:5px;
+}
+.btn:hover {
+    color: #fff;
+    text-decoration: none;
+}
+.btn:active {
+    box-shadow: none;
+}
+
+/*HEADER, NAVBAR, BACKGROUND*/
+.business-header {
+    height: 30%;
+    min-height: 200px;
+    background: url('../images/jocassee_home_stephen_taylor.jpg') center center no-repeat scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.bg-image-full {
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+.navbar,
+.dropdown-menu {
+    background-color: #123e66;
+}
+.navbar a {
+    color: #fff;
+}
+.navbar {
+    box-shadow: 0 4px 6px rgba(0,0,0,0.4);
+}
+
+.page-header{
+    color:white;
+    font-size:3em;
+}
+.background-text{
+    background:rgba(0,0,0,0.3)
+}
+
+.inner-logo {
+    width: 10%;
+    min-width: 100px;
+}
+.nav-item:hover {
+    text-decoration: underline;
+}
+
+.dropdown-item:hover {
+    color: #6e7b82;
+    background-color: #e0d996;
+}
+
+.dropdown-item:active {
+    background-color: #b3d9d9;
+}
+
+.navbar-toggler {
+    border-width: 1px;
+    border-color: rgba(255, 255, 255, 0.5)
+}
+#intro-caption{
+    color:rgba(255,255,255,0.4);
+    position: absolute;
+    top:-30px;
+    right:5px;
+}
+.navguide {
+    font-size:12px;
+    position: relative;
+    top:-50px;
+    left: 10px;
+    color:#842932;
+}
+
+/*PROPERTIES PAGE AND MAP*/
+#map-search {
+    width:100%;
+    display: inline-flex;
+}
+#map-search .btn {
+    cursor: pointer;
+}
+#map{
+    width:100%;
+    height:450px;
+}
+#map-search div {
+    display: inline-flex;
+}
+.map-icon{
+    width:30px;
+    height: 30px;
+    margin-top:4px;
+    margin-left:8px;
+}
+#nat, #cul {
+    width:175px;
+}
+
+/*Events Calendar*/
+.embed-cal {
+    min-height:400px;
+}
+
+/*PARKER ANNEX PAGE*/
+#location-map{
+    width:80%;
+    height:200px;
+    margin: auto;
+}
+#image-set {
+    width:35%;
+    height:auto;
+    float:right;
+    margin: 15px;
+    min-width:150px;
+}
+.bldg-image{
+    width:100%;
+}
+#image-set:hover{
+    opacity: 0.5;
+}
+
+/*responsive embed*/
+.embed-responsive {
+    max-width: 800px;
+}
+
+/*FOOTER*/
+footer {
+    background-color: #6e7b82;
+}
+.footer-content{
+    color:white;
+}
+.footer-logo{
+    text-align: center;
+    width: 80%;
+    max-width: 150px;
+}
+#copyright {
+    font-size: 0.8em;
+}
+
+/*ADDITIONAL MEDIA QUERIES*/
+@media (max-width: 768px) {
+    #footer-content > div {
+       text-align: center;
+       margin-bottom:20px;
+    }
+    #footer-content div:last-child{
+        margin-bottom: 0;
+    }
+    .navbar-brand {
+        font-size:0.85em;
+        margin-left:-5px;
+    }
+    .navbar {padding:0.9rem;}
+    .navbar-toggler {padding:0;}
+    #home-logo{margin-top:5%;}
+    #intro-caption{
+        font-size: 0.8em;
+        margin: auto;
+        width:100%;
+        position: relative;
+        text-align: center;
+    }
+}
+@media (max-width:992px) {
+    #map-search > div {
+        margin: 10px 0;
+    }
+}
+.geocoder-control-input {
+    font-size: 16px;
+}
+}
