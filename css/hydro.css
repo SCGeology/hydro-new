@@ -63,9 +63,7 @@ h1, h2, h3, h4, h5, p, a {
 .popup {
     max-width: 200px;
 }
-.fas {
-    margin-left: 20px;
-}
+
 .navbar a {
     text-decoration: none;
 }
@@ -79,6 +77,10 @@ h1, h2, h3, h4, h5, p, a {
     top:10px;
     left:10px
 }
+#nav-logo img{
+    width:75px;
+    height:auto;
+}
 .nav-link{
     font-size:1.1rem;
 }
@@ -88,7 +90,25 @@ a {text-decoration: underline;}
     text-decoration: underline;
     cursor: pointer;
 }
+.table {
+    max-width:500px;
+}
+.table-bordered td, .table-bordered  th{
+    border:1px solid #555;
+}
 
+h3:target {
+    padding-top: 80px;
+    margin-top: -80px;
+}
+
+.white-bg{
+    background-color:#fff;
+    padding:10px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px #ddd;
+    margin: 15px 0;
+}
 .news-row {
   display: flex;
   flex-wrap: wrap;
@@ -97,6 +117,25 @@ a {text-decoration: underline;}
   display: flex;
   flex-direction: column;
 }
+.links {
+    width:100%;
+    border-bottom: 1px solid #999;
+    line-height: 2em;
+    color:#666;
+}
+.links a {
+    color:#555;
+}
+.links a:hover{
+    color:#051f38;
+}
+.active{
+    color:#051f38;
+    padding:2px 5px;
+    border-radius:2px;
+    font-weight: bold;
+}
+
 
 /* --- FONT HEADERS*/
 #index-header{
@@ -138,13 +177,16 @@ h4 {
 
 /*HEADER, NAVBAR, BACKGROUND*/
 .business-header {
-    height: 30%;
-    min-height: 200px;
+    height: 20%;
+    min-height: 120px;
     background: url('../images/jocassee_home_stephen_taylor.jpg') center center no-repeat scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
+}
+.business-header-main {
+    height:20%;
 }
 .bg-image-full {
     background: no-repeat center center scroll;
