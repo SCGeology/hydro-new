@@ -1,0 +1,105 @@
+#basins {
+    width:50%; 
+    height:auto; 
+    margin-left:20%;
+    border:0px;
+}
+
+/* style for surfacewater.html toggle in "documents" div drop downs*/
+
+#find-out-more {
+    background-color:#d7eadf;
+    border-radius: 4px;
+}
+#find-out-more a {
+    display: block;
+}
+
+#wellDocs {
+    margin: 1em 0;
+    background-color:#e1e1d1;
+    border-radius:4px;
+}
+
+#wellSum {text-decoration: underline;}
+
+#docsHeader {margin-top:3em;}
+
+.allDocsClose, .allDocsOpen {
+    text-decoration: underline;
+    cursor: pointer;
+    color:blue;
+    font-size:1em;
+    background-color: #ddd;
+    border-radius: 3px;
+    padding: 3px 6px;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.allDocsClose:hover, .allDocsOpen:hover {border:0px;}
+
+.new {color:red; margin: 0 0 0 12px;}
+
+.toggler ul {
+	display:none;
+    margin: 0;
+    padding-bottom: 4px;
+}
+.toggler li{margin:10px;}
+
+.toggler h3 {
+    border-radius:4px;
+    margin:0;
+    line-height: 2em;
+}
+
+.toggler h3:hover {
+	cursor:pointer;
+	background-color: #ddd;
+	border-radius:4px;
+}
+
+.closed {
+    background:url('../assets/rightarrow.png') no-repeat;
+    background-position:90% center;
+}
+
+.open {
+    background:url('../assets/downarrow.png') no-repeat;
+    background-position:90% center;
+}
+
+.basinDocs {
+    list-style-type: none;
+    display:block;
+    margin: 5px;
+    padding-left: 20px; 
+}
+#wellFinder{
+    width:90%;
+    margin:10px auto;
+    padding:5px;
+    display: block;
+    position: relative;
+    border-radius: 3px;
+    border:2px solid gray;
+    box-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+#wellFinder h2,#wellFinder h4,#wellFinder li {margin:0.4em;padding:0;}
+
+#mapImage{
+    width:100%;
+    display: block;
+    position: relative;
+    border:none;
+}
+#wellFinder:hover {box-shadow: 1px 1px 3px rgba(0,0,0,0.2);}
+
+/*style of hydrology homepage box with link to surface water modeling updates*/
+#swm {
+    color:blue;
+    text-decoration: underline;
+    margin:0;
+    font-size: 1.25em;
+}
