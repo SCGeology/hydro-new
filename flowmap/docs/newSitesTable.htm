@@ -1,0 +1,570 @@
+<style>
+    #newSites td {
+        padding: 1px 4px;
+    }
+    
+    #newSites table th:first-child {
+        width: 40px;
+        text-align: center;
+    }
+    
+    #newSites table th:nth-child(2) {
+        width: 50px;
+        text-align: center;
+    }
+    
+    #newSites table td:first-child {
+        text-align: center;
+    }
+    
+    .footnote {
+        font-size: 0.8em;
+    }
+    
+    #newSites table tr td:first-child {
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+</style>
+
+<div class="csvLinks">Click the Site ID to zoom to the site on the map. <a style="float:right;" href="flowmap/docs/newSites.csv"><i>Download a CSV file of this table.</i></a></div>
+
+<table class="table table-bordered table-hover table-condensed" id="newSites">
+    <thead>
+        <tr>
+            <th title="Field #1">Site ID</th>
+            <th title="Field #2">Reach or Site</th>
+            <th title="Field #3">Basin</th>
+            <th title="Field #4">Description</th>
+            <th title="Field #5">Designation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>10</td>
+            <td>Enoree River</td>
+            <td>Broad</td>
+            <td>Mainstem, near confluence with Broad</td>
+            <td>SCE&amp;G Recommended, SW Assessments, Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>34</td>
+            <td>Rocky Branch</td>
+            <td>Broad</td>
+            <td>Tributary to Bullock Creek</td>
+            <td>Flood Frequency, USGS recommended</td>
+        </tr>
+        <tr>
+            <td>61</td>
+            <td>Little River</td>
+            <td>Broad</td>
+            <td>Tributary to Broad River</td>
+            <td>SW Assessments</td>
+        </tr>
+        <tr>
+            <td>62</td>
+            <td>Duncan Creek</td>
+            <td>Broad</td>
+            <td>Tributary to Enoree River</td>
+            <td>SW Assessments</td>
+        </tr>
+        <tr>
+            <td>75</td>
+            <td>Broad River</td>
+            <td>Broad</td>
+            <td>Mainstem, above Parr Reservoir</td>
+            <td>SW Assessments</td>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Big Pine Tree Creek</td>
+            <td>Catawba</td>
+            <td>Tributary to Catawba</td>
+            <td>SW Assessments, DNR Fisheries, Lack of gages in middle basin</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Twentyfivemile Creek</td>
+            <td>Catawba</td>
+            <td>Tributary to Catawba</td>
+            <td>SW Assessments, Lack of gages in middle basin</td>
+        </tr>
+        <tr>
+            <td>30</td>
+            <td>Wateree River</td>
+            <td>Catawba</td>
+            <td>Mainstem, US 378</td>
+            <td>SW Assessments, DOT, Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>South Fork Edisto Headwaters</td>
+            <td>Edisto</td>
+            <td>Mainstem or Beech Creek</td>
+            <td>WU/Regulation, SW Assessments, DNR Fisheries</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Black Creek</td>
+            <td>Edisto</td>
+            <td>Tributary to Upper North Fork Edisto</td>
+            <td>WU/Regulation, SW Assessments, DNR Fisheries</td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>North Fork Edisto Headwaters</td>
+            <td>Edisto</td>
+            <td>Mainstem, Chinquapin Creek or Lightwood Knot Creek</td>
+            <td>WU/Regulation, SW Assessments</td>
+        </tr>
+        <tr>
+            <td>6</td>
+            <td>Four Hole Swamp</td>
+            <td>Edisto</td>
+            <td>Tributary to Edisto, I-95</td>
+            <td>SW Assessments, DNR Fisheries, DOT, Flood Frequency/Forecasting</td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>Shaw Creek</td>
+            <td>Edisto</td>
+            <td>Tributary to South Fork Edisto</td>
+            <td>WU/Regulation, SW Assessments</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>Edisto River</td>
+            <td>Edisto</td>
+            <td>Mainstem or South Edisto River, Coastal</td>
+            <td>Coastal Studies</td>
+        </tr>
+        <tr>
+            <td>35</td>
+            <td>Edisto River</td>
+            <td>Edisto</td>
+            <td>Mainstem, US 17</td>
+            <td>DOT, Forecasting</td>
+        </tr>
+        <tr>
+            <td>36</td>
+            <td>Edisto River</td>
+            <td>Edisto</td>
+            <td>Mainstem, I-95</td>
+            <td>DOT, Forecasting</td>
+        </tr>
+        <tr>
+            <td>58</td>
+            <td>Four Hole Swamp</td>
+            <td>Edisto</td>
+            <td>Lower part of basin near Edisto confluence</td>
+            <td>DOT, Flood Frequency/Forecasting, SW Assessments</td>
+        </tr>
+        <tr>
+            <td>67</td>
+            <td>North Fork Edisto River</td>
+            <td>Edisto</td>
+            <td>Mainstem, Hwy 321 or Slab Landing Rd</td>
+            <td>Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>68</td>
+            <td>North Fork Edisto River</td>
+            <td>Edisto</td>
+            <td>Mainstem, near confluence with South Fork Edisto</td>
+            <td>Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>Green Swamp</td>
+            <td>Pee Dee</td>
+            <td>Tributary to Pocotaligo River</td>
+            <td>Flood Frequency, USGS recommended</td>
+        </tr>
+        <tr>
+            <td>9</td>
+            <td>Jeffries Creek</td>
+            <td>Pee Dee</td>
+            <td>Tributary to Pee Dee</td>
+            <td>Flood Frequency, USGS recommended</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>Swift Creek</td>
+            <td>Pee Dee</td>
+            <td>Tributary to Black Creek</td>
+            <td>Flood Frequency, USGS recommended</td>
+        </tr>
+        <tr>
+            <td>12</td>
+            <td>Thompson Creek</td>
+            <td>Pee Dee</td>
+            <td>Tributary to Pee Dee</td>
+            <td>SW Assessments, major tributary to Pee Dee River</td>
+        </tr>
+        <tr>
+            <td>13</td>
+            <td>Black River</td>
+            <td>Pee Dee</td>
+            <td>Mainstem, SC 41</td>
+            <td>DOT, Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>25</td>
+            <td>Pee Dee River</td>
+            <td>Pee Dee</td>
+            <td>Below Lynches River Confluence</td>
+            <td>SW Assessments</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td>Lynches River</td>
+            <td>Pee Dee</td>
+            <td>Upper Lynches Mainstem</td>
+            <td>SW Assessments</td>
+        </tr>
+        <tr>
+            <td>32</td>
+            <td>Pee Dee River</td>
+            <td>Pee Dee</td>
+            <td>Mainstem near NC-SC border</td>
+            <td>SW Assessments</td>
+        </tr>
+        <tr>
+            <td>33</td>
+            <td>Sampit River</td>
+            <td>Pee Dee</td>
+            <td>Coastal</td>
+            <td>WU/Regulation, Coastal Studies</td>
+        </tr>
+        <tr>
+            <td>37</td>
+            <td>Pee Dee River</td>
+            <td>Pee Dee</td>
+            <td>Mainstem, I-95</td>
+            <td>DOT, Forecasting</td>
+        </tr>
+        <tr>
+            <td>38</td>
+            <td>Pee Dee/Waccamaw</td>
+            <td>Pee Dee</td>
+            <td>US 17</td>
+            <td>DOT, Forecasting</td>
+        </tr>
+        <tr>
+            <td>39</td>
+            <td>Lynches River</td>
+            <td>Pee Dee</td>
+            <td>Mainstem, I-95</td>
+            <td>DOT, Forecasting</td>
+        </tr>
+        <tr>
+            <td>40</td>
+            <td>Lynches River</td>
+            <td>Pee Dee</td>
+            <td>Mainstem, SC 41/51</td>
+            <td>DOT, Forecasting</td>
+        </tr>
+        <tr>
+            <td>41</td>
+            <td>Black River</td>
+            <td>Pee Dee</td>
+            <td>Mainstem, SC 51</td>
+            <td>DOT, Forecasting</td>
+        </tr>
+        <tr>
+            <td>42</td>
+            <td>Black River</td>
+            <td>Pee Dee</td>
+            <td>Mainstem, US 701</td>
+            <td>DOT, Flood Forecasting, Coastal Studies</td>
+        </tr>
+        <tr>
+            <td>43</td>
+            <td>Lumber River</td>
+            <td>Pee Dee</td>
+            <td>Mainstem, SC 9/US 76</td>
+            <td>DOT, Flood Forecasting, SW Assessments</td>
+        </tr>
+        <tr>
+            <td>44</td>
+            <td>Little Pee Dee River</td>
+            <td>Pee Dee</td>
+            <td>Mainstem, US 378</td>
+            <td>DOT, Flood Frequency/Forecasting</td>
+        </tr>
+        <tr>
+            <td>45</td>
+            <td>Pocotaligo River</td>
+            <td>Pee Dee</td>
+            <td>Tributary to Black River, I-95</td>
+            <td>DOT, Flood Frequency/Forecasting, SW Assessments</td>
+        </tr>
+        <tr>
+            <td>59</td>
+            <td>Pee Dee River</td>
+            <td>Pee Dee</td>
+            <td>Mainstem, Tom Blue Landing</td>
+            <td>Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>60</td>
+            <td>Pee Dee River</td>
+            <td>Pee Dee</td>
+            <td>Mainstem, US 15/401</td>
+            <td>Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>63</td>
+            <td>Crooked Creek</td>
+            <td>Pee Dee</td>
+            <td>Tributary to Pee Dee River</td>
+            <td>SW Assessments</td>
+        </tr>
+        <tr>
+            <td>65</td>
+            <td>Pee Dee River</td>
+            <td>Pee Dee</td>
+            <td>Mainstem</td>
+            <td>Coastal Studies, SCDNR WMA</td>
+        </tr>
+        <tr>
+            <td>66</td>
+            <td>Flat Creek</td>
+            <td>Pee Dee</td>
+            <td>Tributary to Lynches River</td>
+            <td>Ecological</td>
+        </tr>
+        <tr>
+            <td>72</td>
+            <td>Waccamaw River</td>
+            <td>Pee Dee</td>
+            <td>Mainstem, upstream of Buck Creek</td>
+            <td>Water Quality</td>
+        </tr>
+        <tr>
+            <td>73</td>
+            <td>Simpson Creek</td>
+            <td>Pee Dee</td>
+            <td>Tributary to Waccamaw River</td>
+            <td>Water Quality</td>
+        </tr>
+        <tr>
+            <td>74</td>
+            <td>Crabtree Canal</td>
+            <td>Pee Dee</td>
+            <td>Tributary to Waccamaw River, upstream of Oak St.</td>
+            <td>Water Quality</td>
+        </tr>
+        <tr>
+            <td>14</td>
+            <td>Ashepoo</td>
+            <td>Salkehatchie</td>
+            <td>Upper Mainstem</td>
+            <td>DNR Fisheries</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>Jackson Branch</td>
+            <td>Salkehatchie</td>
+            <td>Tributary to Salkehatchie</td>
+            <td>SW Assessments, Flood Frequency, General lack of streamflow data in basin</td>
+        </tr>
+        <tr>
+            <td>16</td>
+            <td>Little Salkehatchie River</td>
+            <td>Salkehatchie</td>
+            <td>Tributary to Salkehatchie</td>
+            <td>DNR Fisheries, SW Assessments, Flood Frequency, General lack of streamflow data in basin</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>Salkehatchie River</td>
+            <td>Salkehatchie</td>
+            <td>Upper Salkehatchie Mainstem</td>
+            <td>DNR Fisheries, SW Assessments, Flood Frequency, General lack of streamflow data in basin</td>
+        </tr>
+        <tr>
+            <td>26</td>
+            <td>Broad River/Port Royal Sound</td>
+            <td>Salkehatchie</td>
+            <td>Coastal</td>
+            <td>Coastal Studies</td>
+        </tr>
+        <tr>
+            <td>46</td>
+            <td>Ashepoo River</td>
+            <td>Salkehatchie</td>
+            <td>Coastal</td>
+            <td>Coastal Studies</td>
+        </tr>
+        <tr>
+            <td>18</td>
+            <td>Clouds Creek</td>
+            <td>Saluda</td>
+            <td>Tributary to Little Saluda River</td>
+            <td>WU/Regulation, SW Assessments, DNR Fisheries</td>
+        </tr>
+        <tr>
+            <td>19</td>
+            <td>Twelvemile Creek</td>
+            <td>Saluda</td>
+            <td>Tributary Saluda</td>
+            <td>WU/Regulation, SW Assessments, Flood Frequency/Forecasting, Water Quality</td>
+        </tr>
+        <tr>
+            <td>20</td>
+            <td>Reedy River</td>
+            <td>Saluda</td>
+            <td>Upper Reedy River</td>
+            <td>Flood Frequency/Forecasting</td>
+        </tr>
+        <tr>
+            <td>27</td>
+            <td>Saluda River</td>
+            <td>Saluda</td>
+            <td>Below North Saluda River Confluence</td>
+            <td>WU/Regulation, SW Assessments</td>
+        </tr>
+        <tr>
+            <td>28</td>
+            <td>Congaree River</td>
+            <td>Saluda</td>
+            <td>Above Wateree River Confluence</td>
+            <td>SW Assessments</td>
+        </tr>
+        <tr>
+            <td>47</td>
+            <td>Saluda River</td>
+            <td>Saluda</td>
+            <td>Mainstem, I-26</td>
+            <td>Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>48</td>
+            <td>Coronaca Creek</td>
+            <td>Saluda</td>
+            <td>Tributary to Wilson Creek</td>
+            <td>Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>49</td>
+            <td>Little River</td>
+            <td>Saluda</td>
+            <td>Reach between City of Laurens and Newberry County Line</td>
+            <td>Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>50</td>
+            <td>Saluda River</td>
+            <td>Saluda</td>
+            <td>Mainstem</td>
+            <td>Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>69</td>
+            <td>Stoop Creek</td>
+            <td>Saluda</td>
+            <td>Tributary to Lower Saluda River</td>
+            <td>Water Quality</td>
+        </tr>
+        <tr>
+            <td>64</td>
+            <td>Oolenoy River</td>
+            <td>Saluda</td>
+            <td>Tributary to South Saluda River</td>
+            <td>SW Assessments</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>Ashley River</td>
+            <td>Santee</td>
+            <td>Mainstem</td>
+            <td>Coastal Studies</td>
+        </tr>
+        <tr>
+            <td>51</td>
+            <td>French Quarter Creek</td>
+            <td>Santee</td>
+            <td>Tributary to East Branch Cooper River</td>
+            <td>Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>52</td>
+            <td>North Santee River</td>
+            <td>Santee</td>
+            <td>Coastal</td>
+            <td>Coastal Studies</td>
+        </tr>
+        <tr>
+            <td>53</td>
+            <td>South Santee River</td>
+            <td>Santee</td>
+            <td>Coastal</td>
+            <td>Coastal Studies</td>
+        </tr>
+        <tr>
+            <td>70</td>
+            <td>East Branch Cooper River</td>
+            <td>Santee</td>
+            <td>Near confluence of Quinby and Huger Creeks</td>
+            <td>Coastal Studies</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>Chauga River</td>
+            <td>Savannah</td>
+            <td>Tributary to Lake Hartwell</td>
+            <td>SW Assessments, DNR Fisheries</td>
+        </tr>
+        <tr>
+            <td>23</td>
+            <td>Eastatoe Creek</td>
+            <td>Savannah</td>
+            <td>Headwater Tributary to Lake Keowee</td>
+            <td>SW Assessments, DNR Fisheries, lack of gages in Blue Ridge</td>
+        </tr>
+        <tr>
+            <td>29</td>
+            <td>Long Cane Creek</td>
+            <td>Savannah</td>
+            <td>Tributary to Little River</td>
+            <td>SW Assessments, Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>54</td>
+            <td>Cuffeytown Creek</td>
+            <td>Savannah</td>
+            <td>Tributary to Steven&#39;s Creek</td>
+            <td>Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>55</td>
+            <td>Hard Labor Creek</td>
+            <td>Savannah</td>
+            <td>Tributary to Steven&#39;s Creek</td>
+            <td>Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>56</td>
+            <td>Steven&#39;s Creek</td>
+            <td>Savannah</td>
+            <td>Mainstem, Garrett Rd</td>
+            <td>Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>57</td>
+            <td>Steven&#39;s Creek</td>
+            <td>Savannah</td>
+            <td>Mainstem, Woodlawn Rd</td>
+            <td>Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>71</td>
+            <td>Turkey Creek </td>
+            <td>Savannah</td>
+            <td>Tributary to Steven&#39;s Creek</td>
+            <td>Ecological</td>
+        </tr>
+    </tbody>
+</table>

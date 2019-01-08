@@ -1,0 +1,48 @@
+ID,Site No.,Site Name,Basin,DA,Start,End,Years,Designation
+17,2156370,"Pacolet River near Saratt, SC",Broad,-1,8/22/2012,6/15/2014,2,"SW Assessments, Sedimentation Studies, Flood Forecasting"
+21,2157000,"North Tyger River near Fairmont, SC",Broad,44.4,10/1/1950,9/30/1988,38,"Flood Frequency/Forecasting, SW Assessments, POR"
+23,2157490,"Beaverdam Creek above Greer, SC",Broad,15.9,3/7/2002,9/7/2014,12,"Flood Frequency, SW Assessments"
+30,2159000,"South Tyger River near Woodruff, SC",Broad,174,10/1/1933,9/30/1971,38,"Flood Frequency, DNR Fisheries, SW Assessments, POR"
+31,2159500,"Tyger River near Woodruff, SC",Broad,351,10/1/1929,9/30/1956,27,"WU/Regulation, SW Assessments, POR"
+34,2159810,"Fairforest Creek below Spartanburg, SC",Broad,23.6,5/17/1988,4/2/1998,10,Flood Frequency
+35,2160000,"Fairforest Creek near Union, SC",Broad,183,7/1/1940,9/30/1971,31,"Flood Frequency, DNR Fisheries, SW Assessments, POR"
+48,2162010,"Cedar Creek near Blythewood, SC",Broad,48.9,12/1/1966,9/30/1996,30,"SW Assessments, Flood Frequency, POR"
+49,2162080,"Crane Creek at Columbia, SC",Broad,66.5,1/1/1968,9/30/1974,6,"Water Quality, SW Assessments"
+67,2147403,"Fishing Creek below Fort Lawn, SC",Catawba,280,2/15/2001,10/1/2003,2,"SW Assessments, Lack of gages in middle basin"
+71,2148300,"Colonels Creek near Leesburg, SC",Catawba,40.2,9/1/1966,10/21/2007,41,"Flood Frequency, SW Assessments, Lack of gages in lower basin, POR"
+265,2145940,"Little Dutchman Creek Trib at Rock Hill, SC",Catawba,-1,8/19/1986,4/1/1986,12,"Flood Frequency, USGS recommended"
+83,2172640,"Dean Swamp Creek near Salley, SC",Edisto,31.2,10/1/1980,9/30/2000,20,"SW Assessments, Flood Frequency, POR"
+90,2174000,"Edisto River near Branchville, SC",Edisto,1720,10/1/1945,9/30/1996,51,"SW Assessments, Flood Forecasting"
+91,2174250,"Cow Castle Creek near Bowman, SC",Edisto,23.4,10/1/1970,2/24/2013,43,"Flood Frequency, SW Assessments, DNR Fisheries, POR"
+111,2131309,"Fork Creek at Jefferson, SC",Pee Dee,24.3,8/27/1976,9/30/1997,21,"SW Assessments, Flood Frequency, POR"
+116,2132500,"Little Pee Dee River near Dillon, SC",Pee Dee,524,4/1/1939,9/30/1971,32,Flood Forecasting
+120,2135300,"Scape Ore Swamp near Bishpville, SC",Pee Dee,96,7/26/1968,9/30/2003,35,"SW Assessments, Flood Frequency, POR"
+121,2135500,"Black River near Gable, SC",Pee Dee,401,6/1/1951,9/30/1992,41,"SW Assessments, Flood Forecasting, POR"
+131,2176000,"Combahee River near Yemassee, SC",Salkehatchie,1100,6/1/1951,6/30/1957,6,"SW Assessments, DNR Fisheries, Coastal Studies"
+133,2176517,"Coosawhatchie River near Early Branch, SC",Salkehatchie,382,10/1/1995,9/30/1998,3,"SW Assessments, Coastal Studies"
+267,2176380,"Tributary to Coosawhatchie R at Allendale, SC",Salkehatchie,1.5,12/13/1985,11/21/2005,21,"Flood Frequency, POR, USGS recommended"
+151,2166970,"Ninety-six Creek near Ninety-six, SC",Saluda,17.4,10/1/1980,9/30/2001,21,"SW Assessments, Flood Frequency/Forecasting, POR"
+162,2169550,"Congaree Creek at Cayce, SC",Saluda,122,10/1/1959,9/30/1980,21,"SW Assessments, Flood Frequency/Forecasting, POR"
+164,2169630,"Big Beaver Creek near St. Matthews, SC",Saluda,10,7/16/1966,9/30/1993,27,"SW Assessments, Flood Frequency, POR"
+165,2169670,"Cedar Creek below Myers Creek near Hopkins, SC",Saluda,66.9,11/13/1980,9/30/1985,5,SW Assessments
+266,2169505,"Rocky Branch at Pickens St. at Columbia, SC",Saluda,2.2,6/7/1985,6/28/2004,20,"Flood Frequency, POR, USGs recommended"
+136,2176720,"May River near Bluffton, SC",Savannah,20.9,6/6/2002,6/9/2004,2,Coastal Studies
+189,2185200,"Little River near Walhalla, SC",Savannah,72,3/4/1967,9/30/2003,36,"DNR Fisheries, SW Assessments, Flood Frequency, POR"
+217,2197315,"Upper Three Runs at Road A (SRS), SC",Savannah,203,6/6/1974,9/30/2002,28,"SW Assessments, DNR Fisheries, POR"
+,,,,,,,,
+*,"DA: Drainage area in square miles, -1 denotes that drainage area is not listed on USGS website or the site is a tidal creek",,,,,,,
+,,,,,,,,
+Designation Descriptions,,,,,,,,
+Designation,Purpose,,,,,,,
+Flood Frequency Site,Will be used to determine flood frequencies and magnitudes.,,,,,,,
+Flood Forecasting Site,Will be used for forecasting flood events and are important for public safety.,,,,,,,
+SW Assessment Site,"Will be used to improve UIFs (Unimpaired Flows) for model development as part of the State's Surface Water Assessment Project.  These UIFS are used to develop inflows to the surface water allocation models being developed by the SCDNR, SCDHEC, and a consultant (CDM Smith).",,,,,,,
+POR Site,Period of Record (for reactivation sites only) - site has 20 or more years of historic data from which to compare new streamflow data.,,,,,,,
+DNR Fisheries Site,"Will be used by SCDNR biologists for monitoring and  fisheries assessment, management and protection.",,,,,,,
+Coastal Studies Site,Will help define location of the saltwater/freshwater interface and help determine rate of salt water intrusion.,,,,,,,
+WU/Regulation Site,"Site is regulated or has impairment (downstream of a reservoir, noteable water use/withdrawals, ect.), and data will be used to assess water availability concerns.",,,,,,,
+DOT Site,Will be at a bridge crossing and will address DOT infrastructure and transportation concerns.,,,,,,,
+Water Quality,Will be used to monitor water quality,,,,,,,
+Ecological,Will be used to monitor and study a stream of noted ecological value or concern,,,,,,,
+"Other purposes include the general lack of data availability on a mainstem, a major tributary, or in a particular part of a basin.",,,,,,,,
+"Though not listed explicitly, many of the proposed sites can also be used for low flow studies (7Q10 estimates, for example) or for drought monitoring.",,,,,,,,

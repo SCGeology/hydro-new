@@ -1,0 +1,107 @@
+
+#map {
+    background-color: #ffffff;
+    height:500px;
+    margin-bottom: 10px;
+}
+th {
+    text-align: left;
+    vertical-align: top;
+}
+.info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.9);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+.info h2 {
+    margin: 0 0 5px;
+    color: #777;
+}
+.leaflet-container {
+    background: #fff;
+}
+
+.legendpng {
+    width:205px;
+    height:auto;
+}
+
+.leaflet-popup-content {width:301px;}
+.leaflet-popup-content td, th {
+    padding: 0 5px 0 5px;
+    width:80px;
+} 
+.leaflet-popup-content tr th {width:80px;}
+.leaflet-popup-content tr td {width:202px;}
+
+#mainContent th{background:#eee;line-height: 1.5em;}
+#mainContent table {border-collapse: collapse;margin:10px auto}
+
+.leaflet-popup-content tr:nth-child(odd) {background: #e3e8e6;}
+
+/*non map stuff*/
+
+#mainContent h2 {font-size:1.1em;}
+
+.doctitle a {font-size:1em;color:#0b4d8e;}
+.doctitle a:visited {color:#0b4d8e;}
+.doctitle:hover {background-color:#eee;}
+.toggler ul {list-style-type:none; padding-left:0;line-height: 1.5em;}
+.toggler li {border-bottom:1px solid #ccc;padding-bottom:10px;font-style: italic;}
+
+#docsHeader{margin-top:10px;}
+
+#mapHeadTitle {
+    margin-left: -3px;
+    border-radius: 3px;
+    background-color: #ddd;
+}
+.infoTables{
+    display:none;
+    width:98%;
+    margin:0 auto;
+}
+
+.infoTables table {width: 100%;}
+
+.csvLinks{padding:4px; font-weight: bold; border-radius: 4px; background-color:#d0e1e1;}
+.docs {width:96%;margin:1em auto;}
+
+#intro {
+    width:84%;
+    float:left;
+    margin-top:0.5em;
+}
+#logos {
+    width:100%;
+    float:right;
+    margin:1em 0 0 0;
+    text-align: center;
+}
+#dnrLogo {width:75%;margin-bottom:12px;}
+#usgsLogo {width:90%;}
+
+p.clear{clear:both;}
+
+#newSites tr td:first-child {
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+#reactSites tr td:first-child {
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+#table-tabs .nav-link {
+    text-decoration: none;
+    color:darkblue;
+}
+.tab-content {
+    margin:15px 0;
+}

@@ -1,0 +1,382 @@
+<style>
+    #reactSites {
+        margin-bottom: 12px;
+    }
+    
+    #reactSites td {
+        padding: 1px 4px;
+    }
+    
+    .footnote {
+        font-size: 0.8em;
+    }
+    
+    #reactSites table td:nth-child(8) {
+        text-align: center;
+    }
+    
+    #reactSites table td:nth-child(5) {
+        text-align: center;
+    }
+    
+    #reactSites table td:nth-child(1) {
+        text-align: center;
+    }
+    
+    #reactSites table tr td:first-child {
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+</style>
+
+<div class="csvLinks">Click the Site ID to zoom to the site on the map. <a style="float:right;" href="flowmap/docs/reactivationSites.csv">Download a CSV file of this table.</a></div>
+
+<table class="table table-bordered table-hover table-condensed" id="reactSites">
+    <thead>
+        <tr>
+            <th title="Field #1" style="width:30px;">ID</th>
+            <th title="Field #2" style="width:70px;">Site No.</th>
+            <th title="Field #3" style="width:150px">Site Name</th>
+            <th title="Field #4">Basin</th>
+            <th title="Field #5" style="width:20px;">DA</th>
+            <th title="Field #6">Start</th>
+            <th title="Field #7">End</th>
+            <th title="Field #8" style="width:20px;">Years</th>
+            <th title="Field #9">Designation</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>76</td>
+            <td>2157490</td>
+            <td>Beaverdam Creek above Greer, SC</td>
+            <td>Broad</td>
+            <td>15.9</td>
+            <td>3/7/2002</td>
+            <td>9/7/2014</td>
+            <td>12</td>
+            <td>Flood Frequency, SW Assessments</td>
+        </tr>
+        <tr>
+            <td>77</td>
+            <td>2156370</td>
+            <td>Pacolet River near Saratt, SC</td>
+            <td>Broad</td>
+            <td>-1.0</td>
+            <td>8/22/2012</td>
+            <td>6/15/2014</td>
+            <td>2</td>
+            <td>SW Assessments, Sedimentation Studies, Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>78</td>
+            <td>2157000</td>
+            <td>North Tyger River near Fairmont, SC</td>
+            <td>Broad</td>
+            <td>44.4</td>
+            <td>10/1/1950</td>
+            <td>9/30/1988</td>
+            <td>38</td>
+            <td>Flood Frequency/Forecasting, SW Assessments, POR</td>
+        </tr>
+        <tr>
+            <td>79</td>
+            <td>2159000</td>
+            <td>South Tyger River near Woodruff, SC</td>
+            <td>Broad</td>
+            <td>174.0</td>
+            <td>10/1/1933</td>
+            <td>9/30/1971</td>
+            <td>38</td>
+            <td>Flood Frequency, DNR Fisheries, SW Assessments, POR</td>
+        </tr>
+        <tr>
+            <td>80</td>
+            <td>2159500</td>
+            <td>Tyger River near Woodruff, SC</td>
+            <td>Broad</td>
+            <td>351.0</td>
+            <td>10/1/1929</td>
+            <td>9/30/1956</td>
+            <td>27</td>
+            <td>WU/Regulation, SW Assessments, POR</td>
+        </tr>
+        <tr>
+            <td>81</td>
+            <td>2159810</td>
+            <td>Fairforest Creek below Spartanburg, SC</td>
+            <td>Broad</td>
+            <td>23.6</td>
+            <td>5/17/1988</td>
+            <td>4/2/1998</td>
+            <td>10</td>
+            <td>Flood Frequency</td>
+        </tr>
+        <tr>
+            <td>82</td>
+            <td>2160000</td>
+            <td>Fairforest Creek near Union, SC</td>
+            <td>Broad</td>
+            <td>183.0</td>
+            <td>7/1/1940</td>
+            <td>9/30/1971</td>
+            <td>31</td>
+            <td>Flood Frequency, DNR Fisheries, SW Assessments, POR</td>
+        </tr>
+        <tr>
+            <td>83</td>
+            <td>2162010</td>
+            <td>Cedar Creek near Blythewood, SC</td>
+            <td>Broad</td>
+            <td>48.9</td>
+            <td>12/1/1966</td>
+            <td>9/30/1996</td>
+            <td>30</td>
+            <td>SW Assessments, Flood Frequency, POR</td>
+        </tr>
+        <tr>
+            <td>84</td>
+            <td>2162080</td>
+            <td>Crane Creek at Columbia, SC</td>
+            <td>Broad</td>
+            <td>66.5</td>
+            <td>1/1/1968</td>
+            <td>9/30/1974</td>
+            <td>6</td>
+            <td>Water Quality, SW Assessments</td>
+        </tr>
+        <tr>
+            <td>85</td>
+            <td>2145940</td>
+            <td>Little Dutchman Creek Trib at Rock Hill, SC</td>
+            <td>Catawba</td>
+            <td>-1.0</td>
+            <td>8/19/1986</td>
+            <td>4/1/1986</td>
+            <td>12</td>
+            <td>Flood Frequency, USGS recommended</td>
+        </tr>
+        <tr>
+            <td>86</td>
+            <td>2147403</td>
+            <td>Fishing Creek below Fort Lawn, SC</td>
+            <td>Catawba</td>
+            <td>280.0</td>
+            <td>2/15/2001</td>
+            <td>10/1/2003</td>
+            <td>2</td>
+            <td>SW Assessments, Lack of gages in middle basin</td>
+        </tr>
+        <tr>
+            <td>87</td>
+            <td>2148300</td>
+            <td>Colonels Creek near Leesburg, SC</td>
+            <td>Catawba</td>
+            <td>40.2</td>
+            <td>9/1/1966</td>
+            <td>10/21/2007</td>
+            <td>41</td>
+            <td>Flood Frequency, SW Assessments, Lack of gages in lower basin, POR</td>
+        </tr>
+        <tr>
+            <td>88</td>
+            <td>2174250</td>
+            <td>Cow Castle Creek near Bowman, SC</td>
+            <td>Edisto</td>
+            <td>23.4</td>
+            <td>10/1/1970</td>
+            <td>2/24/2013</td>
+            <td>43</td>
+            <td>Flood Frequency, SW Assessments, DNR Fisheries, POR</td>
+        </tr>
+        <tr>
+            <td>89</td>
+            <td>2172640</td>
+            <td>Dean Swamp Creek near Salley, SC</td>
+            <td>Edisto</td>
+            <td>31.2</td>
+            <td>10/1/1980</td>
+            <td>9/30/2000</td>
+            <td>20</td>
+            <td>SW Assessments, Flood Frequency, POR</td>
+        </tr>
+        <tr>
+            <td>90</td>
+            <td>2174000</td>
+            <td>Edisto River near Branchville, SC</td>
+            <td>Edisto</td>
+            <td>1720.0</td>
+            <td>10/1/1945</td>
+            <td>9/30/1996</td>
+            <td>51</td>
+            <td>SW Assessments, Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>91</td>
+            <td>2131309</td>
+            <td>Fork Creek at Jefferson, SC</td>
+            <td>Pee Dee</td>
+            <td>24.3</td>
+            <td>8/27/1976</td>
+            <td>9/30/1997</td>
+            <td>21</td>
+            <td>SW Assessments, Flood Frequency, POR</td>
+        </tr>
+        <tr>
+            <td>92</td>
+            <td>2132500</td>
+            <td>Little Pee Dee River near Dillon, SC</td>
+            <td>Pee Dee</td>
+            <td>524.0</td>
+            <td>4/1/1939</td>
+            <td>9/30/1971</td>
+            <td>32</td>
+            <td>Flood Forecasting</td>
+        </tr>
+        <tr>
+            <td>93</td>
+            <td>2135300</td>
+            <td>Scape Ore Swamp near Bishpville, SC</td>
+            <td>Pee Dee</td>
+            <td>96.0</td>
+            <td>7/26/1968</td>
+            <td>9/30/2003</td>
+            <td>35</td>
+            <td>SW Assessments, Flood Frequency, POR</td>
+        </tr>
+        <tr>
+            <td>94</td>
+            <td>2135500</td>
+            <td>Black River near Gable, SC</td>
+            <td>Pee Dee</td>
+            <td>401.0</td>
+            <td>6/1/1951</td>
+            <td>9/30/1992</td>
+            <td>41</td>
+            <td>SW Assessments, Flood Forecasting, POR</td>
+        </tr>
+        <tr>
+            <td>95</td>
+            <td>2176380</td>
+            <td>Tributary to Coosawhatchie R at Allendale, SC</td>
+            <td>Salkehatchie</td>
+            <td>1.5</td>
+            <td>12/13/1985</td>
+            <td>11/21/2005</td>
+            <td>21</td>
+            <td>Flood Frequency, POR, USGS recommended</td>
+        </tr>
+        <tr>
+            <td>96</td>
+            <td>2176000</td>
+            <td>Combahee River near Yemassee, SC</td>
+            <td>Salkehatchie</td>
+            <td>1100.0</td>
+            <td>6/1/1951</td>
+            <td>6/30/1957</td>
+            <td>6</td>
+            <td>SW Assessments, DNR Fisheries, Coastal Studies</td>
+        </tr>
+        <tr>
+            <td>97</td>
+            <td>2176517</td>
+            <td>Coosawhatchie River near Early Branch, SC</td>
+            <td>Salkehatchie</td>
+            <td>382.0</td>
+            <td>10/1/1995</td>
+            <td>9/30/1998</td>
+            <td>3</td>
+            <td>SW Assessments, Coastal Studies</td>
+        </tr>
+        <tr>
+            <td>99</td>
+            <td>2169505</td>
+            <td>Rocky Branch at Pickens St. at Columbia, SC</td>
+            <td>Saluda</td>
+            <td>2.2</td>
+            <td>6/7/1985</td>
+            <td>6/28/2004</td>
+            <td>20</td>
+            <td>Flood Frequency, POR, USGs recommended</td>
+        </tr>
+        <tr>
+            <td>100</td>
+            <td>2166970</td>
+            <td>Ninety-six Creek near Ninety-six, SC</td>
+            <td>Saluda</td>
+            <td>17.4</td>
+            <td>10/1/1980</td>
+            <td>9/30/2001</td>
+            <td>21</td>
+            <td>SW Assessments, Flood Frequency/Forecasting, POR</td>
+        </tr>
+        <tr>
+            <td>101</td>
+            <td>2169550</td>
+            <td>Congaree Creek at Cayce, SC</td>
+            <td>Saluda</td>
+            <td>122.0</td>
+            <td>10/1/1959</td>
+            <td>9/30/1980</td>
+            <td>21</td>
+            <td>SW Assessments, Flood Frequency/Forecasting, POR</td>
+        </tr>
+        <tr>
+            <td>102</td>
+            <td>2169630</td>
+            <td>Big Beaver Creek near St. Matthews, SC</td>
+            <td>Saluda</td>
+            <td>10.0</td>
+            <td>7/16/1966</td>
+            <td>9/30/1993</td>
+            <td>27</td>
+            <td>SW Assessments, Flood Frequency, POR</td>
+        </tr>
+        <tr>
+            <td>103</td>
+            <td>2169670</td>
+            <td>Cedar Creek below Myers Creek near Hopkins, SC</td>
+            <td>Saluda</td>
+            <td>66.9</td>
+            <td>11/13/1980</td>
+            <td>9/30/1985</td>
+            <td>5</td>
+            <td>SW Assessments</td>
+        </tr>
+        <tr>
+            <td>98</td>
+            <td>2176720</td>
+            <td>May River near Bluffton, SC</td>
+            <td>Savannah</td>
+            <td>20.9</td>
+            <td>6/6/2002</td>
+            <td>6/9/2004</td>
+            <td>2</td>
+            <td>Coastal Studies</td>
+        </tr>
+        <tr>
+            <td>104</td>
+            <td>2185200</td>
+            <td>Little River near Walhalla, SC</td>
+            <td>Savannah</td>
+            <td>72.0</td>
+            <td>3/4/1967</td>
+            <td>9/30/2003</td>
+            <td>36</td>
+            <td>DNR Fisheries, SW Assessments, Flood Frequency, POR</td>
+        </tr>
+        <tr>
+            <td>105</td>
+            <td>2197315</td>
+            <td>Upper Three Runs at Road A (SRS), SC</td>
+            <td>Savannah</td>
+            <td>203.0</td>
+            <td>6/6/1974</td>
+            <td>9/30/2002</td>
+            <td>28</td>
+            <td>SW Assessments, DNR Fisheries, POR</td>
+        </tr>
+    </tbody>
+</table>
+<span class="footnote">*DA: Drainage area in square miles, -1 denotes that drainage area is not listed on USGS website or the site is a tidal creek</span>

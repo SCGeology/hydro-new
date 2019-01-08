@@ -90,7 +90,7 @@ a {text-decoration: underline;}
     text-decoration: underline;
     cursor: pointer;
 }
-.table {
+.about-table {
     max-width:500px;
 }
 .table-bordered td, .table-bordered  th{
@@ -129,13 +129,12 @@ h3:target {
 .links a:hover{
     color:#051f38;
 }
-.active{
+.lil-nav-active{
     color:#051f38;
     padding:2px 5px;
     border-radius:2px;
     font-weight: bold;
 }
-
 
 /* --- FONT HEADERS*/
 #index-header{
