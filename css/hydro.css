@@ -350,4 +350,25 @@ footer {
 .geocoder-control-input {
     font-size: 16px;
 }
+/*FAQ droptown divs*/
+#faq {}
+.closed {
+    background:url('http://www.dnr.sc.gov/water/waterplan/assets/rightarrow.png') no-repeat;
+    background-position:90% center;
+}
+
+.open {
+    background:url('http://www.dnr.sc.gov/water/waterplan/assets/downarrow.png') no-repeat;
+    background-position:90% center;
+}
+.question{
+    padding:5px;
+    
+}
+.question:hover{cursor: pointer;background-color:#eee;border-radius:4px;}
+.answer{
+    display:none;
+    padding:8px;
+    color:#2e6da4;
+    width:95%;
 }
