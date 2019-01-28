@@ -10,6 +10,7 @@
 #find-out-more {
     background-color:#d7eadf;
     border-radius: 4px;
+    box-shadow:1px 1px 1px #ddd;
 }
 #find-out-more a {
     display: block;
@@ -61,7 +62,7 @@
 }
 
 .closed {
-    background:url('../assets/rightarrow.png') no-repeat;
+    background:url('/rightarrow.png') no-repeat;
     background-position:90% center;
 }
 
