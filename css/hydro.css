@@ -136,43 +136,6 @@ h3:target {
     font-weight: bold;
 }
 
-/* --- FONT HEADERS*/
-#index-header{
-    font-size:1.9em;
-}
-.page-header {
-    font-size:2.0rem;
-    margin:0 0 8px 0;
-}
-h2{
-    font-size: 1.4rem;
-}
-h3 {
-    font-size: 1.2rem;
-}
-h4 {
-    font-size:1.1rem;
-}
-/*BUTTON STYLING*/
-.btn {
-    font-size:0.9em;
-}
-.btn {
-    background-color: #842932;
-    color: #fff;
-    box-shadow: 2px 2px 3px rgba(0,0,0,0.5);
-}
-.otherbtn {
-    background-color: #7fa370;
-    margin:5px;
-}
-.btn:hover {
-    color: #fff;
-    text-decoration: none;
-}
-.btn:active {
-    box-shadow: none;
-}
 
 /*HEADER, NAVBAR, BACKGROUND*/
 .business-header {
@@ -222,12 +185,9 @@ h4 {
 }
 
 .dropdown-item:hover {
-    color: #6e7b82;
-    background-color: #e0d996;
-}
-
-.dropdown-item:active {
-    background-color: #b3d9d9;
+    text-decoration: underline;
+    background-color:#123e66;
+    color:white;
 }
 
 .navbar-toggler {
@@ -248,60 +208,11 @@ h4 {
     color:#842932;
 }
 
-/*PROPERTIES PAGE AND MAP*/
-#map-search {
-    width:100%;
-    display: inline-flex;
-}
-#map-search .btn {
-    cursor: pointer;
-}
-#map{
-    width:100%;
-    height:450px;
-}
-#map-search div {
-    display: inline-flex;
-}
-.map-icon{
-    width:30px;
-    height: 30px;
-    margin-top:4px;
-    margin-left:8px;
-}
-#nat, #cul {
-    width:175px;
-}
-
 /*Events Calendar*/
 .embed-cal {
     min-height:400px;
 }
 
-/*PARKER ANNEX PAGE*/
-#location-map{
-    width:80%;
-    height:200px;
-    margin: auto;
-}
-#image-set {
-    width:35%;
-    height:auto;
-    float:right;
-    margin: 15px;
-    min-width:150px;
-}
-.bldg-image{
-    width:100%;
-}
-#image-set:hover{
-    opacity: 0.5;
-}
-
-/*responsive embed*/
-.embed-responsive {
-    max-width: 800px;
-}
 
 /*FOOTER*/
 footer {
@@ -371,4 +282,130 @@ footer {
     padding:8px;
     color:#2e6da4;
     width:95%;
+}
+
+/*bunch of stuff for the groundwater viewer */
+
+/*leaflet*/
+#map{
+    height:400px;
+    width:100%;
+}
+.cluster{
+    border-radius:100%;
+    text-align: center;
+    background-color:rgba(20, 20, 20,0.8);
+    border:3px solid #aaaaaa;
+    opacity: 0.8;
+}
+
+/*dygraph*/
+#chart {
+    height:225px;
+    margin-bottom: 8px;
+}
+.dygraph-title{
+    font-size:16px;
+}
+#datefilter{
+    padding:7px 0;
+}
+#datefilter label{
+    font-weight: normal;
+}
+.dygraph-legend{
+    top:-55px !important;
+    width:300px !important;
+}
+#hydrolegend {
+    height:40px;
+    width:100%;
+    display:inline-flex;
+    margin-left:7%;
+}
+#hydrolegend img {
+    height:20px;
+    width:auto;
+    margin: 0 15px;
+}
+
+.leaflet-clear-control {
+    height:34px;
+    width:34px;
+    background-color:white;
+}
+.leaflet-clear-control i {
+    margin:3px 5px;
+    color:#a06666;
+}
+
+.leaflet-clear-control:hover{
+    cursor: pointer;
+}
+.leaflet-clear-control i:hover{
+    color:darkred;
+}
+.leaflet-clear-control i:active{
+    color:gray;
+}
+
+/*table on map displaying well info*/
+#table{
+    position: absolute;
+    top:0;
+    left:0;
+    width:150px;
+    height:100%;
+    z-index: 1029;
+    background-color:rgba(50,50,50,0.85);
+    padding:0 5px;
+    color:#fff;
+}
+#table table td, #table table th {
+    padding:3px;
+    height:24px;
+}
+#table table td{
+    border-bottom: 1px solid #ccc;
+}
+
+#legend{
+    width:100%;
+    max-width: 750px;
+    text-align: center;
+    padding:5px 0;
+    margin:5px 0;
+}
+
+#getdata{
+    margin: 15px 5px;
+}
+
+/*FAQ droptown divs*/
+.closed {
+    background:url('http://www.dnr.sc.gov/water/waterplan/assets/rightarrow.png') no-repeat;
+    background-position:90% center;
+}
+
+.open {
+    background:url('http://www.dnr.sc.gov/water/waterplan/assets/downarrow.png') no-repeat;
+    background-position:90% center;
+}
+.question{padding:5px;}
+.question:hover{cursor: pointer;background-color:#eee;border-radius:4px;}
+.answer{
+    display:none;
+    padding:8px;
+    color:#2e6da4;
+    width:95%;
+}
+#wellgraph {
+    width:90%;
+    padding:10px;
+    height:auto;
+    margin:10px auto;
+}
+
+i {
+    margin-right:10px;
 }

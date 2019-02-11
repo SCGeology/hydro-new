@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="South Carolina Department of Natural Resources - Hydrology Section information.">
+    <meta name="author" content="South Carolina Department of Natural Resources - Hydrology Section">
+
+    <title>Hydrology - SCDNR</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+    <!-- Bootstrap core CSS -->
+    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../css/hydro.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/MarkerCluster.Default.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/MarkerCluster.css">
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.6/dist/esri-leaflet-geocoder.css">
+
+    <script src="https://use.fontawesome.com/b4f8eb2c18.js"></script>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="js/dygraph-combined.js"></script>
+    <script src="https://unpkg.com/esri-leaflet@2.0.3"></script>
+    <script src="js/papaparse.min.js"></script>
+    <script src="js/dygraph-extra.js"></script>
+    <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.6"></script>
+    <script src="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/leaflet.markercluster.js"></script>
+    <script src="https://unpkg.com/esri-leaflet-cluster@2.0.0"></script>
+
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg text-white fixed-top">
+        <div class="container">
+            <img src="../images/dnr-logo-small.gif" id="nav-logo">
+            <a class="navbar-brand ml-5 pl-5 pl-md-1" href="index.html">SCDNR Hydrology</a>
+            <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html"><i class="fas fa-home"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://www.dnr.sc.gov/water/hydro/publications.html">Publications</a>
+                    </li>
+                    <!--Data Dropdown-->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownData">
+                            <a class="dropdown-item" href="#">
+					 Groundwater Data</a>
+                            <a class="dropdown-item" href="http://www.dnr.sc.gov/hydro/gl_home.html">
+					Geophysical Logs</a>
+                            <a class="dropdown-item" href="../well-database.html">
+					Coastal Plain Well Database</a>
+                            <a class="dropdown-item" href="../Surface-water-levels.html">
+					Surface Water Levels</a>
+                            <a class="dropdown-item" href="../swam-models.html">
+					Surface Water Models</a>
+                        </div>
+                    </li>
+                    <!--Data Dropdown Done-->
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=tangnar123%40gmail.com&ctz=America%2FNew_York">Calendar</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header with Background Image -->
+    <header class="business-header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 my-sm-4 pt-3 pt-sm-0 background-text">
+                    <h1 class="page-header">Groundwater Viewer</h1>
+                    <p class="text-white lead">View and download data from the groundwater monitoring network.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Content -->
+    <div class="container">
+        <div id="main" class="row white-bg">
+            <div class="col-lg-12 mt-2">
+                <div id="map">
+                    <div class="pt-2" id="table">
+                        <h3 class="text-white h5">Selected Well</h3>
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <th>Well ID</th>
+                                </tr>
+                                <tr>
+                                    <td id="id"></td>
+                                </tr>
+                                <tr>
+                                    <th>Aquifer</th>
+                                </tr>
+                                <tr>
+                                    <td id="aq"></td>
+                                </tr>
+                                <tr>
+                                    <th>Well Depth</th>
+                                </tr>
+                                <tr>
+                                    <td id="wd"></td>
+                                </tr>
+                                <tr>
+                                    <th>Screen Depth</th>
+                                </tr>
+                                <tr>
+                                    <td id="sd"></td>
+                                </tr>
+                                <tr>
+                                    <th>Measure Type</th>
+                                </tr>
+                                <tr>
+                                    <td id="type"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <button id="getdata" class="btn btn-primary disabled" title="Select a well on the map.">Get Data</button>
+                    </div>
+                </div>
+                <!--<div id="legend"><img class="img-fluid" src="image/legend.png" alt="well legend" /></div>-->
+            </div>
+        </div>
+
+        <div class="row white-bg">
+            <h4>Hydrograph --- <span id="wellTitle" style="color:#555;">Select a well from the map.</span></h4>
+            <div class="col-lg-12" id="hydrolegend">
+                <img src="image/adr.png" />
+                <p>Data from Automatic Data Recorder (ADR)</p>
+                <p style="margin:0 0 0 20px;">|</p>
+                <img src="image/manual.png" />
+                <p>Manual measurements</p>
+                <div class="form-check ml-4 ">
+                    <input class="form-check-input position-static" type="checkbox" id="manualview" value="manualview" aria-label="view manual measurements">
+                </div>
+            </div>
+            <div class="col-lg-12 p-0" id="chart">
+            </div>
+            <div class="col-lg-12 ml-3 mb-3" id="datefilter">
+                <form class="form-inline">
+                    <div class="form-group mx-2">
+                        <label for="startdate">Start Date</label>
+                        <input type="date" class="form-control ml-1" id="startdate" placeholder="mm/dd/yyyy">
+                    </div>
+                    <div class="form-group mx-2">
+                        <label for="enddate">End Date</label>
+                        <input type="date" class="form-control ml-1" id="enddate" placeholder="mm/dd/yyyy">
+                    </div>
+                    <button id="filter" type="button" class="btn btn-primary disabled mx-1">Filter Data</button>
+                    <button id="reset" type="button" class="btn btn-success disabled mx-1">Full Extent</button>
+                </form>
+            </div>
+            <div class="col-lg-12">
+                <h4>Download Data</h4>
+                <p>Daily water level data are downloaded in a CSV format.</p>
+                <div class="radio">
+                    <label class="radio-inline mx-2">
+                        <input class="mx-1" type="radio" name="optradio" id="fullrecord" checked="checked">Full Period of Record</label>
+                    <label class="radio-inline mx-2">
+                        <input class="mx-1" type="radio" name="optradio" id="select">Selected Period Only (dates above)</label>
+                </div>
+                <div class="my-2" id="buttons">
+                    <button class="btn btn-primary disabled" id="dailydl" title="Select a well from the map to download data."><i class="fa fa-arrow-circle-down" aria-hidden="true"></i>Download Now</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row white-bg">
+            <div class="col-lg-12 toggler">
+                <h2>Groundwater Monitoring Network</h2>
+                <p>The South Carolina Department of Natural Resources (DNR) routinely collects groundwater level data for water-resource assessments and for management and planning purposes. DNR's base groundwater monitoring network currently includes 170 wells, including 33 cluster sites.</p>
+                <div id="faq" class="ml-lg-2">
+                    <p class="question closed">Why does SCDNR collect groundwater data?</p>
+                    <p class="answer">These data are used to identify short- and long-term changes in groundwater levels and storage due to changes in withdrawals, recharge rates, and climatic conditions; to calibrate ground-water flow models; to produce potentiometric maps for the major aquifers in the Coastal Plain Province; and to determine regional hydraulic gradients, and groundwater flow rates and directions of the major aquifers.</p>
+
+                    <p class="question closed">How often are water levels measured?</p>
+                    <p class="answer">Water levels of <strong>135 wells are measured hourly with automated data recorders (ADRs)</strong>; the remaining wells are measured periodically (manual wells), typically on a bimonthly basis using an electric measuring tape.</p>
+
+                    <p class="question closed">What aquifers are monitored by the network?</p>
+                    <p class="answer">NEED TO RE-WRITE THIS TO TAKE INTO ACCOUNT THE NEW AQUIFER NAMES.</p>
+
+                    <p class="question closed">What is the format of the downloaded water level data?</p>
+                    <p class="answer">Data are downloaded in as a CSV file with daily average water levels for each date in the period of record. Daily average water levels are calculated for each day having 7 or fewer missing hourly measurements. Manual measurements at each well site are also included in the data download.</p>
+
+                    <p class="question closed">In what units are water levels reported?</p>
+                    <p class="answer">All groundwater levels available here are reported in <strong>feet below land surface</strong>, except for several flowing wells where water levels rise above land surface. Negative water-level values are assigned to these sites to indicate that water levels are above land surface as opposed to below land surface.</p>
+
+                    <p class="question closed">How long has groundwater been monitored by SCDNR?</p>
+                    <p class="answer">Most monitoring wells have been measured since the mid-to-late 1990s, although a number of wells existed before then, one dating back to 1955.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row white-bg">
+            <div class="col-lg-12">
+                <h4>Groundwater Data Reports</h4>
+                <ul>
+                    <li><a href="http://www.dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_57_GW_Network.pdf">South Carolina DNR Groundwater Monitoring Network Status Report - July 2009 through June 2014</a></li>
+                    <li><a href="http://www.dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_50_WL_Data.pdf">Ground-Water Levels in South Carolina 2006-2010 (PDF)</a>
+                    </li>
+                    <li><a href="http://www.dnr.sc.gov/water/hydro/HydroPubs/pdf/williamsburg.pdf">Ground-Water Resources of Williamsburg County, South Carolina 2006-2010 (PDF)</a>
+                    </li>
+                    <li><a href="http://www.dnr.sc.gov/water/hydro/HydroPubs/Abs_dnr_R41.htm">Water Resources Data for South Carolina, 2000-2005</a>
+                    </li>
+                    <li><a href="http://www.dnr.sc.gov/water/hydro/HydroPubs/Abs_dnr_R31.htm">Water Resources Data for South Carolina, 2000-2001</a>
+                    </li>
+                    <li><a href="http://www.dnr.sc.gov/water/hydro/HydroPubs/Abs_dnr_R26.htm">Ground-Water Levels in South Carolina - A Compilation of Historical Water-Level Data</a>
+                    </li>
+                </ul>
+
+                <h4>More Groundwater Resources</h4>
+                <ul>
+                    <li><a href="../pot-mapping.html">Potentiometric Mapping</a></li>
+                    <li><a href="../groundwater-modeling.html">Groundwater and Hydrogeologic Modeling</a></li>
+                    <li><a href="../WellRecords/index.htm">Coastal Plain Well Inventory</a></li>
+                    <li><a href="../publications.html">Hydrology Publications</a></li>
+                    <li><a href="https://cida.usgs.gov/ngwmn/" target="_blank">National Groundwater Monitoring Network</a></li>
+                </ul>
+
+
+                <h4>Disclaimer</h4>
+                <p style="font-size:80%;">Data presented on this web site may have been retrieved partially or entirely from several sources including federal or other state agencies. DNR makes every effort to provide accurate and complete information, however, the database is a "work in progress" and updates will occur regularly. In no event should the South Carolina Department of Natural Resources or any contributing agencies be liable for any direct or indirect, incidental, or other damages arising from the use of these data. DNR does not warrant, guarantee, or make any representations regarding the use, or the results of the use, of the information provided to you by the Department in terms of correctness, accuracy, reliability, timeliness or otherwise. The entire risk as to the results and performance of any information obtained from the DNR is entirely assumed by the recipient. DNR welcomes suggestions on how to improve our home page and correct errors.</p>
+                <p>
+            </div>
+        </div>
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 ">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <p>SC Department of Natural Resources
+                        <br> Land, Water, and Conservation Division
+                        <br> 1000 Assembly Street
+                        <br> Columbia, SC 29201
+                        <br>
+                        <a href="http://dnr.sc.gov/water/hydro">dnr.sc.gov/water/hydro</a>
+                    </p>
+                    <a href="http://dnr.sc.gov/"><img src="../images/dnr-logo-small.gif" alt="SC Department of Natural Resources logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
+                    <p class="mt-3">Copyright ©
+                        <script type="text/javascript">
+                            document.write(new Date().getFullYear());
+                        </script>
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="../vendor/jquery/jquery.min.js"></script>
+    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="js/gw.js"></script>
+
+</body>
+
+</html>
