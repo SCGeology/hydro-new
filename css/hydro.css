@@ -263,15 +263,7 @@ footer {
 }
 /*FAQ droptown divs*/
 #faq {}
-.closed {
-    background:url('http://www.dnr.sc.gov/water/waterplan/assets/rightarrow.png') no-repeat;
-    background-position:90% center;
-}
 
-.open {
-    background:url('http://www.dnr.sc.gov/water/waterplan/assets/downarrow.png') no-repeat;
-    background-position:90% center;
-}
 .question{
     padding:5px;
     
@@ -298,6 +290,19 @@ footer {
     border:3px solid #aaaaaa;
     opacity: 0.8;
 }
+#close-well-table{
+    position: absolute;
+    bottom:5px;
+    right:5px;
+    border: none;
+}
+
+#open-well-table{
+    position: absolute;
+    bottom:26px;
+    left:-3px;
+    z-index: 1003;
+}
 
 /*dygraph*/
 #chart {
@@ -314,15 +319,10 @@ footer {
     font-weight: normal;
 }
 .dygraph-legend{
-    top:-55px !important;
-    width:300px !important;
+    top:-20px !important;
+    width:250px !important;
 }
-#hydrolegend {
-    height:40px;
-    width:100%;
-    display:inline-flex;
-    margin-left:7%;
-}
+
 #hydrolegend img {
     height:20px;
     width:auto;
@@ -360,6 +360,8 @@ footer {
     background-color:rgba(50,50,50,0.85);
     padding:0 5px;
     color:#fff;
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    overflow-x: hidden;
 }
 #table table td, #table table th {
     padding:3px;
@@ -382,16 +384,11 @@ footer {
 }
 
 /*FAQ droptown divs*/
-.closed {
-    background:url('http://www.dnr.sc.gov/water/waterplan/assets/rightarrow.png') no-repeat;
-    background-position:90% center;
-}
 
-.open {
-    background:url('http://www.dnr.sc.gov/water/waterplan/assets/downarrow.png') no-repeat;
-    background-position:90% center;
+.question{
+    padding:5px;
+    text-decoration: underline;
 }
-.question{padding:5px;}
 .question:hover{cursor: pointer;background-color:#eee;border-radius:4px;}
 .answer{
     display:none;
@@ -409,3 +406,47 @@ footer {
 i {
     margin-right:10px;
 }
+.form-control {
+    color:  #051f38;
+}
+/*css loader*/
+/*
+.lds-ring {
+  display: inline-block;
+  position: ;
+  top:50%;
+  left:50%;
+  width: 64px;
+  height: 64px;
+  z-index: 1005;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 51px;
+  height: 51px;
+  margin: 6px;
+  border: 6px solid #051f38;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #051f38 transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+*/

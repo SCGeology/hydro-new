@@ -72,7 +72,7 @@ function oef(feature, layer) {
         highlight.setLatLng(ll);
 
         wellID = feature.properties.Well_ID
-        $("#getdata").removeClass("disabled");
+        $('#getdata').prop('disabled', false);
     });
 };
 
@@ -148,11 +148,12 @@ L.Control.ClearMap = L.Control.extend({
             searchResults.clearLayers();
             highlight.setLatLng([0,0]);
             
-            //this clears the table on the size
+            //this clears the table on the side
             $("#table td").empty();
             
             //disable get data button until anoather well is clicked
-            $("#getdata").addClass("disabled");
+            $('#getdata').prop('disabled', true);
+            //$("#getdata").addClass("disabled");
             
             //zoom map to orignal extent. 
             map.setView([33.6, -81.4], 7)
@@ -160,10 +161,8 @@ L.Control.ClearMap = L.Control.extend({
         
         return clearDiv;
     },
-    
     onRemove: function(map){  
     },
-    
 });
 
 L.control.clearMap = function(opts) {
@@ -171,6 +170,15 @@ L.control.clearMap = function(opts) {
 }
 
 L.control.clearMap().addTo(map);
+
+$("#close-well-table").click(function(){
+    $("#table").width(0);
+    $('#open-well-table').removeClass('d-none');
+});
+$("#open-well-table").click(function(){
+    $("#table").width(150);
+    $("#open-well-table").addClass('d-none');
+});
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Hydrograph and other non map related stuff below ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 //pass a date object
@@ -192,7 +200,8 @@ function unformatDate(datestr) {
 }
 
 function getData(wellID) {
-    var url = "data/wl" + wellID + ".xml"
+    //var url = "data/wl" + wellID + ".xml"
+    var url = "http://usgswells.dnr.sc.gov/api/WaterLevel/GetWaterLevel?WellId="+wellID
     $.ajax({
         type: "GET",
         url: url,
@@ -207,12 +216,16 @@ var valmax = -1000
     //use the values to start min and max, when iterating will compare to these values and replace if higher or lower.
 
 //create an empty dy graph that will be updated when data is fetched
-hg = new Dygraph(document.getElementById("chart"), [
-    [0]
-], {
-    valueRange: [0, 0],
-    ylabel: "ft below land surface"
-});
+var initGraph = function(){
+    hg = new Dygraph(document.getElementById("chart"), [
+        [0]
+        ], {
+            valueRange: [0, 0],
+            ylabel: "ft below land surface"
+        });
+};
+
+initGraph()
 
 //when the get data button is clicked, get data from server by calling well ID... 
 
@@ -249,6 +262,11 @@ function wellParse(xml) {
         valueRange: [valmax, valmin],
         ylabel: "ft below land surface",
         xRangePad: 10,
+        axes: {
+                x: {
+                  pixelsPerLabel: 55
+                }
+              },
         zoomCallback: function(minDate, maxDate) {
             //This happens when you do a zoom action on the hydrograph
             var min = new Date(minDate);
@@ -293,6 +311,14 @@ $("#filter").click(function() {
 $("#reset").click(function() {
     hg.resetZoom();
     $("#fullrecord").prop("checked", true);
+});
+
+$("#clear-data").click(function(){
+    hg.destroy();
+    initGraph()
+    $("#dailydl").prop("disabled",true)
+        .attr("title", "Select a well from the map to download data.")
+    $("#filter, #reset, #manualview, #clear-data").prop("disabled", true);
 });
 
 //NEED TO PARSE OUT THE DATA ARRAY BASED ON THE SELECTION, CHANGE DATE STYLE
@@ -350,24 +376,24 @@ $("#getdata").click(function() {
     valmin = 1000
     valmax = -1000
         //reset button colors
-    $(this).addClass("disabled");
+    $(this).prop("disabled", true);
     //write well name to the screen
     $('#wellTitle').text(wellID);
     //initiate the get data function 
     getData(wellID);
     //enable the download button
-    $("#dailydl").removeClass("disabled")
+    $("#dailydl").prop("disabled",false)
         .attr("title", "Download daily data.")
-    $("#filter, #reset, #manualview").removeClass("disabled");
+    $("#filter, #reset, #manualview, #clear-data").prop("disabled", false);
 });
 
 $('#manualview').click(function() {
     if (hg.visibility()[1] == false) {
         hg.setVisibility(1, true);
-        $(this).removeClass("btn-primary");
+        $('#manual-show').text('Hide')
     } else {
         hg.setVisibility(1, false);
-        $(this).addClass("btn-primary");
+        $('#manual-show').text('View')
     }
 });
 

@@ -32,8 +32,7 @@
     <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.6"></script>
     <script src="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/leaflet.markercluster.js"></script>
     <script src="https://unpkg.com/esri-leaflet-cluster@2.0.0"></script>
-
-
+    
 </head>
 
 <body>
@@ -42,7 +41,7 @@
     <nav class="navbar navbar-expand-lg text-white fixed-top">
         <div class="container">
             <img src="../images/dnr-logo-small.gif" id="nav-logo">
-            <a class="navbar-brand ml-5 pl-5 pl-md-1" href="index.html">SCDNR Hydrology</a>
+            <a class="navbar-brand ml-5 pl-5 pl-md-1" href="../index.html">SCDNR Hydrology</a>
             <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -98,11 +97,11 @@
     <!-- Page Content -->
     <div class="container">
         <div id="main" class="row white-bg">
-            <div class="col-lg-12 mt-2">
+            <div class="col-lg-12 m-0 p-0">
                 <div id="map">
-                    <div class="pt-2" id="table">
-                        <h3 class="text-white h5">Selected Well</h3>
-                        <table>
+                    <div class="pt-2 px-0" id="table">
+                        <h3 class="text-white h5 ml-2">Selected Well</h3>
+                        <table class="ml-2">
                             <tbody>
                                 <tr>
                                     <th>Well ID</th>
@@ -136,55 +135,67 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <button id="getdata" class="btn btn-primary disabled" title="Select a well on the map.">Get Data</button>
+                        <button id="getdata" class="btn btn-primary" disabled title="Select a well on the map.">Get Data</button>
+                        <button class="btn btn-outline-light btn-sm" id="close-well-table">Close<i class="fas fa-arrow-left ml-2 mr-0"></i></button>                       
                     </div>
+                    <button class="btn btn-outline-dark btn-sm d-none" id="open-well-table">Open<i class="fas fa-arrow-right ml-2 mr-0"></i></button>
                 </div>
                 <!--<div id="legend"><img class="img-fluid" src="image/legend.png" alt="well legend" /></div>-->
             </div>
         </div>
-
-        <div class="row white-bg">
+        
+        <div class="white-bg">
             <h4>Hydrograph --- <span id="wellTitle" style="color:#555;">Select a well from the map.</span></h4>
-            <div class="col-lg-12" id="hydrolegend">
-                <img src="image/adr.png" />
-                <p>Data from Automatic Data Recorder (ADR)</p>
-                <p style="margin:0 0 0 20px;">|</p>
-                <img src="image/manual.png" />
-                <p>Manual measurements</p>
-                <div class="form-check ml-4 ">
-                    <input class="form-check-input position-static" type="checkbox" id="manualview" value="manualview" aria-label="view manual measurements">
+            <div class="row mt-4" id="hydrolegend">                
+                <div class="col-lg-5 d-inline-flex">
+                    <img src="image/adr.png" />
+                    <p>Data from Automatic Data Recorder (ADR)</p>
+                </div>
+                <div class="col-lg-5 d-inline-flex">
+                    <img src="image/manual.png" />
+                    <p>Manual Measurements - <button class="btn btn-sm btn-outline-primary" role="button" id="manualview"><span id="manual-show">View</span></button></p>
                 </div>
             </div>
-            <div class="col-lg-12 p-0" id="chart">
+            <div class="row p-3">
+                <!--<div class="lds-ring"><div></div><div></div><div></div><div></div></div>-->
+                <div class="col-lg-12 p-0" id="chart">
+                </div>
             </div>
-            <div class="col-lg-12 ml-3 mb-3" id="datefilter">
-                <form class="form-inline">
-                    <div class="form-group mx-2">
-                        <label for="startdate">Start Date</label>
-                        <input type="date" class="form-control ml-1" id="startdate" placeholder="mm/dd/yyyy">
+            <div class="row">
+                <div class="col-lg-12 ml-3 mb-3" id="datefilter">
+                    <form class="form-inline">
+                        <div class="form-group mx-2">
+                            <label for="startdate">Start Date</label>
+                            <input type="date" class="form-control ml-1" id="startdate" placeholder="mm/dd/yyyy">
+                        </div>
+                        <div class="form-group mx-2">
+                            <label for="enddate">End Date</label>
+                            <input type="date" class="form-control ml-1" id="enddate" placeholder="mm/dd/yyyy">
+                        </div>
+                        <div id="button-group">
+                            <button id="filter" type="button" class="btn btn-outline-primary mx-1" disabled>Filter Data</button>
+                            <button id="reset" type="button" class="btn btn-outline-success mx-1" disabled>Full Extent</button>
+                            <button id="clear-data" type="button" class="btn btn-outline-danger mx-1" disabled>Clear Data</button>
+                        </div>    
+                    </form>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4>Download Data</h4>
+                    <p>Daily water level data are downloaded in a CSV format.</p>
+                    <div class="radio">
+                        <label class="radio-inline mx-2">
+                            <input class="mx-1" type="radio" name="optradio" id="fullrecord" checked="checked">Full Period of Record</label>
+                        <label class="radio-inline mx-2">
+                            <input class="mx-1" type="radio" name="optradio" id="select">Selected Period Only (dates above)</label>
                     </div>
-                    <div class="form-group mx-2">
-                        <label for="enddate">End Date</label>
-                        <input type="date" class="form-control ml-1" id="enddate" placeholder="mm/dd/yyyy">
+                    <div class="my-2" id="buttons">
+                        <button class="btn btn-primary" disabled id="dailydl" title="Select a well from the map to download data."><i class="fa fa-arrow-circle-down" aria-hidden="true"></i>Download Now</button>
                     </div>
-                    <button id="filter" type="button" class="btn btn-primary disabled mx-1">Filter Data</button>
-                    <button id="reset" type="button" class="btn btn-success disabled mx-1">Full Extent</button>
-                </form>
-            </div>
-            <div class="col-lg-12">
-                <h4>Download Data</h4>
-                <p>Daily water level data are downloaded in a CSV format.</p>
-                <div class="radio">
-                    <label class="radio-inline mx-2">
-                        <input class="mx-1" type="radio" name="optradio" id="fullrecord" checked="checked">Full Period of Record</label>
-                    <label class="radio-inline mx-2">
-                        <input class="mx-1" type="radio" name="optradio" id="select">Selected Period Only (dates above)</label>
-                </div>
-                <div class="my-2" id="buttons">
-                    <button class="btn btn-primary disabled" id="dailydl" title="Select a well from the map to download data."><i class="fa fa-arrow-circle-down" aria-hidden="true"></i>Download Now</button>
                 </div>
             </div>
-        </div>
+        </div> 
 
         <div class="row white-bg">
             <div class="col-lg-12 toggler">
