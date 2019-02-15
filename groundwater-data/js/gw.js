@@ -111,7 +111,7 @@ var wellSearch = L.esri.Geocoding.featureLayerProvider({
     url: data,
     searchFields: ['Well_ID'],
     label: 'Well IDs',
-    maxResults:10
+    maxResults:5
 });
 
 var agol = L.esri.Geocoding.arcgisOnlineProvider({
@@ -229,31 +229,78 @@ initGraph()
 
 //when the get data button is clicked, get data from server by calling well ID... 
 
+var pushData = function(l,dt,m){
+    //For the row, keep increasing/decrease valmin/max as necessary to show the data well
+    //instead of padding by some constant, would be better to pad based on the range in the data
+        if (parseFloat(l) < valmin && parseFloat(l) > 0) {
+            valmin = parseFloat(l) - 3
+        }
+        if (parseFloat(l) > valmax) {
+            valmax = parseFloat(l) + 3
+        }
+
+    //puts the data in the right order in the arrays so ADR and MANUAL data are independent series
+        if (m === "Automatic Data Recorder") {
+            var insert = [dt, l, null]
+            dataArray.push(insert);            
+        } else if (m === "MANUAL") {
+            var insert = [dt, null, l]
+            dataArray.push(insert);
+        }
+}
+
 function wellParse(xml) {
     var data = $.parseXML(xml),
         $xml = $(xml),
         $record = $xml.find("WATER_LEVEL");
+    
+    var lastDate
+    
     $($record).each(function() {
         var level = $(this).find("WATER_DEPTH").text();
-        var date = $(this).find("DATE_TIME").text();
+        var dateText = $(this).find("DATE_TIME").text();
         var msmt = $(this).find("MEASUREMENT_METHOD").text();
+        //make date object from text date
+        var dateN = new Date(dateText);
         
-        //you could pad the min and max with some percent of the range    
-        if (parseFloat(level) < valmin) {
-            valmin = parseFloat(level) - (parseFloat(level) * 0.1)
-        }
-        if (parseFloat(level) > valmax) {
-            valmax = parseFloat(level) + (parseFloat(level) * 0.1)
+        //first IF is universal - can't be unknown measurement type and can't be a '0' value. 
+        if (msmt !== "UNKNOWN" && level !== "0"){
+            
+            //first row, lastDate will be undefined, so go ahead and push to DataArray
+            if (typeof lastDate === 'undefined') {
+            
+                pushData(level,dateN,msmt)
+                
+                if (msmt === "Automatic Data Recorder"){
+                    lastDate = dateN
+                }
+            
+            } else if (msmt === "Automatic Data Recorder") {
+            
+                //make a date object that is the lastDate, plus an additional day. will compare to date
+                var nextDay = new Date(lastDate)
+                nextDay.setDate(lastDate.getDate()+1)
+            
+                while (formatDate(dateN) !== formatDate(nextDay)){
+                    //push a NaN value with date to the array
+                    pushData(NaN,new Date(nextDay),"Automatic Data Recorder")              
+                    //increase the nextDay, will compare again until it breaks the while loop when nextDay matches current date
+                    nextDay.setDate(nextDay.getDate()+1)
+                }
+            
+                //push the actual XML row after filled missing dates with above while loop
+                pushData(level,dateN,msmt)
+                lastDate = dateN    
+            
+            } else {
+                //will take care of adding in the manual measurements, but don't have to worry about filling these missing dates
+                pushData(level,dateN,msmt) 
+            }
         }
 
-        if (msmt == "Automatic Data Recorder") { 
-            var insert = [new Date(date), level, null]
-            dataArray.push(insert);            
-        } else {
-            var insert = [new Date(date), null, level]
-            dataArray.push(insert);
-        }
     });
+    
+    //console.log(dataArray)
     
     hg.updateOptions({
         file: dataArray,
@@ -262,11 +309,6 @@ function wellParse(xml) {
         valueRange: [valmax, valmin],
         ylabel: "ft below land surface",
         xRangePad: 10,
-        axes: {
-                x: {
-                  pixelsPerLabel: 55
-                }
-              },
         zoomCallback: function(minDate, maxDate) {
             //This happens when you do a zoom action on the hydrograph
             var min = new Date(minDate);
@@ -284,10 +326,11 @@ function wellParse(xml) {
             },
             'ADR Level': {
                 strokeWidth: 1.5,
-                color: "#279ff4"
+                color: "#279ff4",
+                connectSeparatedPoints:true
             }
         },
-        visibility: [true, false]
+        visibility: [true, true]
     });
     
     hg.resetZoom();
@@ -319,6 +362,7 @@ $("#clear-data").click(function(){
     $("#dailydl").prop("disabled",true)
         .attr("title", "Select a well from the map to download data.")
     $("#filter, #reset, #manualview, #clear-data").prop("disabled", true);
+    $("#wellTitle").text("Select a well from the map.")
 });
 
 //NEED TO PARSE OUT THE DATA ARRAY BASED ON THE SELECTION, CHANGE DATE STYLE
@@ -352,19 +396,13 @@ var downloaddata = function() {
     if ($("#select").is(':checked')) {
         var startrecord = unformatDate($('#startdate').val()),
             endrecord = unformatDate($('#enddate').val());
-
         function filterdate(record) {
             return record[0] >= startrecord && record[0] <= endrecord;
         }
-
         var filtered = dataArray.filter(filterdate);
-
         makecsv(filtered, "filtered");
-
     } else {
-
         makecsv(dataArray, "fullrecord");
-
     }
 };
 

@@ -33,6 +33,7 @@
     <script src="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/leaflet.markercluster.js"></script>
     <script src="https://unpkg.com/esri-leaflet-cluster@2.0.0"></script>
     
+    
 </head>
 
 <body>
@@ -96,6 +97,79 @@
 
     <!-- Page Content -->
     <div class="container">
+        
+        <!-- Well Legend Modal -->
+        <div class="modal fade" id="legend-modal" tabindex="-1" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="modal-title">Aquifer Legend</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                  <style>
+                      img {
+                          height:15px;
+                      }
+                  </style>
+                <table>
+                <tbody>
+                <tr>
+                <td><img class="m-2" src="image/shallow.png" alt="shallow aquifer icon"></td>
+                <td>Shallow Aquifer</td>
+                </tr>
+                <tr>
+                <td><img class="m-2" src="image/crys.png" alt="crystalline rock icon"></td>
+                <td>Crystalline Rock</td>
+                </tr>
+                <tr>
+                <td><img class="m-2" src="image/gordon.png" alt="gordon aquifer icon"></td>
+                <td>Gordon</td>
+                </tr>
+                <tr>
+                <td><img class="m-2" src="image/upflo.png" alt="upper floridan aquifer icon"></td>
+                <td>Upper Floridan</td>
+                </tr>
+                <tr>
+                <td><img class="m-2" src="image/midflo.png" alt="middle floridan aquifer icon"></td>
+                <td>Middle Floridan</td>
+                </tr>
+                <tr>
+                <td><img class="m-2" src="image/mcqueen.png" alt="mcqueen branc aquifer icon"></td>
+                <td>McQueen Branch</td>
+                </tr>
+                <tr>
+                <td><img class="m-2" src="image/charleston.png" alt="charleston aquifer icon"></td>
+                <td>Charleston</td>
+                </tr>
+                <tr>
+                <td><img class="m-2" src="image/gramling.png" alt="gramling aquifer icon"></td>
+                <td>Gramling</td>
+                </tr>
+                <tr>
+                <td><img class="m-2" src="image/gram_con.png" alt="gramlin confining unit icon"></td>
+                <td>Gramling Confining</td>
+                </tr>
+                <tr>
+                <td><img class="m-2" src="image/crouch.png" alt="crouch branch aquifer icon"></td>
+                <td>Crouch Branch</td>
+                </tr>
+                <tr>
+                <td><img class="m-2" src="image/cluster.png" alt="cluster site icon"></td>
+                <td>Cluster Site (multiple aquifers)</td>
+                </tr>
+                </tbody>
+                </table>     
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
         <div id="main" class="row white-bg">
             <div class="col-lg-12 m-0 p-0">
                 <div id="map">
@@ -140,8 +214,8 @@
                     </div>
                     <button class="btn btn-outline-dark btn-sm d-none" id="open-well-table">Open<i class="fas fa-arrow-right ml-2 mr-0"></i></button>
                 </div>
-                <!--<div id="legend"><img class="img-fluid" src="image/legend.png" alt="well legend" /></div>-->
-            </div>
+                <p class='m-0'>Wells are color-coded by aquifer. <a href="#" data-toggle="modal" data-target="#legend-modal">View Legend</a></p>
+            </div> 
         </div>
         
         <div class="white-bg">
@@ -149,11 +223,11 @@
             <div class="row mt-4" id="hydrolegend">                
                 <div class="col-lg-5 d-inline-flex">
                     <img src="image/adr.png" />
-                    <p>Data from Automatic Data Recorder (ADR)</p>
+                    <p>Daily Data from Automatic Data Recorder (ADR)</p>
                 </div>
                 <div class="col-lg-5 d-inline-flex">
                     <img src="image/manual.png" />
-                    <p>Manual Measurements - <button class="btn btn-sm btn-outline-primary" role="button" id="manualview"><span id="manual-show">View</span></button></p>
+                    <p>Manual Measurements - <button class="btn btn-sm btn-outline-primary" role="button" id="manualview"><span id="manual-show">Hide</span></button></p>
                 </div>
             </div>
             <div class="row p-3">
@@ -175,15 +249,16 @@
                         <div id="button-group">
                             <button id="filter" type="button" class="btn btn-outline-primary mx-1" disabled>Filter Data</button>
                             <button id="reset" type="button" class="btn btn-outline-success mx-1" disabled>Full Extent</button>
-                            <button id="clear-data" type="button" class="btn btn-outline-danger mx-1" disabled>Clear Data</button>
+                            <button id="clear-data" class="btn btn-outline-danger mx-1" disabled>Clear Data</button>
                         </div>    
                     </form>
                 </div>
             </div>
+            
             <div class="row">
                 <div class="col-lg-12">
                     <h4>Download Data</h4>
-                    <p>Daily water level data are downloaded in a CSV format.</p>
+                    <p class="ml-1">Daily water level data are downloaded in a CSV format.</p>
                     <div class="radio">
                         <label class="radio-inline mx-2">
                             <input class="mx-1" type="radio" name="optradio" id="fullrecord" checked="checked">Full Period of Record</label>
@@ -191,12 +266,12 @@
                             <input class="mx-1" type="radio" name="optradio" id="select">Selected Period Only (dates above)</label>
                     </div>
                     <div class="my-2" id="buttons">
-                        <button class="btn btn-primary" disabled id="dailydl" title="Select a well from the map to download data."><i class="fa fa-arrow-circle-down" aria-hidden="true"></i>Download Now</button>
+                        <button class="btn btn-primary ml-3" disabled id="dailydl" title="Select a well from the map to download data."><i class="fa fa-arrow-circle-down" aria-hidden="true"></i>Download Now</button>
                     </div>
                 </div>
             </div>
         </div> 
-
+        
         <div class="row white-bg">
             <div class="col-lg-12 toggler">
                 <h2>Groundwater Monitoring Network</h2>
