@@ -24,6 +24,9 @@ body {
 .card {
     height: 100%;
 }
+.card-body {
+    min-height: 0.01px;
+}
 /*for some reason this fixes image issues in flex layout on home page in IE */
 /*https://stackoverflow.com/questions/33079325/internet-explorer-flexbox-image-ratio*/
 .card-img-top {
