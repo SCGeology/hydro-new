@@ -8,7 +8,7 @@
     <meta name="description" content="South Carolina Department of Natural Resources - Hydrology Section information.">
     <meta name="author" content="South Carolina Department of Natural Resources - Hydrology Section">
 
-    <title>State Water Planning - SCDNR</title>
+    <title>Water Planning - SCDNR</title>
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -37,21 +37,34 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownData">
+					<a class="dropdown-item" href="water-planning.html">
+					Water Planning</a>
+					<a class="dropdown-item" href="groundwater.html">
+					Groundwater</a>
+					<a class="dropdown-item" href="surface-water.html">
+					Surface Water</a>
+					</div>
+					</li>
+					<!--Data Dropdown Done-->					
                      <li class="nav-item">
-                        <a class="nav-link" href="http://www.dnr.sc.gov/water/hydro/publications.html">Publications</a>
+                        <a class="nav-link" href="publications.html">Publications</a>
                     </li>
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
 					<div class="dropdown-menu" aria-labelledby="dropdownData">
 					<a class="dropdown-item" href="groundwater-data/index.html">
-					 Groundwater Data</a>
+					Groundwater Level Data</a>
 					<a class="dropdown-item" href="http://www.dnr.sc.gov/hydro/gl_home.html">
 					Geophysical Logs</a>
 					<a class="dropdown-item" href="well-database.html">
 					Coastal Plain Well Database</a>
-					<a class="dropdown-item" href="Surface-water-levels.html">
-					Surface Water Levels</a>
+					<a class="dropdown-item" href="streamflow-and-lake-levels.html">
+					Streamflow and Lake Levels</a>
 					<a class="dropdown-item" href="swam-models.html">
 					Surface Water Models</a>
 					</div>
@@ -71,7 +84,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 my-sm-4 pt-3 pt-sm-0 background-text">
-                    <h1 class="page-header">State and Regional Water Planning</h1>
+                    <h1 class="page-header">Water Planning</h1>
                      <p class="text-white lead">Some brief statement about SCDNR being involved in water planning process. Mostly because it'd look better to have some text hear, and let people know something basic about SCDNR's involvement.</p>
                 </div>
             </div>
@@ -80,10 +93,11 @@
 
     <!-- Page Content -->
     <div class="container">
-        
+      <!--old nav  
       <div class="row my-3 ml-2 text-center links">
           <span class="mb-3"> <span class="lil-nav-active">Water Planning</span> | <a href="groundwater.html">Groundwater</a> | <span style="white-space: nowrap"><a href="surface-water.html">Surface Water</a></span>  </span>
-      </div>        
+      </div> 
+	  -->
         
       <div class="white-bg">
             <h2>Overview</h2>
@@ -110,9 +124,9 @@
           <div class="card">
             
             <div class="card-body">
-              <h2 class="card-title"><a href="regional-water-planning.html">Regional Water
+              <h2 class="card-title"><a href="river-basin-planning.html">River Basin
                   <br>Planning</a></h2>
-                <img class="card-img-top" src="images/basins.jpg"> <!--alt="" title=""-->
+                <img class="card-img-top" src="images/basins.jpg" alt="eight basins map" title="eight basins map">
             </div>              
           </div>
         </div>
@@ -121,9 +135,9 @@
           <div class="card">
             
             <div class="card-body">
-              <h2 class="card-title"><a href="surface-water-Models.html">Surface Water<br>
+              <h2 class="card-title"><a href="surface-water-models.html">Surface Water<br>
                 Models</a></h2>
-                <img class="card-img-top" src="images/SWAM_Schematic.png"> <!--alt="" title=""-->
+                <img class="card-img-top" src="images/SWAM_Schematic.png" alt="SWAM" title="SWAM">
             </div>              
           </div>
         </div>  
@@ -133,7 +147,7 @@
             
             <div class="card-body">
                 <h2 class="card-title"><a href="groundwater-models.html">Groundwater <br>Models</a></h2>
-                <img class="card-img-top" src="images/fence_model2.jpg"> <!--alt="" title=""-->
+                <img class="card-img-top" src="images/fence_model2.jpg" alt="groundwater model" title="groundwater model">
             </div>              
           </div>
         </div>

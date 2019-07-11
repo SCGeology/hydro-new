@@ -17,6 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/hydro.css" rel="stylesheet">
+	<link href="css/surface-water.css" rel="stylesheet">
 </head>
 
 <body>
@@ -37,21 +38,34 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownData">
+					<a class="dropdown-item" href="water-planning.html">
+					Water Planning</a>
+					<a class="dropdown-item" href="groundwater.html">
+					Groundwater</a>
+					<a class="dropdown-item" href="surface-water.html">
+					Surface Water</a>
+					</div>
+					</li>
+					<!--Data Dropdown Done-->					
                      <li class="nav-item">
-                        <a class="nav-link" href="http://www.dnr.sc.gov/water/hydro/publications.html">Publications</a>
+                        <a class="nav-link" href="publications.html">Publications</a>
                     </li>
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
 					<div class="dropdown-menu" aria-labelledby="dropdownData">
 					<a class="dropdown-item" href="groundwater-data/index.html">
-					 Groundwater Data</a>
+					Groundwater Level Data</a>
 					<a class="dropdown-item" href="http://www.dnr.sc.gov/hydro/gl_home.html">
 					Geophysical Logs</a>
 					<a class="dropdown-item" href="well-database.html">
 					Coastal Plain Well Database</a>
-					<a class="dropdown-item" href="Surface-water-levels.html">
-					Surface Water Levels</a>
+					<a class="dropdown-item" href="streamflow-and-lake-levels.html">
+					Streamflow and Lake Levels</a>
 					<a class="dropdown-item" href="swam-models.html">
 					Surface Water Models</a>
 					</div>
@@ -86,7 +100,7 @@
 			<h2><a href="./locatewells/index.html">Coastal Plain Well Finder</a></h2>
         
 			<p>The Hydrology Section of the SCDNR has hard-copy records of more than 13,000 water wells located in the Coastal Plain counties of South Carolina.</p>
-			<p class="m-3"><a href="http://www.dnr.sc.gov/water/hydro/WellRecords/locatewells/index.html"><img class="img-fluid" style="max-width:400px;" src="http://www.dnr.sc.gov/water/hydro/images/wellfinder.jpg"></a>
+			<p class="m-3"><a href="http://www.dnr.sc.gov/water/hydro/WellRecords/locatewells/index.html"><img class="img-fluid" style="max-width:400px;" src="http://dnr.sc.gov/water/hydro/images/wellfinder.JPG"></a>
             </p>
 			
 			<ul>
@@ -101,15 +115,17 @@
 		<div class="white-bg">
 			<h2>Links</h2>
 			<p>The links listed below open Excel files that contain summary information about each well in our Coastal Plain inventory. In most cases, the hard-copy well records kept in our office contain more information than is presented here.</p>
-						
-			<div class="dropdown">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Summary Well Information</button>
-			<div class="dropdown-menu">
+				
+			<div class="row ml-md-3">
+            <div id="documents" class="my-4 col-md-6">
+			<p><a class="allDocsClose">Show</a> / <a class="allDocsOpen">Hide</a> All Documents </p>
+			<div class="toggler">
+			<h3 class="closed" style="text-decoration:underline;">Summary Well Information</h3>
                 <ul>
                     <li><a href="Explanation_of_SCDNR_well_data.pdf" title="Explanation of well database">Explanation of SCDNR Coastal Plain well records</a></li>
                     <li><a href="CoastalPlainwells2015.xlsx" target="blank">Entire Coastal Plain</a> (13,781 wells)</li>
                     <li><a href="AIKwells2015.xlsx" target="blank">Aiken</a> (1,057 wells)</li>
-                    <li><a href="ALLwells2015.xlsx" target="blank">Allendale</a>(217 wells)</li>
+                    <li><a href="ALLwells2015.xlsx" target="blank">Allendale</a> (217 wells)</li>
                     <li><a href="BAMwells2015.xlsx" target="blank">Bamberg</a> (113 wells)</li>
                     <li><a href="BRNwells2015.xlsx" target="blank">Barnwell</a> (610 wells)</li>
                     <li><a href="BFTwells2015.xlsx" target="blank">Beaufort</a> (1,939 wells)</li>
@@ -118,7 +134,7 @@
                     <li><a href="CHNwells2015.xlsx" target="blank">Charleston</a> (692 wells)</li>
                     <li><a href="CTFwells2015.xlsx" target="blank">Chesterfield</a> (279 wells)</li>
                     <li><a href="CLAwells2015.xlsx" target="blank">Clarendon</a> (200 wells)</li>
-                    <li><a href="COLwells2015.xlsx" target="blank">Colleton</a>(740 wells)</li>
+                    <li><a href="COLwells2015.xlsx" target="blank">Colleton</a> (740 wells)</li>
                     <li><a href="DARwells2015.xlsx" target="blank">Darlington</a> (214 wells)</li>
                     <li><a href="DILwells2015.xlsx" target="blank">Dillon</a> (157 wells)</li>
                     <li><a href="DORwells2015.xlsx" target="blank">Dorchester</a> (318 wells)</li>
@@ -139,6 +155,7 @@
                 </ul>
 				</div>
         </div>
+		</div>
 	
 			<p>Downloadable files above are in the PDF or Excel format.</p>	
 			
@@ -179,6 +196,29 @@
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  
     
+	<!-- JQUERY TOGGLE SCRIPT -->
+    <script>
+        $(function() {
+            $('.toggler h3').click(function() {
+                $(this).next().slideToggle();
+                $(this).toggleClass("closed open");
+            });
+        });
+    </script>
+
+    <script>
+        $(".allDocsClose").click(function() {
+            $(".toggler ul").show("slow");
+            $(".toggler h3").removeClass("closed open").addClass("open");
+        });
+
+        $(".allDocsOpen").click(function() {
+            $(".toggler ul").hide("slow");
+            $(".toggler h3").removeClass("open closed").addClass("closed");
+        });
+    </script>
+	
+	
     <script src="js/format-google-calendar.js"></script>
     
     <script>

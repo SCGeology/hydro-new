@@ -8,7 +8,7 @@
     <meta name="description" content="South Carolina Department of Natural Resources - Hydrology Section information.">
     <meta name="author" content="South Carolina Department of Natural Resources - Hydrology Section">
 
-    <title>Surface Water - SCDNR</title>
+    <title>Surface Water Program - SCDNR</title>
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -37,21 +37,34 @@
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownData">
+					<a class="dropdown-item" href="water-planning.html">
+					Water Planning</a>
+					<a class="dropdown-item" href="groundwater.html">
+					Groundwater</a>
+					<a class="dropdown-item" href="surface-water.html">
+					Surface Water</a>
+					</div>
+					</li>
+					<!--Data Dropdown Done-->					
                      <li class="nav-item">
-                        <a class="nav-link" href="http://www.dnr.sc.gov/water/hydro/publications.html">Publications</a>
+                        <a class="nav-link" href="publications.html">Publications</a>
                     </li>
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
 					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
 					<div class="dropdown-menu" aria-labelledby="dropdownData">
 					<a class="dropdown-item" href="groundwater-data/index.html">
-					 Groundwater Data</a>
+					Groundwater Level Data</a>
 					<a class="dropdown-item" href="http://www.dnr.sc.gov/hydro/gl_home.html">
 					Geophysical Logs</a>
 					<a class="dropdown-item" href="well-database.html">
 					Coastal Plain Well Database</a>
-					<a class="dropdown-item" href="Surface-water-levels.html">
-					Surface Water Levels</a>
+					<a class="dropdown-item" href="streamflow-and-lake-levels.html">
+					Streamflow and Lake Levels</a>
 					<a class="dropdown-item" href="swam-models.html">
 					Surface Water Models</a>
 					</div>
@@ -80,72 +93,62 @@
 
     <!-- Page Content -->
     <div class="container">
-        
+        <!--old nav
       <div class="row my-3 ml-2 text-center links">
           <span class="mb-3"><a href="water-planning.html">Water Planning</a> | <a href="groundwater.html">Groundwater</a> | <span class="lil-nav-active" style="white-space: nowrap">Surface Water</span>  </span>
-      </div>      
+      </div>
+	  -->	  
         
-      <div class="row mb-4">
+      <div class="row my-4">
           
-        <div class="col-md-4 my-1">
+        <div class="col-md-3 my-1">
           <div class="card">
             
             <div class="card-body">
-              <h2 class="card-title"><a href="surface-water-levels.html">Streamflow and Lake<br> Level Data</a></h2>
-                <img class="card-img-top" src="images/lowerSaluda.jpg"> <!--alt="" title=""-->
+              <h2 class="card-title"><a href="streamflow-and-lake-levels.html">Streamflow and Lake<br> Level Data</a></h2>
+                <img class="card-img-top" src="images/lowerSaluda.jpg" alt="Lower Saluda River" title="Lower Saluda River">
             </div>              
           </div>
         </div>
           
-        <div class="col-md-4 my-1">
+        <div class="col-md-3 my-1">
           <div class="card">
             
             <div class="card-body">
               <h2 class="card-title"><a href="http://scdrought.com/current.html">Surface Water
                   <br>Drought Status</a></h2>
-                <img class="card-img-top" src="images/boat_drought.jpg"> <!--alt="" title=""-->
+                <img class="card-img-top" src="images/boat_drought.jpg" alt="boat during drought" title="boat during drought">
             </div>              
           </div>
         </div>
           
-        <div class="col-md-4 my-1">
+       <div class="col-md-3 my-1">
           <div class="card">
             
             <div class="card-body">
-              <h2 class="card-title"><a href="surface-water-assessments.html">Surface Water<br>
+              <h2 class="card-title"><a href="surface-water-models.html">Surface Water<br>
                 Models</a></h2>
                 <img class="card-img-top" src="images/SWAM_Schematic.png" alt="surface water model schematic" title="shoals on the saluda river">
             </div>              
           </div>
         </div>  
-      </div>
     
-     <div class="row my-4">
-          
-        <div class="col-md-4 my-1">
+		<div class="col-md-3 my-1">
           <div class="card">
             
             <div class="card-body">
-              <h2 class="card-title"><a href="streamflow-workshops.html">Streamflow Monitoring <br>Workshops</a></h2>
+              <h2 class="card-title"><a href="streamflow-workshops.html">Streamflow Monitoring</a></h2>
                 <img class="card-img-top" src="images/GreatFalls.jpg" alt="great falls dam" title="great falls dam">
             </div>              
           </div>
         </div>
           
-        <div class="col-md-4 my-1">
-          <div class="card">
-            
-            <div class="card-body">
-              <h2 class="card-title">Water Resource <br>
-                Investigations</h2>
-                <img class="card-img-top" src="images/corephoto.jpg" alt="shoals on the saluda river" title="shoals on the saluda river">
-            </div>              
-          </div>
-        </div>
+
           
       </div>   
 
     </div>
+		
     <!-- /.container -->
 
     <!-- Footer -->

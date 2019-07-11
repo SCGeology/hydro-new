@@ -8,7 +8,7 @@
     <meta name="description" content="South Carolina Department of Natural Resources - Hydrology Section information.">
     <meta name="author" content="South Carolina Department of Natural Resources - Hydrology Section">
 
-    <title>Pot Mapping - SCDNR</title>
+    <title>Publications - SCDNR</title>
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -17,6 +17,10 @@
 
     <!-- Custom styles for this template -->
     <link href="css/hydro.css" rel="stylesheet">
+	
+	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.css"/>
+	<link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
+  
 </head>
 
 <body>
@@ -31,9 +35,6 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i></a>
-                    </li>
                     <li class="nav-item">
                         <a class="nav-link" href="about.html">About</a>
                     </li>
@@ -69,7 +70,7 @@
 					Surface Water Models</a>
 					</div>
 					</li>
-					<!--Data Dropdown Done-->
+					<!--Data Dropdown Done-->	
                      <li class="nav-item">
                         <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=tangnar123%40gmail.com&ctz=America%2FNew_York">Calendar</a>
                     </li>
@@ -84,8 +85,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 my-sm-4 pt-3 pt-sm-0 background-text">
-                    <h1 class="page-header">Potentiometric Mapping</h1>
-                    <p class="text-white lead">Insert Text Here</p>
+                    <h1 class="page-header">Publications</h1>
+                    <p class="text-white lead">The following is a listing of reports produced by the Hydrology Section and its predecessor, the South Carolina Water Resources Commission (SCWRC). For a complete listing of all publications maintained by the Division visit: <a style="color:white" href="www.dnr.sc.gov/lwc/pubs/waterpubs.html">www.dnr.sc.gov/lwc/pubs/waterpubs.html</a>. Copies of these reports are available for review in the Hydrology Section's Columbia office. Copies of some reports are also available from the Charleston field office.</p>
                 </div>
             </div>
         </div>
@@ -93,74 +94,79 @@
 
     <!-- Page Content -->
     <div class="container">
-		
-		<div class="white-bg">
-			<h2>Overview</h2>
-            <div class="row">
-                <div class="col-lg-8">
-                     <p> The potentiometric surface of an aquifer is defined by the elevations at which water stands in tightly cased wells completed in the aquifer. Over the past 20 years, the Hydrology Section, in collaboration with the U.S. Geological Survey, SCDHEC, and the Savannah River Site, has prepared numerous potentiometric maps of the major Coastal Plain aquifers (Floridan, Black Creek, and Middendorf) in order to assess changes in groundwater storage and to determine regional ground-water flow directions and hydraulic gradients.</p>
-                     <p>Water-level data used to construct these maps are collected from about 600 wells across the Coastal Plain, including numerous monitoring wells and a variety of public-supply, industrial, and agricultural wells. Water levels are typically measured in November/December about once every five years. A new 3-year rotating schedule went into effect in 2011, in which one of the three aquifers will be measured each year and every three years thereafter. 
-                     </p>
-                </div> 
-                <div class="col-lg-4"><img src="images/potmaps.jpg" class="img-fluid"></div>
-            </div>    
-				
-        </div>
-   
-		<div class="white-bg">       
-			<h2>Download Potentiometric Maps</h2>
-        
-			<p> Reports are listed below in chronological order and/or available for download in <a href="https://get.adobe.com/reader/">PDF</a> format.<br>
-			A GIS database with all pot map contours, well locations and levels, and gridded surfaces is also available for download. Please read GIS metadata before using the GIS data.<br><br>
-			
-			<a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_59_Black Creek_2015.pdf">Potentiometric Surface of the Black Creek (Crouch Branch) Aquifer in South Carolina, November 2015</a><br>
-			Andrew Wachob and Brooke Czwartacki<br>
-			SCDNR Water Resources Report 59<br><br>
-			
-			<a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_58_Middendorf_2014.pdf">Potentiometric Surface of the Middendorf Aquifer in South Carolina, November 2014</a><br>
-			Andrew Wachob<br>
-			SCDNR Water Resources Report 58<br><br>
-			
-			<a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_56_Floridan_2013.pdf">Potentiometric Surface of the Floridan and Tertiary Sand Aquifers in South Carolina, November  2013</a><br>
-			Andrew Wachob, Brenda L. Hockensmith, Katie Luciano, and C. Scott Howard<br>
-			SCDNR Water Resources Report 56<br><br>
-			
-			<a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_55_Black Creek_2012.pdf">Potentiometric Surface of the Black Creek Aquifer in South Carolina, November 2012</a><br>
-			Brenda L. Hockensmith, Andrew Wachob, C. Scott Howard, and Erin Koch<br>
-			SCDNR Water Resources Report 55<br><br>
-			
-			<a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_54_Middendorf_2011.pdf">Potentiometric Surface of the Middendorf Aquifer in South Carolina, November 2011</a><br>
-			Brenda L. Hockensmith, Andrew Wachob, C. Scott Howard, and Erin Koch<br>
-			SCDNR Water Resources Report 54<br><br>
-			
-			<a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_53_Floridan_2010.pdf">Potentiometric Surface of the Floridan and Tertiary Sand Aquifers in South Carolina, November 2010 </a><br>
-			Brenda L. Hockensmith, Andrew Wachob, C. Scott Howard, and Erin Koch<br>
-			SCDNR Water Resources Report 53<br><br>
-			
-			<a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_52_Black_Creek_2009.pdf">Potentiometric Surface of the Black Creek Aquifer in South Carolina, November 2009</a><br>
-			Brenda L. Hockensmith, 2012<br>
-			SCDNR Water Resources Report 52<br><br>
-			
-			<a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_51_Middendorf_2009.pdf">Potentiometric Surface of the Middendorf Aquifer in South Carolina, November 2009</a><br>
-			Brenda L. Hockensmith, 2012<br>
-			SCDNR Water Resources Report 51<br><br>
-			
-			<a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report48fFloridan.pdf">Potentiometric Surface of the Floridan Aquifer and Tertiary Sand Aquifer in South Carolina, November 2004 </a><br>
-			Brenda L. Hockensmith, 2009<br>
-			SCDNR Water Resources Report 48<br><br>
-			
-			<a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report47_BlackCreek.pdf">Potentiometric Surface of the Black Creek Aquifer in South Carolina, November 2004</a><br>
-			Brenda L. Hockensmith, 2008<br>
-			SCDNR Water Resources Report 47<br><br>
-			
-			<a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report46_Middendorf.pdf">Potentiometric Surface of the Middendorf Aquifer in South Carolina, November 2004</a><br>
-			Brenda L. Hockensmith, 2008<br>
-			SCDNR Water Resources Report 46
-			</p>	
-        </div>
-		
-  </div>    
+      <div class="row white-bg">
+            <div class="col">
+                <p><a href="http://dnr.sc.gov/lwc/pubs/waterpubs.html">Land, Water, and Conservation Division Publications</a></p>
+				<p><a href="http://www.dnr.sc.gov/water/admin/pubs/pdfs/SCWaterPlan2.pdf">South Carolina water plan -- second edition</a><br>
+				A.W. Badr, Andrew Wachob, and Joseph A. Gellici 2004</p>
+				<p><a href="http://dnr.sc.gov/water/hydro/HydroPubs/assessment.htm">South Carolina State Water Assessment</a></p>
+            </div>
+		</div>
 
+    
+	
+	<div class="row white-bg">
+		<div class="col">
+		<h2>Publications Table</h2>
+		<table class="table table-bordered table-hover table-condensed" id="myTable">
+			<thead><tr><th style="width:30%" title="Field #1">Title</th>
+			<th style="width:20%" title="Field #2">Publication #</th>
+			<th style="width:20%" title="Field #3">Author(s)</th>
+			<th style="width:10%" title="Field #4">Date</th>
+			<th style="width:20%" title="Field #5">Counties or Region</th>
+			</tr></thead>
+			<tbody><tr>
+			<td><a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_60_Potentiometric_maps_2016.pdf">Potentiometric Surface Maps of the South Carolina Coastal Plain, November&#8208;December 2016 (10MB)</a></td>
+			<td>SCDNR Water Resources Report 60</td>
+			<td>Andrew Wachob, Joseph A. Gellici, and Brooke Czwartacki</td>
+			<td align="right">2017</td>
+			<td>Coastal Plain Area</td>
+			</tr>
+			<tr>
+			<td><a href="http://dnr.sc.gov/water/hydro/HydroPubs/Abs_dnr_R42.htm">Hydrostratigraphy of the ORG-393 Core Hole at Orangeburg, South Carolina</a></td>
+			<td>SCDNR Water Resources Report 42</td>
+			<td>Joseph A. Gellici</td>
+			<td align="right">2007</td>
+			<td>Orangeburg</td>
+			</tr>
+			<tr>
+			<td><a href="http://dnr.sc.gov/water/hydro/HydroPubs/Abs_wrc_R157.htm">Potentiometric surface of the Floridan aquifer in South Carolina, July 1986</a></td>
+			<td>SCWRC Report 157</td>
+			<td>Michael S. Crouch, W. Brian Hughes, W. Robert Logan, and J. Kevin Meadows</td>
+			<td align="right">1987</td>
+			<td>Coastal Plain Area</td>
+			</tr>
+			<tr>
+			<td><a href="http://dnr.sc.gov/water/hydro/HydroPubs/Abs_dnr_R44.htm">Ditch Pond Carolina Bay restoration project, Aiken and Barnwell Counties, South Carolina - Phase II</a></td>
+			<td>SCDNR Water Resources Report 44</td>
+			<td>Scott V. Harder, Joseph A. Gellici, and Andrew Wachob</td>
+			<td align="right">2007</td>
+			<td>Aiken, Barnwell</td>
+			</tr>
+			<tr>
+			<td><a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_50_WL_Data.pdf">Ground-Water Levels in South Carolina 2006-2010</a></td>
+			<td>SCDNR Water Resources Report 50</td>
+			<td>Scott V. Harder, Constance E. Gawne, Joseph A. Gellici and Andrew Wachob</td>
+			<td align="right">2012</td>
+			<td>Statewide</td>
+			</tr>
+			<tr>
+			<td><a href="http://dnr.sc.gov/water/hydro/HydroPubs/Abs_wrc_R173.htm">Impact of the Spartanburg Water System on the Hydropower Generation of Bluestone Energy Design, Inc., and Clifton Power Corporation Facilities</a></td>
+			<td>SCWRC Report 173</td>
+			<td>A.W. (Bud) Badr</td>
+			<td align="right">1993</td>
+			<td>Spartanburg</td>
+			</tr>
+			</tbody></table>
+		</div>
+		</div>
+		
+		<div class="row white-bg">
+            <div class="col">
+                <p><b>Ordering Reports:</b> Printed copies of most of these reports can be ordered by contacting the DNR via phone (803-734-9100), or by writing to or visiting the DNR's Columbia office at the following address: SC Department of Natural Resources, Land, Water and Conservation Division, Rembert C. Dennis Building, 1000 Assembly Street, Columbia, SC 29201. Although most of the publications are available free of charge, a $5 shipping and handling fee may be charged if the reports are mailed out.</p>
+            </div>
+		</div>
+		</div>
     <!-- /.container -->
 
     <!-- Footer -->
@@ -192,6 +198,17 @@
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  
     
     <script src="js/format-google-calendar.js"></script>
+	
+	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
+	<script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
+
+	
+	<script>
+		$(document).ready( function () {
+		$('#myTable').DataTable();
+		} );
+
+	</script>
     
     <script>
         formatGoogleCalendar.init({
