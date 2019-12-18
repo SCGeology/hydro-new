@@ -199,8 +199,9 @@ function unformatDate(datestr) {
     return (new Date(y, m, dy));
 }
 
+/* THIS CODE FOR PARSIN THE XML WEB SERVICE 
+
 function getData(wellID) {
-    //var url = "data/wl" + wellID + ".xml"
     var url = "http://usgswells.dnr.sc.gov/api/WaterLevel/GetWaterLevel?WellId="+wellID
     $.ajax({
         type: "GET",
@@ -209,6 +210,60 @@ function getData(wellID) {
         success: wellParse
     });
 }
+
+*/
+
+// CODE BELOW FOR PARSING WEB SERVICE FROM ARCGIS PORTAL
+
+var dataQuery = L.esri.query({
+        url: 'https://arcweb.dnr.sc.gov/server/rest/services/Hosted/scdnr_gwmn_levels_p/FeatureServer/0'
+    });
+
+function getData(wellID) {
+    
+    //for some reason had to orderBy (sort) descending on the date to get it to work correctly. was coming in the opposite.
+    dataQuery.where("well_id = '"+wellID+"'")
+    dataQuery.ids(function(error,ids,response) {
+        
+        if (error) {
+            console.log(error);
+            return;
+        }
+        
+        // these things are going to break the ids out into however many arrays of 1000 ids each. 
+        // then below we will run that number of queries to build the final data array. 
+        
+        ids.sort()
+		
+        var ids_len = ids.length
+        var bins = Math.ceil(ids_len / 1000)
+        var binarray = []
+        
+		console.log(ids_len)
+        //add a plus one so that it runs one extra time after all bins used.
+        for (var i = 0; i < bins+1; i++) {
+            //if i == bins, that means this is the last run of the loop - no more bins of ids, but instead draw the graph. 
+            console.log(i, bins)
+            
+            if (i != bins) {
+                if (i+1 != bins) {
+                    var startpos = i*1000
+                    var endpos = (i+1)*1000
+                    binarray = ids.slice(startpos, endpos)
+                } else {
+                    var startpos = i*1000
+                    binarray = (ids.slice(startpos))
+                }
+                wellDataBins(binarray)
+            } else {
+                setTimeout(drawGraph,1000);
+            }
+        }
+        
+    });    
+}
+
+
 
 var dataArray = []
 var valmin = 1000
@@ -247,24 +302,48 @@ var pushData = function(l,dt,m){
             var insert = [dt, null, l]
             dataArray.push(insert);
         }
+		
 }
 
-function wellParse(xml) {
-    var data = $.parseXML(xml),
-        $xml = $(xml),
-        $record = $xml.find("WATER_LEVEL");
+function wellDataBins(binArray) {
+    
+    var exp = "OBJECTID BETWEEN "+binArray[0].toString()+" AND "+binArray[binArray.length -1]
+
+    console.log(exp)
+    
+    dataQuery.where(exp).orderBy("time_stamp","DESC")
+    
+    dataQuery.run(function (error, featureCollection, response) {
+        if (error) {
+            console.log(error);
+            return;
+        }
+        
+        wellParse(featureCollection);
+    });
+
+}
+
+//THIS ONE PARSES JSON PROVIDED BY ESRI QUERY
+
+function wellParse(fc) {
     
     var lastDate
     
-    $($record).each(function() {
-        var level = $(this).find("WATER_DEPTH").text();
-        var dateText = $(this).find("DATE_TIME").text();
-        var msmt = $(this).find("MEASUREMENT_METHOD").text();
+    console.log(fc.features)
+    
+    for (var i = 0; i < fc.features.length; i++){
+        
+        var level = fc.features[i].properties.water_level
+        var dateText = fc.features[i].properties.time_stamp
+        var msmt = fc.features[i].properties.msmnt_type
         //make date object from text date
         var dateN = new Date(dateText);
         
-        //first IF is universal - can't be unknown measurement type and can't be a '0' value. 
+        
+        
         if (msmt !== "UNKNOWN" && level !== "0"){
+            
             
             //first row, lastDate will be undefined, so go ahead and push to DataArray
             if (typeof lastDate === 'undefined') {
@@ -276,12 +355,14 @@ function wellParse(xml) {
                 }
             
             } else if (msmt === "Automatic Data Recorder") {
-            
+                
                 //make a date object that is the lastDate, plus an additional day. will compare to date
+                //why the heck is this now date minus 1 instead of plus one?
                 var nextDay = new Date(lastDate)
                 nextDay.setDate(lastDate.getDate()+1)
-            
+                
                 while (formatDate(dateN) !== formatDate(nextDay)){
+                    
                     //push a NaN value with date to the array
                     pushData(NaN,new Date(nextDay),"Automatic Data Recorder")              
                     //increase the nextDay, will compare again until it breaks the while loop when nextDay matches current date
@@ -297,40 +378,41 @@ function wellParse(xml) {
                 pushData(level,dateN,msmt) 
             }
         }
+        
+    }
+}
 
-    });
-    
-    //console.log(dataArray)
-    
+function drawGraph() {
+
     hg.updateOptions({
-        file: dataArray,
-        labels: ["Date", "ADR Level", "Manual Level"],
-        rollPeriod: 0,
-        valueRange: [valmax, valmin],
-        ylabel: "ft below land surface",
-        xRangePad: 10,
-        zoomCallback: function(minDate, maxDate) {
-            //This happens when you do a zoom action on the hydrograph
-            var min = new Date(minDate);
-            var max = new Date(maxDate);
-            $("#startdate").val(formatDate(min));
-            $("#enddate").val(formatDate(max));
+    file: dataArray.sort(function(a,b){return a[0]-b[0]}),
+    labels: ["Date", "ADR Level", "Manual Level"],
+    rollPeriod: 0,
+    valueRange: [valmax, valmin],
+    ylabel: "ft below land surface",
+    xRangePad: 10,
+    zoomCallback: function(minDate, maxDate) {
+        //This happens when you do a zoom action on the hydrograph
+        var min = new Date(minDate);
+        var max = new Date(maxDate);
+        $("#startdate").val(formatDate(min));
+        $("#enddate").val(formatDate(max));
+    },
+    series: {
+        'Manual Level': {
+            strokeWidth: 0.0,
+            drawPoints: true,
+            pointSize: 3,
+            color: "rgba(0, 43, 163, 0.78)",
+            fillAlpha: 0.2
         },
-        series: {
-            'Manual Level': {
-                strokeWidth: 0.0,
-                drawPoints: true,
-                pointSize: 3,
-                color: "rgba(0, 43, 163, 0.78)",
-                fillAlpha: 0.2
-            },
-            'ADR Level': {
-                strokeWidth: 1.5,
-                color: "#279ff4",
-                connectSeparatedPoints:true
-            }
-        },
-        visibility: [true, true]
+        'ADR Level': {
+            strokeWidth: 1.5,
+            color: "#279ff4",
+            connectSeparatedPoints:true
+        }
+    },
+    visibility: [true, true]
     });
     
     hg.resetZoom();
@@ -340,7 +422,12 @@ function wellParse(xml) {
     $("#startdate").val(formatDate(start))
     var end = new Date(hg.xAxisRange()[1])
     $("#enddate").val(formatDate(end));
+
 };
+
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// END PARSING DATA AND DRAWING GRAPH
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 $("#filter").click(function() {
     var st = unformatDate($('#startdate').val()),
