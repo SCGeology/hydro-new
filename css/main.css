@@ -1,0 +1,136 @@
+﻿/*bunch of stuff for the groundwater viewer */
+
+/*leaflet*/
+#map{
+    height:400px;
+    width:100%;
+}
+.cluster{
+    border-radius:100%;
+    text-align: center;
+    background-color:rgba(20, 20, 20,0.8);
+    border:3px solid #aaaaaa;
+    opacity: 0.8;
+}
+#close-well-table{
+    position: absolute;
+    bottom:5px;
+    right:5px;
+    border: none;
+}
+
+#open-well-table{
+    position: absolute;
+    bottom:26px;
+    left:-3px;
+    z-index: 1003;
+}
+
+/*dygraph*/
+#chart {
+    height:225px;
+    margin-bottom: 8px;
+}
+.dygraph-title{
+    font-size:16px;
+}
+#datefilter{
+    padding:7px 0;
+}
+#datefilter label{
+    font-weight: normal;
+}
+.dygraph-legend{
+    top:-20px !important;
+    width:250px !important;
+}
+
+#hydrolegend img {
+    height:20px;
+    width:auto;
+    margin: 0 15px;
+}
+
+.leaflet-clear-control {
+    height:34px;
+    width:34px;
+    background-color:white;
+}
+.leaflet-clear-control i {
+    margin:3px 5px;
+    color:#a06666;
+}
+
+.leaflet-clear-control:hover{
+    cursor: pointer;
+}
+.leaflet-clear-control i:hover{
+    color:darkred;
+}
+.leaflet-clear-control i:active{
+    color:gray;
+}
+
+/*table on map displaying well info*/
+#table{
+    position: absolute;
+    top:0;
+    left:0;
+    width:150px;
+    height:100%;
+    z-index: 1029;
+    background-color:rgba(50,50,50,0.85);
+    padding:0 5px;
+    color:#fff;
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+    overflow-x: hidden;
+}
+#table table td, #table table th {
+    padding:3px;
+    height:24px;
+}
+#table table td{
+    border-bottom: 1px solid #ccc;
+}
+
+#legend{
+    width:100%;
+    max-width: 750px;
+    text-align: center;
+    padding:5px 0;
+    margin:5px 0;
+}
+
+#getdata{
+    margin: 15px 5px;
+}
+
+/*Table on Geophysical Logs*/
+ #geoTable td, #geoTable th {
+	 padding: 5px
+ }
+
+.csvLinks {
+	padding:4px;
+	font-weight: bold;
+	border-radius: 4px;
+	background-color:#d0e1e1;
+}
+
+#caption {
+	font-size:12px;
+}
+
+#wellgraph {
+    width:90%;
+    padding:10px;
+    height:auto;
+    margin:10px auto;
+}
+
+i {
+    margin-right:10px;
+}
+.form-control {
+    color:  #051f38;
+}
