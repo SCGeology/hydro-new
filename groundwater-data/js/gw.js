@@ -216,7 +216,7 @@ function getData(wellID) {
 // CODE BELOW FOR PARSING WEB SERVICE FROM ARCGIS PORTAL
 
 var dataQuery = L.esri.query({
-        url: 'https://arcweb.dnr.sc.gov/server/rest/services/Hosted/scdnr_gwmn_levels_p/FeatureServer/0'
+        url: 'https://services.arcgis.com/acgZYxoN5Oj8pDLa/arcgis/rest/services/well_level_data/FeatureServer/0'
     });
 
 function getData(wellID) {
