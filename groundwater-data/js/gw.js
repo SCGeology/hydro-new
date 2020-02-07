@@ -216,51 +216,29 @@ function getData(wellID) {
 // CODE BELOW FOR PARSING WEB SERVICE FROM ARCGIS PORTAL
 
 var dataQuery = L.esri.query({
-        url: 'https://services.arcgis.com/acgZYxoN5Oj8pDLa/arcgis/rest/services/well_level_data/FeatureServer/0'
+        url: 'https://services.arcgis.com/acgZYxoN5Oj8pDLa/arcgis/rest/services/scdnr_gwmn/FeatureServer/2'
     });
+
+dataQuery.orderBy("Time_Stamp","DESC")
 
 function getData(wellID) {
     
     //for some reason had to orderBy (sort) descending on the date to get it to work correctly. was coming in the opposite.
-    dataQuery.where("well_id = '"+wellID+"'")
-    dataQuery.ids(function(error,ids,response) {
-        
+    dataQuery.where("Well_ID = '"+wellID+"'")
+    
+    dataQuery.run(function (error, featureCollection, response) {
         if (error) {
             console.log(error);
             return;
         }
         
-        // these things are going to break the ids out into however many arrays of 1000 ids each. 
-        // then below we will run that number of queries to build the final data array. 
-        
-        ids.sort()
-		
-        var ids_len = ids.length
-        var bins = Math.ceil(ids_len / 1000)
-        var binarray = []
-        
-		console.log(ids_len)
-        //add a plus one so that it runs one extra time after all bins used.
-        for (var i = 0; i < bins+1; i++) {
-            //if i == bins, that means this is the last run of the loop - no more bins of ids, but instead draw the graph. 
-            console.log(i, bins)
-            
-            if (i != bins) {
-                if (i+1 != bins) {
-                    var startpos = i*1000
-                    var endpos = (i+1)*1000
-                    binarray = ids.slice(startpos, endpos)
-                } else {
-                    var startpos = i*1000
-                    binarray = (ids.slice(startpos))
-                }
-                wellDataBins(binarray)
-            } else {
-                setTimeout(drawGraph,1000);
-            }
-        }
-        
-    });    
+        wellParse(featureCollection);
+    });
+
+    
+    console.log(wellID)
+    
+    setTimeout(drawGraph,1000)
 }
 
 
@@ -305,25 +283,6 @@ var pushData = function(l,dt,m){
 		
 }
 
-function wellDataBins(binArray) {
-    
-    var exp = "OBJECTID BETWEEN "+binArray[0].toString()+" AND "+binArray[binArray.length -1]
-
-    console.log(exp)
-    
-    dataQuery.where(exp).orderBy("time_stamp","DESC")
-    
-    dataQuery.run(function (error, featureCollection, response) {
-        if (error) {
-            console.log(error);
-            return;
-        }
-        
-        wellParse(featureCollection);
-    });
-
-}
-
 //THIS ONE PARSES JSON PROVIDED BY ESRI QUERY
 
 function wellParse(fc) {
@@ -334,13 +293,11 @@ function wellParse(fc) {
     
     for (var i = 0; i < fc.features.length; i++){
         
-        var level = fc.features[i].properties.water_level
-        var dateText = fc.features[i].properties.time_stamp
-        var msmt = fc.features[i].properties.msmnt_type
+        var level = fc.features[i].properties.Water_Level
+        var dateText = fc.features[i].properties.Time_Stamp
+        var msmt = fc.features[i].properties.Msmnt_Type
         //make date object from text date
         var dateN = new Date(dateText);
-        
-        
         
         if (msmt !== "UNKNOWN" && level !== "0"){
             
@@ -359,14 +316,14 @@ function wellParse(fc) {
                 //make a date object that is the lastDate, plus an additional day. will compare to date
                 //why the heck is this now date minus 1 instead of plus one?
                 var nextDay = new Date(lastDate)
-                nextDay.setDate(lastDate.getDate()+1)
+                nextDay.setDate(lastDate.getDate()-1)
                 
                 while (formatDate(dateN) !== formatDate(nextDay)){
                     
                     //push a NaN value with date to the array
                     pushData(NaN,new Date(nextDay),"Automatic Data Recorder")              
                     //increase the nextDay, will compare again until it breaks the while loop when nextDay matches current date
-                    nextDay.setDate(nextDay.getDate()+1)
+                    nextDay.setDate(nextDay.getDate()-1)
                 }
             
                 //push the actual XML row after filled missing dates with above while loop
