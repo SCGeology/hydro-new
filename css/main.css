@@ -1,8 +1,8 @@
-﻿/*bunch of stuff for the groundwater viewer */
+/*bunch of stuff for the groundwater viewer */
 
 /*leaflet*/
 #map{
-    height:400px;
+    height:450px;
     width:100%;
 }
 .cluster{
@@ -84,11 +84,18 @@
     color:#fff;
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
     overflow-x: hidden;
+    font-size: 1.2em;
 }
 #table table td, #table table th {
     padding:3px;
     height:24px;
 }
+
+#table table th {
+    color: #00e7e7;
+    padding-top: 5px;
+}
+
 #table table td{
     border-bottom: 1px solid #ccc;
 }
@@ -102,7 +109,9 @@
 }
 
 #getdata{
-    margin: 15px 5px;
+    margin: 22px 5px 10px 10px;
+    cursor: pointer;
+    
 }
 
 /*Table on Geophysical Logs*/
