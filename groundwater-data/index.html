@@ -17,7 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="../css/hydro.css" rel="stylesheet" type="text/css" />
-    <link href="../css/main.css" rel="Stylesheet" />
+    
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/MarkerCluster.Default.css">
@@ -237,7 +237,7 @@
         </div>
         
         <div class="white-bg">
-            <h4>Hydrograph --- <span id="wellTitle" style="color:#555;">Select a well from the map.</span></h4>
+            <h4>Hydrograph --- <span id="wellTitle" style="color:#555;">Select a well from the map.</span><span id="loading"> --- Getting data...</h4>
             <div class="row mt-4" id="hydrolegend">                
                 <div class="col-lg-5 d-inline-flex">
                     <img alt="light blue circle" src="image/adr.png" />
@@ -255,6 +255,7 @@
             </div>
             <div class="row">
                 <div class="col-lg-12 ml-3 mb-3" id="datefilter">
+				<h4>Choose Date Range</h4>
                     <form class="form-inline">
                         <div class="form-group mx-2">
                             <label for="startdate">Start Date</label>
@@ -264,10 +265,11 @@
                             <label for="enddate">End Date</label>
                             <input type="date" class="form-control ml-1" id="enddate" placeholder="mm/dd/yyyy">
                         </div>
+						
                         <div id="button-group">
-                            <button id="filter" type="button" class="btn btn-outline-primary mx-1" disabled>Filter Graph <i class="fas fa-filter ml-2 mr-0"></i></button>
-                            <button id="reset" type="button" class="btn btn-outline-success mx-1" disabled>Full Record <i class="fas fa-expand ml-2 mr-0"></i></button>
-                            <button id="clear-data" class="btn btn-outline-danger mx-1" disabled>Clear Graph <i class="fas fa-times ml-2 mr-0"></i></button>
+                            <button id="filter" type="button" class="btn btn-outline-primary mx-1 my-2" disabled>Draw Hydrograph <i class="fas fa-filter ml-2 mr-0"></i></button>
+                            <button id="reset" type="button" class="btn btn-outline-success mx-1 my-2" disabled>Full Record <i class="fas fa-expand ml-2 mr-0"></i></button>
+                            <button id="clear-data" class="btn btn-outline-danger mx-1 my-2" disabled>Clear <i class="fas fa-times ml-2 mr-0"></i></button>
                         </div>    
                     </form>
                 </div>
