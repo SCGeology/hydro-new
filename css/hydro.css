@@ -282,8 +282,11 @@ footer {
 /*bunch of stuff for the groundwater viewer */
 
 /*leaflet*/
+/*bunch of stuff for the groundwater viewer */
+
+/*leaflet*/
 #map{
-    height:400px;
+    height:450px;
     width:100%;
 }
 .cluster{
@@ -365,11 +368,18 @@ footer {
     color:#fff;
     transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
     overflow-x: hidden;
+    font-size: 1.2em;
 }
 #table table td, #table table th {
     padding:3px;
     height:24px;
 }
+
+#table table th {
+    color: #00e7e7;
+    padding-top: 5px;
+}
+
 #table table td{
     border-bottom: 1px solid #ccc;
 }
@@ -383,8 +393,18 @@ footer {
 }
 
 #getdata{
-    margin: 15px 5px;
+    margin: 22px 5px 10px 10px;
+    cursor: pointer;
 }
+
+#loading{
+	display:none;
+}
+
+/*Table on Geophysical Logs*/
+ #geoTable td, #geoTable th {
+	 padding: 5px
+ }
 
 /*FAQ droptown divs*/
 
@@ -406,50 +426,21 @@ footer {
     margin:10px auto;
 }
 
+#caption {
+	font-size:12px;
+}
+
+.csvLinks {
+	padding:4px;
+	font-weight: bold;
+	border-radius: 4px;
+	background-color:#d0e1e1;
+}
+
+
 i {
     margin-right:10px;
 }
 .form-control {
     color:  #051f38;
 }
-/*css loader*/
-/*
-.lds-ring {
-  display: inline-block;
-  position: ;
-  top:50%;
-  left:50%;
-  width: 64px;
-  height: 64px;
-  z-index: 1005;
-}
-.lds-ring div {
-  box-sizing: border-box;
-  display: block;
-  position: absolute;
-  width: 51px;
-  height: 51px;
-  margin: 6px;
-  border: 6px solid #051f38;
-  border-radius: 50%;
-  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
-  border-color: #051f38 transparent transparent transparent;
-}
-.lds-ring div:nth-child(1) {
-  animation-delay: -0.45s;
-}
-.lds-ring div:nth-child(2) {
-  animation-delay: -0.3s;
-}
-.lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
-}
-@keyframes lds-ring {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-*/
