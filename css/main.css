@@ -42,7 +42,8 @@
 }
 .dygraph-legend{
     top:-20px !important;
-    width:250px !important;
+    width:260px !important;
+    font-size: 16px !important;
 }
 
 #hydrolegend img {
