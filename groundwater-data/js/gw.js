@@ -133,6 +133,22 @@ searchControl.on("results", function(data) {
     }
 });
 
+//for clearing map with clearMap or clear hydrograph. 
+ var clearTheMap = function(){
+	searchResults.clearLayers();
+	highlight.setLatLng([0,0]);
+	
+	//this clears the table on the side
+	$("#table td").empty();
+	
+	//disable get data button until anoather well is clicked
+	$('#getdata').prop('disabled', true);
+	//$("#getdata").addClass("disabled");
+	
+	//zoom map to orignal extent. 
+	map.setView([33.6, -81.4], 7)
+}
+
 // custom control to clear the map search and well selection
 L.Control.ClearMap = L.Control.extend({
     options: {
@@ -144,20 +160,7 @@ L.Control.ClearMap = L.Control.extend({
         clearDiv.title = "Clear Map Search and Selection"
         clearDiv.appendChild(icon);
         
-        L.DomEvent.on(clearDiv,'click', function(){
-            searchResults.clearLayers();
-            highlight.setLatLng([0,0]);
-            
-            //this clears the table on the side
-            $("#table td").empty();
-            
-            //disable get data button until anoather well is clicked
-            $('#getdata').prop('disabled', true);
-            //$("#getdata").addClass("disabled");
-            
-            //zoom map to orignal extent. 
-            map.setView([33.6, -81.4], 7)
-        });
+        L.DomEvent.on(clearDiv,'click',clearTheMap);
         
         return clearDiv;
     },
@@ -172,11 +175,11 @@ L.control.clearMap = function(opts) {
 L.control.clearMap().addTo(map);
 
 $("#close-well-table").click(function(){
-    $("#table").width(0);
+	$("#table").hide(300);
     $('#open-well-table').removeClass('d-none');
 });
 $("#open-well-table").click(function(){
-    $("#table").width(150);
+	$("#table").show(300);
     $("#open-well-table").addClass('d-none');
 });
 
@@ -234,19 +237,10 @@ function getData(wellID) {
         
         wellParse(featureCollection);
     });
-
-    
     console.log(wellID)
-    
-    setTimeout(drawGraph,1000)
 }
 
-
-
 var dataArray = []
-var valmin = 1000
-var valmax = -1000
-    //use the values to start min and max, when iterating will compare to these values and replace if higher or lower.
 
 //create an empty dy graph that will be updated when data is fetched
 var initGraph = function(){
@@ -265,13 +259,13 @@ initGraph()
 var pushData = function(l,dt,m){
     //For the row, keep increasing/decrease valmin/max as necessary to show the data well
     //instead of padding by some constant, would be better to pad based on the range in the data
-        if (parseFloat(l) < valmin && parseFloat(l) > 0) {
-            valmin = parseFloat(l) - 3
+        if (parseFloat(l) < valmin) {
+            valmin = parseFloat(l)
         }
         if (parseFloat(l) > valmax) {
-            valmax = parseFloat(l) + 3
+            valmax = parseFloat(l)
         }
-
+		console.log(valmin, valmax)
     //puts the data in the right order in the arrays so ADR and MANUAL data are independent series
         if (m === "Automatic Data Recorder") {
             var insert = [dt, l, null]
@@ -280,7 +274,6 @@ var pushData = function(l,dt,m){
             var insert = [dt, null, l]
             dataArray.push(insert);
         }
-		
 }
 
 //THIS ONE PARSES JSON PROVIDED BY ESRI QUERY
@@ -289,7 +282,7 @@ function wellParse(fc) {
     
     var lastDate
     
-    console.log(fc.features)
+    //console.log(fc.features)
     
     for (var i = 0; i < fc.features.length; i++){
         
@@ -300,7 +293,6 @@ function wellParse(fc) {
         var dateN = new Date(dateText);
         
         if (msmt !== "UNKNOWN" && level !== "0"){
-            
             
             //first row, lastDate will be undefined, so go ahead and push to DataArray
             if (typeof lastDate === 'undefined') {
@@ -337,6 +329,7 @@ function wellParse(fc) {
         }
         
     }
+	setTimeout(drawGraph,1000)
 }
 
 function drawGraph() {
@@ -345,7 +338,7 @@ function drawGraph() {
     file: dataArray.sort(function(a,b){return a[0]-b[0]}),
     labels: ["Date", "ADR Level", "Manual Level"],
     rollPeriod: 0,
-    valueRange: [valmax, valmin],
+    valueRange: [valmax+5, valmin-5],
     ylabel: "ft below land surface",
     xRangePad: 10,
     zoomCallback: function(minDate, maxDate) {
@@ -369,6 +362,13 @@ function drawGraph() {
             connectSeparatedPoints:true
         }
     },
+	axes: {
+        x: {
+            valueFormatter: function (d) {
+                return new Date(d).toLocaleDateString();
+            }
+        }
+    },
     visibility: [true, true]
     });
     
@@ -379,6 +379,8 @@ function drawGraph() {
     $("#startdate").val(formatDate(start))
     var end = new Date(hg.xAxisRange()[1])
     $("#enddate").val(formatDate(end));
+	
+	$("#loading").hide();
 
 };
 
@@ -407,6 +409,9 @@ $("#clear-data").click(function(){
         .attr("title", "Select a well from the map to download data.")
     $("#filter, #reset, #manualview, #clear-data").prop("disabled", true);
     $("#wellTitle").text("Select a well from the map.")
+	$("#startdate").val("");
+    $("#enddate").val("");
+	clearTheMap();
 });
 
 //NEED TO PARSE OUT THE DATA ARRAY BASED ON THE SELECTION, CHANGE DATE STYLE
@@ -455,12 +460,14 @@ $("#dailydl").bind("click", downloaddata)
 $("#getdata").click(function() {
     //clear data array
     dataArray = []
+	//seems opposite, but setting the values this way ensures that the actual values do indeed adjust the valmin and valmax.
     valmin = 1000
     valmax = -1000
         //reset button colors
     $(this).prop("disabled", true);
     //write well name to the screen
     $('#wellTitle').text(wellID);
+	$('#loading').show();
     //initiate the get data function 
     getData(wellID);
     //enable the download button
