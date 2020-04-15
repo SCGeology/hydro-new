@@ -191,61 +191,55 @@
         <div id="main" class="row white-bg">
             <div class="col-lg-12 m-0 p-0">
                 <div id="map">
-                    <div class="pt-2 px-0" id="table">
-                        <h3 class="text-white h5 ml-2">Selected Well</h3>
-                        <table class="ml-2">
-                            <tbody>
-                                <tr>
-                                    <th>Well ID</th>
-                                </tr>
-                                <tr>
-                                    <td id="id"></td>
-                                </tr>
-                                <tr>
-                                    <th>Aquifer</th>
-                                </tr>
-                                <tr>
-                                    <td id="aq"></td>
-                                </tr>
-                                <tr>
-                                    <th>Well Depth</th>
-                                </tr>
-                                <tr>
-                                    <td id="wd"></td>
-                                </tr>
-                                <tr>
-                                    <th>Screen Depth</th>
-                                </tr>
-                                <tr>
-                                    <td id="sd"></td>
-                                </tr>
-                                <tr>
-                                    <th>Measure Type</th>
-                                </tr>
-                                <tr>
-                                    <td id="type"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <button id="getdata" class="btn btn-primary" disabled title="Select a well on the map.">Get Data</button>
-                        <button class="btn btn-outline-light btn-sm" id="close-well-table">Close<i class="fas fa-arrow-left ml-2 mr-0"></i></button>                       
-                    </div>
-                    <button class="btn btn-outline-dark btn-sm d-none" id="open-well-table">Open<i class="fas fa-arrow-right ml-2 mr-0"></i></button>
-                </div>
-                <p class='m-0'>Wells are color-coded by aquifer. <a href="#" data-toggle="modal" data-target="#legend-modal">View Legend</a></p>
-            </div> 
+					<div class="pt-2" id="table">
+						<div id="close-tab" class="d-inline">
+							<p class="text-center mt-1">Selected Well <i id="arrow-down" class="fas fa-angle-down ml-4 mr-0"></i><i id="arrow-up" class="fas fa-angle-up ml-4 mr-0"></i></p>
+						</div>
+						<div id="well-info" class="row ml-2">
+							<div class="col">
+								<h5>Well ID</h5>
+								<p id="id"></p>
+							</div>
+							<div class="col">
+								<h5>Aquifer</h5>
+								<p id="aq"></p>
+							</div>
+							<div class="col">
+								<h5>Well Depth</h5>
+								<p id="wd"></p>
+							</div>
+							<div class="w-100 d-lg-none"></div>
+							<div class="col">
+								<h5>Screen Depth</h5>
+								<p id="sd"></p>
+							</div>
+							<div class="col">
+								<h5>Elevation</h5>
+								<p id="elev"></p>
+							</div>
+							<div class="col my-3">
+								<button id="getdata" class="btn btn-primary" disabled title="Select a well on the map.">Get Data</button>
+							</div>
+							
+						</div>
+					</div>
+				</div> 
+				<p class='ml-1 mt-2 mb-0 h6'>Wells are color-coded by aquifer. <a href="#" data-toggle="modal" data-target="#legend-modal">View Legend</a>.</p>
+			</div>
         </div>
         
         <div class="white-bg">
-            <h4>Hydrograph --- <span id="wellTitle" style="color:#555;">Select a well from the map.</span><span id="loading"> --- Getting data...</h4>
+            <h3>Hydrograph</h3>
+			<h4 class="mt-2"><span id="wellTitle" style="color:#333;">Select a well from the map.</span><span id="wellAq" style="color:#333;"></span><span id="loading" style="color:#333;"> --- Getting data...</span></h4>
+			
             <div class="row mt-4" id="hydrolegend">                
-                <div class="col-lg-5 d-inline-flex">
+                <div class="col-lg-3 d-inline-flex">
                     <img alt="light blue circle" src="image/adr.png" />
-                    <p>Daily Data from Automatic Data Recorder (ADR)</p>
+                    <p>Average Daily Water Levels</p>
                 </div>
-                <div class="col-lg-5 d-inline-flex">
+                <div class="col-lg-4 d-inline-flex">
                     <img alt="dark blue circle" src="image/manual.png" />
-                    <p>Manual Measurements - <button class="btn btn-sm btn-outline-primary" role="button" id="manualview"><span id="manual-show">Hide</span></button></p>
+                    <p>Manual Water Levels - <button class="btn btn-sm btn-outline-primary" role="button" id="manualview"><span id="manual-show">Hide</span></button></p>
                 </div>
             </div>
             <div class="row p-3">
@@ -253,40 +247,61 @@
                 <div class="col-lg-12 p-0" id="chart">
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-12 ml-3 mb-3" id="datefilter">
-				<h4>Choose Date Range</h4>
-                    <form class="form-inline">
-                        <div class="form-group mx-2">
+			<h3>Custom Axis Options</h3>
+			<p class="ml-1">Set custom range values for the X and Y axes of the hydrograph. You can also click and drag your cursor on the hydrograph for a custom view.</p>
+            <div class="row ml-lg-4 ml-1 mb-4">
+                <div class="col-lg-4" id="datefilter">
+					<h4>Date Range (X-Axis)</h4>
+                    <form>
+                        <div class="form-group">
                             <label for="startdate">Start Date</label>
-                            <input type="date" class="form-control ml-1" id="startdate" placeholder="mm/dd/yyyy">
+                            <input type="date" class="form-control" id="startdate" placeholder="mm/dd/yyyy" disabled>
                         </div>
-                        <div class="form-group mx-2">
+                        <div class="form-group">
                             <label for="enddate">End Date</label>
-                            <input type="date" class="form-control ml-1" id="enddate" placeholder="mm/dd/yyyy">
+                            <input type="date" class="form-control" id="enddate" placeholder="mm/dd/yyyy" disabled>
                         </div>
 						
                         <div id="button-group">
-                            <button id="filter" type="button" class="btn btn-outline-primary mx-1 my-2" disabled>Draw Hydrograph <i class="fas fa-filter ml-2 mr-0"></i></button>
-                            <button id="reset" type="button" class="btn btn-outline-success mx-1 my-2" disabled>Full Record <i class="fas fa-expand ml-2 mr-0"></i></button>
-                            <button id="clear-data" class="btn btn-outline-danger mx-1 my-2" disabled>Clear <i class="fas fa-times ml-2 mr-0"></i></button>
+                            <button id="filter" type="button" class="btn btn-outline-primary " disabled>Update</button>
+                            <button id="reset" type="button" class="btn btn-outline-success 2" disabled>Full Record</button>
                         </div>    
                     </form>
                 </div>
+				<div class="col-lg-6 mt-4 mt-lg-0" id="axis">
+					<h4>Value Range (Y-Axis)</h4>
+					<form>
+                        <div role="group" class="form-group" id="upper-group">
+                            <label for="upper">Upper</label>
+                            <input type="number" class="form-control" step="0.1" id="upper" placeholder="" disabled>
+                        </div>
+                        <div role="group" class="form-group" id="lower-group">
+                            <label for="lower">Lower</label>
+                            <input type="number" class="form-control" step="0.1" id="lower" placeholder="" disabled>
+                        </div>
+						
+                        <div id="button-group">
+							<button id="y-set" type="button" class="btn btn-outline-primary " disabled>Update</button>
+                            <button id="y-clear" type="button" class="btn btn-outline-success " disabled>Default</button>
+                        </div>    
+                    </form>
+				</div>
             </div>
             
-            <div class="row">
+			<h3>Download Data</h3>
+			<p class="ml-1">Daily water level and manual measurement data are downloaded in a CSV format. If 'Selected Period Only' is chosen, the downloaded data will correspond to the dates shown in the Date Range option and X-Axis on the hydrograph.</p>
+            <div class="row mt-4 ml-lg-3">
                 <div class="col-lg-12">
-                    <h4>Download Data</h4>
-                    <p class="ml-1">Daily water level data are downloaded in a CSV format.</p>
-                    <div class="radio">
-                        <label class="radio-inline mx-2">
-                            <input class="mx-1" type="radio" name="optradio" id="fullrecord" checked="checked">Full Period of Record</label>
-                        <label class="radio-inline mx-2">
-                            <input class="mx-1" type="radio" name="optradio" id="select">Selected Period Only (dates above)</label>
+                    <div class="form-check">
+						<input class="mx-1 form-check-input" type="radio" id="fullrecord" name="record" value="full" checked>
+                        <label class="mx-2 form-check-label">Full Period of Record</label>
+					</div>
+					<div class="form-check">
+						<input class="mx-1 form-check-input" type="radio" id="select" name="record" value="selected">
+                        <label class="mx-2 form-check-label">Selected Period Only (dates above)</label>
                     </div>
                     <div class="my-2" id="buttons">
-                        <button class="btn btn-primary ml-3" disabled id="dailydl" title="Select a well from the map to download data."><i class="fa fa-arrow-circle-down" aria-hidden="true"></i>Download Now</button>
+                        <button class="btn btn-primary" disabled id="dailydl" title="Select a well from the map to download data."><i class="fa fa-arrow-circle-down" aria-hidden="true"></i>Download Now</button>
                     </div>
                 </div>
             </div>

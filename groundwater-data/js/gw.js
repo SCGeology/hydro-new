@@ -1,7 +1,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Leaflet interaction ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var map = L.map('map', {
     zoomControl: false
-}).setView([33.6, -81.4], 7);
+}).setView([33.3, -81.2], 7);
 
 L.esri.basemapLayer("Topographic").addTo(map);
 
@@ -67,7 +67,7 @@ function oef(feature, layer) {
         $('#aq').text(feature.properties.Aquifer2);
         $('#wd').text(feature.properties.Well_depth);
         $('#sd').text(feature.properties.Screen_or_);
-        $('#type').text(feature.properties.msmnt_type);
+        $('#elev').text(feature.properties.Land_surfa);
         ll = layer.getLatLng();
         highlight.setLatLng(ll);
 
@@ -119,10 +119,12 @@ var agol = L.esri.Geocoding.arcgisOnlineProvider({
 });
 
 var searchControl = L.esri.Geocoding.geosearch({
-    position: 'topright',
+    position: 'topleft',
     providers: [wellSearch, agol],
+	expanded:true,
+	collapseAfterResult:false,
     title: "Well or Place Search",
-    placeholder: "Well ID (ex. HOR-0290) or places.",
+    placeholder: "Search Well ID or location.",
     searchBounds: [[35.42,-83.87],[31.33,-77.7]]
 }).addTo(map);
 
@@ -139,25 +141,25 @@ searchControl.on("results", function(data) {
 	highlight.setLatLng([0,0]);
 	
 	//this clears the table on the side
-	$("#table td").empty();
+	$("#well-info p").empty();
 	
 	//disable get data button until anoather well is clicked
 	$('#getdata').prop('disabled', true);
 	//$("#getdata").addClass("disabled");
 	
 	//zoom map to orignal extent. 
-	map.setView([33.6, -81.4], 7)
+	map.setView([33.3, -81.2], 7)
 }
 
 // custom control to clear the map search and well selection
 L.Control.ClearMap = L.Control.extend({
     options: {
-        position: 'bottomright'
+        position: 'topleft'
     },
     onAdd: function(map){
         var clearDiv = L.DomUtil.create("a", "leaflet-clear-control leaflet-touch leaflet-bar");
-        var icon = L.DomUtil.create("i", "fa fa-times-circle-o fa-2x");
-        clearDiv.title = "Clear Map Search and Selection"
+        var icon = L.DomUtil.create("i", "fas fa-home fa-2x");
+        clearDiv.title = "Reset Map."
         clearDiv.appendChild(icon);
         
         L.DomEvent.on(clearDiv,'click',clearTheMap);
@@ -174,13 +176,32 @@ L.control.clearMap = function(opts) {
 
 L.control.clearMap().addTo(map);
 
-$("#close-well-table").click(function(){
-	$("#table").hide(300);
-    $('#open-well-table').removeClass('d-none');
-});
-$("#open-well-table").click(function(){
-	$("#table").show(300);
-    $("#open-well-table").addClass('d-none');
+var tabStatus = 0
+
+$("#close-tab").click(function(){
+	if (tabStatus == 0) {
+		$("#well-info").fadeOut(200, function(){
+			$("#table").animate({
+			bottom:"-80px"
+		}, 400 );
+		});
+		$("#arrow-down").fadeOut(200, function() {
+			$("#arrow-up").fadeIn(200)
+		});
+		tabStatus = 1
+	} else {
+		$("#table").animate({
+			bottom:"0px"
+			}, 400, function() {
+				$("#well-info").fadeIn(200)	
+			}
+		);
+		
+		$("#arrow-up").fadeOut(200, function() {
+			$("#arrow-down").fadeIn(200)
+		});
+		tabStatus = 0
+	}
 });
 
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Hydrograph and other non map related stuff below ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -237,7 +258,6 @@ function getData(wellID) {
         
         wellParse(featureCollection);
     });
-    console.log(wellID)
 }
 
 var dataArray = []
@@ -265,7 +285,6 @@ var pushData = function(l,dt,m){
         if (parseFloat(l) > valmax) {
             valmax = parseFloat(l)
         }
-		console.log(valmin, valmax)
     //puts the data in the right order in the arrays so ADR and MANUAL data are independent series
         if (m === "Automatic Data Recorder") {
             var insert = [dt, l, null]
@@ -281,8 +300,6 @@ var pushData = function(l,dt,m){
 function wellParse(fc) {
     
     var lastDate
-    
-    //console.log(fc.features)
     
     for (var i = 0; i < fc.features.length; i++){
         
@@ -332,13 +349,21 @@ function wellParse(fc) {
 	setTimeout(drawGraph,1000)
 }
 
-function drawGraph() {
+var roundToDec = function(num){
+	var newNum = Math.round(num*10)/10
+	return newNum
+}
 
+function drawGraph() {
+	
+	//padding based on percentage of range
+	var padding = (valmax - valmin)*.1
+	
     hg.updateOptions({
     file: dataArray.sort(function(a,b){return a[0]-b[0]}),
-    labels: ["Date", "ADR Level", "Manual Level"],
+    labels: ["Date", "Avg Daily Level", "Manual Level"],
     rollPeriod: 0,
-    valueRange: [valmax+5, valmin-5],
+    valueRange: [roundToDec(valmax+padding), roundToDec(valmin-padding)],
     ylabel: "ft below land surface",
     xRangePad: 10,
     zoomCallback: function(minDate, maxDate) {
@@ -347,6 +372,9 @@ function drawGraph() {
         var max = new Date(maxDate);
         $("#startdate").val(formatDate(min));
         $("#enddate").val(formatDate(max));
+		$("#upper").val(roundToDec(hg.yAxisRange()[1]))
+		$("#lower").val(roundToDec(hg.yAxisRange()[0]))
+        console.log(hg.yAxisRange()[0],hg.yAxisRange()[1])
     },
     series: {
         'Manual Level': {
@@ -356,7 +384,7 @@ function drawGraph() {
             color: "rgba(0, 43, 163, 0.78)",
             fillAlpha: 0.2
         },
-        'ADR Level': {
+        'Avg Daily Level': {
             strokeWidth: 1.5,
             color: "#279ff4",
             connectSeparatedPoints:true
@@ -380,6 +408,9 @@ function drawGraph() {
     var end = new Date(hg.xAxisRange()[1])
     $("#enddate").val(formatDate(end));
 	
+	$("#upper").val(hg.yAxisRange()[1])
+	$("#lower").val(hg.yAxisRange()[0])
+	
 	$("#loading").hide();
 
 };
@@ -388,6 +419,7 @@ function drawGraph() {
 // END PARSING DATA AND DRAWING GRAPH
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+//for filtering date axis
 $("#filter").click(function() {
     var st = unformatDate($('#startdate').val()),
         end = unformatDate($('#enddate').val());
@@ -402,15 +434,36 @@ $("#reset").click(function() {
     $("#fullrecord").prop("checked", true);
 });
 
+//for filtering value (y) axis
+
+$("#y-set").on('click', function(){
+	var upperVal = $("#upper").val();
+	var lowerVal = $("#lower").val();
+	hg.updateOptions({
+		valueRange:[lowerVal, upperVal]
+	});
+});
+
+$("#y-clear").on('click', function(){
+	var padding = (valmax - valmin)*.1
+	hg.updateOptions({
+		valueRange: [roundToDec(valmax+padding), roundToDec(valmin-padding)]
+	});
+	$("#upper").val(roundToDec(valmin-padding))
+	$("#lower").val(roundToDec(valmax+padding))
+});
+
 $("#clear-data").click(function(){
     hg.destroy();
     initGraph()
     $("#dailydl").prop("disabled",true)
         .attr("title", "Select a well from the map to download data.")
-    $("#filter, #reset, #manualview, #clear-data").prop("disabled", true);
+    $("#filter, #reset, #manualview, #clear-data, #y-set, #y-clear, #enddate, #startdate, #upper, #lower").prop("disabled", true);
     $("#wellTitle").text("Select a well from the map.")
 	$("#startdate").val("");
     $("#enddate").val("");
+	$("#upper").val("");
+	$("#lower").val("");
 	clearTheMap();
 });
 
@@ -423,7 +476,7 @@ var headers = [
 var makecsv = function(indata, filename) {
     var betterdata = []
 
-//making a new array with more friendly dates for download to csv - doesn't print time. is that ok?  
+	//making a new array with more friendly dates for download to csv - doesn't print time. is that ok?  
     $.each(indata, function(i,v){
         betterdata.push([v[0].toLocaleDateString(),v[1],v[2]])
     });
@@ -467,13 +520,14 @@ $("#getdata").click(function() {
     $(this).prop("disabled", true);
     //write well name to the screen
     $('#wellTitle').text(wellID);
+	$('#wellAq').text(" --- "+$("#aq").text());
 	$('#loading').show();
     //initiate the get data function 
     getData(wellID);
     //enable the download button
     $("#dailydl").prop("disabled",false)
         .attr("title", "Download daily data.")
-    $("#filter, #reset, #manualview, #clear-data").prop("disabled", false);
+    $("#filter, #reset, #manualview, #clear-data, #y-set, #y-clear, #enddate, #startdate, #upper, #lower").prop("disabled", false);
 });
 
 $('#manualview').click(function() {
@@ -484,10 +538,8 @@ $('#manualview').click(function() {
         hg.setVisibility(1, false);
         $('#manual-show').text('View')
     }
-});
-
-//toggle dropdown stuff
-$('.question').click(function() {
-    $(this).next('.answer').slideToggle();
-    $(this).toggleClass("closed open");
+    var upperVal = $("#upper").val();
+	var lowerVal = $("#lower").val();
+    console.log(lowerVal,upperVal)
+    console.log(hg.yAxisRange()[0],hg.yAxisRange()[1])
 });
