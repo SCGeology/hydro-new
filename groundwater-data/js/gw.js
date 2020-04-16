@@ -1,6 +1,7 @@
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Leaflet interaction ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 var map = L.map('map', {
-    zoomControl: false
+    zoomControl: false,
+    gestureHandling:true
 }).setView([33.3, -81.2], 7);
 
 L.esri.basemapLayer("Topographic").addTo(map);
@@ -14,7 +15,7 @@ var data = "https://services.arcgis.com/acgZYxoN5Oj8pDLa/ArcGIS/rest/services/sc
 var clusterPoly = L.esri.Cluster.featureLayer({
     url: "https://services.arcgis.com/acgZYxoN5Oj8pDLa/ArcGIS/rest/services/scdnr_gwmn/FeatureServer/1",
     onEachFeature: function(feature, layer) {
-        layer.bindTooltip("Cluster Site: " + feature.properties.cluster_na, {
+        layer.bindTooltip("Cluster Site: " + feature.properties.cluster_name, {
             direction: 'right',
             offset: [40, 0]
         });
@@ -41,9 +42,9 @@ function aqColor(a) {
 
 function style(feature) {
     return {
-        color: aqColor(feature.properties.Aquifer2),
+        color: aqColor(feature.properties.aquifer2),
         radius: 5,
-        fillColor: aqColor(feature.properties.Aquifer2),
+        fillColor: aqColor(feature.properties.aquifer2),
         fillOpacity: 0.7,
         opacity: 1
     }
@@ -60,25 +61,25 @@ var highlight = L.circleMarker([0, 0], {
 
 //Custom radius and icon create function
 function oef(feature, layer) {
-    layer.bindTooltip(feature.properties.Well_ID)
+    layer.bindTooltip(feature.properties.well_id)
 
     layer.on('click', function() {
-        $('#id').text(feature.properties.Well_ID);
-        $('#aq').text(feature.properties.Aquifer2);
-        $('#wd').text(feature.properties.Well_depth);
-        $('#sd').text(feature.properties.Screen_or_);
-        $('#elev').text(feature.properties.Land_surfa);
+        $('#id').text(feature.properties.well_id);
+        $('#aq').text(feature.properties.aquifer2);
+        $('#wd').text(feature.properties.well_depth);
+        $('#sd').text(feature.properties.screen_depth);
+        $('#elev').text(feature.properties.elevation1);
         ll = layer.getLatLng();
         highlight.setLatLng(ll);
 
-        wellID = feature.properties.Well_ID
+        wellID = feature.properties.well_id
         $('#getdata').prop('disabled', false);
     });
 };
 
 var wellsC = L.esri.Cluster.featureLayer({
     url: data,
-    where: "Cluster = 'yes'",
+    where: "cluster = 'yes'",
     pointToLayer: function(feature, latlng) {
         return L.circleMarker(latlng, style(feature))
     },
@@ -97,7 +98,7 @@ var wellsC = L.esri.Cluster.featureLayer({
 
 var wellsInd = L.esri.featureLayer({
     url: data,
-    where: "Cluster <> 'yes'",
+    where: "cluster <> 'yes'",
     pointToLayer: function(feature, latlng) {
         return L.circleMarker(latlng, style(feature))
     },
@@ -109,7 +110,7 @@ var searchResults = L.layerGroup().addTo(map);
 //search for wells by well ID
 var wellSearch = L.esri.Geocoding.featureLayerProvider({
     url: data,
-    searchFields: ['Well_ID'],
+    searchFields: ['well_id'],
     label: 'Well IDs',
     maxResults:5
 });
@@ -374,7 +375,7 @@ function drawGraph() {
         $("#enddate").val(formatDate(max));
 		$("#upper").val(roundToDec(hg.yAxisRange()[1]))
 		$("#lower").val(roundToDec(hg.yAxisRange()[0]))
-        console.log(hg.yAxisRange()[0],hg.yAxisRange()[1])
+        
     },
     series: {
         'Manual Level': {
@@ -484,15 +485,25 @@ var makecsv = function(indata, filename) {
     var dldata = headers.concat(betterdata),
         daily = Papa.unparse(dldata);
 
-    var a = document.createElement('a')
-    a.href = 'data:attachment/csv,' + encodeURIComponent(daily);
-    a.target = '_blank';
-    a.download = wellID + "_" + filename + '_daily.csv';
+    //this first part takes care of issue with downloading CSV on EDGE browser
+    if (navigator.msSaveBlob) { // IE 10+
+        var expFileName = wellID + "_" + filename + '_water_levels.csv';
+        var blob = new Blob([daily], { type: 'text/csv;charset=utf-8;' });
+        navigator.msSaveBlob(blob, expFileName);
+        
+    } else {
+    
+        var a = document.createElement('a')
+        a.href = 'data:attachment/csv,' + encodeURIComponent(daily);
+        a.target = '_blank';
+        a.download = wellID + "_" + filename + '_water_levels.csv';
 
-    document.body.appendChild(a);
-    a.click();
+        document.body.appendChild(a);
+        a.click();
+        
+    }
 }
-
+    
 var downloaddata = function() {
 
     if ($("#select").is(':checked')) {
@@ -542,4 +553,7 @@ $('#manualview').click(function() {
 	var lowerVal = $("#lower").val();
     console.log(lowerVal,upperVal)
     console.log(hg.yAxisRange()[0],hg.yAxisRange()[1])
+    hg.updateOptions({
+        valueRange:[lowerVal,upperVal]
+    });
 });

@@ -23,6 +23,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/MarkerCluster.Default.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/MarkerCluster.css">
     <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.6/dist/esri-leaflet-geocoder.css">
+     <link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css">
 
     <script src="https://use.fontawesome.com/b4f8eb2c18.js"></script>
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
@@ -33,6 +34,8 @@
     <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.6"></script>
     <script src="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/leaflet.markercluster.js"></script>
     <script src="https://unpkg.com/esri-leaflet-cluster@2.0.0"></script>
+    <script src="https://unpkg.com/leaflet-gesture-handling"></script>
+    <script src="js/html2canvas.min.js"></script>
     
     
 </head>
@@ -195,7 +198,7 @@
 						<div id="close-tab" class="d-inline">
 							<p class="text-center mt-1">Selected Well <i id="arrow-down" class="fas fa-angle-down ml-4 mr-0"></i><i id="arrow-up" class="fas fa-angle-up ml-4 mr-0"></i></p>
 						</div>
-						<div id="well-info" class="row ml-2">
+						<div id="well-info" class="row m-2">
 							<div class="col">
 								<h5>Well ID</h5>
 								<p id="id"></p>
@@ -204,15 +207,16 @@
 								<h5>Aquifer</h5>
 								<p id="aq"></p>
 							</div>
+                            <div class="w-100 d-lg-none"></div>
 							<div class="col">
 								<h5>Well Depth</h5>
 								<p id="wd"></p>
 							</div>
-							<div class="w-100 d-lg-none"></div>
 							<div class="col">
 								<h5>Screen Depth</h5>
 								<p id="sd"></p>
 							</div>
+                            <div class="w-100 d-lg-none"></div>
 							<div class="col">
 								<h5>Elevation</h5>
 								<p id="elev"></p>
@@ -229,24 +233,26 @@
         </div>
         
         <div class="white-bg">
-            <h3>Hydrograph</h3>
-			<h4 class="mt-2"><span id="wellTitle" style="color:#333;">Select a well from the map.</span><span id="wellAq" style="color:#333;"></span><span id="loading" style="color:#333;"> --- Getting data...</span></h4>
-			
-            <div class="row mt-4" id="hydrolegend">                
-                <div class="col-lg-3 d-inline-flex">
-                    <img alt="light blue circle" src="image/adr.png" />
-                    <p>Average Daily Water Levels</p>
+            <div id="hgdiv">
+                <h3>Hydrograph</h3>
+                <h4 class="mt-2"><span id="wellTitle" style="color:#333;">Select a well from the map.</span><span id="wellAq" style="color:#333;"></span><span id="loading" style="color:#333;"> --- Getting data...</span></h4>
+
+                <div class="row mt-4" id="hydrolegend">                
+                    <div class="col-lg-3 d-inline-flex">
+                        <img alt="light blue circle" src="image/adr.png" />
+                        <p>Average Daily Water Levels</p>
+                    </div>
+                    <div class="col-lg-4 d-inline-flex">
+                        <img alt="dark blue circle" src="image/manual.png" />
+                        <p>Manual Water Levels - <button class="btn btn-sm btn-outline-primary" role="button" id="manualview"><span id="manual-show">Hide</span></button></p>
+                    </div>
                 </div>
-                <div class="col-lg-4 d-inline-flex">
-                    <img alt="dark blue circle" src="image/manual.png" />
-                    <p>Manual Water Levels - <button class="btn btn-sm btn-outline-primary" role="button" id="manualview"><span id="manual-show">Hide</span></button></p>
+                <div class="row p-3">
+                    <!--<div class="lds-ring"><div></div><div></div><div></div><div></div></div>-->
+                    <div class="col-lg-12 p-0" id="chart">
+                    </div>
                 </div>
-            </div>
-            <div class="row p-3">
-                <!--<div class="lds-ring"><div></div><div></div><div></div><div></div></div>-->
-                <div class="col-lg-12 p-0" id="chart">
-                </div>
-            </div>
+            </div>    
 			<h3>Custom Axis Options</h3>
 			<p class="ml-1">Set custom range values for the X and Y axes of the hydrograph. You can also click and drag your cursor on the hydrograph for a custom view.</p>
             <div class="row ml-lg-4 ml-1 mb-4">
