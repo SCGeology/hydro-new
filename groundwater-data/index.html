@@ -5,38 +5,27 @@
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="South Carolina Department of Natural Resources - Groundwater Data.">
+    <meta name="description" content="SCDNR Groundwater Data View and Download">
     <meta name="author" content="South Carolina Department of Natural Resources - Hydrology Section">
 
     <title>Groundwater Data - SCDNR</title>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
-
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
-    <link href="../css/hydro.css" rel="stylesheet" type="text/css" />
-    
+    <!-- CSS for this application -->
+    <link href="css/gw.css" rel="stylesheet" type="text/css" />
 
+    <!-- leaflet, ESRI leaflet, and plugin css -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/MarkerCluster.Default.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/MarkerCluster.css">
     <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.6/dist/esri-leaflet-geocoder.css">
-     <link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css">
-
-    <script src="https://use.fontawesome.com/b4f8eb2c18.js"></script>
-    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
-    <script src="js/dygraph-combined.js"></script>
-    <script src="https://unpkg.com/esri-leaflet@2.0.3"></script>
-    <script src="js/papaparse.min.js"></script>
-    <script src="js/dygraph-extra.js"></script>
-    <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.6"></script>
-    <script src="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/leaflet.markercluster.js"></script>
-    <script src="https://unpkg.com/esri-leaflet-cluster@2.0.0"></script>
-    <script src="https://unpkg.com/leaflet-gesture-handling"></script>
-
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css" type="text/css">
     
+    <!-- font awesome css -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -44,47 +33,57 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg text-white fixed-top d-print-none">
         <div class="container">
-            <img src="../images/dnr-logo-small.gif" id="nav-logo" alt="scdnr-logo">
-            <a class="navbar-brand ml-5 pl-5 pl-md-1" href="../index.html">SCDNR Hydrology</a>
+            <a href="http://www.dnr.sc.gov/"><img src="http://hydrology.dnr.sc.gov/images/dnr-logo-small.gif" id="nav-logo" alt="scdnr-logo"></a>
+            <a class="navbar-brand ml-5 pl-5 pl-md-1" href="index.html">SCDNR Hydrology</a>
             <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="../about.html">About Us</a>
-                    </li>
-					<li class="nav-item">
-                        <a class="nav-link" href="../water-planning.html">Water Planning</a>
+                        <a class="nav-link" href="about.html">About Us</a>
                     </li>
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
-					<a class="dropdown-item" href="../groundwater.html">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataOne" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Water Planning</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataOne">
+						<a class="dropdown-item" href="water-planning.html">Overview</a>
+						<a class="dropdown-item" href="state-and-river-basin-planning.html">State and River Basin Planning</a>
+						<a class="dropdown-item" href="edisto-basin-planning.html">Edisto Basin Planning</a>
+						<a class="dropdown-item" href="water-demand.html">Water Demand Projections</a>
+						<a class="dropdown-item" href="surface-water-models.html">Surface Water Models</a>
+						<a class="dropdown-item" href="groundwater-models.html">Groundwater Models</a>
+						</div>
+                    </li>
+					<!--Data Dropdown Done-->
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataTwo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataTwo">
+					<a class="dropdown-item" href="groundwater.html">
 					Groundwater</a>
-					<a class="dropdown-item" href="../surface-water.html">
+					<a class="dropdown-item" href="surface-water.html">
 					Surface Water</a>
 					</div>
 					</li>
 					<!--Data Dropdown Done-->	
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
-					<a class="dropdown-item" href="groundwater-data.html">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataThree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataThree">
+					<a class="dropdown-item" href="groundwater-level-monitoring-network.html#groundleveldata">
 					Groundwater Level Data</a>
-					<a class="dropdown-item" href="../geophysical-logs.html">
+					<a class="dropdown-item" href="geophysical-logs.html">
 					Geophysical Logs</a>
-					<a class="dropdown-item" href="../well-database.html">
+					<a class="dropdown-item" href="well-database.html">
 					Coastal Plain Well Database</a>
-					<a class="dropdown-item" href="../streamflow-and-lake-levels.html">
+					<a class="dropdown-item" href="streamflow-and-lake-levels.html">
 					Streamflow and Lake Levels</a>
 					</div>
 					</li>
 					<!--Data Dropdown Done-->
                      <li class="nav-item">
-                        <a class="nav-link" href="../publications.html">Publications</a>
+                        <a class="nav-link" href="publications.html">Publications</a>
                     </li>					
                      <li class="nav-item">
                         <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a>
@@ -239,7 +238,7 @@
                 <div class="row mt-4" id="hydrolegend">                
                     <div class="col-lg-3 d-inline-flex">
                         <img alt="light blue circle" src="image/adr.png" />
-                        <p>Average Daily Water Levels</p>
+                        <p>Daily Average Water Levels</p>
                     </div>
                     <div class="col-lg-4 d-inline-flex">
                         <img alt="dark blue circle" src="image/manual.png" />
@@ -326,7 +325,7 @@
 
                 <h4>Disclaimer</h4>
                 <p style="font-size:80%;">Data presented on this web site may have been retrieved partially or entirely from several sources including federal or other state agencies. SCDNR makes every effort to provide accurate and complete information, however, the database is a "work in progress" and updates will occur regularly. In no event should the South Carolina Department of Natural Resources or any contributing agencies be liable for any direct or indirect, incidental, or other damages arising from the use of these data. SCDNR does not warrant, guarantee, or make any representations regarding the use, or the results of the use, of the information provided to you by the Department in terms of correctness, accuracy, reliability, timeliness or otherwise. The entire risk as to the results and performance of any information obtained from the SCDNR is entirely assumed by the recipient. SCDNR welcomes suggestions on how to improve our home page and correct errors.</p>
-                <p>
+                
         </div>
 
     </div>
@@ -406,7 +405,7 @@
                         Columbia, SC 29201<br>
                         <a href="http://hydrology.dnr.sc.gov/">http://hydrology.dnr.sc.gov/</a>
                     </p>
-                    <a href="http://dnr.sc.gov/"><img src="images/dnr-logo-small.gif" alt="SC Department of Natural Resources logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
+                    <a href="http://dnr.sc.gov/"><img src="http://hydrology.dnr.sc.gov/images/dnr-logo-small.gif" alt="SC Department of Natural Resources logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
                     <p class="mt-3">Copyright © 
                         <script type="text/javascript">
                             document.write(new Date().getFullYear());
@@ -421,7 +420,25 @@
     <!-- Bootstrap core JavaScript -->
     <script src="../vendor/jquery/jquery.min.js"></script>
     <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- font awesome -->
+    <script src="https://use.fontawesome.com/b4f8eb2c18.js"></script>
+    
+    <!--leaflet stuff-->
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet@2.0.3"></script>
+    <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.6"></script>
+    <script src="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/leaflet.markercluster.js"></script>
+    <script src="https://unpkg.com/esri-leaflet-cluster@2.0.0"></script>
+    <script src="https://unpkg.com/leaflet-gesture-handling"></script>
+    
+    <!-- dygraph for the hydrograph, papaParse for the json and csv parsing -->
+    <script src="js/dygraph-combined.js"></script>
+    <script src="js/papaparse.min.js"></script>
+
+    <!-- JS for this application -->
     <script src="js/gw.js"></script>
+    
 
 </body>
 

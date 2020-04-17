@@ -355,27 +355,37 @@ var roundToDec = function(num){
 	return newNum
 }
 
+var upperVal
+var lowerVal
+
 function drawGraph() {
 	
 	//padding based on percentage of range
 	var padding = (valmax - valmin)*.1
 	
+    lowerVal = roundToDec(valmax+padding)
+    upperVal = roundToDec(valmin-padding)
+    
     hg.updateOptions({
     file: dataArray.sort(function(a,b){return a[0]-b[0]}),
-    labels: ["Date", "Avg Daily Level", "Manual Level"],
+    labels: ["Date", "Daily Avg Level", "Manual Level"],
     rollPeriod: 0,
-    valueRange: [roundToDec(valmax+padding), roundToDec(valmin-padding)],
+    valueRange: [lowerVal, upperVal],
     ylabel: "ft below land surface",
     xRangePad: 10,
-    zoomCallback: function(minDate, maxDate) {
-        //This happens when you do a zoom action on the hydrograph
+    zoomCallback: function(minDate, maxDate,yVals) {
+        //After a zoom action on the hydrograph, sync the inputs (ie get from graph) to reflect the new values.
         var min = new Date(minDate);
         var max = new Date(maxDate);
+        
         $("#startdate").val(formatDate(min));
         $("#enddate").val(formatDate(max));
-		$("#upper").val(roundToDec(hg.yAxisRange()[1]))
-		$("#lower").val(roundToDec(hg.yAxisRange()[0]))
         
+        //always set the value range to the y axis values specified in the input boxes, which is basically disabling the y zoom.
+        this.updateOptions({
+            valueRange:[lowerVal,upperVal]
+        });
+
     },
     series: {
         'Manual Level': {
@@ -385,7 +395,7 @@ function drawGraph() {
             color: "rgba(0, 43, 163, 0.78)",
             fillAlpha: 0.2
         },
-        'Avg Daily Level': {
+        'Daily Avg Level': {
             strokeWidth: 2,
             color: "#279ff4",
             connectSeparatedPoints:true
@@ -409,8 +419,8 @@ function drawGraph() {
     var end = new Date(hg.xAxisRange()[1])
     $("#enddate").val(formatDate(end));
 	
-	$("#upper").val(hg.yAxisRange()[1])
-	$("#lower").val(hg.yAxisRange()[0])
+	$("#upper").val(upperVal)
+	$("#lower").val(lowerVal)
 	
 	$("#loading").hide();
 
@@ -436,22 +446,30 @@ $("#reset").click(function() {
 });
 
 //for filtering value (y) axis
-
+//define upper and lower values based on the input boxes for this event.
 $("#y-set").on('click', function(){
-	var upperVal = $("#upper").val();
-	var lowerVal = $("#lower").val();
+    
+	upperVal = $("#upper").val();
+	lowerVal = $("#lower").val();
 	hg.updateOptions({
 		valueRange:[lowerVal, upperVal]
 	});
+    
 });
 
+//when clear, reset just like when graph initiated, using valmin and valmax
 $("#y-clear").on('click', function(){
 	var padding = (valmax - valmin)*.1
-	hg.updateOptions({
-		valueRange: [roundToDec(valmax+padding), roundToDec(valmin-padding)]
-	});
-	$("#upper").val(roundToDec(valmin-padding))
-	$("#lower").val(roundToDec(valmax+padding))
+	
+    lowerVal = roundToDec(valmax+padding)
+    upperVal = roundToDec(valmin-padding)
+    
+    hg.updateOptions({
+        valueRange: [lowerVal, upperVal]
+    });
+    
+	$("#upper").val(upperVal)
+	$("#lower").val(lowerVal)
 });
 
 $("#clear-hg-btn").click(function(){
@@ -553,13 +571,6 @@ $('#manualview').click(function() {
         hg.setVisibility(1, false);
         $('#manual-show').text('View')
     }
-    var upperVal = $("#upper").val();
-	var lowerVal = $("#lower").val();
-    console.log(lowerVal,upperVal)
-    console.log(hg.yAxisRange()[0],hg.yAxisRange()[1])
-    hg.updateOptions({
-        valueRange:[lowerVal,upperVal]
-    });
 });
 
 $("#print-hg-btn").on('click',function(){
