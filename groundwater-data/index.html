@@ -35,15 +35,14 @@
     <script src="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/leaflet.markercluster.js"></script>
     <script src="https://unpkg.com/esri-leaflet-cluster@2.0.0"></script>
     <script src="https://unpkg.com/leaflet-gesture-handling"></script>
-    <script src="js/html2canvas.min.js"></script>
-    
+
     
 </head>
 
 <body>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg text-white fixed-top">
+    <nav class="navbar navbar-expand-lg text-white fixed-top d-print-none">
         <div class="container">
             <img src="../images/dnr-logo-small.gif" id="nav-logo" alt="scdnr-logo">
             <a class="navbar-brand ml-5 pl-5 pl-md-1" href="../index.html">SCDNR Hydrology</a>
@@ -97,7 +96,7 @@
     </nav>
 
     <!-- Header with Background Image -->
-    <header class="business-header">
+    <header class="business-header d-print-none">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 my-sm-4 pt-3 pt-sm-0 background-text">
@@ -111,7 +110,7 @@
     <!-- Page Content -->
     <div class="container">
 		
-       <div class="row white-bg">
+       <div class="row white-bg d-print-none">
             <div class="col-lg-12 toggler">
                 <h2>Overview</h2>
                 <p>Use the data viewer below to view or download groundwater data from the SCDNR groundwater monitoring network. Daily average groundwater levels are provided in feet below land surface and are calculated for each day missing 7 or fewer hourly measurements. Manual measurements in feet below land surface also are available for review and download. In the case of flowing wells, where water levels rise above land surface, negative water-level values indicate water levels are above rather than below land surface. Data downloaded from this site are saved in a CSV file format.</p>
@@ -191,10 +190,10 @@
           </div>
         </div>
         
-        <div id="main" class="row white-bg">
+        <div id="main" class="row white-bg ">
             <div class="col-lg-12 m-0 p-0">
                 <div id="map">
-					<div class="pt-2" id="table">
+					<div class="pt-2 d-print-none" id="table">
 						<div id="close-tab" class="d-inline">
 							<p class="text-center mt-1">Selected Well <i id="arrow-down" class="fas fa-angle-down ml-4 mr-0"></i><i id="arrow-up" class="fas fa-angle-up ml-4 mr-0"></i></p>
 						</div>
@@ -228,7 +227,7 @@
 						</div>
 					</div>
 				</div> 
-				<p class='ml-1 mt-2 mb-0 h6'>Wells are color-coded by aquifer. <a href="#" data-toggle="modal" data-target="#legend-modal">View Legend</a>.</p>
+				<p class='ml-1 mt-2 mb-0 h6 d-print-none'>Wells are color-coded by aquifer. <a href="#" data-toggle="modal" data-target="#legend-modal">View Legend</a>.</p>
 			</div>
         </div>
         
@@ -244,7 +243,15 @@
                     </div>
                     <div class="col-lg-4 d-inline-flex">
                         <img alt="dark blue circle" src="image/manual.png" />
-                        <p>Manual Water Levels - <button class="btn btn-sm btn-outline-primary" role="button" id="manualview"><span id="manual-show">Hide</span></button></p>
+                        <p>Manual Water Levels - <button class="btn btn-sm btn-outline-primary d-print-none" role="button" id="manualview"><span id="manual-show">Hide</span></button></p>
+                    </div>
+                    <div class="col text-right d-none" id="print-hg">
+                        <button class="btn btn-sm btn-outline-primary d-print-none" title="Print hydrograph." role="button" id="print-hg-btn">
+                            <i class="fas fa-print fa-lg m-0"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary d-print-none" title="Clear hydrograph." role="button" id="clear-hg-btn">
+                            <i class="fas fa-times fa-lg m-0"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="row p-3">
@@ -252,79 +259,81 @@
                     <div class="col-lg-12 p-0" id="chart">
                     </div>
                 </div>
-            </div>    
-			<h3>Custom Axis Options</h3>
-			<p class="ml-1">Set custom range values for the X and Y axes of the hydrograph. You can also click and drag your cursor on the hydrograph for a custom view.</p>
-            <div class="row ml-lg-4 ml-1 mb-4">
-                <div class="col-lg-4" id="datefilter">
-					<h4>Date Range (X-Axis)</h4>
-                    <form>
-                        <div class="form-group">
-                            <label for="startdate">Start Date</label>
-                            <input type="date" class="form-control" id="startdate" placeholder="mm/dd/yyyy" disabled>
-                        </div>
-                        <div class="form-group">
-                            <label for="enddate">End Date</label>
-                            <input type="date" class="form-control" id="enddate" placeholder="mm/dd/yyyy" disabled>
-                        </div>
-						
-                        <div id="button-group">
-                            <button id="filter" type="button" class="btn btn-outline-primary " disabled>Update</button>
-                            <button id="reset" type="button" class="btn btn-outline-success 2" disabled>Full Record</button>
-                        </div>    
-                    </form>
-                </div>
-				<div class="col-lg-6 mt-4 mt-lg-0" id="axis">
-					<h4>Value Range (Y-Axis)</h4>
-					<form>
-                        <div role="group" class="form-group" id="upper-group">
-                            <label for="upper">Upper</label>
-                            <input type="number" class="form-control" step="0.1" id="upper" placeholder="" disabled>
-                        </div>
-                        <div role="group" class="form-group" id="lower-group">
-                            <label for="lower">Lower</label>
-                            <input type="number" class="form-control" step="0.1" id="lower" placeholder="" disabled>
-                        </div>
-						
-                        <div id="button-group">
-							<button id="y-set" type="button" class="btn btn-outline-primary " disabled>Update</button>
-                            <button id="y-clear" type="button" class="btn btn-outline-success " disabled>Default</button>
-                        </div>    
-                    </form>
-				</div>
             </div>
-            
-			<h3>Download Data</h3>
-			<p class="ml-1">Daily water level and manual measurement data are downloaded in a CSV format. If 'Selected Period Only' is chosen, the downloaded data will correspond to the dates shown in the Date Range option and X-Axis on the hydrograph.</p>
-            <div class="row mt-4 ml-lg-3">
-                <div class="col-lg-12">
-                    <div class="form-check">
-						<input class="mx-1 form-check-input" type="radio" id="fullrecord" name="record" value="full" checked>
-                        <label class="mx-2 form-check-label">Full Period of Record</label>
-					</div>
-					<div class="form-check">
-						<input class="mx-1 form-check-input" type="radio" id="select" name="record" value="selected">
-                        <label class="mx-2 form-check-label">Selected Period Only (dates above)</label>
+            <div class="d-print-none" id="options">
+                <h3>Custom Axis Options</h3>
+                <p class="ml-1">Set custom range values for the X and Y axes of the hydrograph. You can also click and drag your cursor on the hydrograph for a custom view.</p>
+                <div class="row ml-lg-4 ml-1 mb-4">
+                    <div class="col-lg-4" id="datefilter">
+                        <h4>Date Range (X-Axis)</h4>
+                        <form>
+                            <div class="form-group">
+                                <label for="startdate">Start Date</label>
+                                <input type="date" class="form-control" id="startdate" placeholder="mm/dd/yyyy" disabled>
+                            </div>
+                            <div class="form-group">
+                                <label for="enddate">End Date</label>
+                                <input type="date" class="form-control" id="enddate" placeholder="mm/dd/yyyy" disabled>
+                            </div>
+
+                            <div id="button-group">
+                                <button id="filter" type="button" class="btn btn-outline-primary " disabled>Update</button>
+                                <button id="reset" type="button" class="btn btn-outline-success 2" disabled>Full Record</button>
+                            </div>    
+                        </form>
                     </div>
-                    <div class="my-2" id="buttons">
-                        <button class="btn btn-primary" disabled id="dailydl" title="Select a well from the map to download data."><i class="fa fa-arrow-circle-down" aria-hidden="true"></i>Download Now</button>
+                    <div class="col-lg-6 mt-4 mt-lg-0" id="axis">
+                        <h4>Value Range (Y-Axis)</h4>
+                        <form>
+                            <div role="group" class="form-group" id="upper-group">
+                                <label for="upper">Upper</label>
+                                <input type="number" class="form-control" step="0.1" id="upper" placeholder="" disabled>
+                            </div>
+                            <div role="group" class="form-group" id="lower-group">
+                                <label for="lower">Lower</label>
+                                <input type="number" class="form-control" step="0.1" id="lower" placeholder="" disabled>
+                            </div>
+
+                            <div id="button-group">
+                                <button id="y-set" type="button" class="btn btn-outline-primary " disabled>Update</button>
+                                <button id="y-clear" type="button" class="btn btn-outline-success " disabled>Default</button>
+                            </div>    
+                        </form>
+                    </div>
+                </div>
+
+                <h3>Download Data</h3>
+                <p class="ml-1">Daily water level and manual measurement data are downloaded in a CSV format. If 'Selected Period Only' is chosen, the downloaded data will correspond to the dates shown in the Date Range option and X-Axis on the hydrograph.</p>
+                <div class="row mt-4 ml-lg-3">
+                    <div class="col-lg-12">
+                        <div class="form-check">
+                            <input class="mx-1 form-check-input" type="radio" id="fullrecord" name="record" value="full" checked>
+                            <label class="mx-2 form-check-label">Full Period of Record</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="mx-1 form-check-input" type="radio" id="select" name="record" value="selected">
+                            <label class="mx-2 form-check-label">Selected Period Only (dates above)</label>
+                        </div>
+                        <div class="my-2" id="buttons">
+                            <button class="btn btn-primary" disabled id="dailydl" title="Select a well from the map to download data."><i class="fa fa-arrow-circle-down" aria-hidden="true"></i>Download Now</button>
+                        </div>
                     </div>
                 </div>
             </div>
         </div> 
 		
-		<div class="row white-bg">
+		<div class="row white-bg d-print-none">
 
                 <h4>Disclaimer</h4>
                 <p style="font-size:80%;">Data presented on this web site may have been retrieved partially or entirely from several sources including federal or other state agencies. SCDNR makes every effort to provide accurate and complete information, however, the database is a "work in progress" and updates will occur regularly. In no event should the South Carolina Department of Natural Resources or any contributing agencies be liable for any direct or indirect, incidental, or other damages arising from the use of these data. SCDNR does not warrant, guarantee, or make any representations regarding the use, or the results of the use, of the information provided to you by the Department in terms of correctness, accuracy, reliability, timeliness or otherwise. The entire risk as to the results and performance of any information obtained from the SCDNR is entirely assumed by the recipient. SCDNR welcomes suggestions on how to improve our home page and correct errors.</p>
                 <p>
-            </div>
+        </div>
 
     </div>
     <!-- /.container -->
 
     <!-- Footer -->
-    <footer class="py-5 ">
+    <footer class="py-5 d-print-none">
         <div class="container">
         <h5>SCDNR Hydrology Section</h5>
             <div class="row mt-4">

@@ -52,7 +52,7 @@ function style(feature) {
 
 //start the highlight marker at 0,0 so it's out of sight. Then when a marker is clicked, all you have to do is setLatLng... def a workaround.
 var highlight = L.circleMarker([0, 0], {
-    color: "#ff1d00",
+    color: "#fc031c",
     radius: 9,
     fillOpacity: 0,
     weight: 5,
@@ -381,12 +381,12 @@ function drawGraph() {
         'Manual Level': {
             strokeWidth: 0.0,
             drawPoints: true,
-            pointSize: 3,
+            pointSize: 3.5,
             color: "rgba(0, 43, 163, 0.78)",
             fillAlpha: 0.2
         },
         'Avg Daily Level': {
-            strokeWidth: 1.5,
+            strokeWidth: 2,
             color: "#279ff4",
             connectSeparatedPoints:true
         }
@@ -454,12 +454,14 @@ $("#y-clear").on('click', function(){
 	$("#lower").val(roundToDec(valmax+padding))
 });
 
-$("#clear-data").click(function(){
+$("#clear-hg-btn").click(function(){
     hg.destroy();
     initGraph()
     $("#dailydl").prop("disabled",true)
         .attr("title", "Select a well from the map to download data.")
     $("#filter, #reset, #manualview, #clear-data, #y-set, #y-clear, #enddate, #startdate, #upper, #lower").prop("disabled", true);
+    $("#print-hg").addClass("d-none");
+    $("#clear-hg").addClass("d-none");
     $("#wellTitle").text("Select a well from the map.")
 	$("#startdate").val("");
     $("#enddate").val("");
@@ -539,6 +541,8 @@ $("#getdata").click(function() {
     $("#dailydl").prop("disabled",false)
         .attr("title", "Download daily data.")
     $("#filter, #reset, #manualview, #clear-data, #y-set, #y-clear, #enddate, #startdate, #upper, #lower").prop("disabled", false);
+    $("#print-hg").removeClass("d-none");
+    $("#clear-hg").removeClass("d-none");
 });
 
 $('#manualview').click(function() {
@@ -556,4 +560,8 @@ $('#manualview').click(function() {
     hg.updateOptions({
         valueRange:[lowerVal,upperVal]
     });
+});
+
+$("#print-hg-btn").on('click',function(){
+    window.print()
 });
