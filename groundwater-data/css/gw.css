@@ -305,9 +305,8 @@ footer {
 .dygraph-title{
     font-size:16px;
 }
-
-#datefilter label{
-    font-weight: normal;
+#dateFilter input, #axis input {
+    height:40px
 }
 .dygraph-legend{
     top:-20px !important;
