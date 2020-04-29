@@ -183,7 +183,7 @@ $("#close-tab").click(function(){
 	if (tabStatus == 0) {
 		$("#well-info").fadeOut(200, function(){
 			$("#table").animate({
-			bottom:"-80px"
+			bottom:-$("#table").height()
 		}, 400 );
 		});
 		$("#arrow-down").fadeOut(200, function() {
@@ -269,7 +269,8 @@ var initGraph = function(){
         [0]
         ], {
             valueRange: [0, 0],
-            ylabel: "ft below land surface"
+            ylabel: "ft below land surface",
+            legend:'always'
         });
 };
 
@@ -369,6 +370,7 @@ function drawGraph() {
     hg.updateOptions({
     file: dataArray.sort(function(a,b){return a[0]-b[0]}),
     labels: ["Date", "Daily Avg Level", "Manual Level"],
+    labelsDiv: 'hg-legend',
     rollPeriod: 0,
     valueRange: [lowerVal, upperVal],
     ylabel: "ft below land surface",
@@ -387,6 +389,29 @@ function drawGraph() {
         });
 
     },
+    legendFormatter: function (data) {
+        
+        var displayDate
+        
+        data.series.forEach(function (series) {
+            if (series.label == "Manual Level" && series.yHTML != null) {
+                displayDate = new Date(data.x).toLocaleDateString() + " " + new Date(data.x).toLocaleTimeString();
+            } else {
+                displayDate = new Date(data.x).toLocaleDateString();
+            }
+        });        
+        
+        if (data.x == null) {
+            return 'Date: <br>'+ data.series.map(element => {
+                return '<span style="font-weight:bold; color:' + element.color + ';">' + '<div class="dygraph-legend-line" style="border-bottom-color:' + element.color + ';"></div>' + ' ' + element.labelHTML + '</span><br>';
+            }).join(' ');
+        } else {
+            
+            return  'Date: ' + displayDate+'<br>' + data.series.map(element => {
+                return '<span style="font-weight:bold; color:' + element.color + ';">' + '<div class="dygraph-legend-line" style="border-bottom-color:' + element.color + ';"></div>' + ' ' + element.labelHTML + ': ' + (element.yHTML ? element.yHTML : '') + '</span><br>';
+            }).join(' ');
+        }
+    },
     series: {
         'Manual Level': {
             strokeWidth: 0.0,
@@ -399,13 +424,6 @@ function drawGraph() {
             strokeWidth: 2,
             color: "#279ff4",
             connectSeparatedPoints:true
-        }
-    },
-	axes: {
-        x: {
-            valueFormatter: function (d) {
-                return new Date(d).toLocaleDateString();
-            }
         }
     },
     visibility: [true, true]
@@ -425,7 +443,7 @@ function drawGraph() {
 	$("#loading").hide();
 
 };
-
+    
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 // END PARSING DATA AND DRAWING GRAPH
 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -481,6 +499,7 @@ $("#clear-hg-btn").click(function(){
     $("#print-hg").addClass("d-none");
     $("#clear-hg").addClass("d-none");
     $("#wellTitle").text("Select a well from the map.")
+    $('#wellAq').text("");
 	$("#startdate").val("");
     $("#enddate").val("");
 	$("#upper").val("");
@@ -499,7 +518,7 @@ var makecsv = function(indata, filename) {
 
 	//making a new array with more friendly dates for download to csv - doesn't print time. is that ok?  
     $.each(indata, function(i,v){
-        betterdata.push([v[0].toLocaleDateString(),v[1],v[2]])
+        betterdata.push([v[0].toLocaleString(),v[1],v[2]])
     });
     
     var dldata = headers.concat(betterdata),

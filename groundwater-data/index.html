@@ -13,9 +13,6 @@
     <!-- Bootstrap core CSS -->
     <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- CSS for this application -->
-    <link href="css/gw.css" rel="stylesheet" type="text/css" />
-
     <!-- leaflet, ESRI leaflet, and plugin css -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" />
     <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/Leaflet/Leaflet.markercluster/v1.0.0-rc.1/dist/MarkerCluster.Default.css">
@@ -25,6 +22,12 @@
     
     <!-- font awesome css -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    
+    <!-- CSS dygraph -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.css" />
+    
+     <!-- CSS for this application -->
+    <link href="css/gw.css" rel="stylesheet" type="text/css" />
 
 </head>
 
@@ -196,7 +199,7 @@
 						<div id="close-tab" class="d-inline">
 							<p class="text-center mt-1">Selected Well <i id="arrow-down" class="fas fa-angle-down ml-4 mr-0"></i><i id="arrow-up" class="fas fa-angle-up ml-4 mr-0"></i></p>
 						</div>
-						<div id="well-info" class="row m-2">
+						<div id="well-info" class="row mx-2">
 							<div class="col">
 								<h5>Well ID</h5>
 								<p id="id"></p>
@@ -225,7 +228,9 @@
 							
 						</div>
 					</div>
+                    
 				</div> 
+               
 				<p class='ml-1 mt-2 mb-0 h6 d-print-none'>Wells are color-coded by aquifer. <a href="#" data-toggle="modal" data-target="#legend-modal">View Legend</a>.</p>
 			</div>
         </div>
@@ -244,63 +249,71 @@
                         <img alt="dark blue circle" src="image/manual.png" />
                         <p>Manual Water Levels - <button class="btn btn-sm btn-outline-primary d-print-none" role="button" id="manualview"><span id="manual-show">Hide</span></button></p>
                     </div>
-                    <div class="col text-right d-none" id="print-hg">
-                        <button class="btn btn-sm btn-outline-primary d-print-none" title="Print hydrograph." role="button" id="print-hg-btn">
-                            <i class="fas fa-print fa-lg m-0"></i>
-                        </button>
-                        <button class="btn btn-sm btn-outline-secondary d-print-none" title="Clear hydrograph." role="button" id="clear-hg-btn">
-                            <i class="fas fa-times fa-lg m-0"></i>
-                        </button>
-                    </div>
                 </div>
-                <div class="row p-3">
+                <div class="row px-3" pb-3>
                     <!--<div class="lds-ring"><div></div><div></div><div></div><div></div></div>-->
                     <div class="col-lg-12 p-0" id="chart">
                     </div>
                 </div>
+                    <div id="print-hg" class="text-right d-none">
+                        <button class="btn btn-sm btn-outline-primary d-print-none m-2" title="Print hydrograph." role="button" id="print-hg-btn">
+                            Print <i class="fas fa-print fa-lg mx-2"></i>
+                        </button>
+                        <button class="btn btn-sm btn-outline-secondary d-print-none m-2" title="Clear hydrograph." role="button" id="clear-hg-btn">
+                            Clear <i class="fas fa-times fa-lg mx-2"></i>
+                        </button>
+                    </div>
             </div>
             <div class="d-print-none" id="options">
                 <h3>Custom Axis Options</h3>
-                <p class="ml-1">Set custom range values for the X and Y axes of the hydrograph. You can click and drag your cursor on the hydrograph to select a custom date range.</p>
+                <p class="ml-1">Set custom range values for the X and Y axes of the hydrograph. You can click and drag your cursor on the hydrograph to select a custom date range. Double-click the chart to return to the full period of record. </p>
                 <div class="row ml-lg-4 ml-1 mb-4">
-                    <div class="col-lg-4" id="datefilter">
+                    <div class="col-lg-5" id="datefilter">
                         <h4>Date Range (X-Axis)</h4>
-                        <form>
+                        <form class="form-inline">
+                            <style>
+                                #startdate {margin-left: 15px;}
+                                #enddate{margin-left: 21px;}
+                            </style>
                             <div class="form-group">
                                 <label for="startdate">Start Date</label>
                                 <input type="date" class="form-control" id="startdate" placeholder="mm/dd/yyyy" disabled>
                             </div>
-                            <div class="form-group">
+                            <div class="form-group mt-1">
                                 <label for="enddate">End Date</label>
                                 <input type="date" class="form-control" id="enddate" placeholder="mm/dd/yyyy" disabled>
-                            </div>
-
-                            <div id="button-group">
+                            </div> 
+                        </form>
+                        <div class="button-group my-3">
                                 <button id="filter" type="button" class="btn btn-outline-primary " disabled>Update</button>
                                 <button id="reset" type="button" class="btn btn-outline-success 2" disabled>Full Record</button>
-                            </div>    
-                        </form>
+                        </div>   
+
                     </div>
-                    <div class="col-lg-6 mt-4 mt-lg-0" id="axis">
+                    <div class="col-lg-4 mt-4 mt-lg-0" id="axis">
                         <h4>Value Range (Y-Axis)</h4>
-                        <form>
+                        <form class="form-inline">
+                            <style>
+                                #upper {margin-left: 15px;}
+                                #lower {margin-left: 17px;}
+                            </style>
                             <div role="group" class="form-group" id="upper-group">
                                 <label for="upper">Upper</label>
                                 <input type="number" class="form-control" step="0.1" id="upper" placeholder="" disabled>
                             </div>
-                            <div role="group" class="form-group" id="lower-group">
+                            <div role="group" class="form-group mt-1" id="lower-group">
                                 <label for="lower">Lower</label>
                                 <input type="number" class="form-control" step="0.1" id="lower" placeholder="" disabled>
                             </div>
-
-                            <div id="button-group">
-                                <button id="y-set" type="button" class="btn btn-outline-primary " disabled>Update</button>
-                                <button id="y-clear" type="button" class="btn btn-outline-success " disabled>Default</button>
-                            </div>    
-                        </form>
+                           </form>
+                         <div class="button-group my-3">
+                            <button id="y-set" type="button" class="btn btn-outline-primary " disabled>Update</button>
+                            <button id="y-clear" type="button" class="btn btn-outline-success " disabled>Default</button>
+                        </div> 
                     </div>
+                    
                 </div>
-
+                
                 <h3>Download Data</h3>
                 <p class="ml-1">Daily water level and manual measurement data are downloaded in a CSV format. If 'Selected Period Only' is chosen, the downloaded data will correspond to the dates shown in the Date Range option and X-Axis on the hydrograph.</p>
                 <div class="row mt-4 ml-lg-3">
@@ -433,13 +446,13 @@
     <script src="https://unpkg.com/leaflet-gesture-handling"></script>
     
     <!-- dygraph for the hydrograph, papaParse for the json and csv parsing -->
-    <script src="js/dygraph-combined.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dygraph/2.1.0/dygraph.min.js"></script>
     <script src="js/papaparse.min.js"></script>
 
     <!-- JS for this application -->
     <script src="js/gw.js"></script>
     
-
+    
 </body>
 
 </html>
