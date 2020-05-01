@@ -19,7 +19,6 @@
     <link href="css/hydro.css" rel="stylesheet">
 	
 	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.css"/>
-	<link rel="stylesheet" type="text/css" href="/DataTables/datatables.css">
   
 </head>
 
@@ -28,7 +27,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg text-white fixed-top">
         <div class="container">
-            <img src="images/dnr-logo-small.gif" id="nav-logo">
+            <a href="http://www.dnr.sc.gov/"><img src="images/dnr-logo-small.gif" id="nav-logo" alt="scdnr-logo"></a>
             <a class="navbar-brand ml-5 pl-5 pl-md-1" href="index.html">SCDNR Hydrology</a>
             <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -36,43 +35,52 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html">About Us</a>
                     </li>
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
-					<a class="dropdown-item" href="water-planning.html">
-					Water Planning</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataOne" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Water Planning</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataOne">
+						<a class="dropdown-item" href="water-planning.html">Overview</a>
+						<a class="dropdown-item" href="state-and-river-basin-planning.html">State and River Basin Planning</a>
+						<a class="dropdown-item" href="edisto-basin-planning.html">Edisto Basin Planning</a>
+						<a class="dropdown-item" href="water-demand.html">Water Demand Projections</a>
+						<a class="dropdown-item" href="surface-water-models.html">Surface Water Models</a>
+						<a class="dropdown-item" href="groundwater-models.html">Groundwater Models</a>
+						</div>
+                    </li>
+					<!--Data Dropdown Done-->
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataTwo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataTwo">
 					<a class="dropdown-item" href="groundwater.html">
 					Groundwater</a>
 					<a class="dropdown-item" href="surface-water.html">
 					Surface Water</a>
 					</div>
 					</li>
-					<!--Data Dropdown Done-->					
-                     <li class="nav-item">
-                        <a class="nav-link" href="publications.html">Publications</a>
-                    </li>
+					<!--Data Dropdown Done-->	
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataThree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataThree">
 					<a class="dropdown-item" href="groundwater-data/index.html">
 					Groundwater Level Data</a>
-					<a class="dropdown-item" href="http://www.dnr.sc.gov/hydro/gl_home.html">
+					<a class="dropdown-item" href="geophysical-logs.html">
 					Geophysical Logs</a>
 					<a class="dropdown-item" href="well-database.html">
 					Coastal Plain Well Database</a>
 					<a class="dropdown-item" href="streamflow-and-lake-levels.html">
 					Streamflow and Lake Levels</a>
-					<a class="dropdown-item" href="swam-models.html">
-					Surface Water Models</a>
 					</div>
 					</li>
-					<!--Data Dropdown Done-->	
+					<!--Data Dropdown Done-->
                      <li class="nav-item">
-                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=tangnar123%40gmail.com&ctz=America%2FNew_York">Calendar</a>
+                        <a class="nav-link" href="publications.html">Publications</a>
+                    </li>					
+                     <li class="nav-item">
+                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a>
                     </li>
                     
                 </ul>
@@ -85,8 +93,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 my-sm-4 pt-3 pt-sm-0 background-text">
-                    <h1 class="page-header">Publications</h1>
-                    <p class="text-white lead">The following is a listing of reports produced by the Hydrology Section and its predecessor, the South Carolina Water Resources Commission (SCWRC). For a complete listing of all publications maintained by the Division visit: <a style="color:white" href="www.dnr.sc.gov/lwc/pubs/waterpubs.html">www.dnr.sc.gov/lwc/pubs/waterpubs.html</a>. Copies of these reports are available for review in the Hydrology Section's Columbia office. Copies of some reports are also available from the Charleston field office.</p>
+                    <h1 class="page-header">Hydrology Section Publications</h1>
+                    <p class="text-white lead">Search and download reports and maps produced by the SCDNR Hydrology Section.</p>
                 </div>
             </div>
         </div>
@@ -96,10 +104,8 @@
     <div class="container">
       <div class="row white-bg">
             <div class="col">
-                <p><a href="http://dnr.sc.gov/lwc/pubs/waterpubs.html">Land, Water, and Conservation Division Publications</a></p>
-				<p><a href="http://www.dnr.sc.gov/water/admin/pubs/pdfs/SCWaterPlan2.pdf">South Carolina water plan -- second edition</a><br>
-				A.W. Badr, Andrew Wachob, and Joseph A. Gellici 2004</p>
-				<p><a href="http://dnr.sc.gov/water/hydro/HydroPubs/assessment.htm">South Carolina State Water Assessment</a></p>
+				<h2>Overview</h2>
+				<p>Listed in the table below are all the reports produced by the SCDNR Hydrology Section and its predecessor, the South Carolina Water Resources Commission (SCWRC) relating to the surface water and groundwater resources of South Carolina. Copies of these reports are available for review in the SCDNR’s Columbia office, and many reports are available for download as pdf files. To request copies of these reports, or for more information about these publications, contact Andrew Wachob at <a href="mailto: WachobaA@dnr.sc.gov">wachoba@dnr.sc.gov</a> or by phone at (803)734-6440.</p>
             </div>
 		</div>
 
@@ -108,77 +114,1169 @@
 	<div class="row white-bg">
 		<div class="col">
 		<h2>Publications Table</h2>
-		<table class="table table-bordered table-hover table-condensed" id="myTable">
-			<thead><tr><th style="width:30%" title="Field #1">Title</th>
-			<th style="width:20%" title="Field #2">Publication #</th>
-			<th style="width:20%" title="Field #3">Author(s)</th>
-			<th style="width:10%" title="Field #4">Date</th>
-			<th style="width:20%" title="Field #5">Counties or Region</th>
-			</tr></thead>
-			<tbody><tr>
-			<td><a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_60_Potentiometric_maps_2016.pdf">Potentiometric Surface Maps of the South Carolina Coastal Plain, November&#8208;December 2016 (10MB)</a></td>
-			<td>SCDNR Water Resources Report 60</td>
-			<td>Andrew Wachob, Joseph A. Gellici, and Brooke Czwartacki</td>
-			<td align="right">2017</td>
-			<td>Coastal Plain Area</td>
-			</tr>
-			<tr>
-			<td><a href="http://dnr.sc.gov/water/hydro/HydroPubs/Abs_dnr_R42.htm">Hydrostratigraphy of the ORG-393 Core Hole at Orangeburg, South Carolina</a></td>
-			<td>SCDNR Water Resources Report 42</td>
-			<td>Joseph A. Gellici</td>
-			<td align="right">2007</td>
-			<td>Orangeburg</td>
-			</tr>
-			<tr>
-			<td><a href="http://dnr.sc.gov/water/hydro/HydroPubs/Abs_wrc_R157.htm">Potentiometric surface of the Floridan aquifer in South Carolina, July 1986</a></td>
-			<td>SCWRC Report 157</td>
-			<td>Michael S. Crouch, W. Brian Hughes, W. Robert Logan, and J. Kevin Meadows</td>
-			<td align="right">1987</td>
-			<td>Coastal Plain Area</td>
-			</tr>
-			<tr>
-			<td><a href="http://dnr.sc.gov/water/hydro/HydroPubs/Abs_dnr_R44.htm">Ditch Pond Carolina Bay restoration project, Aiken and Barnwell Counties, South Carolina - Phase II</a></td>
-			<td>SCDNR Water Resources Report 44</td>
-			<td>Scott V. Harder, Joseph A. Gellici, and Andrew Wachob</td>
-			<td align="right">2007</td>
-			<td>Aiken, Barnwell</td>
-			</tr>
-			<tr>
-			<td><a href="http://dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_50_WL_Data.pdf">Ground-Water Levels in South Carolina 2006-2010</a></td>
-			<td>SCDNR Water Resources Report 50</td>
-			<td>Scott V. Harder, Constance E. Gawne, Joseph A. Gellici and Andrew Wachob</td>
-			<td align="right">2012</td>
-			<td>Statewide</td>
-			</tr>
-			<tr>
-			<td><a href="http://dnr.sc.gov/water/hydro/HydroPubs/Abs_wrc_R173.htm">Impact of the Spartanburg Water System on the Hydropower Generation of Bluestone Energy Design, Inc., and Clifton Power Corporation Facilities</a></td>
-			<td>SCWRC Report 173</td>
-			<td>A.W. (Bud) Badr</td>
-			<td align="right">1993</td>
-			<td>Spartanburg</td>
-			</tr>
-			</tbody></table>
+				<table class="table table-hover table-condensed" id="myTable">
+			<thead>
+				<tr>
+					<th>Title</th>
+					<th>Author(s)</th>
+					<th>Date</th>
+					<th>Publication #</th>
+					<th>Counties or Region</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>			
+				  <td><a href="pdfs/basin-planning/SC_Water_Planning_Framework.pdf">South Carolina State Water Planning Framework</a></td>
+				  <td>Hydrology Section/State Water Planning Advisory Committee</td>
+				  <td>2019</td>
+				  <td></td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/basin-planning/Projection_Methods.pdf">Projection Methods for Off-stream Water Demand in South Carolina</a></td>
+				  <td>Alex Pellett</td>
+				  <td>2019</td>
+				  <td></td>
+				  <td>Statewide</td>
+				</tr>				
+				<tr>			
+				  <td><a href="pdfs/reports/Report_61_Floridan_Gordon_2018.pdf">Potentiometric Surface Maps of the Upper and Middle Floridan and Gordon Aquifers in South Carolina, November-December 2018</a></td>
+				  <td>Brooke Czwartacki, Andrew Wachob, and Joseph A. Gellici</td>
+				  <td>2019</td>
+				  <td>SCDNR Water Resources Report 61</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_60_Potentiometric_maps_2016.pdf">Potentiometric Surface Maps of the South Carolina Coastal Plain, November-December 2016</a></td>
+				  <td>Andrew Wachob, Joseph A. Gellici, and Brooke Czwartacki</td>
+				  <td>2017</td>
+				  <td>SCDNR Water Resources Report 60</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_59_Black%20Creek_2015.pdf">Potentiometric Surface of the Black Creek (Crouch Branch) Aquifer in South Carolina, November 2015</a></td>
+				  <td>Andrew Wachob and Brooke Czwartacki</td>
+				  <td>2016</td>
+				  <td>SCDNR Water Resources Report 59</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				 <td><a href="pdfs/reports/Report_58_Middendorf_2014.pdf">Potentiometric Surface of the Middendorf Aquifer in South Carolina, November 2014</a></td>
+				  <td>Andrew Wachob</td>
+				  <td>2015</td>
+				  <td>SCDNR Water Resources Report 58</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_57_GW_Network.pdf">South Carolina DNR Groundwater Monitoring Network Status Report, July 2009 through June 2014</a></td>
+				  <td>Scott V. Harder, Joseph A. Gellici, and Andrew Wachob</td>
+				  <td>2014</td>
+				  <td>SCDNR Water Resources Report 57</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_56_Floridan_2013.pdf">Potentiometric Surface of the Floridan and Tertiary Sand Aquifers in South Carolina, November 2013</a></td>
+				  <td>Andrew Wachob, Brenda L. Hockensmith, Katie Luciano, and C. Scott Howard</td>
+				  <td>2014</td>
+				  <td>SCDNR Water Resources Report 56</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_55_Black%20Creek_2012.pdf">Potentiometric Surface of the Black Creek Aquifer in South Carolina, November 2012</a></td>
+				  <td>Brenda L. Hockensmith, Andrew Wachob, C. Scott Howard, and Erin Koch</td>
+				  <td>2013</td>
+				  <td>SCDNR Water Resources Report 55</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_54_Middendorf_2011.pdf">Potentiometric Surface of the Middendorf Aquifer in South Carolina, November 2011</a></td>
+				  <td>Brenda L. Hockensmith, Andrew Wachob, C. Scott Howard, and Erin Koch</td>
+				  <td>2013</td>
+				  <td>SCDNR Water Resources Report 54</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_53_Floridan_2010.pdf">Potentiometric Surface of the Floridan and Tertiary Sand Aquifers in South Carolina, November 2010</a></td>
+				  <td>Brenda L. Hockensmith, Andrew Wachob, C. Scott Howard, and Erin Koch</td>
+				  <td>2013</td>
+				  <td>SCDNR Water Resources Report 53</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_52_Black_Creek_2009.pdf">Potentiometric Surface of the Black Creek Aquifer in South Carolina, November 2009</a></td>
+				  <td>Brenda L. Hockensmith</td>
+				  <td>2012</td>
+				  <td>SCDNR Water Resources Report 52</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_51_Middendorf_2009.pdf">Potentiometric Surface of the Middendorf Aquifer in South Carolina, November 2009</a></td>
+				  <td>Brenda L. Hockensmith</td>
+				  <td>2012</td>
+				  <td>SCDNR Water Resources Report 51</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_50_WL_Data.pdf">Ground-water Levels in South Carolina, 2006-2010</a></td>
+				  <td>Scott V. Harder, Constance E. Gawne, Joseph A. Gellici, and Andrew Wachob</td>
+				  <td>2012</td>
+				  <td>SCDNR Water Resources Report 50</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/assessment/SC_Water_Assessment_2.pdf">South Carolina State Water Assessment, Second Edition</a></td>
+				  <td>Andrew Wachob, A. Drennan Park, and Roy Newcome, Jr.</td>
+				  <td>2009</td>
+				  <td></td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/williamsburg.pdf">Ground-water Resources of Williamsburg County, South Carolina</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>2008</td>
+				  <td>SCDNR Water Resources Report 49</td>
+				  <td>Williamsburg</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report48fFloridan.pdf">Potentiometric Surface of the Floridan Aquifer and Tertiary Sand Aquifer in South Carolina, November 2004</a></td>
+				  <td>Brenda L. Hockensmith</td>
+				  <td>2009</td>
+				  <td>SCDNR Water Resources Report 48</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report47_BlackCreek.pdf">Potentiometric Surface of the Black Creek Aquifer in South Carolina, November 2004</a></td>
+				  <td>Brenda L. Hockensmith</td>
+				  <td>2008</td>
+				  <td>SCDNR Water Resources Report 47</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report46_Middendorf.pdf">Potentiometric Surface of the Middendorf Aquifer in South Carolina, November 2004</a></td>
+				  <td>Brenda L. Hockensmith</td>
+				  <td>2008</td>
+				  <td>SCDNR Water Resources Report 46</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_44_DPB.pdf">Ditch Pond Carolina Bay Restoration Project, Aiken and Barnwell Counties, South Carolina, Phase II</a></td>
+				  <td>Scott V. Harder, Joseph A. Gellici, and Andrew Wachob</td>
+				  <td>2007</td>
+				  <td>SCDNR Water Resources Report 44</td>
+				  <td>Aiken, Barnwell</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_43_Aiken.pdf">Hydrostratigraphy of the AIK-2448 and AIK-2449 Core Holes in the Breezy Hill Area of Aiken County, South Carolina</a></td>
+				  <td>Joseph A. Gellici</td>
+				  <td>2007</td>
+				  <td>SCDNR Water Resources Report 43</td>
+				  <td>Aiken</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_42_Org393.pdf">Hydrostratigraphy of the ORG-393 Core Hole at Orangeburg, South Carolina</a></td>
+				  <td>Joseph A. Gellici</td>
+				  <td>2007</td>
+				  <td>SCDNR Water Resources Report 42</td>
+				  <td>Orangeburg</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_41_WL_Data.pdf">Water Resources Data for South Carolina, 2000-2005</a></td>
+				  <td>Karen Agerton, A. Drennan Park, Constance E. Gawne, and Andrew Wachob</td>
+				  <td>2007</td>
+				  <td>SCDNR Water Resources Report 41</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCDNR_OF-12_Scott_Creek.pdf">Stage Data for Scott Creek, Edisto Beach, South Carolina</a></td>
+				  <td>Brenda L. Hockensmith</td>
+				  <td>2006</td>
+				  <td>SCDNR Open-File Report 12</td>
+				  <td>Colleton</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCDNR_Open-File_Report_11.pdf">Ditch Pond Carolina Bay Restoration Project, Phase I Progress Report</a></td>
+				  <td>Scott V. Harder, Joseph A. Gellici, and Andrew Wachob</td>
+				  <td>2006</td>
+				  <td>SCDNR Open-File Report 11</td>
+				  <td>Aiken, Barnwell</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_40_Clarendon.pdf">Ground-water Resources of Clarendon County, South Carolina</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>2006</td>
+				  <td>SCDNR Water Resources Report 40</td>
+				  <td>Clarendon</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_39_Hampton.pdf">Ground-water Resources of Hampton County, South Carolina</a></td>
+				  <td>Roy Newcome, Jr. and Joseph A. Gellici</td>
+				  <td>2006</td>
+				  <td>SCDNR Water Resources Report 39</td>
+				  <td>Hampton</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report38Lexington.pdf">Water Resources of Lexington County, South Carolina</a></td>
+				  <td>Karen W. Agerton and Samuel E. Baker</td>
+				  <td>2006</td>
+				  <td>SCDNR Water Resources Report 38</td>
+				  <td>Lexington</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCDNR_OF_10_Pumping_Tests.pdf">Results of Pumping Tests in the Coastal Plain of South Carolina</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>2005</td>
+				  <td>SCDNR Open-File Report 10</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report37Largestusers.pdf">The 100 Largest Public Water Supplies in South Carolina, 2005</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>2005</td>
+				  <td>SCDNR Water Resources Report 37</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/scspringsmap6.pdf">Springs of South Carolina</a></td>
+				  <td>H. Lee Mitchell</td>
+				  <td>2004</td>
+				  <td>Hydrology/Geology Map 6</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report%2036%20Chesterfield.pdf">Ground-water Resources of Chesterfield County, South Carolina</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>2004</td>
+				  <td>SCDNR Water Resources Report 36</td>
+				  <td>Chesterfield</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report35.pdf">Flow and Salinity Characteristics of the Santee River Estuary, South Carolina</a></td>
+				  <td>Brenda L. Hockensmith</td>
+				  <td>2004</td>
+				  <td>SCDNR Water Resources Report 35</td>
+				  <td>Charleston, Georgetown</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report%2034%20Drought.pdf">Hydrologic Effects of the June 1998 through August 2002 Drought in South Carolina</a></td>
+				  <td>Hydrology Section</td>
+				  <td>2004</td>
+				  <td>SCDNR Water Resources Report 34</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/water-plan/SCWaterPlan2.pdf">South Carolina Water Plan, Second Edition</a> (<a href="pdfs/reports/SCWaterPlan2errata.pdf">Errata Sheet</a>)</td>
+				  <td>A.W. Badr, Andrew Wachob, and Joseph A. Gellici</td>
+				  <td>2004</td>
+				  <td></td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Lee%20County%20Report%2033.pdf">Ground-water Resources of Lee County, South Carolina</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>2004</td>
+				  <td>SCDNR Water Resources Report 33</td>
+				  <td>Lee</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report31.pdf">Water Resources Data for South Carolina, 2000-2001</a></td>
+				  <td>Shelly L. Harwell, A. Drennan Park, Brenda L. Hockensmith, and Constance E. Gawne</td>
+				  <td>2004</td>
+				  <td>SCDNR Water Resources Report 31</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/richlandcounty.pdf">Ground-water Resources of Richland County, South Carolina</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>2003</td>
+				  <td>SCDNR Water Resources Report 30</td>
+				  <td>Richland</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_29_Black_Creek.pdf">Potentiometric Surface of the Black Creek Aquifer in South Carolina, November 2001</a></td>
+				  <td>Brenda L. Hockensmith</td>
+				  <td>2003</td>
+				  <td>SCDNR Water Resources Report 29</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_28_Middendorf.pdf">Potentiometric Surface of the Middendorf Aquifer in South Carolina, November 2001</a></td>
+				  <td>Brenda L. Hockensmith</td>
+				  <td>2003</td>
+				  <td>SCDNR Water Resources Report 28</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/Report_26_Groundwater_Levels.pdf">Ground-water Levels in South Carolina - a Compilation of Historical Water-Level Data</a></td>
+				  <td>Karen E. Waters</td>
+				  <td>2003</td>
+				  <td>SCDNR Water Resources Report 26</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/GranbyReport27.pdf">Impact of Removing the Granby Dam on Water Levels in the Congaree River</a></td>
+				  <td>Andrew Wachob</td>
+				  <td>2002</td>
+				  <td>SCDNR Water Resources Report 27</td>
+				  <td>Lexington, Richland</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/kershawreport.pdf">Ground-water Resources of Kershaw County, South Carolina</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>2002</td>
+				  <td>SCDNR Water Resources Report 24</td>
+				  <td>Kershaw</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Drought_PDF.pdf">Multiyear-Drought Impact on Hydrologic Conditions in South Carolina, Water Years 1998-2001 (pamphlet)</a></td>
+				  <td>Masaaki Kiuchi</td>
+				  <td>2002</td>
+				  <td></td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/map2schydrology.pdf">General Hydrology of South Carolina</a></td>
+				  <td>Rodney N. Cherry, A.W. Badr, and Andrew Wachob</td>
+				  <td>2001</td>
+				  <td>Hydrology/Geology Map 2</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCDNR_Open-File_Report_8.pdf">Wells Used by the Major Public Water Supplies of South Carolina&#39;s Coastal Plain, January 2001</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>2001</td>
+				  <td>SCDNR Open-File Report 8</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>					
+				  <td><a href="pdfs/reports/SCDNR_Open-File_Report_7.pdf">A History of Pumpage fromwater wells in the Upper Floridan aquifer in South Carolina and Georgia, 1886 to 1986</a></td>
+				  <td>Michael W. Dale</td>
+				  <td>2001</td>
+				  <td>SCDNR Open-File Report 7</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_23_Floridan_1998.pdf">Potentiometric Map of the Floridan and Tertiary Sand Aquifer in South Carolina, 1998</a></td>
+				  <td>Brenda Hockensmith</td>
+				  <td>2001</td>
+				  <td>SCDNR Water Resources Report 23</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>					
+				  <td><a href="pdfs/reports/SCDNR_Open-File_Report_6.pdf">Water-level Measurements used in the Construction of the 1998 Potentiometric Map for the Floridan Aquifer and Tertiary Sand Aquifer in South Carolina</a></td>
+				  <td>Brenda L. Hockensmith</td>
+				  <td>2000</td>
+				  <td>SCDNR Open-File Report 6</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCDNR_Open-File_Report_5.pdf">Results of Pumping Tests in the Coastal Plain of South Carolina</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>2000</td>
+				  <td>SCDNR Open-File Report 5</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/100%20Users%20Report%2021.pdf">The 100 Largest Public Water Supplies in South Carolina, 2000</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>2000</td>
+				  <td>SCDNR Water Resources Report 21</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>				
+				  <!--report link?--><td>Variations in Salinity in the North and South Santee Rivers, South Carolina</td>
+				  <td>Brenda L. Hockensmith</td>
+				  <td>2000</td>
+				  <td>Hydrology/Geology Map 5</td>
+				  <td>Charleston, Georgetown</td>
+				</tr>
+				<tr>				
+				  <!--report link?--><td>Distribution and Rate of Water Use in South Carolina</td>
+				  <td>Joffre E. Castro and John Foster</td>
+				  <td>2000</td>
+				  <td>Hydrology/Geology Map 4</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>					
+				  <!--report link?--><td>Generalized Geologic Map of South Carolina</td>
+				  <td>Arthur H. Maybin, III, and Paul G. Nystrom, Jr.</td>
+				  <td>2000</td>
+				  <td>Hydrology/Geology Map 1</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/Map 3 letter size.pdf">Maintaining Minimum Flow in the Streams of South Carolina</a> (<a href="pdfs/reports/map3minimumflows.pdf">Poster</a>)</td>
+				  <td>A.W. Badr and Rodney N. Cherry</td>
+				  <td>1999</td>
+				  <td>Hydrology/Geology Map 3</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCDNR_Water_Resources_Report_20.pdf">Irrigation Supply Potential of the Shallow Aquifer, Hilton Head Island, South Carolina</a></td>
+				  <td>Michael W. Dale and A. Drennan Park</td>
+				  <td>1999</td>
+				  <td>SCDNR Water Resources Report 20</td>
+				  <td>Beaufort</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/water-plan/SCDNR_Water_Plan_1998.pdf">South Carolina Water Plan</a></td>
+				  <td>Rodney N. Cherry and A.W. Badr</td>
+				  <td>1998</td>
+				  <td></td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCDNR_Water_Resources_Report_19.pdf">Potentiometric Surface of the Middendorf Aquifer in South Carolina, November 1996</a></td>
+				  <td>Brenda L. Hockensmith and Karen E. Waters</td>
+				  <td>1998</td>
+				  <td>SCDNR Water Resources Report 19</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>					
+				  <td><a href="pdfs/reports/SCDNR_Water_Resources_Report_18.pdf">Distribution and Rate of Water Use in South Carolina, 1994</a></td>
+				  <td>Joffre E. Castro and Jun Hu</td>
+				  <td>1997</td>
+				  <td>SCDNR Water Resources Report 18</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCDNR_Water_Resources_Report_17.pdf">Effects of Pond Irrigation on the Shallow Aquifer of Wadmalaw Island, South Carolina</a></td>
+				  <td>Brenda L. Hockensmith</td>
+				  <td>1997</td>
+				  <td>SCDNR Water Resources Report 17</td>
+				  <td>Charleston</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCDNR_Water_Resources_Report_16.pdf">Potentiometric Surface of the Black Creek Aquifer in South Carolina; November 1995</a></td>
+				  <td>Brenda L. Hockensmith</td>
+				  <td>1997</td>
+				  <td>SCDNR Water Resources Report 16</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/Report_14_Contributions.pdf">Contributions to the Hydrology of South Carolina</a></td>
+				  <td>Hydrology Section</td>
+				  <td>1997</td>
+				  <td>SCDNR Water Resources Report 14</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCDNR_Open-File_Report_4.pdf">Color in Surface Water: a Water Supply Problem in the Grand Strand of Coastal South Carolina</a></td>
+				  <td>Joffre E. Castro</td>
+				  <td>1996</td>
+				  <td>SCDNR Open-File Report 4</td>
+				  <td>Georgetown, Horry</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCDNR_Open-File_Report_3.pdf">Hydrogeologic Investigation and Establishment of a Permanent Multi-observational Well Network in Aiken, Allendale, and Barnwell Counties, South Carolina, Phase VIII</a></td>
+				  <td>Joseph A. Gellici and Constance E. Gawne</td>
+				  <td>1996</td>
+				  <td>SCDNR Open-File Report 3</td>
+				  <td>Aiken, Allendale, Barnwell</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCDNR_Water_Resources_Report_11.pdf">Aquifer Storage and Recovery - Horry County, South Carolina; Phase IV:  Results of the Bay Road well and Highway 501 Pottery well injection tests</a></td>
+				  <td>Joffre E. Castro, Susan Libes, and Sharon Garrell</td>
+				  <td>1996</td>
+				  <td>SCDNR Water Resources Report 11</td>
+				  <td>Horry</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCDNR_Water_Resources_Report_9.pdf">Aquifer Storage and Recovery - Myrtle Beach, South Carolina; Phase III:  Results of the Myrtle Beach injection test of 1994</a></td>
+				  <td>Joffre E. Castro</td>
+				  <td>1996</td>
+				  <td>SCDNR Water Resources Report 9</td>
+				  <td>Horry</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCDNR_Open-File_Report_2.pdf">Evaluation of the Shallow Aquifer, Hilton Head Island, South Carolina</a></td>
+				  <td>Michael W. Dale</td>
+				  <td>1995</td>
+				  <td>SCDNR Open-File Report 2</td>
+				  <td>Beaufort</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/Report_08_Greenville.pdf">Geology, Ground Water, and Wells of Greenville County, South Carolina</a></td>
+				  <td>H. Lee Mitchell</td>
+				  <td>1995</td>
+				  <td>SCDNR Water Resources Report 8</td>
+				  <td>Greenville</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCDNR_Water_Resources_Report_7.pdf">Aquifer Storage and Recovery - Myrtle Beach, South Carolina; Phase II:  A hydrologic, geochemical, and economic investigation</a></td>
+				  <td>Joffre E. Castro</td>
+				  <td>1995</td>
+				  <td>SCDNR Water Resources Report 7</td>
+				  <td>Horry</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCDNR_Water_Resources_Report_5.pdf">Hydrogeologic Framework of West-Central South Carolina</a></td>
+				  <td>Rolf K. Aadland, Joseph A. Gellici, and Paul Thayer</td>
+				  <td>1995</td>
+				  <td>SCDNR Water Resources Report 5</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCDNR_Water_Resources_Report_4.pdf">Aquifer Storage and Recovery - Myrtle Beach, South Carolina; Phase I:  Feasibility study; a hydrologic investigation</a></td>
+				  <td>Joffre E. Castro, Brenda L. Hockensmith, and Robert E. Curley</td>
+				  <td>1995</td>
+				  <td>SCDNR Water Resources Report 4</td>
+				  <td>Horry</td>
+				</tr>
+				<tr>					
+				  <td><a href="pdfs/reports/SCDNR_Water_Resources_Report_3.pdf">The 100 largest Public Water Supplies in South Carolina, 1995</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>1995</td>
+				  <td>SCDNR Water Resources Report 3</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>									 
+				  <td><a href="pdfs/reports/SCDNR_Open-File_Report_1.pdf">Hydrogeologic Investigation and Establishment of a Permanent Multi-observational Well Network in Aiken, Allendale, and Barnwell Counties, South Carolina, eight-year interimm report (1986-1994)</a></td>
+				  <td>Joseph A. Gellici, Robert H. Reed, W. Robert Logan, Rolf K. Aadland, and Gregory C. Simones</td>
+				  <td>1994</td>
+				  <td>SCDNR Open-File Report 1</td>
+				  <td>Aiken, Allendale, Barnwell</td>
+				</tr>
+				<tr>	
+				  <td><a href="pdfs/reports/SCDNR_Water_Resources_Report_1.pdf">Ground-water Resources of Darlington, Dillon, Florence, Marion, and Marlboro Counties, South Carolina</a></td>
+				  <td>J. Alberto Rodriguez, Roy Newcome, Jr., and Andrew Wachob</td>
+				  <td>1994</td>
+				  <td>SCDNR Water Resources Report 1</td>
+				  <td>Darlington, Dillon, Florence, Marion, Marlboro</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_43.pdf">Water-level Measurements and Potentiometric Maps for 1991-1993 Beaufort, Colleton, Hampton, and Jasper Counties, South Carolina, with Selected Hydrographs for 1975-1993</a></td>
+				  <td>Constance E. Gawne</td>
+				  <td>1994</td>
+				  <td>SCWRC Open-File Report 43</td>
+				  <td>Beaufort, Colleton, Hampton, Jasper</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_42.pdf">Chemical Quality of Ground Water in Aquifers of the Black Creek Formation, Horry County, South Carolina</a></td>
+				  <td>Brenda L. Hockensmith and Joffre E. Castro</td>
+				  <td>1993</td>
+				  <td>SCWRC Open-File Report 42</td>
+				  <td>Horry</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Report_175.pdf">Ground-water Resources of Calhoun County, South Carolina</a></td>
+				  <td>Teresa Greaney</td>
+				  <td>1993</td>
+				  <td>SCWRC Report 175</td>
+				  <td>Calhoun</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_174_Pumping_Tests.pdf">Pumping Tests of the Coastal Plain Aquifers in South Carolina, with a discussion of aquifer and well characteristics</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>1993</td>
+				  <td>SCWRC Report 174</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Report_173.pdf">Impact of the Spartanburg Water System on the Hydropower Ggeneration of Bluestone Energy Design, Inc., and Clifton Power Corporation Facilities</a></td>
+				  <td>A.W. (Bud) Badr</td>
+				  <td>1993</td>
+				  <td>SCWRC Report 173</td>
+				  <td>Spartanburg</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCDNR_Open-File_Report_9.pdf">Water-Supply Potential of the Middle Floridan Aquifer in Southern Beaufort County, South Carolina</a></td>
+				  <td>Constance E. Gawne and A. Drennan Park</td>
+				  <td>1992</td>
+				  <td>SCDNR Open-File Report 9</td>
+				  <td>Beaufort</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_41.pdf">Hydrogeologic Investigation and Establishment of a Permanent Multi-observational Well Network in Aiken, Allendale, and Barnwell Counties, South Carolina, Phase V</a></td>
+				  <td>Gregory C. Simones</td>
+				  <td>1992</td>
+				  <td>SCWRC Open-File Report 41</td>
+				  <td>Aiken, Allendale, Barnwell</td>
+				</tr>
+				<tr>	
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_40.pdf">Report of a Capacity-Use Investigation for Hampton County, South Carolina</a></td>
+				  <td>A. Drennan Park, Nancy M. Whiting, and Constance E. Gawne</td>
+				  <td>1991</td>
+				  <td>SCWRC Open-File Report 40</td>
+				  <td>Hampton</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_39.pdf">Hydrogeologic Investigation and Establishment of a Permanent Multi-observational Well Network in Aiken, Allendale, and Barnwell Counties, South Carolina, Phase IV</a></td>
+				  <td>Joseph A. Gellici</td>
+				  <td>1991</td>
+				  <td>SCWRC Open-File Report 39</td>
+				  <td>Aiken, Allendale, Barnwell</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Report_171.pdf">Inventory of Lakes in South Carolina ten acres or more in surface area</a></td>
+				  <td>U.S. Army Corp of Engineers and SCWRC</td>
+				  <td>1991</td>
+				  <td>SCWRC Report 171</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_38.pdf">Potentiometric Surface of the Upper Floridan Aquifer, Beaufort Hampton, and Jasper Counties, South Carolina</a></td>
+				  <td>Constance E. Gawne</td>
+				  <td>1990</td>
+				  <td>SCWRC Open-File Report 38</td>
+				  <td>Beaufort,Hampton, Jasper</td>
+				</tr>
+				<tr>	
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_37.pdf">Preliminary Investigation of Water-Level Declines I Wells near Estill, Hamton County, South Carolina</a></td>
+				  <td>Nancy M. Whiting and A. Drennan Park</td>
+				  <td>1990</td>
+				  <td>SCWRC Open-File Report 37</td>
+				  <td>Hampton</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_36.pdf">Ground Water in the Pee Dee Region of South Carolina</td>
+				  <td>Robert Curley</td>
+				  <td>1990</td>
+				  <td>SCWRC Open-File Report 36</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>	
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_35.pdf">Using Electric Logs to Predict Ground-Water Quality in the Sand Qauifers of the South Carolina Coastal Plain</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>1990</td>
+				  <td>SCWRC Open-File Report 35</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>	
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_34.pdf">Well Grouting and Grout Seal Evaluation Techniques</a></td>
+				  <td>Gregory B. Kuntz</td>
+				  <td>1990</td>
+				  <td>SCWRC Open-File Report 34</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_33.pdf">Comparison of Lineament Mapping on Various Remotely Sensed Imagery over Newberry County, South Carolina</a></td>
+				  <td>Joseph A. Harrigan</td>
+				  <td>1990</td>
+				  <td>SCWRC Open-File Report 33</td>
+				  <td>Newberry</td>
+				</tr>
+				<tr>	
+				  <td><a href="pdfs/reports/SCWRC_Report_169.pdf">The 100 Largest Public Water Supplies in South Carolina, 1990</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>1990</td>
+				  <td>SCWRC Report 169</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_32.pdf">Hydrogeologic Investigation and Establishment of a Permanent Multi-observational Well Network in Aiken, Allendale, and Barnwell Counties, South Carolina, Phase III</a></td>
+				  <td>Gregory B. Kuntz, William T. Griffin, Teresa Greaney, and Joseph A. Gellici</td>
+				  <td>1989</td>
+				  <td>SCWRC Open-File Report 32</td>
+				  <td>Aiken, Allendale, Barnwell</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_31.pdf">Investigation of Ground-water Conditions at Goretown, in eastern Horry County, South Carolina</a></td>
+				  <td>Brenda L. Hockensmith</td>
+				  <td>1989</td>
+				  <td>SCWRC Open-File Report 31</td>
+				  <td>Horry</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Report_168.pdf">Water Use and Future Requirements, Hilton Head Island and vicinity, South Carolina</a></td>
+				  <td>Roger W. McCready</td>
+				  <td>1989</td>
+				  <td>SCWRC Report 168</td>
+				  <td>Beaufort</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Report_167.pdf">Ground-water Resources of South Carolina&#39;s Coastal Plain: 1988; an overview</a></td>
+				  <td>Roy Newcome, Jr.</td>
+				  <td>1989</td>
+				  <td>SCWRC Report 167</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Report_166.pdf">Magnitude and Frequency of Low Streamflows in South Carolina</a></td>
+				  <td>Terry L. Steinert</td>
+				  <td>1989</td>
+				  <td>SCWRC Report 166</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Report_165.pdf">A Geological Approach to Modeling the Movement of Ground Water in the Shallow Aquifer in the Vicinity of the Burton Recharge Area, Beaufort, South Carolina: Phase 1</a></td>
+				  <td>Michael G. Waddell</td>
+				  <td>1989</td>
+				  <td>SCWRC Report 165</td>
+				  <td>Beaufort</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Report_158.pdf">Hydrogeology and Saltwater Contamination of the Floridan Aquifer, Beaufort and Jasper Counties, South Carolina</a></td>
+				  <td>W. Brian Hughes, Michael S. Crouch, and A. Drennan Park</td>
+				  <td>1989</td>
+				  <td>SCWRC Report 158</td>
+				  <td>Beaufort, Jasper</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Report_155.pdf">Geology and Ground-water Resources of Allendale, Bamberg, Barnwell Counties and part of Aiken County, South Carolina</a></td>
+				  <td>W. Robert Logan and Gwen M. Euler</td>
+				  <td>1989</td>
+				  <td>SCWRC Report 155</td>
+				  <td>Allendale, Aiken, Bamberg, Barnwell</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_30.pdf">Historical Summary of Onshore Oil and Gas Exploration Activities in South Carolina</a></td>
+				  <td>William T. Griffin</td>
+				  <td>1988</td>
+				  <td>SCWRC Open-File Report 30</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_29.pdf">Six-month Interim Report for SCWRC-USGS Cooperative Project; Evaluation of the use of Surface Geophysics, Geomorphic Data, and Remote Sensing Methods to Predict Yields of Ground Water from Piedmont Aquifers in South Carolina</a></td>
+				  <td>Joseph A. Harrigan and H. Lee Mitchell</td>
+				  <td>1988</td>
+				  <td>SCWRC Open-File Report 29</td>
+				  <td>Piedmont</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_28.pdf">Hydrogeologic Investigation and Establishment of a Permanent Multi-observational Well Network in Aiken, Allendale, and Barnwell Counties, South Carolina, Phase II</a></td>
+				  <td>Gregory B. Kuntz and William T. Griffin</td>
+				  <td>1988</td>
+				  <td>SCWRC Open-File Report 28</td>
+				  <td>Aiken, Allendale, Barnwell</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_27.pdf">Ground Water Prospecting in Fractured Slate using DC Resistivity and the VLF-based WADI system, Kershaw County, South Carolina</a></td>
+				  <td>Joseph A. Gellici</td>
+				  <td>1988</td>
+				  <td>SCWRC Open-File Report 27</td>
+				  <td>Kershaw</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_26.pdf">Aquifer Storage Recovery Wellhead and Core Handling Procedures</a></td>
+				  <td>Joffre E. Castro and Brenda L. Hockensmith</td>
+				  <td>1988</td>
+				  <td>SCWRC Open-File Report 26</td>
+				  <td>Horry</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_19.pdf">Investigation of Ground-water Problems near Vulcan Materials Marble Quarry, Cherokee County, South Carolina</a></td>
+				  <td>Joffre E. Castro, Joseph A. Harrigan, and H. Lee Mitchell</td>
+				  <td>1988</td>
+				  <td>SCWRC Open-File Report 19</td>
+				  <td>Cherokee</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_25.pdf">Preliminary Geohydrologic Framework for Colleton County, South Carolina</a></td>
+				  <td>W. Brian Hughes</td>
+				  <td>1987</td>
+				  <td>SCWRC Open-File Report 25</td>
+				  <td>Colleton</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_24.pdf">Flouoride and Chloride in Water from Deep Wells in the Charleston Area</a></td>
+				  <td>J. Kevin Meadows</td>
+				  <td>1987</td>
+				  <td>SCWRC Open-File Report 24</td>
+				  <td>Charleston</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_23.pdf">Geohydrologic Investigation and Establishment of a Permanent Multi-observational Well Network in Aiken, Allendale, and Barnwell Counties, South Carolina, Phase I</a></td>
+				  <td>W. Robert Logan</td>
+				  <td>1987</td>
+				  <td>SCWRC Open-File Report 23</td>
+				  <td>Aiken, Allendale, Barnwell</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_22.pdf">Aquifer Storage Recovery in Coastal Plain Sediments at Myrtle Beach, South Carolina</a></td>
+				  <td>Joffre E. Castro</td>
+				  <td>1987</td>
+				  <td>SCWRC Open-File Report 22</td>
+				  <td>Horry</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_21.pdf">Preliminary Hydrogeologic Study of the Aquifer Storage Recovery Testing Site, Myrtle Beach, South Carolina</a></td>
+				  <td>Joffre E. Castro and Brenda L. Hockensmith</td>
+				  <td>1987</td>
+				  <td>SCWRC Open-File Report 21</td>
+				  <td>Horry</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_15.pdf">Review of the 1986 South Carolina Low Country Floridan Aquifer Water Level Monitoring Network</a></td>
+				  <td>Michael S. Crouch</td>
+				  <td>1987</td>
+				  <td>SCWRC Open-File Report 15</td>
+				  <td>Beaufort, Colleton, Hampton, Jasper</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_11.pdf">Investigation of Sinkhole Occurrences at Goretown, near Loris, South Carolina</a></td>
+				  <td>Brenda L. Hockensmith and A. Michel Pelletier</td>
+				  <td>1987</td>
+				  <td>SCWRC Open-File Report 11</td>
+				  <td>Horry</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Report_157.pdf">Potentiometric Surface of the Floridan Aquifer in South Carolina, July 1986</a></td>
+				  <td>Michael S. Crouch, W. Brian Hughes, W. Robert Logan, and J. Kevin Meadows</td>
+				  <td>1987</td>
+				  <td>SCWRC Report 157</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCWRC_156.pdf">Ground-water Conditions in the Santee Limestone and Black Mingo Formation near Monks Corner, Berkeley County, South Carolina</a></td>
+				  <td>J. Kevin Meadows</td>
+				  <td>1987</td>
+				  <td>SCWRC Report 156</td>
+				  <td>Berkeley</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_10.pdf">Water Resources Evaluation of the Spring Valley Subdivision in Richland County, South Carolina</a></td>
+				  <td>Joseph A. Harrigan</td>
+				  <td>1986</td>
+				  <td>SCWRC Open-File Report 10</td>
+				  <td>Richland</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_8.pdf">Ground-water Conditions in Western Horry County, South Carolina</a></td>
+				  <td>A. Michel Pelletier</td>
+				  <td>1986</td>
+				  <td>SCWRC Open-File Report 8</td>
+				  <td>Horry</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_18.pdf">Chloride Conditions in the Floridan Aquifer in Beaufort County, South Carolina: data collected during May 1985</a></td>
+				  <td>Mark R. Davies</td>
+				  <td>1985</td>
+				  <td>SCWRC Open-File Report 18</td>
+				  <td>Beaufort</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_7.pdf">Spartanburg County Potential Flood Damage Assessment</a></td>
+				  <td>George S. Saussy, III</td>
+				  <td>1985</td>
+				  <td>SCWRC Open-File Report 7</td>
+				  <td>Spartanburg</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_6.pdf">Greenville County Potential Flood Damage Assessment</a></td>
+				  <td>George S. Saussy, III</td>
+				  <td>1985</td>
+				  <td>SCWRC Open-File Report 6</td>
+				  <td>Greenville</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Report_148.pdf">Water Use in South Carolina, July-December 1983</a></td>
+				  <td>Joseph A. Harrigan</td>
+				  <td>1985</td>
+				  <td>SCWRC Report 148</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Report_147.pdf">Ground-water Conditions in the Ladies and St. Helena Islands area, South Carolina</a></td>
+				  <td>Jeffrey A. Hassen</td>
+				  <td>1985</td>
+				  <td>SCWRC Report 147</td>
+				  <td>Beaufort</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Report_144.pdf">Ground-water Conditions and Water-supply Alternatives in the Waccamaw Capacity Use Area, South Carolina</a></td>
+				  <td>A. Michel Pelletier</td>
+				  <td>1985</td>
+				  <td>SCWRC Report 144</td>
+				  <td>Georgetown, Horry</td>
+				</tr>
+				<tr>
+				  <td><a href="pdfs/reports/SCWRC_139.pdf">The Ground-water Resources of Charleston, Berkeley, and Dorchester Counties, South Carolina</a></td>
+				  <td>A. Drennan Park</td>
+				  <td>1985</td>
+				  <td>SCWRC Report 139</td>
+				  <td>Charleston, Berkeley, Dorchester</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_14.pdf">Water Level Conditions in the Upper Permeable Zone of the Floridan Aquifer in the South Carolina Low Country, June 1985</a></td>
+				  <td>Michael S. Crouch, Mark R. Davies, Jeffrey A. Hassen, and W. Brian Hughes</td>
+				  <td>1985</td>
+				  <td>SCWRC Open-File Report 14</td>
+				  <td>Beaufort, Colleton, Hampton, Jasper</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_13.pdf">Water Level Conditions in the Upper Permeable Zone of the Floridan Aquifer in the South Carolina Low Country, May 1985</a></td>
+				  <td>Michael S. Crouch, Mark R. Davies, Jeffrey A. Hassen, and W. Brian Hughes</td>
+				  <td>1985</td>
+				  <td>SCWRC Open-File Report 13</td>
+				  <td>Beaufort, Colleton, Hampton, Jasper</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_12.pdf">Water Level Conditions in the Upper Permeable Zone of the Floridan Aquifer in the South Carolina Low Country, March 1985</a></td>
+				  <td>Michael S. Crouch, Mark R. Davies, Jeffrey A. Hassen, and W. Brian Hughes</td>
+				  <td>1985</td>
+				  <td>SCWRC Open-File Report 12</td>
+				  <td>Beaufort, Colleton, Hampton, Jasper</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_20.pdf">Report on Water Level Conditions of Beaufort, Jasper, Colleton, and Hampton  Counties, South Carolina</a></td>
+				  <td>H. D. Spencer</td>
+				  <td>1984</td>
+				  <td>SCWRC Open-File Report 20</td>
+				  <td>Beaufort, Colleton, Hampton, Jasper</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_17.pdf">Water Quality Conditions in Beaufort County, from Data Collected during April of 1984</a></td>
+				  <td>H. D. Spencer</td>
+				  <td>1984</td>
+				  <td>SCWRC Open-File Report 17</td>
+				  <td>Beaufort</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_16.pdf">Water Level Conditions in Beaufort, Jasper, Colleton, and Hampton Counties, from Data Collected during August of 1983</a></td>
+				  <td>H. D. Spencer</td>
+				  <td>1983</td>
+				  <td>SCWRC Open-File Report 16</td>
+				  <td>Beaufort, Colleton, Hampton, Jasper</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Report_140.pdf">South Carolina State Water Assessment</a></td>
+				  <td>SCWRC Staff</td>
+				  <td>1983</td>
+				  <td>SCWRC Report 140</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Administrative_Report_16.pdf">Water Resources of the Piedmont Region, South Carolina</a></td>
+				  <td>SCWRC Staff</td>
+				  <td>1983</td>
+				  <td>SCWRC Administrative Report 16</td>
+				  <td>Piedmont</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Report_138.pdf">Water Use in South Carolina, 1980</a></td>
+				  <td>Gerald E. Lonon, Christopher B. Burnette, and Harriet J. Morris</td>
+				  <td>1983</td>
+				  <td>SCWRC Report 138</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_5.pdf">Report on the Ground-water Resources of the Bennettsville area, with Alternatives for an Interim Water Supply</a></td>
+				  <td>A. Michel Pelletier</td>
+				  <td>1982</td>
+				  <td>SCWRC Open-File Report 5</td>
+				  <td>Marlboro</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_4.pdf">Impact of the Proposed Union Camp Paper Mill on the Local Ground-water Users in Richland County, South Carolina</a></td>
+				  <td>A. Michel Pelletier</td>
+				  <td>1982</td>
+				  <td>SCWRC Open-File Report 4</td>
+				  <td>Richland</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/USGS-SCWRC_Report_14.pdf">Low-flow Characteristics of Ungaged Streams in the Piedmont and Lower Coastal Plain of South Carolina</a></td>
+				  <td>William M. Bloxham</td>
+				  <td>1981</td>
+				  <td>USGS/SCWRC Report 14</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Report_133.pdf">Ground-water Resources of Sumter and Florence Counties, South Carolina</a></td>
+				  <td>A. Drennan Park</td>
+				  <td>1980</td>
+				  <td>SCWRC Report 133</td>
+				  <td>Florence, Sumter</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Report_132.pdf">Report on Ground-water Conditions in the Low Country area, South Carolina</a></td>
+				  <td>B.C. Spignor and Camille Ransom</td>
+				  <td>1979</td>
+				  <td>SCWRC Report 132</td>
+				  <td>Beaufort, Colleton, Hampton, Jasper</td>
+				</tr>
+				<tr>	
+				  <td><a href="pdfs/reports/USGS-SCWRC_Report_11.pdf">Low-flow Frequency and Flow Duration of South Carolina Streams</a></td>
+				  <td>William M. Bloxham</td>
+				  <td>1979</td>
+				  <td>USGS/SCWRC Report 11</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/USGS-SCWRC_Report_9.pdf">The Ground-water Resources of Beaufort, Colleton, Hampton, and Jasper Counties, South Carolina</a></td>
+				  <td>Larry R. Hayes</td>
+				  <td>1979</td>
+				  <td>USGS/SCWRC Report 9</td>
+				  <td>Beaufort, Colleton, Hampton, Jasper</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_2.pdf">Land Surface Collapse and Ground Water Problems in the Jamestown area, Berkeley County, South Carolina</a></td>
+				  <td>B.C. Spignor</td>
+				  <td>1978</td>
+				  <td>SCWRC Open-File Report 2</td>
+				  <td>Berkeley</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/SCWRC_Open-File_Report_1.pdf">Review of Sinkhole-Collapse Problems in a Carbonate Terrane</a></td>
+				  <td>B.C. Spignor</td>
+				  <td>1978</td>
+				  <td>SCWRC Open-File Report 1</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/USGS-SCWRC_Report_13.pdf">Reconnaissance of the Ground-water Resources of Clarendon and Williamsburg Counties, South Carolina</a></td>
+				  <td>Phillip W. Johnson</td>
+				  <td>1978</td>
+				  <td>USGS/SCWRC Report 13</td>
+				  <td>Clarendon, Williamsburg</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/USGS-SCWRC_Report_10.pdf">A Tracer Study of the Flushing Time of the Sampit River Estuary, Georgetown, South Carolina</a></td>
+				  <td>F. A. Johnson</td>
+				  <td>1978</td>
+				  <td>USGS/SCWRC Report 10</td>
+				  <td>Georgetown</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/SCWRC_Report_129.pdf">Report on the Ground-water Resources of Horry and Georgetown Counties, South Carolina</a></td>
+				  <td>B.C. Spignor, Ken Stevens, and William Moser</td>
+				  <td>1977</td>
+				  <td>SCWRC Report 129</td>
+				  <td>Georgetown, Horry</td>
+				</tr>
+				<tr>			
+				  <!--report link?--><td>Municipal and Industrial Water Use in South Carolina</td>
+				  <td>James W. Duke</td>
+				  <td>1977</td>
+				  <td>SCWRC Report 127</td>
+				  <td>Statewide</td>
+				</tr>
+				<tr>	
+				  <td><a href="pdfs/reports/USGS-SCWRC_Report_8.pdf">The Occurrence, Availability, and Chemical Quality of Ground Water, Grand Strand area and surrounding parts of Horry and Georgetown Counties, South Carolina</a></td>
+				  <td>Allen Zack</td>
+				  <td>1977</td>
+				  <td>USGS/SCWRC Report 8</td>
+				  <td>Georgetown, Horry</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/USGS-SCWRC_Report_7.pdf">A Reconnaissance of the Hydrology of the Intracoastal Waterway from Bucksport to Little River Inlet, South Carolina</a></td>
+				  <td>F. A. Johnson</td>
+				  <td>1977</td>
+				  <td>USGS/SCWRC Report 7</td>
+				  <td>Georgetown, Horry</td>
+				</tr>
+				<tr>			
+				  <td><a href="pdfs/reports/USGS-SCWRC_Report_6.pdf">A Reconnaissance of the Hydrology of the Edisto and Ashepoo Estuaries, South Carolina</a></td>
+				  <td>F. A. Johnson</td>
+				  <td>1977</td>
+				  <td>USGS/SCWRC Report 6</td>
+				  <td>Colleton</td>
+				</tr>
+				<tr>	
+				  <td><a href="pdfs/reports/USGS-SCWRC_Report_5.pdf">Low-flow Characteristics of Streams in the Inner Coastal Plain of South Carolina</a></td>
+				  <td>William M. Bloxham</td>
+				  <td>1976</td>
+				  <td>USGS/SCWRC Report 5</td>
+				  <td>Coastal Plain</td>
+				</tr>
+				<tr>		
+				  <td><a href="pdfs/reports/USGS-SCWRC_Report_4.pdf">A Reconnaissance of the Winyah Bay Eestuarine Zone, South Carolina</a></td>
+				  <td>F. A. Johnson</td>
+				  <td>1972</td>
+				  <td>USGS/SCWRC Report 4</td>
+				  <td>Georgetown</td>
+				</tr>
+				<tr>					
+				  <td><a href="pdfs/reports/USGS-SCWRC_Report_3.pdf">Water Resources of Spartanburg County, South Carolina</a></td>
+				  <td>W. M. Bloxham, George E. Siple, and T. Ray Cummings</td>
+				  <td>1970</td>
+				  <td>USGS/SCWRC Report 3</td>
+				  <td>Spartanburg</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/USGS-SCWRC_Report_2.pdf">A Reconnaissance of the Santee River Estuary, South Carolina</a></td>
+				  <td>T. Ray Cummings</td>
+				  <td>1970</td>
+				  <td>USGS/SCWRC Report 2</td>
+				  <td>Charleston, Georgetown</td>
+				</tr>
+				<tr>				
+				  <td><a href="pdfs/reports/USGS-SCWRC_Report_1.pdf">A Reconnaissance of the Water Resources of Pickens County, South Carolina</a></td>
+				  <td>F. A. Johnson, G. E. Siple, and T. Ray Cummings</td>
+				  <td>1968</td>
+				  <td>USGS/SCWRC Report 1</td>
+				  <td>Pickens</td>
+				</tr>
+			</tbody>
+		</table>
 		</div>
 		</div>
 		
-		<div class="row white-bg">
-            <div class="col">
-                <p><b>Ordering Reports:</b> Printed copies of most of these reports can be ordered by contacting the DNR via phone (803-734-9100), or by writing to or visiting the DNR's Columbia office at the following address: SC Department of Natural Resources, Land, Water and Conservation Division, Rembert C. Dennis Building, 1000 Assembly Street, Columbia, SC 29201. Although most of the publications are available free of charge, a $5 shipping and handling fee may be charged if the reports are mailed out.</p>
-            </div>
-		</div>
 		</div>
     <!-- /.container -->
 
     <!-- Footer -->
     <footer class="py-5 ">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">                
-                    <p>SC Department of Natural Resources<br>
+        <h5>SCDNR Hydrology Section</h5>
+            <div class="row mt-4">
+                
+                <div class="col-lg-4 pr-4 sitemap">
+                    <h6>Hydrology Home</h6>
+                    <ul>
+                        <li><a href="index.html">Home Page</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="hydrology-news.html">Hydrology News</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+						<li><a href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a></li>
+                    </ul>
+                    <h6>Water Planning</h6>
+                    <ul>
+                        <li><a href="water-planning.html">Water Planning Home</a></li>
+                        <li><a href="surface-water-models.html">Surface Water Models</a></li>
+                        <li><a href="groundwater-models.html">Groundwater Models</a></li>
+                        <li><a href="water-demand.html">Water Demand Projections</a></li>
+                        <li><a href="swam-models.html">Simplified Water Allocation Models (SWAM)</a></li>
+                        <li><a href="state-and-river-basin-planning.html">State and River Basin Planning</a></li>
+                            <ul>
+                                <li><a href="ppac.html">Planning Process Advisory Committee</a></li>
+                                <li><a href="edisto-basin-planning.html">Edisto Basin Planning</a></li>
+                                <li><a href="faq.html">Frequently Asked Questions</a></li>
+                            </ul>						
+                    </ul>
+                    
+                    <h6>Data</h6>
+                    <ul>
+                        <li><a href="groundwater-data/index.html">Groundwater Level Data</a></li>
+                        <li><a href="geophysical-logs.html">Geophysical Logs</a></li>
+                        <li><a href="well-database.html">Coastal Plain Water Well Database</a></li>
+                        <li><a href="streamflow-and-lake-levels.html">Streamflow and Lake Level Data</a></li>						
+                    </ul>
+                    
+                </div>
+                <div class="col-lg-4 pl-lg-4 sitemap">
+                    <h6>Groundwater Program</h6>
+                    <ul>
+                        <li><a href="groundwater.html">Groundwater Program Home</a></li>
+                        <li><a href="groundwater-level-monitoring-network.html">Groundwater Level Monitoring Network</a></li>
+                        <li><a href="well-database.html">Coastal Plain Water Well Database</a></li>
+                        <li><a href="pot-mapping.html">Potentiometric Mapping</a></li>
+                        <li><a href="geophysical-logs.html">Geophysical Logs</a></li>
+                        <li><a href="aquifers.html">Aquifer Delineation</a></li>
+                        <li><a href="aquifer-properties.html">Aquifer Properties</a></li>
+                        <li><a href="groundwater-models.html">Groundwater Models</a></li>
+                        <li><a href="saltwater-intrusion-monitoring.html">Saltwater Intrusion Monitoring Network</a></li>
+                        <li><a href="groundwater-drought-monitoring-network.html">Groundwater Drought Monitoring Network</a></li>						
+                    </ul>
+                    <h6>Surface Water Program</h6>
+                    <ul>
+                        <li><a href="surface-water.html">Surface Water Home</a></li>
+                        <li><a href="surface-water-models.html">Surface Water Models</a></li>
+                        <li><a href="swam-models.html">Simplified Water Allocation Models (SWAM)</a></li>
+                        <li><a href="surface-water-monitoring.html">Surface Water Monitoring Initiatives</a></li>
+                            <ul>
+                                <li><a href="streamflow-and-lake-levels.html">Streamflow and Lake Level Data</a></li>
+                                <li><a href="streamflow-workshops.html">Streamflow Monitoring Workshops</a></li>
+                            </ul>
+                        	
+                        						
+                    </ul>
+                </div>
+                <div class="col-lg-4 pl-lg-5 ">                
+                    <p>South Carolina Department of<br /> Natural Resources<br>
                     Land, Water, and Conservation Division<br>
                         1000 Assembly Street<br>
                         Columbia, SC 29201<br>
-                        <a href="http://dnr.sc.gov/water/hydro">dnr.sc.gov/water/hydro</a>
+                        <a href="http://hydrology.dnr.sc.gov/">http://hydrology.dnr.sc.gov/</a>
                     </p>
                     <a href="http://dnr.sc.gov/"><img src="images/dnr-logo-small.gif" alt="SC Department of Natural Resources logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
                     <p class="mt-3">Copyright © 
@@ -187,7 +1285,6 @@
                         </script>
                     </p>
                 </div>
-            
             </div>
             
         </div>        
@@ -196,38 +1293,19 @@
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>  
-    
-    <script src="js/format-google-calendar.js"></script>
 	
 	<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
-	<script type="text/javascript" charset="utf8" src="/DataTables/datatables.js"></script>
 
 	
 	<script>
 		$(document).ready( function () {
-		$('#myTable').DataTable();
+		$('#myTable').DataTable({
+		  "order": [ 2, 'desc' ]		
+		});
 		} );
 
 	</script>
     
-    <script>
-        formatGoogleCalendar.init({
-        calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/tangnar123@gmail.com/events?key=AIzaSyCgIXqqokRo_LeGKyIhVx_VcCdSnDW5e-4',
-        past: false,
-        upcoming: true,
-        sameDayTimes: true,
-        dayNames: true,
-        upcomingTopN: 5,
-        recurringEvents: true, 
-        itemsTagName: 'li',
-        upcomingSelector: '#cal-events',
-        upcomingHeading: '<h4>Upcoming events</h4>',
-        format: ['*summary*', '<br>', '*date*', '<br>', '*location*'],
-        timeMin: '2016-06-03T10:00:00-07:00',
-        timeMax: '2020-06-03T10:00:00-07:00'
-});
-        
-    </script>
 
   </body>
 

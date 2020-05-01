@@ -17,7 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/hydro.css" rel="stylesheet">
-    <link href="css/surface-water.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -25,7 +25,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg text-white fixed-top">
         <div class="container">
-            <img src="images/dnr-logo-small.gif" id="nav-logo">
+            <a href="http://www.dnr.sc.gov/"><img src="images/dnr-logo-small.gif" id="nav-logo" alt="scdnr-logo"></a>
             <a class="navbar-brand ml-5 pl-5 pl-md-1" href="index.html">SCDNR Hydrology</a>
             <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,48 +33,54 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html">About Us</a>
                     </li>
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
-					<a class="dropdown-item" href="water-planning.html">
-					Water Planning</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataOne" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Water Planning</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataOne">
+						<a class="dropdown-item" href="water-planning.html">Overview</a>
+						<a class="dropdown-item" href="state-and-river-basin-planning.html">State and River Basin Planning</a>
+						<a class="dropdown-item" href="edisto-basin-planning.html">Edisto Basin Planning</a>
+						<a class="dropdown-item" href="water-demand.html">Water Demand Projections</a>
+						<a class="dropdown-item" href="surface-water-models.html">Surface Water Models</a>
+						<a class="dropdown-item" href="groundwater-models.html">Groundwater Models</a>
+						</div>
+                    </li>
+					<!--Data Dropdown Done-->
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataTwo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataTwo">
 					<a class="dropdown-item" href="groundwater.html">
 					Groundwater</a>
 					<a class="dropdown-item" href="surface-water.html">
 					Surface Water</a>
 					</div>
 					</li>
-					<!--Data Dropdown Done-->					
-                    <li class="nav-item">
-                        <a class="nav-link" href="publications.html">Publications</a>
-                    </li>
+					<!--Data Dropdown Done-->	
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataThree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataThree">
 					<a class="dropdown-item" href="groundwater-data/index.html">
 					Groundwater Level Data</a>
-					<a class="dropdown-item" href="http://www.dnr.sc.gov/hydro/gl_home.html">
+					<a class="dropdown-item" href="geophysical-logs.html">
 					Geophysical Logs</a>
 					<a class="dropdown-item" href="well-database.html">
 					Coastal Plain Well Database</a>
 					<a class="dropdown-item" href="streamflow-and-lake-levels.html">
 					Streamflow and Lake Levels</a>
-					<a class="dropdown-item" href="swam-models.html">
-					Surface Water Models</a>
 					</div>
 					</li>
 					<!--Data Dropdown Done-->
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=tangnar123%40gmail.com&ctz=America%2FNew_York">Calendar</a>
+                     <li class="nav-item">
+                        <a class="nav-link" href="publications.html">Publications</a>
+                    </li>					
+                     <li class="nav-item">
+                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a>
                     </li>
-
+                    
                 </ul>
             </div>
         </div>
@@ -86,7 +92,7 @@
             <div class="row">
                 <div class="col-lg-12 my-sm-4 pt-3 pt-sm-0 background-text">
                     <h1 class="page-header">Groundwater Models</h1>
-                    <p class="text-white lead">Groundwater Models do this and that so here you go. </p>
+                    <p class="text-white lead">Groundwater models are used to simulate groundwater flow and assess groundwater availability.</p>
                 </div>
             </div>
         </div>
@@ -100,114 +106,186 @@
             <div class="row">
                 <div class="col-12">
 
-                    <p>Effective water planning and management requires an accurate assessment of the location and quantity of the State’s groundwater resources. The SCDNR in cooperation with the United States Geological Survey (USGS), the South Carolina Department of Health and Environmental Control (SCDHEC) and the United States’ Army Corps of Engineers (USACE), are developing flow models that simulate the groundwater system in the Coastal Plain province in South Carolina.
+                    <p>Effective water planning and management requires an accurate assessment of the location and quantity of the State’s groundwater resources. The United States Geological Survey (USGS), in cooperation with SCDNR, the South Carolina Department of Health and Environmental Control (SCDHEC), and the United States Army Corps of Engineers, is developing a computer model to simulate groundwater flow in the Coastal Plain province of South Carolina.
 					</p>
+					
+					<p>The MODFLOW model is expected to be completed and available for use before the end of 2019.</p>
 
-                    <p>The model will be used to:</p>
+                    <p>The model can be used to:</p>
 
                     <ul>
                         <li>Determine groundwater availability.</li>
-                        <li>Evaluate the impacts that pumping has on groundwater and surface water resources and on other groundwater users.</li>
-                        <li>Evaluate future withdrawal scenarios to maximize groundwater use and minimize undesirable effects of pumping.</li>
-						<li>Support the development of State and regional water plans</li>
+                        <li>Evaluate the impact pumping has on groundwater and surface water resources and on other groundwater users.</li>
+                        <li>Evaluate future withdrawal scenarios to help maximize groundwater use and minimize undesirable effects of pumping.</li>
+						<li>Support the development of State and regional water plans.</li>
                     </ul>
+					
+					<p>For more information about the groundwater modeling project, contact Andy Wachob at <a href="mailto: wachoba@dnr.sc.gov">wachoba@dnr.sc.gov</a> or Joe Gellici at <a href="mailto: GelliciJ@dnr.sc.gov">gellicij@dnr.sc.gov</a>.</p>
                 </div>
             </div>
         </div>
 
         <div class="white-bg">
 
-            <h2>Project Documents</h2>
+            <h2>Project Documents and Related Information</h2>
 
-            <p>For information about stakeholder meetings, please visit <a href="http://www.clemson.edu/public/water-assessment/" target="_blank">Clemson's stakeholder website</a>.</p>
+			<p>For additional information on the USGS groundwater model, visit the <a href="https://www.usgs.gov/centers/sa-water/science/update-south-carolina-atlantic-coastal-plain-groundwater-availability-0?qt-science_center_objects=0#qt-science_center_objects" target="_blank">USGS project website</a>.</p>
 
+            <p>For information about stakeholder meetings, please visit <a href="https://www.clemson.edu/public/water-assessment/" target="_blank">Clemson's stakeholder website</a>.</p>
 
-            <p>For additional information on the project, visit the <a href="https://www.usgs.gov/centers/sa-water/science/update-south-carolina-atlantic-coastal-plain-groundwater-availability-0?qt-science_center_objects=0#qt-science_center_objects" target="_blank">USGS project website</a>.</p>
 
                 <div class="row ml-md-3">
+				
 
                     <div id="documents" class="my-4 col-md-6">
 
                         <p><a class="allDocsClose">Show</a> / <a class="allDocsOpen">Hide</a> All Documents </p>
 
                         <div class="toggler">
-                            <h3 class="closed" style="text-decoration:underline;">Reports</h3>
+                            <h4 class="closed" style="text-decoration:underline;">Reports</h4>
                             <ul>
-                                <li>Newcome, Roy, Jr., 2005, <a href="gwmpdfs/Newcome2005_SCWR_OFR10_PumpingTests.pdf" target="_blank">Pumping tests of the Coastal Plain aquifers in South Carolina</a>: South Carolina Water Resources Open-File Report 10, 28 p.</li>
+                                <li>Newcome, Roy, Jr., 2005, <a href="pdfs/gwm/Newcome2005_SCWR_OFR10_PumpingTests.pdf" target="_blank">Pumping tests of the Coastal Plain aquifers in South Carolina</a>: South Carolina Water Resources Open-File Report 10, 28 p.</li>
                                 <li>Campbell, B.G., and Coes, A.L., eds., 2010, <a href="https://pubs.er.usgs.gov/publication/pp1773" target="_blank">Groundwater availability in the Atlantic Coastal Plain of North and South Carolina</a>: U.S. Geological Survey Professional Paper 1773, 241 p., 7 pls.</li>
                                 <li>Gellici, J.A., and Lautier, J.C., 2010, <a href="https://pubs.er.usgs.gov/publication/pp1773" target="_blank">Hydrogeologic framework of the Atlantic Coastal Plain, North and South Carolina, in Campbell, B.G., and Coes, A.L., eds., Groundwater availability in the Atlantic Coastal Plain of North and South Carolina</a>: U.S. Geological Survey Professional Paper 1773, 241 p., 7 pls.</li>
-                                <li>Wachob, Andrew, Gellici, J.A., and Czwartacki, Brooke, 2017, <a href="http://www.dnr.sc.gov/water/hydro/HydroPubs/pdf/Report_60_Potentiometric_maps_2016.pdf" target="_blank">Potentiometric Surface Maps of the South Carolina Coastal Plain Aquifers, November – December 2016</a>: South Carolina Department of Natural Resources, Water Resources Report 60, 35 p., 3 plates.</li>
+                                <li>Wachob, Andrew, Gellici, J.A., and Czwartacki, Brooke, 2017, <a href="pdfs/reports/Report_60_Potentiometric_maps_2016.pdf" target="_blank">Potentiometric Surface Maps of the South Carolina Coastal Plain Aquifers, November – December 2016</a>: South Carolina Department of Natural Resources, Water Resources Report 60, 35 p., 3 plates.</li>
                             </ul>
                         </div>
 
                         <div class="toggler">
-                            <h3 class="closed" style="text-decoration:underline;">Meeting Notes</h3>
+                            <h4 class="closed" style="text-decoration:underline;">Meeting Notes</h4>
                             <ul>
-                                <li><a href="gwmpdfs/MeetingNotesOct2018.pdf">Meeting Notes - October 2018</a></li>
-                                <li><a href="gwmpdfs/MeetingNotesJuly2018.pdf">Meeting Notes - July 2018</a></li>
-                                <li><a href="gwmpdfs/MeetingNotesJune2018.pdf">Meeting Notes - June 2018</a></li>
-                                <li><a href="gwmpdfs/MeetingNotesMay2018.pdf">Meeting Notes - May 2018</a></li>
+                                <li><a href="pdfs/gwm/MeetingNotesMarch2019.pdf">Meeting Notes - March 2019</a></li>
+								<li><a href="pdfs/gwm/MeetingNotesOct2018.pdf">Meeting Notes - October 2018</a></li>
+                                <li><a href="pdfs/gwm/MeetingNotesJuly2018.pdf">Meeting Notes - July 2018</a></li>
+                                <li><a href="pdfs/gwm/MeetingNotesJune2018.pdf">Meeting Notes - June 2018</a></li>
+                                <li><a href="pdfs/gwm/MeetingNotesMay2018.pdf">Meeting Notes - May 2018</a></li>
                             </ul>
                         </div>
 
                         <div class="toggler">
-                            <h3 class="closed" style="text-decoration:underline;">Presentations</h3>
+                            <h4 class="closed" style="text-decoration:underline;">Presentations</h4>
                             <ul>
-                                <li><a href="gwmpdfs/GelliciTACOct2018TexasGroundwaterManagement.pdf">Gellici TAC October 2018 Texas Groundwater Management</a></li>
-                                <li><a href="gwmpdfs/CampbellTACOct2018Recharge.pdf">Campbell TAC October 2018 Recharge Model</a></li>
-                                <li><a href="gwmpdfs/CzwartackiTACOct2018PotMap.pdf">Czwartacki TAC October 2018 Potentiometric Mapping</a></li>
-                                <li><a href="gwmpdfs/GelliciTACJuly2018HydrogeologyMyrtleBeachArea.pdf">Gellici TAC July 2018 Hydrogeology of the Myrtle Beach Area</a></li>
-                                <li><a href="gwmpdfs/CampbellTACJune2018_USGS_NWC_CoastalCarolinas.pdf">Campbell TAC June 2018 USGS National Water Census – Coastal Carolinas Focus Area Study</a></li>
-                                <li><a href="gwmpdfs/GelliciTACJune2018UpdateHydrogeologicFramework.pdf">Gellici TAC June 2018 Update Hydrogeologic Framework</a></li>
-                                <li><a href="gwmpdfs/SanchezTACJune2018ForecastingUrbanizationWaterDemand.pdf">Sanchez TAC June 2018 Forecasting Urbanization and Future Water Demand</a></li>
-                                <li><a href="gwmpdfs/GW_TAC_RECHARGE_1_red.pdf">Butler TAC May 2018 Recharge Model (part 1)</a></li>
-                                <li><a href="gwmpdfs/GW_TAC_RECHARGE_2_red.pdf">Butler TAC May 2018 Recharge Model (part 2)</a></li>
-                                <li><a href="gwmpdfs/CampbellFASTACMtgMay2018.pdf">Campbell TAC May 2018 Groundwater Model</a></li>
-                                <li><a href="gwmpdfs/Gellici_GWTAC1_5172018_red.pdf">Gellici TAC May 2018 Hydrogeologic Framework.pdf</a></li>
+                                <li><a href="pdfs/gwm/GelliciTACMarch2019Overview.pdf">Gellici TAC March 2019 Overview</a></li>
+								<li><a href="pdfs/gwm/GelliciTACOct2018TexasGroundwaterManagement.pdf">Gellici TAC October 2018 Texas Groundwater Management</a></li>
+                                <li><a href="pdfs/gwm/CampbellTACOct2018Recharge.pdf">Campbell TAC October 2018 Recharge Model</a></li>
+                                <li><a href="pdfs/gwm/CzwartackiTACOct2018PotMap.pdf">Czwartacki TAC October 2018 Potentiometric Mapping</a></li>
+                                <li><a href="pdfs/gwm/GelliciTACJuly2018HydrogeologyMyrtleBeachArea.pdf">Gellici TAC July 2018 Hydrogeology of the Myrtle Beach Area</a></li>
+                                <li><a href="pdfs/gwm/CampbellTACJune2018_USGS_NWC_CoastalCarolinas.pdf">Campbell TAC June 2018 USGS National Water Census – Coastal Carolinas Focus Area Study</a></li>
+                                <li><a href="pdfs/gwm/GelliciTACJune2018UpdateHydrogeologicFramework.pdf">Gellici TAC June 2018 Update Hydrogeologic Framework</a></li>
+                                <li><a href="pdfs/gwm/SanchezTACJune2018ForecastingUrbanizationWaterDemand.pdf">Sanchez TAC June 2018 Forecasting Urbanization and Future Water Demand</a></li>
+                                <li><a href="pdfs/gwm/GW_TAC_RECHARGE_1_red.pdf">Butler TAC May 2018 Recharge Model (part 1)</a></li>
+                                <li><a href="pdfs/gwm/GW_TAC_RECHARGE_2_red.pdf">Butler TAC May 2018 Recharge Model (part 2)</a></li>
+                                <li><a href="pdfs/gwm/CampbellFASTACMtgMay2018.pdf">Campbell TAC May 2018 Groundwater Model</a></li>
+                                <li><a href="pdfs/gwm/Gellici_GWTAC1_5172018_red.pdf">Gellici TAC May 2018 Hydrogeologic Framework.pdf</a></li>
                             </ul>
                         </div>
 
                         <div class="toggler">
-                            <h3 class="closed" style="text-decoration:underline;">Meeting Documents</h3>
+                            <h4 class="closed" style="text-decoration:underline;">Meeting Documents</h4>
                             <ul>
-                                <li><a href="gwmpdfs/DuffieTACJune2018_OverdraftingNegativeImpacts.pdf">Duffie TAC June 2018 - What constitutes negative impacts of overdrafting?</a></li>
+                                <li><a href="pdfs/gwm/DuffieTACJune2018_OverdraftingNegativeImpacts.pdf">Duffie TAC June 2018 - What constitutes negative impacts of overdrafting?</a></li>
                             </ul>
                         </div>
 
                     </div>
 
-                </div>
 
+			
+				<div class="col-md-6">
+					<img src="images/GeologicProvinces.jpg" class="img-fluid" alt="physiographic provinces map" title="physiographic provinces map">
+				</div> 			
             </div>
+        </div>
             <!-- white bg -->
 
         </div>
         <!-- /.container -->
 
-        <!-- Footer -->
-        <footer class="py-5 ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <p>SC Department of Natural Resources
-                            <br> Land, Water, and Conservation Division
-                            <br> 1000 Assembly Street
-                            <br> Columbia, SC 29201
-                            <br>
-                            <a href="http://dnr.sc.gov/water/hydro">dnr.sc.gov/water/hydro</a>
-                        </p>
-                        <a href="http://dnr.sc.gov/"><img src="images/dnr-logo-small.gif" alt="SC Department of Natural Resources logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
-                        <p class="mt-3">Copyright ©
-                            <script type="text/javascript">
-                                document.write(new Date().getFullYear());
-                            </script>
-                        </p>
-                    </div>
-
+    <!-- Footer -->
+    <footer class="py-5 ">
+        <div class="container">
+        <h5>SCDNR Hydrology Section</h5>
+            <div class="row mt-4">
+                
+                <div class="col-lg-4 pr-4 sitemap">
+                    <h6>Hydrology Home</h6>
+                    <ul>
+                        <li><a href="index.html">Home Page</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="hydrology-news.html">Hydrology News</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+						<li><a href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a></li>
+                    </ul>
+                    <h6>Water Planning</h6>
+                    <ul>
+                        <li><a href="water-planning.html">Water Planning Home</a></li>
+                        <li><a href="surface-water-models.html">Surface Water Models</a></li>
+                        <li><a href="groundwater-models.html">Groundwater Models</a></li>
+                        <li><a href="water-demand.html">Water Demand Projections</a></li>
+                        <li><a href="swam-models.html">Simplified Water Allocation Models (SWAM)</a></li>
+                        <li><a href="state-and-river-basin-planning.html">State and River Basin Planning</a></li>
+                            <ul>
+                                <li><a href="ppac.html">Planning Process Advisory Committee</a></li>
+                                <li><a href="edisto-basin-planning.html">Edisto Basin Planning</a></li>
+                                <li><a href="faq.html">Frequently Asked Questions</a></li>
+                            </ul>						
+                    </ul>
+                    
+                    <h6>Data</h6>
+                    <ul>
+                        <li><a href="groundwater-data/index.html">Groundwater Level Data</a></li>
+                        <li><a href="geophysical-logs.html">Geophysical Logs</a></li>
+                        <li><a href="well-database.html">Coastal Plain Water Well Database</a></li>
+                        <li><a href="streamflow-and-lake-levels.html">Streamflow and Lake Level Data</a></li>						
+                    </ul>
+                    
                 </div>
-
+                <div class="col-lg-4 pl-lg-4 sitemap">
+                    <h6>Groundwater Program</h6>
+                    <ul>
+                        <li><a href="groundwater.html">Groundwater Program Home</a></li>
+                        <li><a href="groundwater-level-monitoring-network.html">Groundwater Level Monitoring Network</a></li>
+                        <li><a href="well-database.html">Coastal Plain Water Well Database</a></li>
+                        <li><a href="pot-mapping.html">Potentiometric Mapping</a></li>
+                        <li><a href="geophysical-logs.html">Geophysical Logs</a></li>
+                        <li><a href="aquifers.html">Aquifer Delineation</a></li>
+                        <li><a href="aquifer-properties.html">Aquifer Properties</a></li>
+                        <li><a href="groundwater-models.html">Groundwater Models</a></li>
+                        <li><a href="saltwater-intrusion-monitoring.html">Saltwater Intrusion Monitoring Network</a></li>
+                        <li><a href="groundwater-drought-monitoring-network.html">Groundwater Drought Monitoring Network</a></li>						
+                    </ul>
+                    <h6>Surface Water Program</h6>
+                    <ul>
+                        <li><a href="surface-water.html">Surface Water Home</a></li>
+                        <li><a href="surface-water-models.html">Surface Water Models</a></li>
+                        <li><a href="swam-models.html">Simplified Water Allocation Models (SWAM)</a></li>
+                        <li><a href="surface-water-monitoring.html">Surface Water Monitoring Initiatives</a></li>
+                            <ul>
+                                <li><a href="streamflow-and-lake-levels.html">Streamflow and Lake Level Data</a></li>
+                                <li><a href="streamflow-workshops.html">Streamflow Monitoring Workshops</a></li>
+                            </ul>
+                        	
+                        						
+                    </ul>
+                </div>
+                <div class="col-lg-4 pl-lg-5 ">                
+                    <p>South Carolina Department of<br /> Natural Resources<br>
+                    Land, Water, and Conservation Division<br>
+                        1000 Assembly Street<br>
+                        Columbia, SC 29201<br>
+                        <a href="http://hydrology.dnr.sc.gov/">http://hydrology.dnr.sc.gov/</a>
+                    </p>
+                    <a href="http://dnr.sc.gov/"><img src="images/dnr-logo-small.gif" alt="SC Department of Natural Resources logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
+                    <p class="mt-3">Copyright © 
+                        <script type="text/javascript">
+                            document.write(new Date().getFullYear());
+                        </script>
+                    </p>
+                </div>
             </div>
-        </footer>
+            
+        </div>        
+    </footer>
 
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>
@@ -216,7 +294,7 @@
         <!-- JQUERY TOGGLE SCRIPT -->
         <script>
             $(function() {
-                $('.toggler h3').click(function() {
+                $('.toggler h4').click(function() {
                     $(this).next().slideToggle();
                     $(this).toggleClass("closed open");
                 });
@@ -226,12 +304,12 @@
         <script>
             $(".allDocsClose").click(function() {
                 $(".toggler ul").show("slow");
-                $(".toggler h3").removeClass("closed open").addClass("open");
+                $(".toggler h4").removeClass("closed open").addClass("open");
             });
 
             $(".allDocsOpen").click(function() {
                 $(".toggler ul").hide("slow");
-                $(".toggler h3").removeClass("open closed").addClass("closed");
+                $(".toggler h4").removeClass("open closed").addClass("closed");
             });
         </script>
 

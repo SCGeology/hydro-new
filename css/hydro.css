@@ -33,10 +33,16 @@ body {
     min-height: 1px;
 }
 
-/*FONT STUFF - LOADING FONTS FROM cloudtypography ACCOUNT*/
-
 h1, h2, h3, h4, h5, p, a {
     color:#051f38;
+}
+
+.about-table {
+    max-width:500px;
+}
+
+.table-bordered td, .table-bordered  th{
+    border:1px solid #555;
 }
 
 .card-title {
@@ -44,7 +50,7 @@ h1, h2, h3, h4, h5, p, a {
     color: #051f38;
 }
 
-.cal-header{
+.cal-header {
     color:white;
     background-color:#123e66;
     padding:6px;
@@ -57,6 +63,10 @@ h1, h2, h3, h4, h5, p, a {
 
 #cal-events, #news-items{
     padding-left:20px;
+}
+
+#cal-events li {
+    padding-top: 10px; 
 }
 
 .navbar-brand{
@@ -93,13 +103,6 @@ a {text-decoration: underline;}
     text-decoration: underline;
     cursor: pointer;
 }
-.about-table {
-    max-width:500px;
-}
-.table-bordered td, .table-bordered  th{
-    border:1px solid #555;
-}
-
 h3:target {
     padding-top: 80px;
     margin-top: -80px;
@@ -120,24 +123,6 @@ h3:target {
   display: flex;
   flex-direction: column;
 }
-.links {
-    width:100%;
-    border-bottom: 1px solid #999;
-    line-height: 2em;
-    color:#666;
-}
-.links a {
-    color:#555;
-}
-.links a:hover{
-    color:#051f38;
-}
-.lil-nav-active{
-    color:#051f38;
-    padding:2px 5px;
-    border-radius:2px;
-    font-weight: bold;
-}
 
 
 /*HEADER, NAVBAR, BACKGROUND*/
@@ -150,19 +135,15 @@ h3:target {
     background-size: cover;
     -o-background-size: cover;
 }
-.business-header-main {
-    height:20%;
-}
-.bg-image-full {
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    background-size: cover;
-    -o-background-size: cover;
-}
+
 .navbar,
 .dropdown-menu {
     background-color: #123e66;
+}
+@media (max-width: 992px) {
+    .dropdown-menu {
+        text-align: center;
+    }
 }
 .navbar a {
     color: #fff;
@@ -176,13 +157,14 @@ h3:target {
     font-size:3em;
 }
 .background-text{
-    background:rgba(0,0,0,0.3)
+    background:rgba(0,0,0,0.4)
 }
 
-.inner-logo {
-    width: 10%;
-    min-width: 100px;
+
+.nav-item {
+    margin-left: 8px;
 }
+
 .nav-item:hover {
     text-decoration: underline;
 }
@@ -193,33 +175,10 @@ h3:target {
     color:white;
 }
 
-.navbar-toggler {
-    border-width: 1px;
-    border-color: rgba(255, 255, 255, 0.5)
-}
-#intro-caption{
-    color:rgba(255,255,255,0.4);
-    position: absolute;
-    top:-30px;
-    right:5px;
-}
-.navguide {
-    font-size:12px;
-    position: relative;
-    top:-50px;
-    left: 10px;
-    color:#842932;
-}
-
-/*Events Calendar*/
-.embed-cal {
-    min-height:400px;
-}
-
 
 /*FOOTER*/
 footer {
-    background-color: #6e7b82;
+    background-color: #a7acaf;
 }
 .footer-content{
     color:white;
@@ -261,12 +220,8 @@ footer {
         margin: 10px 0;
     }
 }
-.geocoder-control-input {
-    font-size: 16px;
-}
-/*FAQ droptown divs*/
-#faq {}
 
+/*FAQ droptown divs*/
 .question{
     padding:5px;
     
@@ -278,169 +233,93 @@ footer {
     color:#2e6da4;
     width:95%;
 }
+.sitemap li {
+    list-style: none;
+} 
 
-/*bunch of stuff for the groundwater viewer */
-
-/*leaflet*/
-/*bunch of stuff for the groundwater viewer */
-
-/*leaflet*/
-#map{
-    height:500px;
-    width:100%;
-}
-.cluster{
-    border-radius:100%;
-    text-align: center;
-    background-color:rgba(20, 20, 20,0.8);
-    border:3px solid #aaaaaa;
-    opacity: 0.8;
-}
-
-/*dygraph*/
-#chart {
-    height:225px;
-    margin-bottom: 8px;
-}
-.dygraph-title{
-    font-size:16px;
-}
-
-#datefilter label{
-    font-weight: normal;
-}
-.dygraph-legend{
-    top:-20px !important;
-    width:260px !important;
-	font-size:16px !important;
-}
-#datefilter input, #axis input {
-	max-width:200px;
-}
-#hydrolegend img {
-    height:20px;
-    width:auto;
-    margin: 0 15px;
-}
-
-.leaflet-clear-control {
-    height:34px;
-    width:34px;
-    background-color:white;
-}
-.leaflet-clear-control i {
-    margin:3px 2px;
-    color:#888;
-}
-
-.leaflet-clear-control:hover{
-    cursor: pointer;
-}
-.leaflet-clear-control i:hover{
-    color:#222;
-}
-.leaflet-clear-control i:active{
-    color:gray;
-}
-
-/*table on map displaying well info*/
-#table{
-	position:absolute;
-	bottom:0px;
-	right:0;
-	left:0;
-	min-height:80px;
-    z-index: 1029;
-    background-color:rgba(50,50,50,0.85);
-    font-size: 1.4em;
-}
-
-#table table td, #table table th {
-    padding:3px;
-    height:24px;
-}
-
-#table h5 {
-    color: #00e7e7;
-    padding-top: 5px;
-}
-#table p {
-	    color:#fff;
-		margin-bottom:5px;
-}
-
-#close-tab {
-	width:200px;
-	height:30px;
-	position:absolute;
-	top:-30px;
-	right:15px;
-	border-top-right-radius:6px;
-	border-top-left-radius:6px;
-	background-color:rgba(50,50,50,0.85);
-	color:#ddd;
-	cursor:pointer;
-}
-#arrow-up{
-	display:none;
-}
-
-#legend{
-    width:100%;
-    max-width: 750px;
-    text-align: center;
-    padding:5px 0;
-    margin:5px 0;
-}
-
-#getdata{
-    cursor: pointer;
-}
-
-#loading{
-	display:none;
-}
-
-/*Table on Geophysical Logs*/
- #geoTable td, #geoTable th {
-	 padding: 5px
- }
-
-/*FAQ droptown divs*/
-
-.question{
-    padding:5px;
-    text-decoration: underline;
-}
-.question:hover{cursor: pointer;background-color:#eee;border-radius:4px;}
-.answer{
-    display:none;
-    padding:8px;
-    color:#2e6da4;
-    width:95%;
-}
-#wellgraph {
-    width:90%;
-    padding:10px;
-    height:auto;
-    margin:10px auto;
-}
-
-#caption {
-	font-size:12px;
-}
-
-.csvLinks {
-	padding:4px;
+.news {
 	font-weight: bold;
-	border-radius: 4px;
-	background-color:#d0e1e1;
+	font-style: italic;
 }
 
+/* style for surfacewater.html toggle in "documents" div drop downs*/
 
-i {
-    margin-right:10px;
+#find-out-more {
+    background-color:#d7eadf;
+    border-radius: 4px;
+    box-shadow:1px 1px 1px #ddd;
 }
-.form-control {
-    color:  #051f38;
+
+#water-demand-box {
+    background-color:#d7eadf;
+    border-radius: 4px;
+    box-shadow:1px 1px 1px #ddd;
+}
+
+.btn-light {
+	background-color:#8A968E;
+}	
+
+.allDocsClose, .allDocsOpen {
+    text-decoration: underline;
+    cursor: pointer;
+    color:blue;
+    font-size:1em;
+    background-color: #ddd;
+    border-radius: 3px;
+    padding: 3px 6px;
+    border-left: 1px solid gray;
+    border-bottom: 1px solid gray;
+}
+
+.allDocsClose:hover, .allDocsOpen:hover {border:0px;}
+
+.new {color:red; margin: 0 0 0 12px;}
+
+.toggler ul {
+	display:none;
+    margin: 0;
+    padding-bottom: 4px;
+}
+.toggler li{margin:10px;}
+
+.toggler h4 {
+    border-radius:4px;
+    margin:0;
+    line-height: 1.5em;
+}
+
+.toggler h4:hover {
+	cursor:pointer;
+	background-color: #ddd;
+	border-radius:4px;
+}
+
+.toggler h3:hover {
+	cursor:pointer;
+	background-color: #ddd;
+	border-radius:4px;
+}
+
+.toggler p {
+	display:none;
+    margin: 0;
+    padding-bottom: 4px;
+}
+
+.closed {
+    background:url('/rightarrow.png') no-repeat;
+    background-position:90% center;
+}
+
+.open {
+    background:url('../assets/downarrow.png') no-repeat;
+    background-position:90% center;
+}
+
+.basinDocs {
+    list-style-type: none;
+    display:block;
+    margin: 5px;
+    padding-left: 20px; 
 }

@@ -17,10 +17,10 @@
 
     <!-- Custom styles for this template -->
     <link href="css/hydro.css" rel="stylesheet">
-    <link href="css/surface-water.css" rel="stylesheet">
+    
     <link href="css/streamflow-map.css" rel="stylesheet">
-    <link href="vendor/leaflet_fullscreen/leaflet.fullscreen.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.css" rel="stylesheet">
+   
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.5.1/dist/leaflet.css" />
     
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.css"/>
     
@@ -31,7 +31,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg text-white fixed-top">
         <div class="container">
-            <img src="images/dnr-logo-small.gif" id="nav-logo">
+            <a href="http://www.dnr.sc.gov/"><img src="images/dnr-logo-small.gif" id="nav-logo" alt="scdnr-logo"></a>
             <a class="navbar-brand ml-5 pl-5 pl-md-1" href="index.html">SCDNR Hydrology</a>
             <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,48 +39,54 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html">About Us</a>
                     </li>
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
-					<a class="dropdown-item" href="water-planning.html">
-					Water Planning</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataOne" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Water Planning</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataOne">
+						<a class="dropdown-item" href="water-planning.html">Overview</a>
+						<a class="dropdown-item" href="state-and-river-basin-planning.html">State and River Basin Planning</a>
+						<a class="dropdown-item" href="edisto-basin-planning.html">Edisto Basin Planning</a>
+						<a class="dropdown-item" href="water-demand.html">Water Demand Projections</a>
+						<a class="dropdown-item" href="surface-water-models.html">Surface Water Models</a>
+						<a class="dropdown-item" href="groundwater-models.html">Groundwater Models</a>
+						</div>
+                    </li>
+					<!--Data Dropdown Done-->
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataTwo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataTwo">
 					<a class="dropdown-item" href="groundwater.html">
 					Groundwater</a>
 					<a class="dropdown-item" href="surface-water.html">
 					Surface Water</a>
 					</div>
 					</li>
-					<!--Data Dropdown Done-->					
-                    <li class="nav-item">
-                        <a class="nav-link" href="publications.html">Publications</a>
-                    </li>
+					<!--Data Dropdown Done-->	
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataThree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataThree">
 					<a class="dropdown-item" href="groundwater-data/index.html">
 					Groundwater Level Data</a>
-					<a class="dropdown-item" href="http://www.dnr.sc.gov/hydro/gl_home.html">
+					<a class="dropdown-item" href="geophysical-logs.html">
 					Geophysical Logs</a>
 					<a class="dropdown-item" href="well-database.html">
 					Coastal Plain Well Database</a>
 					<a class="dropdown-item" href="streamflow-and-lake-levels.html">
 					Streamflow and Lake Levels</a>
-					<a class="dropdown-item" href="swam-models.html">
-					Surface Water Models</a>
 					</div>
 					</li>
 					<!--Data Dropdown Done-->
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=tangnar123%40gmail.com&ctz=America%2FNew_York">Calendar</a>
+                     <li class="nav-item">
+                        <a class="nav-link" href="publications.html">Publications</a>
+                    </li>					
+                     <li class="nav-item">
+                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a>
                     </li>
-
+                    
                 </ul>
             </div>
         </div>
@@ -92,7 +98,7 @@
             <div class="row">
                 <div class="col-lg-12 my-sm-4 pt-3 pt-sm-0 background-text">
                     <h1 class="page-header">Streamflow Monitoring Workshops</h1>
-                    <p class="text-white lead">Streamflow monitoring workshops were held to highlight streamflow monitoring needs in the State and to solicit additional monitoring recommendations.</p>
+                    <p class="text-white lead">The Surface Water Program held workshops to highlight streamflow monitoring needs in the State and to solicit additional monitoring recommendations.</p>
                 </div>
             </div>
         </div>
@@ -102,57 +108,58 @@
     <div class="container">
 
         <div class="white-bg">
-            <h2>Proposed Monitoring Sites</h2>
+            <h2>Overview</h2>
             <div class="row">
                 <div class="col-lg-9">
-  
-                     <p>The SCDNR hosted two streamflow monitoring workshops on 2/3/16 and 3/10/16 to highlight streamflow monitoring needs in the State and to solicit additional monitoring recommendations. The workshops were attended by a wide variety of stakeholders including local, state and federal agencies, water suppliers, power utilities and conservation groups. <strong>A total of 105 recommendations were made and are presented in the map below </strong>(<a href="http://dnr.sc.gov/water/hydro/flowmap/docs/StreamflowSitesMap.pdf">PDF version of this map - 8mb</a>). Sites designated as “reactivation” are sites where the United States Geological Survey (USGS) has previously collected data on streamflow but are not currently collecting data. New monitoring reaches are streams where the USGS has not previously collected data. Most sites are recommended for stream discharge measurements; however, conductivity monitoring was recommended for several sites along the coast, while a few other sites in the State were recommended for stream discharge and water quality monitoring.</p>
+					<p>SCDNR hosted <a href="#workshops">two streamflow monitoring workshops</a> in early 2016 to highlight streamflow monitoring needs in the State and to solicit additional monitoring recommendations. The workshops were attended by a wide variety of stakeholders including local, state and federal agencies, water suppliers, power utilities and conservation groups. <strong>A total of 105 recommendations were made during these workshops. Since 2016, 40 of the recommendations have been funded by SCDNR or other State and Federal agencies.</strong> The map below shows the 105 recommendations and highlights the 40 newly funded sites (<a href="pdfs/maps/StreamflowMonitoringRecommendations_Update_09_04_19.pdf" target="_blank">PDF version of this map - 8mb</a>).</p>
+					<p>The 105 recommendations are also listed in the table below. The Reactivation Sites tab designates sites where the United States Geological Survey (USGS) has previously collected streamflow data but are not currently collecting data. The New Sites tabs are stream reaches or sites where the USGS has not previously collected data. Most sites are recommended for stream discharge measurements; however, conductivity monitoring also was recommended for several sites along the coast, while a few other sites in the State were recommended for stream discharge and water quality monitoring. The Funded Recommendations tab lists those sites or reaches that have been funded since the workshops in 2016.</p>
                     
-                    <a href="http://waterwatch.usgs.gov/?m=real&w=map&r=sc" target="_blank">USGS Water Watch real time gage data for South Carolina</a>
+                    <a href="https://waterdata.usgs.gov/sc/nwis/current/?type=flow&format=pre" target="_blank">USGS Real-time Streamflow Data</a>
 
 
                 </div>
                 <div class="col-lg-2 ml-lg-5" >
                     <div id="logos">
-                        <img id="dnrLogo" src="http://dnr.sc.gov/water/hydro/flowmap/docs/dnrLogo.png" alt="dnr logo" />
-                        <img id="usgsLogo" src="http://dnr.sc.gov/water/hydro/flowmap/docs/USGSlogo.png" alt="usgs logo" />
+                        <img id="dnrLogo" src="images/dnr-logo-small.gif" alt="dnr logo" style="padding:5px">
+                        <img id="usgsLogo" src="images/usgsLogo.png" alt="usgs logo" style="padding:5px">
                     </div>
                 </div>
             </div>
         </div> 
         
         <div class="white-bg">
-            <p>Layers can be turned on and off at the upper right of the map. Clicking a site will show more information about the site.</p>
+            <p>Layers can be turned on and off at the upper right of the map. Clicking a site will show more information about the site.<br /><span class="funded">Sites designated in red have been funded. Some sites will not become operational until July 2020.</span></p>
             <div id="map"></div>
         </div>
                 
 
         <div class="white-bg">
 
-           <h2>Proposed Site Data Tables</h2>
+           <h2>Workshop Recommendations</h2>
             
-            <p>Search for sites in the table. Clicking the Site ID will zoom to that site on the map.</p>
+            <p>Search for sites in the table. Clicking the Site ID will zoom to that site on the map.<br>
+			<span class="funded">Sites designated in red have been funded. Some sites will not become operational until July 2020.</span></p>
             
             <div id="table-tabs">
             
             <ul class="nav nav-tabs" id="myTab" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" id="new-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="true">New Sites</a>
+                <a class="nav-link active" id="new-tab" data-toggle="tab" href="#new" role="tab" aria-controls="new" aria-selected="true">Recommended New Sites</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="react-tab" data-toggle="tab" href="#react" role="tab" aria-controls="react" aria-selected="false">Reactivation Sites</a>
+                <a class="nav-link" id="react-tab" data-toggle="tab" href="#react" role="tab" aria-controls="react" aria-selected="false">Recommended Reactivation Sites</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" id="def-tab" data-toggle="tab" href="#def" role="tab" aria-controls="def" aria-selected="false">Site Designation Definitions</a>
-              </li>
+                <a class="nav-link" id="fund-tab" data-toggle="tab" href="#fund" role="tab" aria-controls="fund" aria-selected="false">All Funded Recommendations</a>
+              </li>			  
             </ul>
             <div class="tab-content" id="myTabContent">
               <div class="tab-pane fade show active" id="new" role="tabpanel" aria-labelledby="new-tab">
                         <table class="table" id="newSites">
                             <thead>
                                 <tr>
-                                    <th title="Field #1">Site ID</th>
-                                    <th title="Field #2">Reach or Site</th>
+                                    <th class="siteID" title="Field #1">Site ID</th>
+                                    <th title="Field #2">Site</th>
                                     <th title="Field #3">Basin</th>
                                     <th title="Field #4">Description</th>
                                     <th title="Field #5">Designation</th>
@@ -217,7 +224,7 @@
                                 </tr>
                                 <tr>
                                     <td>3</td>
-                                    <td>South Fork Edisto Headwaters</td>
+                                    <td class="funded">South Fork Edisto Headwaters</td>
                                     <td>Edisto</td>
                                     <td>Mainstem or Beech Creek</td>
                                     <td>WU/Regulation, SW Assessments, DNR Fisheries</td>
@@ -231,7 +238,7 @@
                                 </tr>
                                 <tr>
                                     <td>5</td>
-                                    <td>North Fork Edisto Headwaters</td>
+                                    <td class="funded">North Fork Edisto Headwaters</td>
                                     <td>Edisto</td>
                                     <td>Mainstem, Chinquapin Creek or Lightwood Knot Creek</td>
                                     <td>WU/Regulation, SW Assessments</td>
@@ -245,7 +252,7 @@
                                 </tr>
                                 <tr>
                                     <td>7</td>
-                                    <td>Shaw Creek</td>
+                                    <td class="funded">Shaw Creek</td>
                                     <td>Edisto</td>
                                     <td>Tributary to South Fork Edisto</td>
                                     <td>WU/Regulation, SW Assessments</td>
@@ -259,14 +266,14 @@
                                 </tr>
                                 <tr>
                                     <td>35</td>
-                                    <td>Edisto River</td>
+                                    <td class="funded">Edisto River</td>
                                     <td>Edisto</td>
                                     <td>Mainstem, US 17</td>
                                     <td>DOT, Forecasting</td>
                                 </tr>
                                 <tr>
                                     <td>36</td>
-                                    <td>Edisto River</td>
+                                    <td class="funded">Edisto River</td>
                                     <td>Edisto</td>
                                     <td>Mainstem, I-95</td>
                                     <td>DOT, Forecasting</td>
@@ -280,7 +287,7 @@
                                 </tr>
                                 <tr>
                                     <td>67</td>
-                                    <td>North Fork Edisto River</td>
+                                    <td class="funded">North Fork Edisto River</td>
                                     <td>Edisto</td>
                                     <td>Mainstem, Hwy 321 or Slab Landing Rd</td>
                                     <td>Flood Forecasting</td>
@@ -315,14 +322,14 @@
                                 </tr>
                                 <tr>
                                     <td>12</td>
-                                    <td>Thompson Creek</td>
+                                    <td class="funded">Thompson Creek</td>
                                     <td>Pee Dee</td>
                                     <td>Tributary to Pee Dee</td>
                                     <td>SW Assessments, major tributary to Pee Dee River</td>
                                 </tr>
                                 <tr>
                                     <td>13</td>
-                                    <td>Black River</td>
+                                    <td class="funded">Black River</td>
                                     <td>Pee Dee</td>
                                     <td>Mainstem, SC 41</td>
                                     <td>DOT, Flood Forecasting</td>
@@ -343,7 +350,7 @@
                                 </tr>
                                 <tr>
                                     <td>32</td>
-                                    <td>Pee Dee River</td>
+                                    <td class="funded">Pee Dee River</td>
                                     <td>Pee Dee</td>
                                     <td>Mainstem near NC-SC border</td>
                                     <td>SW Assessments</td>
@@ -357,63 +364,63 @@
                                 </tr>
                                 <tr>
                                     <td>37</td>
-                                    <td>Pee Dee River</td>
+                                    <td class="funded">Pee Dee River</td>
                                     <td>Pee Dee</td>
                                     <td>Mainstem, I-95</td>
                                     <td>DOT, Forecasting</td>
                                 </tr>
                                 <tr>
                                     <td>38</td>
-                                    <td>Pee Dee/Waccamaw</td>
+                                    <td class="funded">Pee Dee/Waccamaw</td>
                                     <td>Pee Dee</td>
                                     <td>US 17</td>
                                     <td>DOT, Forecasting</td>
                                 </tr>
                                 <tr>
                                     <td>39</td>
-                                    <td>Lynches River</td>
+                                    <td class="funded">Lynches River</td>
                                     <td>Pee Dee</td>
                                     <td>Mainstem, I-95</td>
                                     <td>DOT, Forecasting</td>
                                 </tr>
                                 <tr>
                                     <td>40</td>
-                                    <td>Lynches River</td>
+                                    <td class="funded">Lynches River</td>
                                     <td>Pee Dee</td>
                                     <td>Mainstem, SC 41/51</td>
                                     <td>DOT, Forecasting</td>
                                 </tr>
                                 <tr>
                                     <td>41</td>
-                                    <td>Black River</td>
+                                    <td class="funded">Black River</td>
                                     <td>Pee Dee</td>
                                     <td>Mainstem, SC 51</td>
                                     <td>DOT, Forecasting</td>
                                 </tr>
                                 <tr>
                                     <td>42</td>
-                                    <td>Black River</td>
+                                    <td class="funded">Black River</td>
                                     <td>Pee Dee</td>
                                     <td>Mainstem, US 701</td>
                                     <td>DOT, Flood Forecasting, Coastal Studies</td>
                                 </tr>
                                 <tr>
                                     <td>43</td>
-                                    <td>Lumber River</td>
+                                    <td class="funded">Lumber River</td>
                                     <td>Pee Dee</td>
                                     <td>Mainstem, SC 9/US 76</td>
                                     <td>DOT, Flood Forecasting, SW Assessments</td>
                                 </tr>
                                 <tr>
                                     <td>44</td>
-                                    <td>Little Pee Dee River</td>
+                                    <td class="funded">Little Pee Dee River</td>
                                     <td>Pee Dee</td>
                                     <td>Mainstem, US 378</td>
                                     <td>DOT, Flood Frequency/Forecasting</td>
                                 </tr>
                                 <tr>
                                     <td>45</td>
-                                    <td>Pocotaligo River</td>
+                                    <td class="funded">Pocotaligo River</td>
                                     <td>Pee Dee</td>
                                     <td>Tributary to Black River, I-95</td>
                                     <td>DOT, Flood Frequency/Forecasting, SW Assessments</td>
@@ -427,7 +434,7 @@
                                 </tr>
                                 <tr>
                                     <td>60</td>
-                                    <td>Pee Dee River</td>
+                                    <td class="funded">Pee Dee River</td>
                                     <td>Pee Dee</td>
                                     <td>Mainstem, US 15/401</td>
                                     <td>Flood Forecasting</td>
@@ -490,14 +497,14 @@
                                 </tr>
                                 <tr>
                                     <td>16</td>
-                                    <td>Little Salkehatchie River</td>
+                                    <td class="funded">Little Salkehatchie River</td>
                                     <td>Salkehatchie</td>
                                     <td>Tributary to Salkehatchie</td>
                                     <td>DNR Fisheries, SW Assessments, Flood Frequency, General lack of streamflow data in basin</td>
                                 </tr>
                                 <tr>
                                     <td>17</td>
-                                    <td>Salkehatchie River</td>
+                                    <td class="funded">Salkehatchie River</td>
                                     <td>Salkehatchie</td>
                                     <td>Upper Salkehatchie Mainstem</td>
                                     <td>DNR Fisheries, SW Assessments, Flood Frequency, General lack of streamflow data in basin</td>
@@ -525,7 +532,7 @@
                                 </tr>
                                 <tr>
                                     <td>19</td>
-                                    <td>Twelvemile Creek</td>
+                                    <td class="funded">Twelvemile Creek</td>
                                     <td>Saluda</td>
                                     <td>Tributary Saluda</td>
                                     <td>WU/Regulation, SW Assessments, Flood Frequency/Forecasting, Water Quality</td>
@@ -546,28 +553,28 @@
                                 </tr>
                                 <tr>
                                     <td>28</td>
-                                    <td>Congaree River</td>
+                                    <td class="funded">Congaree River</td>
                                     <td>Saluda</td>
                                     <td>Above Wateree River Confluence</td>
                                     <td>SW Assessments</td>
                                 </tr>
                                 <tr>
                                     <td>47</td>
-                                    <td>Saluda River</td>
+                                    <td class="funded">Saluda River</td>
                                     <td>Saluda</td>
                                     <td>Mainstem, I-26</td>
                                     <td>Flood Forecasting</td>
                                 </tr>
                                 <tr>
                                     <td>48</td>
-                                    <td>Coronaca Creek</td>
+                                    <td class="funded">Coronaca Creek</td>
                                     <td>Saluda</td>
                                     <td>Tributary to Wilson Creek</td>
                                     <td>Flood Forecasting</td>
                                 </tr>
                                 <tr>
                                     <td>49</td>
-                                    <td>Little River</td>
+                                    <td class="funded">Little River</td>
                                     <td>Saluda</td>
                                     <td>Reach between City of Laurens and Newberry County Line</td>
                                     <td>Flood Forecasting</td>
@@ -595,14 +602,14 @@
                                 </tr>
                                 <tr>
                                     <td>21</td>
-                                    <td>Ashley River</td>
+                                    <td class="funded">Ashley River</td>
                                     <td>Santee</td>
                                     <td>Mainstem</td>
                                     <td>Coastal Studies</td>
                                 </tr>
                                 <tr>
                                     <td>51</td>
-                                    <td>French Quarter Creek</td>
+                                    <td class="funded">French Quarter Creek</td>
                                     <td>Santee</td>
                                     <td>Tributary to East Branch Cooper River</td>
                                     <td>Flood Forecasting</td>
@@ -630,14 +637,14 @@
                                 </tr>
                                 <tr>
                                     <td>22</td>
-                                    <td>Chauga River</td>
+                                    <td class="funded">Chauga River</td>
                                     <td>Savannah</td>
                                     <td>Tributary to Lake Hartwell</td>
                                     <td>SW Assessments, DNR Fisheries</td>
                                 </tr>
                                 <tr>
                                     <td>23</td>
-                                    <td>Eastatoe Creek</td>
+                                    <td class="funded">Eastatoe Creek</td>
                                     <td>Savannah</td>
                                     <td>Headwater Tributary to Lake Keowee</td>
                                     <td>SW Assessments, DNR Fisheries, lack of gages in Blue Ridge</td>
@@ -672,7 +679,7 @@
                                 </tr>
                                 <tr>
                                     <td>57</td>
-                                    <td>Steven&#39;s Creek</td>
+                                    <td class="funded">Steven&#39;s Creek</td>
                                     <td>Savannah</td>
                                     <td>Mainstem, Woodlawn Rd</td>
                                     <td>Flood Forecasting</td>
@@ -686,7 +693,7 @@
                                 </tr>
                             </tbody>
                         </table>
-                  <a class="csvLinks my-3" href="flowmap/docs/newSites.csv">Download a CSV file of this table.</a>
+                  <a class="csvLinks my-3" href="flowmap/data/newSites.csv">Download a CSV file of this table.</a>
               </div>
                   
               <div class="tab-pane fade" id="react" role="tabpanel" aria-labelledby="react-tab">
@@ -694,14 +701,14 @@
                             <table class="table" id="reactSites">
                                 <thead>
                                     <tr>
-                                        <th title="Field #1" >Site ID</th>
-                                        <th title="Field #2" >Site No.</th>
-                                        <th title="Field #3" >Site Name</th>
+                                        <th class="siteID" title="Field #1">Site ID</th>
+                                        <th title="Field #2">Site No.</th>
+                                        <th title="Field #3">Site</th>
                                         <th title="Field #4">Basin</th>
-                                        <th title="Field #5" >DA</th>
+                                        <th title="Field #5">DA</th>
                                         <th title="Field #6">Start</th>
                                         <th title="Field #7">End</th>
-                                        <th title="Field #8" >Years</th>
+                                        <th title="Field #8">Years</th>
                                         <th title="Field #9">Designation</th>
                                     </tr>
                                 </thead>
@@ -720,7 +727,7 @@
                                     <tr>
                                         <td>77</td>
                                         <td>2156370</td>
-                                        <td>Pacolet River near Saratt, SC</td>
+                                        <td class="funded">Pacolet River near Saratt, SC</td>
                                         <td>Broad</td>
                                         <td>-1.0</td>
                                         <td>8/22/2012</td>
@@ -731,7 +738,7 @@
                                     <tr>
                                         <td>78</td>
                                         <td>2157000</td>
-                                        <td>North Tyger River near Fairmont, SC</td>
+                                        <td class="funded">North Tyger River near Fairmont, SC</td>
                                         <td>Broad</td>
                                         <td>44.4</td>
                                         <td>10/1/1950</td>
@@ -742,7 +749,7 @@
                                     <tr>
                                         <td>79</td>
                                         <td>2159000</td>
-                                        <td>South Tyger River near Woodruff, SC</td>
+                                        <td class="funded">South Tyger River near Woodruff, SC</td>
                                         <td>Broad</td>
                                         <td>174.0</td>
                                         <td>10/1/1933</td>
@@ -753,7 +760,7 @@
                                     <tr>
                                         <td>80</td>
                                         <td>2159500</td>
-                                        <td>Tyger River near Woodruff, SC</td>
+                                        <td class="funded">Tyger River near Woodruff, SC</td>
                                         <td>Broad</td>
                                         <td>351.0</td>
                                         <td>10/1/1929</td>
@@ -775,7 +782,7 @@
                                     <tr>
                                         <td>82</td>
                                         <td>2160000</td>
-                                        <td>Fairforest Creek near Union, SC</td>
+                                        <td class="funded">Fairforest Creek near Union, SC</td>
                                         <td>Broad</td>
                                         <td>183.0</td>
                                         <td>7/1/1940</td>
@@ -819,7 +826,7 @@
                                     <tr>
                                         <td>86</td>
                                         <td>2147403</td>
-                                        <td>Fishing Creek below Fort Lawn, SC</td>
+                                        <td class="funded">Fishing Creek below Fort Lawn, SC</td>
                                         <td>Catawba</td>
                                         <td>280.0</td>
                                         <td>2/15/2001</td>
@@ -863,7 +870,7 @@
                                     <tr>
                                         <td>90</td>
                                         <td>2174000</td>
-                                        <td>Edisto River near Branchville, SC</td>
+                                        <td class="funded">Edisto River near Branchville, SC</td>
                                         <td>Edisto</td>
                                         <td>1720.0</td>
                                         <td>10/1/1945</td>
@@ -885,7 +892,7 @@
                                     <tr>
                                         <td>92</td>
                                         <td>2132500</td>
-                                        <td>Little Pee Dee River near Dillon, SC</td>
+                                        <td class="funded">Little Pee Dee River near Dillon, SC</td>
                                         <td>Pee Dee</td>
                                         <td>524.0</td>
                                         <td>4/1/1939</td>
@@ -1028,7 +1035,7 @@
                                     <tr>
                                         <td>105</td>
                                         <td>2197315</td>
-                                        <td>Upper Three Runs at Road A (SRS), SC</td>
+                                        <td  class="funded">Upper Three Runs at Road A (SRS), SC</td>
                                         <td>Savannah</td>
                                         <td>203.0</td>
                                         <td>6/6/1974</td>
@@ -1039,96 +1046,441 @@
                                 </tbody>
                             </table>
                             <span class="footnote">*DA: Drainage area in square miles, -1 denotes that drainage area is not listed on USGS website or the site is a tidal creek</span><br><br>
-                        <a class="csvLinks" href="flowmap/docs/reactivationSites.csv">Download a CSV file of this table.</a>
+                        <a class="csvLinks" href="flowmap/data/reactivationSites.csv">Download a CSV file of this table.</a>
                   
               </div>
                 
-              <div class="tab-pane fade" id="def" role="tabpanel" aria-labelledby="def-tab">
-                        <table class="table table-bordered">
+				
+				<div class="tab-pane fade" id="fund" role="tabpanel" aria-labelledby="fund-tab">
+
+                        <table class="table" id="fundSites">
                             <thead>
-                                <tr>
-                                    <th title="Designation">Designation</th>
-                                    <th title="Purpose">Purpose</th>
-                                </tr>
+								<tr>
+									<th class="siteID" title="Field #1">Site ID</th>
+									<th title="Field #2">Site</th>
+									<th title="Field #3">Basin</th>
+									<th title="Field #4">Description</th>
+									<th title="Field #5">Designation</th>
+									<th title="Field #6">Notes</th>
+								</tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Flood Frequency Site</td>
-                                    <td>Will be used to determine flood frequencies and magnitudes.</td>
-                                </tr>
-                                <tr>
-                                    <td>Flood Forecasting Site</td>
-                                    <td>Will be used for forecasting flood events and are important for public safety.</td>
-                                </tr>
-                                <tr>
-                                    <td>SW Assessment Site</td>
-                                    <td>Will be used to improve UIFs (Unimpaired Flows) for model development as part of the State&#39;s Surface Water Assessment Project. These UIFS are used to develop inflows to the surface water allocation models being developed by the SCDNR, SCDHEC, and a consultant (CDM Smith).</td>
-                                </tr>
-                                <tr>
-                                    <td>POR Site</td>
-                                    <td>Period of Record (for reactivation sites only) - site has 20 or more years of historic data from which to compare new streamflow data.</td>
-                                </tr>
-                                <tr>
-                                    <td>DNR Fisheries Site</td>
-                                    <td>Will be used by SCDNR biologists for monitoring and fisheries assessment, management and protection.</td>
-                                </tr>
-                                <tr>
-                                    <td>Coastal Studies Site</td>
-                                    <td>Will help define location of the saltwater/freshwater interface and help determine rate of salt water intrusion.</td>
-                                </tr>
-                                <tr>
-                                    <td>WU/Regulation Site</td>
-                                    <td>Site is regulated or has impairment (downstream of a reservoir, noteable water use/withdrawals, etc.), and data will be used to assess water availability concerns.</td>
-                                </tr>
-                                <tr>
-                                    <td>DOT Site</td>
-                                    <td>Will be at a bridge crossing and will address DOT infrastructure and transportation concerns.</td>
-                                </tr>
-                                <tr>
-                                    <td>Water Quality</td>
-                                    <td>Will be used to monitor water quality</td>
-                                </tr>
-                                <tr>
-                                    <td>Ecological</td>
-                                    <td>Will be used to monitor and study a stream of noted ecological value or concern</td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2" class="footnote">Other purposes include the general lack of data availability on a mainstem, a major tributary, or in a particular part of a basin.
-                                        <br> Though not listed explicitly, many of the proposed sites can also be used for low flow studies (7Q10 estimates, for example) or for drought monitoring.</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                </div>  
+							<tbody>
+							  <tr>
+								<td>77</td>
+								<td class="funded">Pacolet River</td>
+								<td>Broad</td>
+								<td>USGS 2156370, Pacolet River near Saratt, SC</td>
+								<td>SW Assessments, Sedimentation Studies, Flood Forecasting</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>78</td>
+								<td class="funded">North Tyger River</td>
+								<td>Broad</td>
+								<td>USGS 2157000, North Tyger River near Fairmont, SC</td>
+								<td>Flood Frequency/Forecasting, SW Assessments, POR</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>79</td>
+								<td class="funded">South Tyger River</td>
+								<td>Broad</td>
+								<td>USGS 2159000, South Tyger River near Woodruff, SC</td>
+								<td>Flood Frequency, DNR Fisheries, SW Assessments, POR</td>
+								<td>Real Time Discharge, Installation at USGS 2158408 upstream</td>
+							  </tr>
+							  <tr>
+								<td>80</td>
+								<td class="funded">Tyger River</td>
+								<td>Broad</td>
+								<td>USGS 2159500, Tyger River near Woodruff, SC</td>
+								<td>WU/Regulation, SW Assessments, POR</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>82</td>
+								<td class="funded">Fairforest Creek</td>
+								<td>Broad</td>
+								<td>USGS 2160000, Fairforest Creek near Union, SC</td>
+								<td>Flood Frequency, DNR Fisheries, SW Assessments, POR</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>86</td>
+								<td class="funded">Fishing Creek</td>
+								<td>Catawba</td>
+								<td>USGS, 2147403, Fishing Creek below Fort Lawn, SC</td>
+								<td>SW Assessments, Lack of gages in middle basin</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>3</td>
+								<td class="funded">South Fork Edisto Headwaters</td>
+								<td>Edisto</td>
+								<td>Mainstem or Beech Creek</td>
+								<td>WU/Regulation, SW Assessments, DNR Fisheries</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>5</td>
+								<td class="funded">North Fork Edisto Headwaters</td>
+								<td>Edisto</td>
+								<td>Mainstem, Chinquapin Creek or Lightwood Knot Creek</td>
+								<td>WU/Regulation, SW Assessments</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>7</td>
+								<td class="funded">Shaw Creek</td>
+								<td>Edisto</td>
+								<td>Tributary to South Fork Edisto</td>
+								<td>WU/Regulation, SW Assessments</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>35</td>
+								<td class="funded">Edisto River</td>
+								<td>Edisto</td>
+								<td>Mainstem, US 17</td>
+								<td>DOT, Forecasting</td>
+								<td>Rapid Deployment Gage</td>
+							  </tr>
+							  <tr>
+								<td>36</td>
+								<td class="funded">Edisto River</td>
+								<td>Edisto</td>
+								<td>Mainstem, I-95</td>
+								<td>DOT,  Forecasting</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>67</td>
+								<td class="funded">North Fork Edisto River</td>
+								<td>Edisto</td>
+								<td>Mainstem, Hwy 321 or Slab Landing Rd</td>
+								<td>Flood Forecasting</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>90</td>
+								<td class="funded">Edisto River</td>
+								<td>Edisto</td>
+								<td>USGS 2174000, Edisto River near Branchville, SC</td>
+								<td>SW Assessments, Flood Forecasting</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>12</td>
+								<td class="funded">Thompson Creek</td>
+								<td>Pee Dee</td>
+								<td>Tributary to Pee Dee</td>
+								<td>SW Assessments, major tributary to Pee Dee River</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>13</td>
+								<td class="funded">Black River</td>
+								<td>Pee Dee</td>
+								<td>Mainstem, SC 41</td>
+								<td>DOT, Flood Forecasting</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>32</td>
+								<td class="funded">Pee Dee River</td>
+								<td>Pee Dee</td>
+								<td>Mainstem near NC-SC border</td>
+								<td>SW Assessments</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>37</td>
+								<td class="funded">Pee Dee River</td>
+								<td>Pee Dee</td>
+								<td>Mainstem, I-95</td>
+								<td>DOT, Forecasting</td>
+								<td>Real Time Stage, Pier Scour</td>
+							  </tr>
+							  <tr>
+								<td>38</td>
+								<td class="funded">Pee Dee/Waccamaw</td>
+								<td>Pee Dee</td>
+								<td>US 17</td>
+								<td>DOT, Forecasting</td>
+								<td>Real Time Stage</td>
+							  </tr>
+							  <tr>
+								<td>39</td>
+								<td class="funded">Lynches River</td>
+								<td>Pee Dee</td>
+								<td>Mainstem, I-95</td>
+								<td>DOT, Forecasting</td>
+								<td>Real Time Stage, Pier Scour</td>
+							  </tr>
+							  <tr>
+								<td>40</td>
+								<td class="funded">Lynches River</td>
+								<td>Pee Dee</td>
+								<td>Mainstem, SC 41/51</td>
+								<td>DOT, Forecasting</td>
+								<td>Rapid Deployment Gage</td>
+							  </tr>
+							  <tr>
+								<td>41</td>
+								<td class="funded">Black River</td>
+								<td>Pee Dee</td>
+								<td>Mainstem, SC 51</td>
+								<td>DOT, Forecasting</td>
+								<td>Rapid Deployment Gage</td>
+							  </tr>
+							  <tr>
+								<td>42</td>
+								<td class="funded">Black River</td>
+								<td>Pee Dee</td>
+								<td>Mainstem, US 701</td>
+								<td>DOT, Flood Forecasting, Coastal Studies</td>
+								<td>Rapid Deployment Gage</td>
+							  </tr>
+							  <tr>
+								<td>43</td>
+								<td class="funded">Lumber River</td>
+								<td>Pee Dee</td>
+								<td>Mainstem, SC 9/US 76</td>
+								<td>DOT, Flood Forecasting, SW Assessments</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>44</td>
+								<td class="funded">Little Pee Dee River</td>
+								<td>Pee Dee</td>
+								<td>Mainstem, US 378</td>
+								<td>DOT, Flood Frequency/Forecasting</td>
+								<td>Rapid Deployment Gage</td>
+							  </tr>
+							  <tr>
+								<td>45</td>
+								<td class="funded">Pocotaligo River</td>
+								<td>Pee Dee</td>
+								<td>Tributary to Black River, I-95</td>
+								<td>DOT, Flood Frequency/Forecasting, SW Assessments</td>
+								<td>Real Time Stage, Pier Scour</td>
+							  </tr>
+							  <tr>
+								<td>60</td>
+								<td class="funded">Pee Dee River</td>
+								<td>Pee Dee</td>
+								<td>Mainstem, US 15/401</td>
+								<td>Flood Forecasting</td>
+								<td>Rapid Deployment Gage</td>
+							  </tr>
+							  <tr>
+								<td>92</td>
+								<td class="funded">Little Pee Dee River</td>
+								<td>Pee Dee</td>
+								<td>USGS 2132500, Little Pee Dee River near Dillon, SC</td>
+								<td>Flood Forecasting</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>16</td>
+								<td class="funded">Little Salkehatchie River</td>
+								<td>Salkehatchie</td>
+								<td>Tributary to Salkehatchie</td>
+								<td>DNR Fisheries, SW Assessments, Flood Frequency, General lack of streamflow data in basin</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>17</td>
+								<td class="funded">Salkehatchie River</td>
+								<td>Salkehatchie</td>
+								<td>Upper Salkehatchie Mainstem</td>
+								<td>DNR Fisheries, SW Assessments, Flood Frequency, General lack of streamflow data in basin</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>19</td>
+								<td class="funded">Twelvemile Creek</td>
+								<td>Saluda</td>
+								<td>Tributary Saluda</td>
+								<td>WU/Regulation, SW Assessments, Flood Frequency/Forecasting, Water Quality</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>28</td>
+								<td class="funded">Congaree River</td>
+								<td>Saluda</td>
+								<td>Above Wateree River Confluence</td>
+								<td>SW Assessments</td>
+								<td>Real Time Stage</td>
+							  </tr>
+							  <tr>
+								<td>47</td>
+								<td class="funded">Saluda River</td>
+								<td>Saluda</td>
+								<td>Mainstem, I-26 (I-20)</td>
+								<td>Flood Forecasting</td>
+								<td>Real Time Discharge, Installation site upstream on I-20 crossing</td>
+							  </tr>
+							  <tr>
+								<td>48</td>
+								<td class="funded">Coronaca Creek</td>
+								<td>Saluda</td>
+								<td>Tributary to Wilson Creek</td>
+								<td>Flood Forecasting</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>49</td>
+								<td class="funded">Little River</td>
+								<td>Saluda</td>
+								<td>Reach between City of Laurens and Newberry County Line</td>
+								<td>Flood Forecasting</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>21</td>
+								<td class="funded">Ashley River</td>
+								<td>Santee</td>
+								<td>Mainstem</td>
+								<td>Coastal Studies</td>
+								<td>Real Time Stage</td>
+							  </tr>
+							  <tr>
+								<td>51</td>
+								<td class="funded">French Quarter Creek</td>
+								<td>Santee</td>
+								<td>Tributary to East Branch Cooper River</td>
+								<td>Flood Forecasting</td>
+								<td>Real Time Stage</td>
+							  </tr>
+							  <tr>
+								<td>22</td>
+								<td class="funded">Chauga River</td>
+								<td>Savannah</td>
+								<td>Tributary to Lake Hartwell</td>
+								<td>SW Assessments, DNR Fisheries</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>23</td>
+								<td class="funded">Eastatoe Creek</td>
+								<td>Savannah</td>
+								<td>Headwater Tributary to Lake Keowee</td>
+								<td>SW Assessments, DNR Fisheries, lack of gages in Blue Ridge</td>
+								<td>Real Time Discharge</td>
+							  </tr>
+							  <tr>
+								<td>57</td>
+								<td class="funded">Steven's Creek</td>
+								<td>Savannah</td>
+								<td>Mainstem, Woodlawn Rd</td>
+								<td>Flood Forecasting</td>
+								<td>Real Time Stage</td>
+							  </tr>
+							  <tr>
+								<td>105</td>
+								<td class="funded">Upper Three Runs</td>
+								<td>Savannah</td>
+								<td>USGS 2197315, Upper Three Runs at Road A (SRS), SC</td>
+								<td>SW Assessments, DNR Fisheries, POR</td>
+								<td>Real Time Discharge, Installation site upstream of original recommendation</td>
+							  </tr>
+                                </tbody>
+                            </table>
+                        <a class="csvLinks" href="flowmap/data/fundedSites.csv">Download a CSV file of this table.</a>
+                  
+              </div>				
+				
               </div>
             
             </div>
         </div>
+		
+		<div class="white-bg">
+			<h2>Definitions Table</h2>
+			<div id="def">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th title="Designation">Designation</th>
+							<th title="Purpose">Purpose</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Flood Frequency Site</td>
+							<td>Will be used to determine flood frequencies and magnitudes.</td>
+						</tr>
+						<tr>
+							<td>Flood Forecasting Site</td>
+							<td>Will be used for forecasting flood events and are important for public safety.</td>
+						</tr>
+						<tr>
+							<td>SW Assessment Site</td>
+							<td>Will be used to improve UIFs (Unimpaired Flows) for model development as part of the State&#39;s Surface Water Assessment Project. These UIFS are used to develop inflows to the surface water allocation models being developed by the SCDNR, SCDHEC, and a consultant (CDM Smith).</td>
+						</tr>
+						<tr>
+							<td>POR Site</td>
+							<td>Period of Record (for reactivation sites only) - site has 20 or more years of historic data from which to compare new streamflow data.</td>
+						</tr>
+						<tr>
+							<td>DNR Fisheries Site</td>
+							<td>Will be used by SCDNR biologists for monitoring and fisheries assessment, management and protection.</td>
+						</tr>
+						<tr>
+							<td>Coastal Studies Site</td>
+							<td>Will help define location of the saltwater/freshwater interface and help determine rate of salt water intrusion.</td>
+						</tr>
+						<tr>
+							<td>WU/Regulation Site</td>
+							<td>Site is regulated or has impairment (downstream of a reservoir, noteable water use/withdrawals, etc.), and data will be used to assess water availability concerns.</td>
+						</tr>
+						<tr>
+							<td>DOT Site</td>
+							<td>Will be at a bridge crossing and will address DOT infrastructure and transportation concerns.</td>
+						</tr>
+						<tr>
+							<td>Water Quality</td>
+							<td>Will be used to monitor water quality</td>
+						</tr>
+						<tr>
+							<td>Ecological</td>
+							<td>Will be used to monitor and study a stream of noted ecological value or concern</td>
+						</tr>
+						<tr>
+							<td colspan="2" class="footnote">Other purposes include the general lack of data availability on a mainstem, a major tributary, or in a particular part of a basin.
+								<br> Though not listed explicitly, many of the proposed sites can also be used for low flow studies (7Q10 estimates, for example) or for drought monitoring.</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
         
-        <div class="white-bg">
+        <div id="workshops" class="white-bg">
             <h2 class="mb-3">Workshop Presentations</h2>
             
             <h3>Streamflow Workshop I (2/3/2016)</h3>
                     <ul>
                         <li>
-                            <span class="doctitle"><a href="flowmap/docs/FlowAnalysis020316Feaster.pdf">An Overview of High-and Low-flow Statistics and Why Record Length Matters</a></span>
+                            <span class="doctitle"><a href="pdfs/streamflow/FlowAnalysis020316Feaster.pdf">An Overview of High-and Low-flow Statistics and Why Record Length Matters</a></span>
                             <br> Toby Feaster - USGS
                             <br>
                             <a href="mailto:tfeaster@usgs.gov">tfeaster@usgs.gov</a>
                         </li>
                         <li>
-                            <span class="doctitle"><a href="flowmap/docs/SCDNRCoastalGaging020316Conrads.pdf">Coastal gaging –Monitoring the effects of Riverine and Tidal Forces</a></span>
+                            <span class="doctitle"><a href="pdfs/streamflow/SCDNRCoastalGaging020316Conrads.pdf">Coastal gaging –Monitoring the effects of Riverine and Tidal Forces</a></span>
                             <br> Paul Conrads - USGS
                             <br>
-                            <a href="mailto:pconrads@usgs.gov">pconrads@usgs.gov</a>
+                            <a href="mailto:tfeaster@usgs.gov">tfeaster@usgs.gov</a>
                         </li>
                         <li>
-                            <span class="doctitle"><a href="flowmap/docs/SERFCOverview2015Hamill.pdf">SERFC Operations - Forecasting in South Carolina</a></span>
+                            <span class="doctitle"><a href="pdfs/streamflow/SERFCOverview2015Hamill.pdf">SERFC Operations - Forecasting in South Carolina</a></span>
                             <br> Todd Hammill - NOAA –Southeast Regional Forecast Center
                             <br>
                             <a href="mailto:todd.hamill@noaa.gov">todd.hamill@noaa.gov</a>
                         </li>
                         <li>
-                            <span class="doctitle"><a href="flowmap/docs/StreamflowWorkshop020316Harder.pdf">Workshop Goals and How SCDNR uses Streamflow Data</a></span>
+                            <span class="doctitle"><a href="pdfs/streamflow/StreamflowWorkshop020316Harder.pdf">Workshop Goals and How SCDNR uses Streamflow Data</a></span>
                             <br> Scott Harder - SCDNR
                             <br>
                             <a href="mailto:harders@dnr.sc.gov">harders@dnr.sc.gov</a>
@@ -1140,7 +1492,7 @@
                     <h3>Streamflow Workshop II (3/10/2016)</h3>
                     <ul>
                         <li>
-                            <span class="doctitle"><a href="flowmap/docs/StreamflowWorkshop031016Harder.pdf">Workshop Goals and an Overview of Streamflow Monitoring Needs in South Carolina</a></span>
+                            <span class="doctitle"><a href="pdfs/streamflow/StreamflowWorkshop031016Harder.pdf">Workshop Goals and an Overview of Streamflow Monitoring Needs in South Carolina</a></span>
                             <br> Scott Harder - SCDNR
                             <br>
                             <a href="mailto:harders@dnr.sc.gov">harders@dnr.sc.gov</a>
@@ -1152,7 +1504,7 @@
                 </li>-->
                     </ul>
 
-                <p>For questions regarding these presentations, please contact Scott Harder by phone (864-654-1671, ext. 25) or <a href="mailto:HarderS@dnr.sc.gov">email</a>.
+                <p>For questions regarding these presentations, please contact Scott Harder by phone (864-986-6254) or email <a href="mailto:HarderS@dnr.sc.gov">(harders@dnr.sc.gov)</a>.
                 </p>
 
         </div>
@@ -1164,55 +1516,108 @@
     <!-- Footer -->
     <footer class="py-5 ">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>SC Department of Natural Resources
-                        <br> Land, Water, and Conservation Division
-                        <br> 1000 Assembly Street
-                        <br> Columbia, SC 29201
-                        <br>
-                        <a href="http://dnr.sc.gov/water/hydro">dnr.sc.gov/water/hydro</a>
+        <h5>SCDNR Hydrology Section</h5>
+            <div class="row mt-4">
+                
+                <div class="col-lg-4 pr-4 sitemap">
+                    <h6>Hydrology Home</h6>
+                    <ul>
+                        <li><a href="index.html">Home Page</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="hydrology-news.html">Hydrology News</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+						<li><a href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a></li>
+                    </ul>
+                    <h6>Water Planning</h6>
+                    <ul>
+                        <li><a href="water-planning.html">Water Planning Home</a></li>
+                        <li><a href="surface-water-models.html">Surface Water Models</a></li>
+                        <li><a href="groundwater-models.html">Groundwater Models</a></li>
+                        <li><a href="water-demand.html">Water Demand Projections</a></li>
+                        <li><a href="swam-models.html">Simplified Water Allocation Models (SWAM)</a></li>
+                        <li><a href="state-and-river-basin-planning.html">State and River Basin Planning</a></li>
+                            <ul>
+                                <li><a href="ppac.html">Planning Process Advisory Committee</a></li>
+                                <li><a href="edisto-basin-planning.html">Edisto Basin Planning</a></li>
+                                <li><a href="faq.html">Frequently Asked Questions</a></li>
+                            </ul>						
+                    </ul>
+                    
+                    <h6>Data</h6>
+                    <ul>
+                        <li><a href="groundwater-data/index.html">Groundwater Level Data</a></li>
+                        <li><a href="geophysical-logs.html">Geophysical Logs</a></li>
+                        <li><a href="well-database.html">Coastal Plain Water Well Database</a></li>
+                        <li><a href="streamflow-and-lake-levels.html">Streamflow and Lake Level Data</a></li>						
+                    </ul>
+                    
+                </div>
+                <div class="col-lg-4 pl-lg-4 sitemap">
+                    <h6>Groundwater Program</h6>
+                    <ul>
+                        <li><a href="groundwater.html">Groundwater Program Home</a></li>
+                        <li><a href="groundwater-level-monitoring-network.html">Groundwater Level Monitoring Network</a></li>
+                        <li><a href="well-database.html">Coastal Plain Water Well Database</a></li>
+                        <li><a href="pot-mapping.html">Potentiometric Mapping</a></li>
+                        <li><a href="geophysical-logs.html">Geophysical Logs</a></li>
+                        <li><a href="aquifers.html">Aquifer Delineation</a></li>
+                        <li><a href="aquifer-properties.html">Aquifer Properties</a></li>
+                        <li><a href="groundwater-models.html">Groundwater Models</a></li>
+                        <li><a href="saltwater-intrusion-monitoring.html">Saltwater Intrusion Monitoring Network</a></li>
+                        <li><a href="groundwater-drought-monitoring-network.html">Groundwater Drought Monitoring Network</a></li>						
+                    </ul>
+                    <h6>Surface Water Program</h6>
+                    <ul>
+                        <li><a href="surface-water.html">Surface Water Home</a></li>
+                        <li><a href="surface-water-models.html">Surface Water Models</a></li>
+                        <li><a href="swam-models.html">Simplified Water Allocation Models (SWAM)</a></li>
+                        <li><a href="surface-water-monitoring.html">Surface Water Monitoring Initiatives</a></li>
+                            <ul>
+                                <li><a href="streamflow-and-lake-levels.html">Streamflow and Lake Level Data</a></li>
+                                <li><a href="streamflow-workshops.html">Streamflow Monitoring Workshops</a></li>
+                            </ul>
+                        	
+                        						
+                    </ul>
+                </div>
+                <div class="col-lg-4 pl-lg-5 ">                
+                    <p>South Carolina Department of<br /> Natural Resources<br>
+                    Land, Water, and Conservation Division<br>
+                        1000 Assembly Street<br>
+                        Columbia, SC 29201<br>
+                        <a href="http://hydrology.dnr.sc.gov/">http://hydrology.dnr.sc.gov/</a>
                     </p>
                     <a href="http://dnr.sc.gov/"><img src="images/dnr-logo-small.gif" alt="SC Department of Natural Resources logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
-                    <p class="mt-3">Copyright ©
+                    <p class="mt-3">Copyright © 
                         <script type="text/javascript">
                             document.write(new Date().getFullYear());
                         </script>
                     </p>
                 </div>
-
             </div>
-
-        </div>
+            
+        </div>        
     </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     
+    <script src="https://unpkg.com/leaflet@1.5.1/dist/leaflet.js"></script>
 
-    <script src="vendor/Autolinker.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/leaflet.js"></script>
-    <script src="vendor/leaflet_fullscreen/Leaflet.fullscreen.min.js"></script>
-    
-     <!-- LEAFLET DATA-->
-    <script src="flowmap/data/json_MajorRiverBasins0.js"></script>
-    <script src="flowmap/data/json_newReachZoom1.js"></script>
-    <script src="flowmap/data/json_NewReach2.js"></script>
-    <script src="flowmap/data/json_activeUSGS3.js"></script>
-    <script src="flowmap/data/json_DNRfunded4.js"></script>
-    <script src="flowmap/data/json_reactCon5.js"></script>
-    <script src="flowmap/data/json_react6.js"></script>
-    <script src="flowmap/data/json_newCon7.js"></script>
-    <script src="flowmap/data/json_new8.js"></script>
-    <script src="flowmap/data/siteID.min.js"></script>
+    <script src="flowmap/js/json_MajorRiverBasins0.js"></script>
+
+    <script src="https://unpkg.com/esri-leaflet@2.3.0/dist/esri-leaflet.js"
+    integrity="sha512-1tScwpjXwwnm6tTva0l0/ZgM3rYNbdyMj5q6RSQMbNX6EUMhYDE3pMRGZaT41zHEvLoWEK7qFEJmZDOoDMU7/Q=="
+    crossorigin=""></script>
+    <script src="https://unpkg.com/esri-leaflet-renderers@2.0.6/dist/esri-leaflet-renderers-debug.js"></script>
 
     <!-- LEAFLET MAP SCRIPT -->
     <script src="flowmap/js/streamflowMap.js"></script>
+    <script src="flowmap/js/siteID.min.js"></script>
     
     <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/r-2.2.2/datatables.min.js"></script>
     
-    <!-- JQUERY TOGGLE SCRIPT -->
    <!-- JQUERY TOGGLE SCRIPT -->
             <script>
                 $(document).ready(function() {
@@ -1244,6 +1649,10 @@
                             var tableID = $(this).text();
                             getID(tableID);
                         });
+						$("#fundSites tbody tr td:first-child").on("click", function() {
+                            var tableID = $(this).text();
+                            getID(tableID);
+                        });
                     };
 
                     zoomToMap();
@@ -1262,6 +1671,7 @@
                     
                     $("#newSites").DataTable(tableOptions);
                     $("#reactSites").DataTable(tableOptions);
+                    $("#fundSites").DataTable(tableOptions);					
 
                 });
 

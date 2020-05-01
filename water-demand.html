@@ -17,7 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/hydro.css" rel="stylesheet">
-    <link href="css/surface-water.css" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -25,7 +25,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg text-white fixed-top">
         <div class="container">
-            <img src="images/dnr-logo-small.gif" id="nav-logo">
+            <a href="http://www.dnr.sc.gov/"><img src="images/dnr-logo-small.gif" id="nav-logo" alt="scdnr-logo"></a>
             <a class="navbar-brand ml-5 pl-5 pl-md-1" href="index.html">SCDNR Hydrology</a>
             <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,48 +33,54 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html">About Us</a>
                     </li>
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
-					<a class="dropdown-item" href="water-planning.html">
-					Water Planning</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataOne" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Water Planning</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataOne">
+						<a class="dropdown-item" href="water-planning.html">Overview</a>
+						<a class="dropdown-item" href="state-and-river-basin-planning.html">State and River Basin Planning</a>
+						<a class="dropdown-item" href="edisto-basin-planning.html">Edisto Basin Planning</a>
+						<a class="dropdown-item" href="water-demand.html">Water Demand Projections</a>
+						<a class="dropdown-item" href="surface-water-models.html">Surface Water Models</a>
+						<a class="dropdown-item" href="groundwater-models.html">Groundwater Models</a>
+						</div>
+                    </li>
+					<!--Data Dropdown Done-->
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataTwo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataTwo">
 					<a class="dropdown-item" href="groundwater.html">
 					Groundwater</a>
 					<a class="dropdown-item" href="surface-water.html">
 					Surface Water</a>
 					</div>
 					</li>
-					<!--Data Dropdown Done-->					
-                    <li class="nav-item">
-                        <a class="nav-link" href="publications.html">Publications</a>
-                    </li>
+					<!--Data Dropdown Done-->	
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataThree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataThree">
 					<a class="dropdown-item" href="groundwater-data/index.html">
 					Groundwater Level Data</a>
-					<a class="dropdown-item" href="http://www.dnr.sc.gov/hydro/gl_home.html">
+					<a class="dropdown-item" href="geophysical-logs.html">
 					Geophysical Logs</a>
 					<a class="dropdown-item" href="well-database.html">
 					Coastal Plain Well Database</a>
 					<a class="dropdown-item" href="streamflow-and-lake-levels.html">
 					Streamflow and Lake Levels</a>
-					<a class="dropdown-item" href="swam-models.html">
-					Surface Water Models</a>
 					</div>
 					</li>
 					<!--Data Dropdown Done-->
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=tangnar123%40gmail.com&ctz=America%2FNew_York">Calendar</a>
+                     <li class="nav-item">
+                        <a class="nav-link" href="publications.html">Publications</a>
+                    </li>					
+                     <li class="nav-item">
+                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a>
                     </li>
-
+                    
                 </ul>
             </div>
         </div>
@@ -86,7 +92,7 @@
             <div class="row">
                 <div class="col-lg-12 my-sm-4 pt-3 pt-sm-0 background-text">
                     <h1 class="page-header">Water Demand Projections</h1>
-                    <p class="text-white lead">Text goes here.</p>
+                    <p class="text-white lead">Water demand projections for a 50-year planning horizon will be used for assessing future water availability.</p>
                 </div>
             </div>
         </div>
@@ -99,42 +105,115 @@
         <div class="white-bg">
             <h2>Overview</h2>
             <div class="row">
-                <div class="col-12">
-
-                    <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Projections of future water use are critical to the planning process. In order to develop State and regional plans that effectively balance the economic, environmental and social needs of South Carolina for generations to come, estimates of future water demand are needed.<br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;In 2018, the SCDNR, in cooperation with the United States’ Army Corps of Engineers and the Clemson University’s South Carolina Water Resource Center, began developing water demand projection methodologies to apply statewide.  The SCDNR organized a Technical Advisory Committee to inform the development of the projection methodologies. More information about the process for developing water demand projection methodologies is found below.<br><br>
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Water demand projections will be completed for a 50-year planning horizon for the Energy, Public Water Supply, Industry, Golf Course, and Agricultural Irrigation water-use sectors. Water users and stakeholder in each of the eight river planning basins, will have the opportunity to review and comment on draft water demand projections.
+				<div class="col-lg-9">
+                    <p>Projections of future water use are critical to the planning process. In order to develop State and regional plans that effectively balance the economic, environmental and social needs of South Carolina for generations to come, estimates of future water demand are needed.</p>
+					In 2018, the collaborators, in cooperation with the United States Army Corps of Engineers and Clemson University’s South Carolina Water Resource Center, began developing water demand projection methodologies to apply statewide. The cooperators organized a Technical Advisory Committee to inform the development of the projection methodologies. A final water demand methodology report was published by SCDNR in October 2019 (available <a href="pdfs/basin-planning/Projection_Methods.pdf">here</a>), and will be first applied to water users in the Edisto River basin. For more information about the process for developing water demand projection methodologies, please visit the <a href="https://www.clemson.edu/public/water-assessment/water_demand_projections.html" target="_blank">Clemson Stakeholder Website</a> or contact Alex Pellett (<a href="mailto:pellettc@dnr.sc.gov">pellettc@dnr.sc.gov</a>).</p>
+					Water demand projections will be completed for a 50-year planning horizon for major water use categories including thermo-electric power, public water supply, manufacturing, and agricultural irrigation and for several other minor water use categories including golf courses, domestic water supply, and aquaculture. Water users and stakeholders in each of the eight river planning basins will have the opportunity to review and comment on draft water demand projections. The water demand projections will be used with <a href="surface-water-models.html">surface water models</a> and the <a href="groundwater-models.html">Coastal Plain groundwater models</a> to evaluate current and future water availability and will support the development of River Basin Plans.
 					</p>
                 </div>
-            </div>
-        </div>
-	</div>
+				
+				<div class="col-lg-3">
+					<div class="p-3" id="water-demand-box">
+						<h2 class="h4 font-italic mb-2">Water Demand<br>Methodology Report</h2>
+						<p>The SCDNR is pleased to announce the release of the Projection Methods for Off-stream Water Demand in South Carolina report.</p>
+						<a class="btn btn-info text-white" href="pdfs/basin-planning/Projection_Methods.pdf">Download Report</a>
+					</div>
+					<br>
+					<div class="p-3 bg-light">
+						<h2 class="card-title"><a href="edisto-basin-planning.html">Edisto Basin<br>Planning</a></h2>
+						<img class="card-img-top" src="images/Edisto.jpg" alt="Edisto River" title="Edisto River">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>	
 	
 	
-	    <!-- Footer -->
-        <footer class="py-5 ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <p>SC Department of Natural Resources
-                            <br> Land, Water, and Conservation Division
-                            <br> 1000 Assembly Street
-                            <br> Columbia, SC 29201
-                            <br>
-                            <a href="http://dnr.sc.gov/water/hydro">dnr.sc.gov/water/hydro</a>
-                        </p>
-                        <a href="http://dnr.sc.gov/"><img src="images/dnr-logo-small.gif" alt="SC Department of Natural Resources logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
-                        <p class="mt-3">Copyright ©
-                            <script type="text/javascript">
-                                document.write(new Date().getFullYear());
-                            </script>
-                        </p>
-                    </div>
-
+    <!-- Footer -->
+    <footer class="py-5 ">
+        <div class="container">
+        <h5>SCDNR Hydrology Section</h5>
+            <div class="row mt-4">
+                
+                <div class="col-lg-4 pr-4 sitemap">
+                    <h6>Hydrology Home</h6>
+                    <ul>
+                        <li><a href="index.html">Home Page</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="hydrology-news.html">Hydrology News</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+						<li><a href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a></li>
+                    </ul>
+                    <h6>Water Planning</h6>
+                    <ul>
+                        <li><a href="water-planning.html">Water Planning Home</a></li>
+                        <li><a href="surface-water-models.html">Surface Water Models</a></li>
+                        <li><a href="groundwater-models.html">Groundwater Models</a></li>
+                        <li><a href="water-demand.html">Water Demand Projections</a></li>
+                        <li><a href="swam-models.html">Simplified Water Allocation Models (SWAM)</a></li>
+                        <li><a href="state-and-river-basin-planning.html">State and River Basin Planning</a></li>
+                            <ul>
+                                <li><a href="ppac.html">Planning Process Advisory Committee</a></li>
+                                <li><a href="edisto-basin-planning.html">Edisto Basin Planning</a></li>
+                                <li><a href="faq.html">Frequently Asked Questions</a></li>
+                            </ul>						
+                    </ul>
+                    
+                    <h6>Data</h6>
+                    <ul>
+                        <li><a href="groundwater-data/index.html">Groundwater Level Data</a></li>
+                        <li><a href="geophysical-logs.html">Geophysical Logs</a></li>
+                        <li><a href="well-database.html">Coastal Plain Water Well Database</a></li>
+                        <li><a href="streamflow-and-lake-levels.html">Streamflow and Lake Level Data</a></li>						
+                    </ul>
+                    
                 </div>
-
+                <div class="col-lg-4 pl-lg-4 sitemap">
+                    <h6>Groundwater Program</h6>
+                    <ul>
+                        <li><a href="groundwater.html">Groundwater Program Home</a></li>
+                        <li><a href="groundwater-level-monitoring-network.html">Groundwater Level Monitoring Network</a></li>
+                        <li><a href="well-database.html">Coastal Plain Water Well Database</a></li>
+                        <li><a href="pot-mapping.html">Potentiometric Mapping</a></li>
+                        <li><a href="geophysical-logs.html">Geophysical Logs</a></li>
+                        <li><a href="aquifers.html">Aquifer Delineation</a></li>
+                        <li><a href="aquifer-properties.html">Aquifer Properties</a></li>
+                        <li><a href="groundwater-models.html">Groundwater Models</a></li>
+                        <li><a href="saltwater-intrusion-monitoring.html">Saltwater Intrusion Monitoring Network</a></li>
+                        <li><a href="groundwater-drought-monitoring-network.html">Groundwater Drought Monitoring Network</a></li>						
+                    </ul>
+                    <h6>Surface Water Program</h6>
+                    <ul>
+                        <li><a href="surface-water.html">Surface Water Home</a></li>
+                        <li><a href="surface-water-models.html">Surface Water Models</a></li>
+                        <li><a href="swam-models.html">Simplified Water Allocation Models (SWAM)</a></li>
+                        <li><a href="surface-water-monitoring.html">Surface Water Monitoring Initiatives</a></li>
+                            <ul>
+                                <li><a href="streamflow-and-lake-levels.html">Streamflow and Lake Level Data</a></li>
+                                <li><a href="streamflow-workshops.html">Streamflow Monitoring Workshops</a></li>
+                            </ul>
+                        	
+                        						
+                    </ul>
+                </div>
+                <div class="col-lg-4 pl-lg-5 ">                
+                    <p>South Carolina Department of<br /> Natural Resources<br>
+                    Land, Water, and Conservation Division<br>
+                        1000 Assembly Street<br>
+                        Columbia, SC 29201<br>
+                        <a href="http://hydrology.dnr.sc.gov/">http://hydrology.dnr.sc.gov/</a>
+                    </p>
+                    <a href="http://dnr.sc.gov/"><img src="images/dnr-logo-small.gif" alt="SC Department of Natural Resources logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
+                    <p class="mt-3">Copyright © 
+                        <script type="text/javascript">
+                            document.write(new Date().getFullYear());
+                        </script>
+                    </p>
+                </div>
             </div>
-        </footer>
+            
+        </div>        
+    </footer>
 
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>

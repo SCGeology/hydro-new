@@ -8,7 +8,7 @@
     <meta name="description" content="South Carolina Department of Natural Resources - Hydrology Section information.">
     <meta name="author" content="South Carolina Department of Natural Resources - Hydrology Section">
 
-    <title>Coastal Plain Water Well Records - SCDNR</title>
+    <title>Coastal Plain Water Well Database - SCDNR</title>
     
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 
@@ -17,7 +17,7 @@
 
     <!-- Custom styles for this template -->
     <link href="css/hydro.css" rel="stylesheet">
-	<link href="css/surface-water.css" rel="stylesheet">
+	
 </head>
 
 <body>
@@ -25,7 +25,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg text-white fixed-top">
         <div class="container">
-            <img src="images/dnr-logo-small.gif" id="nav-logo">
+            <a href="http://www.dnr.sc.gov/"><img src="images/dnr-logo-small.gif" id="nav-logo" alt="scdnr-logo"></a>
             <a class="navbar-brand ml-5 pl-5 pl-md-1" href="index.html">SCDNR Hydrology</a>
             <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,46 +33,52 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html">About Us</a>
                     </li>
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
-					<a class="dropdown-item" href="water-planning.html">
-					Water Planning</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataOne" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Water Planning</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataOne">
+						<a class="dropdown-item" href="water-planning.html">Overview</a>
+						<a class="dropdown-item" href="state-and-river-basin-planning.html">State and River Basin Planning</a>
+						<a class="dropdown-item" href="edisto-basin-planning.html">Edisto Basin Planning</a>
+						<a class="dropdown-item" href="water-demand.html">Water Demand Projections</a>
+						<a class="dropdown-item" href="surface-water-models.html">Surface Water Models</a>
+						<a class="dropdown-item" href="groundwater-models.html">Groundwater Models</a>
+						</div>
+                    </li>
+					<!--Data Dropdown Done-->
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataTwo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataTwo">
 					<a class="dropdown-item" href="groundwater.html">
 					Groundwater</a>
 					<a class="dropdown-item" href="surface-water.html">
 					Surface Water</a>
 					</div>
 					</li>
-					<!--Data Dropdown Done-->					
-                     <li class="nav-item">
-                        <a class="nav-link" href="publications.html">Publications</a>
-                    </li>
+					<!--Data Dropdown Done-->	
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataThree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataThree">
 					<a class="dropdown-item" href="groundwater-data/index.html">
 					Groundwater Level Data</a>
-					<a class="dropdown-item" href="http://www.dnr.sc.gov/hydro/gl_home.html">
+					<a class="dropdown-item" href="geophysical-logs.html">
 					Geophysical Logs</a>
 					<a class="dropdown-item" href="well-database.html">
 					Coastal Plain Well Database</a>
 					<a class="dropdown-item" href="streamflow-and-lake-levels.html">
 					Streamflow and Lake Levels</a>
-					<a class="dropdown-item" href="swam-models.html">
-					Surface Water Models</a>
 					</div>
 					</li>
 					<!--Data Dropdown Done-->
                      <li class="nav-item">
-                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=tangnar123%40gmail.com&ctz=America%2FNew_York">Calendar</a>
+                        <a class="nav-link" href="publications.html">Publications</a>
+                    </li>					
+                     <li class="nav-item">
+                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a>
                     </li>
                     
                 </ul>
@@ -85,9 +91,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 my-sm-4 pt-3 pt-sm-0 background-text">
-                    <h1 class="page-header">Coastal Plain Water Well Records</h1>
-                    <p class="text-white lead">The Hydrology Section of the SCDNR has hard-copy records of more than 13,000 water wells located in the Coastal Plain counties of South Carolina.
-					</p>
+                    <h1 class="page-header">Coastal Plain Water Well Database</h1>
+                    <p class="text-white lead">The Groundwater Program has information on more than 14,000 water wells located in the Coastal Plain counties of South Carolina.</p>
                 </div>
             </div>
         </div>
@@ -95,71 +100,84 @@
 
     <!-- Page Content -->
     <div class="container">
+	
+		<div class="white-bg">
+			<h2>Overview</h2>
+        
+			<p>One of the key functions of the SCDNR Hydrology Section is to gain a better understanding of the occurrence and availability of groundwater in South Carolina, and perhaps the best source of information about groundwater hydrology is water wells. To that end, SCDNR and its predecessor, the South Carolina Water Resources Commission, has been collecting information on water wells since 1969, when the Commission was established.</p>
+			<p>SCDNR has compiled information on more than 14,000 sand and limestone wells located in the Coastal Plain province. Although that number may seem large, it represents only a small percentage of the total number of water wells that have been drilled in South Carolina.</p>
+			<p>The SCDNR Coastal Plain well inventory includes a variety of well uses, depths, and yields. The amount and type of information contained in each record varies depending on the use of the well and on the availability of data. At a minimum, the owner, depth, and location of the well are recorded. Additional information often includes well yield, depth of screened interval or open-hole interval, driller’s log, and pumping data. Some wells also have water-level data, chemical analyses, geophysical and geologist’s logs, and aquifer tests.</p>
+        </div>	
       
 		<div class="white-bg">
-			<h2><a href="./locatewells/index.html">Coastal Plain Well Finder</a></h2>
+			<h2>Coastal Plain Well Finder</h2>
         
-			<p>The Hydrology Section of the SCDNR has hard-copy records of more than 13,000 water wells located in the Coastal Plain counties of South Carolina.</p>
-			<p class="m-3"><a href="http://www.dnr.sc.gov/water/hydro/WellRecords/locatewells/index.html"><img class="img-fluid" style="max-width:400px;" src="http://dnr.sc.gov/water/hydro/images/wellfinder.JPG"></a>
-            </p>
+			<p>Click on the image below for an interactive well-location map.</p>
+			<p class="m-3"><a href="https://scdnr.maps.arcgis.com/apps/webappviewer/index.html?id=5052e9310cb242eaa5b07340b406ab5a" target="_blank"><img class="img-fluid" style="max-width:400px;" src="images/cpwells.JPG" alt="screen shot of well finder"></a>
+            <br><br>
+			<a class="btn btn-info text-white" href="https://scdnr.maps.arcgis.com/apps/webappviewer/index.html?id=5052e9310cb242eaa5b07340b406ab5a" target="_blank">Launch Application</a></p>
 			
 			<ul>
-            <li>Search for wells by location.</li>
-            <li>Search for wells by Well ID.</li>
-            <li>Find wells with Geophysical Logs, Chemical Analysis, Drill Logs, and Pump Tests.</li>
+            <li>Search for wells by location or SCDNR ID.</li>
+            <li>Find wells with Geophysical Logs, Chemical Analyses, Drill Logs, or Pumping Tests.</li>
             <li>Summary Information Spreadsheets below provide more details on specific wells.</li>
-            <li>If you have trouble locating wells, or have any questions about this information, please contact Andrew Wachob at <a href="mailto:wachoba@dnr.sc.gov" title="Andrew Wachob's Email address">WachobA@dnr.sc.gov</a> or by phone at (803)734-6440.</li>
+            <li>If you have trouble locating wells, or have any questions about this information, please contact Andrew Wachob at <a href="mailto:wachoba@dnr.sc.gov" title="Andrew Wachob's Email address">wachoba@dnr.sc.gov</a> or by phone at (803) 734-6440.</li>
 			</ul>	
         </div>
    
 		<div class="white-bg">
 			<h2>Links</h2>
-			<p>The links listed below open Excel files that contain summary information about each well in our Coastal Plain inventory. In most cases, the hard-copy well records kept in our office contain more information than is presented here.</p>
-				
+			<p>The link listed below opens an Excel file that contains summary information about each well in our Coastal Plain inventory. In most cases, the hard-copy well records kept in our office contain more information than is presented here.<br>
+			
+			<a href="pdfs/Explanation_of_SCDNR_well_data.pdf" title="Explanation of well database">Explanation of SCDNR Coastal Plain well records (pdf)</a></p>
+			
+			
 			<div class="row ml-md-3">
             <div id="documents" class="my-4 col-md-6">
 			<p><a class="allDocsClose">Show</a> / <a class="allDocsOpen">Hide</a> All Documents </p>
 			<div class="toggler">
 			<h3 class="closed" style="text-decoration:underline;">Summary Well Information</h3>
                 <ul>
-                    <li><a href="Explanation_of_SCDNR_well_data.pdf" title="Explanation of well database">Explanation of SCDNR Coastal Plain well records</a></li>
-                    <li><a href="CoastalPlainwells2015.xlsx" target="blank">Entire Coastal Plain</a> (13,781 wells)</li>
-                    <li><a href="AIKwells2015.xlsx" target="blank">Aiken</a> (1,057 wells)</li>
-                    <li><a href="ALLwells2015.xlsx" target="blank">Allendale</a> (217 wells)</li>
-                    <li><a href="BAMwells2015.xlsx" target="blank">Bamberg</a> (113 wells)</li>
-                    <li><a href="BRNwells2015.xlsx" target="blank">Barnwell</a> (610 wells)</li>
-                    <li><a href="BFTwells2015.xlsx" target="blank">Beaufort</a> (1,939 wells)</li>
-                    <li><a href="BRKwells2015.xlsx" target="blank">Berkeley</a> (569 wells)</li>
-                    <li><a href="CALwells2015.xlsx" target="blank">Calhoun</a> (180 wells)</li>
-                    <li><a href="CHNwells2015.xlsx" target="blank">Charleston</a> (692 wells)</li>
-                    <li><a href="CTFwells2015.xlsx" target="blank">Chesterfield</a> (279 wells)</li>
-                    <li><a href="CLAwells2015.xlsx" target="blank">Clarendon</a> (200 wells)</li>
-                    <li><a href="COLwells2015.xlsx" target="blank">Colleton</a> (740 wells)</li>
-                    <li><a href="DARwells2015.xlsx" target="blank">Darlington</a> (214 wells)</li>
-                    <li><a href="DILwells2015.xlsx" target="blank">Dillon</a> (157 wells)</li>
-                    <li><a href="DORwells2015.xlsx" target="blank">Dorchester</a> (318 wells)</li>
-                    <li><a href="FLOwells2015.xlsx" target="blank">Florence</a> (433 wells)</li>
-                    <li><a href="GEOwells2015.xlsx" target="blank">Georgetown</a> (315 wells)</li>
-                    <li><a href="HAMwells2015.xlsx" target="blank">Hampton</a> (288 wells)</li>
-                    <li><a href="HORwells2015.xlsx" target="blank">Horry</a> (840 wells)</li>
-                    <li><a href="JASwells2015.xlsx" target="blank">Jasper</a> (421 wells)</li>
-                    <li><a href="KERwells2015.xlsx" target="blank">Kershaw</a> (315 wells)</li>
-                    <li><a href="LEEwells2015.xlsx" target="blank">Lee</a> (169 wells)</li>
-                    <li><a href="LEXwells2015.xlsx" target="blank">Lexington</a> (1,529 wells)</li>
-                    <li><a href="MRNwells2015.xlsx" target="blank">Marion</a> (153 wells)</li>
-                    <li><a href="MLBwells2015.xlsx" target="blank">Marlboro</a> (173 wells)</li>
-                    <li><a href="ORGwells2015.xlsx" target="blank">Orangeburg</a> (528 wells)</li>
-                    <li><a href="RICwells2015.xlsx" target="blank">Richland</a> (638 wells)</li>
-                    <li><a href="SUMwells2015.xlsx" target="blank">Sumter</a> (423 wells)</li>
-                    <li><a href="WILwells2015.xlsx" target="blank">Williamsburg</a> (271 wells)</li>
+                    
+                    <h3 class="h5"><a href="data/CoastalPlainWells2019.xlsx" target="blank">Entire Coastal Plain</a></h3>
+                    
+					<li><a href="data/AIKwells2019.xlsx">Aiken</a></li>
+                    <li><a href="data/ALLwells2019.xlsx">Allendale</a></li>
+                    <li><a href="data/BAMwells2019.xlsx" target="blank">Bamberg</a></li>
+                    <li><a href="data/BRNwells2019.xlsx" target="blank">Barnwell</a></li>
+                    <li><a href="data/BFTwells2019.xlsx" target="blank">Beaufort</a></li>
+                    <li><a href="data/BRKwells2019.xlsx" target="blank">Berkeley</a></li>
+                    <li><a href="data/CALwells2019.xlsx" target="blank">Calhoun</a></li>
+                    <li><a href="data/CHNwells2019.xlsx" target="blank">Charleston</a></li>
+                    <li><a href="data/CTFwells2019.xlsx" target="blank">Chesterfield</a></li>
+                    <li><a href="data/CLAwells2019.xlsx" target="blank">Clarendon</a></li>
+                    <li><a href="data/COLwells2019.xlsx" target="blank">Colleton</a></li>
+                    <li><a href="data/DARwells2019.xlsx" target="blank">Darlington</a></li>
+                    <li><a href="data/DILwells2019.xlsx" target="blank">Dillon</a></li>
+                    <li><a href="data/DORwells2019.xlsx" target="blank">Dorchester</a></li>
+                    <li><a href="data/FLOwells2019.xlsx" target="blank">Florence</a></li>
+                    <li><a href="data/GEOwells2019.xlsx" target="blank">Georgetown</a></li>
+                    <li><a href="data/HAMwells2019.xlsx" target="blank">Hampton</a></li>
+                    <li><a href="data/HORwells2019.xlsx" target="blank">Horry</a></li>
+                    <li><a href="data/JASwells2019.xlsx" target="blank">Jasper</a></li>
+                    <li><a href="data/KERwells2019.xlsx" target="blank">Kershaw</a></li>
+                    <li><a href="data/LEEwells2019.xlsx" target="blank">Lee</a></li>
+                    <li><a href="data/LEXwells2019.xlsx" target="blank">Lexington</a></li>
+                    <li><a href="data/MRNwells2019.xlsx" target="blank">Marion</a></li>
+                    <li><a href="data/MLBwells2019.xlsx" target="blank">Marlboro</a></li>
+                    <li><a href="data/ORGwells2019.xlsx" target="blank">Orangeburg</a></li>
+                    <li><a href="data/RICwells2019.xlsx" target="blank">Richland</a></li>
+                    <li><a href="data/SUMwells2019.xlsx" target="blank">Sumter</a></li>
+                    <li><a href="data/WILwells2019.xlsx" target="blank">Williamsburg</a></li>
+					
                 </ul>
 				</div>
         </div>
 		</div>
 	
-			<p>Downloadable files above are in the PDF or Excel format.</p>	
+			<p>The downloadable files above are in the Excel format.</p>	
 			
-			<p><strong>Date of most recent database update: March 2015.</strong> The hard-copy well records kept in our office are updated when new wells are added to our inventory, or when information about wells already inventoried is modified.</p>
+			<p><strong>Date of most recent database update: July 2019.</strong> The hard-copy well records kept in our office are updated when new wells are added to our inventory, or when information about wells already inventoried is modified.</p>
 			<p><strong>Disclaimer:</strong> The SCDNR does not guarantee the accuracy of this well information. In many cases, our well information comes from old records, and as a result, some of the information, such as the well owner or the well use, may no longer be accurate. <strong>This is in no way a complete inventory of all the water wells in the South Carolina Coastal Plain.</strong></p>
 		
         </div>
@@ -171,13 +189,76 @@
     <!-- Footer -->
     <footer class="py-5 ">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">                
-                    <p>SC Department of Natural Resources<br>
+        <h5>SCDNR Hydrology Section</h5>
+            <div class="row mt-4">
+                
+                <div class="col-lg-4 pr-4 sitemap">
+                    <h6>Hydrology Home</h6>
+                    <ul>
+                        <li><a href="index.html">Home Page</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="hydrology-news.html">Hydrology News</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+						<li><a href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a></li>
+                    </ul>
+                    <h6>Water Planning</h6>
+                    <ul>
+                        <li><a href="water-planning.html">Water Planning Home</a></li>
+                        <li><a href="surface-water-models.html">Surface Water Models</a></li>
+                        <li><a href="groundwater-models.html">Groundwater Models</a></li>
+                        <li><a href="water-demand.html">Water Demand Projections</a></li>
+                        <li><a href="swam-models.html">Simplified Water Allocation Models (SWAM)</a></li>
+                        <li><a href="state-and-river-basin-planning.html">State and River Basin Planning</a></li>
+                            <ul>
+                                <li><a href="ppac.html">Planning Process Advisory Committee</a></li>
+                                <li><a href="edisto-basin-planning.html">Edisto Basin Planning</a></li>
+                                <li><a href="faq.html">Frequently Asked Questions</a></li>
+                            </ul>						
+                    </ul>
+                    
+                    <h6>Data</h6>
+                    <ul>
+                        <li><a href="groundwater-data/index.html">Groundwater Level Data</a></li>
+                        <li><a href="geophysical-logs.html">Geophysical Logs</a></li>
+                        <li><a href="well-database.html">Coastal Plain Water Well Database</a></li>
+                        <li><a href="streamflow-and-lake-levels.html">Streamflow and Lake Level Data</a></li>						
+                    </ul>
+                    
+                </div>
+                <div class="col-lg-4 pl-lg-4 sitemap">
+                    <h6>Groundwater Program</h6>
+                    <ul>
+                        <li><a href="groundwater.html">Groundwater Program Home</a></li>
+                        <li><a href="groundwater-level-monitoring-network.html">Groundwater Level Monitoring Network</a></li>
+                        <li><a href="well-database.html">Coastal Plain Water Well Database</a></li>
+                        <li><a href="pot-mapping.html">Potentiometric Mapping</a></li>
+                        <li><a href="geophysical-logs.html">Geophysical Logs</a></li>
+                        <li><a href="aquifers.html">Aquifer Delineation</a></li>
+                        <li><a href="aquifer-properties.html">Aquifer Properties</a></li>
+                        <li><a href="groundwater-models.html">Groundwater Models</a></li>
+                        <li><a href="saltwater-intrusion-monitoring.html">Saltwater Intrusion Monitoring Network</a></li>
+                        <li><a href="groundwater-drought-monitoring-network.html">Groundwater Drought Monitoring Network</a></li>						
+                    </ul>
+                    <h6>Surface Water Program</h6>
+                    <ul>
+                        <li><a href="surface-water.html">Surface Water Home</a></li>
+                        <li><a href="surface-water-models.html">Surface Water Models</a></li>
+                        <li><a href="swam-models.html">Simplified Water Allocation Models (SWAM)</a></li>
+                        <li><a href="surface-water-monitoring.html">Surface Water Monitoring Initiatives</a></li>
+                            <ul>
+                                <li><a href="streamflow-and-lake-levels.html">Streamflow and Lake Level Data</a></li>
+                                <li><a href="streamflow-workshops.html">Streamflow Monitoring Workshops</a></li>
+                            </ul>
+                        	
+                        						
+                    </ul>
+                </div>
+                <div class="col-lg-4 pl-lg-5 ">                
+                    <p>South Carolina Department of<br /> Natural Resources<br>
                     Land, Water, and Conservation Division<br>
                         1000 Assembly Street<br>
                         Columbia, SC 29201<br>
-                        <a href="http://dnr.sc.gov/water/hydro">dnr.sc.gov/water/hydro</a>
+                        <a href="http://hydrology.dnr.sc.gov/">http://hydrology.dnr.sc.gov/</a>
                     </p>
                     <a href="http://dnr.sc.gov/"><img src="images/dnr-logo-small.gif" alt="SC Department of Natural Resources logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
                     <p class="mt-3">Copyright © 
@@ -186,7 +267,6 @@
                         </script>
                     </p>
                 </div>
-            
             </div>
             
         </div>        
@@ -216,28 +296,6 @@
             $(".toggler ul").hide("slow");
             $(".toggler h3").removeClass("open closed").addClass("closed");
         });
-    </script>
-	
-	
-    <script src="js/format-google-calendar.js"></script>
-    
-    <script>
-        formatGoogleCalendar.init({
-        calendarUrl: 'https://www.googleapis.com/calendar/v3/calendars/tangnar123@gmail.com/events?key=AIzaSyCgIXqqokRo_LeGKyIhVx_VcCdSnDW5e-4',
-        past: false,
-        upcoming: true,
-        sameDayTimes: true,
-        dayNames: true,
-        upcomingTopN: 5,
-        recurringEvents: true, 
-        itemsTagName: 'li',
-        upcomingSelector: '#cal-events',
-        upcomingHeading: '<h4>Upcoming events</h4>',
-        format: ['*summary*', '<br>', '*date*', '<br>', '*location*'],
-        timeMin: '2016-06-03T10:00:00-07:00',
-        timeMax: '2020-06-03T10:00:00-07:00'
-});
-        
     </script>
 
   </body>

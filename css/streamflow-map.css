@@ -70,6 +70,11 @@ th {
 .csvLinks{padding:4px; font-weight: bold; border-radius: 4px; background-color:#d0e1e1;}
 .docs {width:96%;margin:1em auto;}
 
+.siteID {
+	width: 1%;
+	white-space: nowrap;
+}
+
 #intro {
     width:84%;
     float:left;
@@ -84,6 +89,21 @@ th {
 #dnrLogo {width:75%;margin-bottom:12px;}
 #usgsLogo {width:90%;}
 
+@media (max-width: 992px) {
+    #logos {
+        width:50%;
+		margin:1em 0 0 0;
+		float:left;
+    }
+	#dnrLogo {
+		width:30%;
+		margin-bottom:12px;
+	}
+	#usgsLogo {
+		width:35%;
+	}
+}
+
 p.clear{clear:both;}
 
 #newSites tr td:first-child {
@@ -97,6 +117,12 @@ p.clear{clear:both;}
         text-decoration: underline;
         cursor: pointer;
     }
+	
+#fundSites tr td:first-child {
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+    }	
 
 #table-tabs .nav-link {
     text-decoration: none;
@@ -105,3 +131,8 @@ p.clear{clear:both;}
 .tab-content {
     margin:15px 0;
 }
+
+.funded {
+	color: red;
+	font-weight: bold;
+}	

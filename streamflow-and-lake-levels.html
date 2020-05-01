@@ -25,7 +25,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg text-white fixed-top">
         <div class="container">
-            <img src="images/dnr-logo-small.gif" id="nav-logo">
+            <a href="http://www.dnr.sc.gov/"><img src="images/dnr-logo-small.gif" id="nav-logo" alt="scdnr-logo"></a>
             <a class="navbar-brand ml-5 pl-5 pl-md-1" href="index.html">SCDNR Hydrology</a>
             <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,48 +33,54 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html">About Us</a>
                     </li>
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
-					<a class="dropdown-item" href="water-planning.html">
-					Water Planning</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataOne" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Water Planning</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataOne">
+						<a class="dropdown-item" href="water-planning.html">Overview</a>
+						<a class="dropdown-item" href="state-and-river-basin-planning.html">State and River Basin Planning</a>
+						<a class="dropdown-item" href="edisto-basin-planning.html">Edisto Basin Planning</a>
+						<a class="dropdown-item" href="water-demand.html">Water Demand Projections</a>
+						<a class="dropdown-item" href="surface-water-models.html">Surface Water Models</a>
+						<a class="dropdown-item" href="groundwater-models.html">Groundwater Models</a>
+						</div>
+                    </li>
+					<!--Data Dropdown Done-->
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataTwo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataTwo">
 					<a class="dropdown-item" href="groundwater.html">
 					Groundwater</a>
 					<a class="dropdown-item" href="surface-water.html">
 					Surface Water</a>
 					</div>
 					</li>
-					<!--Data Dropdown Done-->					
-                    <li class="nav-item">
-                        <a class="nav-link" href="publications.html">Publications</a>
-                    </li>
+					<!--Data Dropdown Done-->	
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataThree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataThree">
 					<a class="dropdown-item" href="groundwater-data/index.html">
 					Groundwater Level Data</a>
-					<a class="dropdown-item" href="http://www.dnr.sc.gov/hydro/gl_home.html">
+					<a class="dropdown-item" href="geophysical-logs.html">
 					Geophysical Logs</a>
 					<a class="dropdown-item" href="well-database.html">
 					Coastal Plain Well Database</a>
 					<a class="dropdown-item" href="streamflow-and-lake-levels.html">
 					Streamflow and Lake Levels</a>
-					<a class="dropdown-item" href="swam-models.html">
-					Surface Water Models</a>
 					</div>
 					</li>
 					<!--Data Dropdown Done-->
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=tangnar123%40gmail.com&ctz=America%2FNew_York">Calendar</a>
+                     <li class="nav-item">
+                        <a class="nav-link" href="publications.html">Publications</a>
+                    </li>					
+                     <li class="nav-item">
+                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a>
                     </li>
-
+                    
                 </ul>
             </div>
         </div>
@@ -86,7 +92,7 @@
             <div class="row">
                 <div class="col-lg-12 my-sm-4 pt-3 pt-sm-0 background-text">
                     <h1 class="page-header">Streamflow and Lake Levels</h1>
-                    <p class="text-white lead">Find water level data for streams and lakes in South Carolina. </p>
+                    <p class="text-white lead">Links to real-time and historical streamflow, river stage, and lake level information.</p>
                 </div>
             </div>
         </div>
@@ -96,99 +102,148 @@
     <div class="container">
 
         <div class="white-bg">
-            <h2>Streamflow Data</h2>
-                <p><!--The U.S. Geological Survey, in cooperation with the SCDNR, operates and maintains a network of stream gages across the State. These gages transmit information to the USGS several times per day, providing near real-time reports of streamflow conditions. Streamflow can be found from the USGS.-->The U.S. Geological Survey operates and maintains a network of real-time stream gages across the State. The SCDNR currently supports funding for 16 of these gages. Data from these sites are used to support drought assessments, hydrologic modeling and water planning activities in the State.</p>
-                <p><a href="https://waterdata.usgs.gov/sc/nwis/current/?type=flow&format=pre" title="USGS SC Stream Gages">Real-time Streamflow Water Data</a></p>
+            <h2>USGS Streamflow Data</h2>
+                <p>The U.S. Geological Survey operates and maintains a network of nearly 200 real-time streamflow and lake-level gages across the State. SCDNR funds 42 gages, 26 of which are new monitoring stations currently being installed by the USGS. All 26 new gages are expected to be operational by July 2020. Data from these sites are used to support drought assessments, flood and emergency response actions, recreational activities, hydrologic modeling, and water planning activities in the State.</p>
+                <p><a href="https://waterdata.usgs.gov/sc/nwis/current/?type=flow&format=pre" title="USGS SC Stream Gages" target="_blank">USGS Real-time Streamflow Data</a></p>
+				<p><a href="https://waterwatch.usgs.gov/?m=real&r=sc&w=real%2Cmap" title="Comparison Map" target="_blank">Statewide Map of Current Streamflow Conditions</a></p>
         </div>
        <div class="white-bg">
-           <h2>Lake Levels</h2>
-				<p>Current lake level and other information for several South Carolina lakes are available at the following links.</p>
+           <h2>Other Sources for Lake Level Information</h2>
+				<p>Current lake levels and other information for several South Carolina lakes are available at the following links or phone numbers.</p>
 				
-				<p><b>Lake Murray (Dominion)</b><br>
-				<a href="https://www.sceg.com/about-us/lakes-and-recreation" title="Lake Murray Levels">Lake Murray Levels</a><br>
+				<p><strong>Lake Murray (Dominion Energy)</strong><br>
+				<a href="https://www.sceg.com/about-us/lakes-and-recreation" title="Lake Murray Levels" target="_blank">Lake Murray Levels</a><br>
 				1-800-830-5253	
 				</p>
 				
-				<p><b>Duke Energy Lakes</b><br>
+				<p><strong>Duke Energy Lakes</strong><br>
 				Bad Creek, Cedar Creek, Fishing Creek, Great Falls, Jocassee, Keowee, Wateree, Wylie<br>
-				<a href="https://lakes.duke-energy.com/index.html#/lakes" title="Duke Energy Lake Levels">Duke Energy Lake Levels</a><br>
+				<a href="https://lakes.duke-energy.com/index.html#/lakes" title="Duke Energy Lake Levels" target="_blank">Duke Energy Lake Levels</a><br>
 				1-800-829-5253<br>
 				This phone number does not provide actual water surface elevations; rather, it provides lake levels relative to the full pond level, which is assumed to be 100.0 feet. For example, if the level of Lake Wylie is given as 97.6 feet, the lake would be 2.4 feet below its level when full.
 				</p>
 				
-				<p><b>Army Corps of Engineers - Savannah River Lakes</b><br>
+				<p><strong>Savannah River Lakes – Army Corps of Engineers</strong><br>
 				Hartwell, Russell, Thurmond<br>
-				<a href="http://water.sas.usace.army.mil/gmap/" title="Savannah River Lake Levels">Savannah River Lakes' Levels</a><br>
+				<a href="http://water.sas.usace.army.mil/gmap/" title="Savannah River Lake Levels" target="_blank">Savannah River Lake Levels</a><br>
 				</p>				
  
-				<p><b>Santee Cooper Lakes</b><br>
+				<p><strong>Santee Cooper Lakes</strong><br>
 				Marion, Moultrie<br>
-				<a href="https://waterdata.usgs.gov/sc/nwis/uv/?site_no=02171000&PARAmeter_cd=00062,62614" title="Lake Marion Levels">Lake Marion Levels</a><br>
-				<a href="https://waterdata.usgs.gov/sc/nwis/uv/?site_no=02172000&PARAmeter_cd=00062,62614" title="Lake Moultrie Levels">Lake Moultrie Levels</a><br>
+				<a href="https://waterdata.usgs.gov/sc/nwis/uv/?site_no=02171000&PARAmeter_cd=00062,62614" title="Lake Marion Levels" target="_blank">Lake Marion Levels</a><br>
+				<a href="https://waterdata.usgs.gov/sc/nwis/uv/?site_no=02172000&PARAmeter_cd=00062,62614" title="Lake Moultrie Levels" target="_blank">Lake Moultrie Levels</a><br>
 				1-800-925-2537
 				</p>
 				
-				<p><b>Lake Greenwood</b><br>
-				<a href="https://waterdata.usgs.gov/nwis/uv?site_no=02166500" title="Lake Greenwood Levels">Lake Greenwood Levels</a><br>
+				<p><strong>Lake Greenwood</strong><br>
+				<a href="https://waterdata.usgs.gov/nwis/uv?site_no=02166500" title="Lake Greenwood Levels" target="_blank">Lake Greenwood Levels</a><br>
 				
 				</p>
 
-				<p><b>Lake Blalock</b><br>
-				<a href="https://waterdata.usgs.gov/sc/nwis/uv/?site_no=021556524&PARAmeter_cd=00062,62614" title="Lake Blalock Levels">Lake Blalock Levels</a><br>
+				<p><strong>Lake Blalock</strong><br>
+				<a href="https://waterdata.usgs.gov/sc/nwis/uv/?site_no=021556524&PARAmeter_cd=00062,62614" title="Lake Blalock Levels" target="_blank">Lake Blalock Levels</a><br>
 					
 				</p>
 
-				<p><b>Lake Bowen</b><br>
-				<a href="https://waterdata.usgs.gov/sc/nwis/uv/?site_no=02154950&PARAmeter_cd=00062,62614" title="Lake Bowen Levels">Lake Bowen Levels</a><br>
+				<p><strong>Lake Bowen</strong><br>
+				<a href="https://waterdata.usgs.gov/sc/nwis/uv/?site_no=02154950&PARAmeter_cd=00062,62614" title="Lake Bowen Levels" target="_blank">Lake Bowen Levels</a><br>
 				
-				</p>				
-         
-    
-            <p><!--<strong>Note:</strong> Duke Energy no longer operates Lake Greenwood. As a result, the Duke Energy web site and telephone information line no longer provide information about the level of Lake Greenwood. Lake Greenwood levels are still available through the -->
-			
-
-
+				</p>
         </div>
                      
 
         </div>
         <!-- /.container -->
 
-        <!-- Footer -->
-        <footer class="py-5 ">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 text-center">
-                        <p>SC Department of Natural Resources
-                            <br> Land, Water, and Conservation Division
-                            <br> 1000 Assembly Street
-                            <br> Columbia, SC 29201
-                            <br>
-                            <a href="http://dnr.sc.gov/water/hydro">dnr.sc.gov/water/hydro</a>
-                        </p>
-                        <a href="http://dnr.sc.gov/"><img src="images/dnr-logo-small.gif" alt="SC Department of Natural Resources logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
-                        <p class="mt-3">Copyright ©
-                            <script type="text/javascript">
-                                document.write(new Date().getFullYear());
-                            </script>
-                        </p>
-                    </div>
-
+    <!-- Footer -->
+    <footer class="py-5 ">
+        <div class="container">
+        <h5>SCDNR Hydrology Section</h5>
+            <div class="row mt-4">
+                
+                <div class="col-lg-4 pr-4 sitemap">
+                    <h6>Hydrology Home</h6>
+                    <ul>
+                        <li><a href="index.html">Home Page</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="hydrology-news.html">Hydrology News</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+						<li><a href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a></li>
+                    </ul>
+                    <h6>Water Planning</h6>
+                    <ul>
+                        <li><a href="water-planning.html">Water Planning Home</a></li>
+                        <li><a href="surface-water-models.html">Surface Water Models</a></li>
+                        <li><a href="groundwater-models.html">Groundwater Models</a></li>
+                        <li><a href="water-demand.html">Water Demand Projections</a></li>
+                        <li><a href="swam-models.html">Simplified Water Allocation Models (SWAM)</a></li>
+                        <li><a href="state-and-river-basin-planning.html">State and River Basin Planning</a></li>
+                            <ul>
+                                <li><a href="ppac.html">Planning Process Advisory Committee</a></li>
+                                <li><a href="edisto-basin-planning.html">Edisto Basin Planning</a></li>
+                                <li><a href="faq.html">Frequently Asked Questions</a></li>
+                            </ul>						
+                    </ul>
+                    
+                    <h6>Data</h6>
+                    <ul>
+                        <li><a href="groundwater-data/index.html">Groundwater Level Data</a></li>
+                        <li><a href="geophysical-logs.html">Geophysical Logs</a></li>
+                        <li><a href="well-database.html">Coastal Plain Water Well Database</a></li>
+                        <li><a href="streamflow-and-lake-levels.html">Streamflow and Lake Level Data</a></li>						
+                    </ul>
+                    
                 </div>
-
+                <div class="col-lg-4 pl-lg-4 sitemap">
+                    <h6>Groundwater Program</h6>
+                    <ul>
+                        <li><a href="groundwater.html">Groundwater Program Home</a></li>
+                        <li><a href="groundwater-level-monitoring-network.html">Groundwater Level Monitoring Network</a></li>
+                        <li><a href="well-database.html">Coastal Plain Water Well Database</a></li>
+                        <li><a href="pot-mapping.html">Potentiometric Mapping</a></li>
+                        <li><a href="geophysical-logs.html">Geophysical Logs</a></li>
+                        <li><a href="aquifers.html">Aquifer Delineation</a></li>
+                        <li><a href="aquifer-properties.html">Aquifer Properties</a></li>
+                        <li><a href="groundwater-models.html">Groundwater Models</a></li>
+                        <li><a href="saltwater-intrusion-monitoring.html">Saltwater Intrusion Monitoring Network</a></li>
+                        <li><a href="groundwater-drought-monitoring-network.html">Groundwater Drought Monitoring Network</a></li>						
+                    </ul>
+                    <h6>Surface Water Program</h6>
+                    <ul>
+                        <li><a href="surface-water.html">Surface Water Home</a></li>
+                        <li><a href="surface-water-models.html">Surface Water Models</a></li>
+                        <li><a href="swam-models.html">Simplified Water Allocation Models (SWAM)</a></li>
+                        <li><a href="surface-water-monitoring.html">Surface Water Monitoring Initiatives</a></li>
+                            <ul>
+                                <li><a href="streamflow-and-lake-levels.html">Streamflow and Lake Level Data</a></li>
+                                <li><a href="streamflow-workshops.html">Streamflow Monitoring Workshops</a></li>
+                            </ul>
+                        	
+                        						
+                    </ul>
+                </div>
+                <div class="col-lg-4 pl-lg-5 ">                
+                    <p>South Carolina Department of<br /> Natural Resources<br>
+                    Land, Water, and Conservation Division<br>
+                        1000 Assembly Street<br>
+                        Columbia, SC 29201<br>
+                        <a href="http://hydrology.dnr.sc.gov/">http://hydrology.dnr.sc.gov/</a>
+                    </p>
+                    <a href="http://dnr.sc.gov/"><img src="images/dnr-logo-small.gif" alt="SC Department of Natural Resources logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
+                    <p class="mt-3">Copyright © 
+                        <script type="text/javascript">
+                            document.write(new Date().getFullYear());
+                        </script>
+                    </p>
+                </div>
             </div>
-        </footer>
+            
+        </div>        
+    </footer>
 
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-        <!-- JQUERY TOGGLE SCRIPT -->
-        <script>//toggle dropdown stuff
-$('.question').click(function() {
-    $(this).next('.answer').slideToggle();
-    $(this).toggleClass("closed open");
-});</script>
            
 
 </body>

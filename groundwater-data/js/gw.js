@@ -77,6 +77,11 @@ function oef(feature, layer) {
     });
 };
 
+ var clusterIcon = L.icon({
+        iconUrl: 'image/cluster.png',
+        iconSize: [15, 15], iconAnchor: [8, 8]
+    });
+
 var wellsC = L.esri.Cluster.featureLayer({
     url: data,
     where: "cluster = 'yes'",
@@ -88,10 +93,7 @@ var wellsC = L.esri.Cluster.featureLayer({
     zoomToBoundsOnClick: true,
     maxClusterRadius: 5,
     iconCreateFunction: function() {
-        return L.divIcon({
-            className: 'cluster',
-            iconSize: L.point(12, 12)
-        });
+        return clusterIcon
     },
     onEachFeature: oef
 }).addTo(map);

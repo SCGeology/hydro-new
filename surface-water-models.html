@@ -17,7 +17,8 @@
 
     <!-- Custom styles for this template -->
     <link href="css/hydro.css" rel="stylesheet">
-    <link href="css/surface-water.css" rel="stylesheet">
+    
+	<link href="css/lightbox.css" rel="stylesheet">	
 </head>
 
 <body>
@@ -25,7 +26,7 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg text-white fixed-top">
         <div class="container">
-            <img src="images/dnr-logo-small.gif" id="nav-logo">
+            <a href="http://www.dnr.sc.gov/"><img src="images/dnr-logo-small.gif" id="nav-logo" alt="scdnr-logo"></a>
             <a class="navbar-brand ml-5 pl-5 pl-md-1" href="index.html">SCDNR Hydrology</a>
             <button class="navbar-toggler navbar-dark" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -33,48 +34,54 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
+                        <a class="nav-link" href="about.html">About Us</a>
                     </li>
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
-					<a class="dropdown-item" href="water-planning.html">
-					Water Planning</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownDataOne" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Water Planning</a>
+						<div class="dropdown-menu" aria-labelledby="dropdownDataOne">
+						<a class="dropdown-item" href="water-planning.html">Overview</a>
+						<a class="dropdown-item" href="state-and-river-basin-planning.html">State and River Basin Planning</a>
+						<a class="dropdown-item" href="edisto-basin-planning.html">Edisto Basin Planning</a>
+						<a class="dropdown-item" href="water-demand.html">Water Demand Projections</a>
+						<a class="dropdown-item" href="surface-water-models.html">Surface Water Models</a>
+						<a class="dropdown-item" href="groundwater-models.html">Groundwater Models</a>
+						</div>
+                    </li>
+					<!--Data Dropdown Done-->
+					<!--Data Dropdown-->
+					<li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataTwo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Programs</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataTwo">
 					<a class="dropdown-item" href="groundwater.html">
 					Groundwater</a>
 					<a class="dropdown-item" href="surface-water.html">
 					Surface Water</a>
 					</div>
 					</li>
-					<!--Data Dropdown Done-->					
-                    <li class="nav-item">
-                        <a class="nav-link" href="publications.html">Publications</a>
-                    </li>
+					<!--Data Dropdown Done-->	
 					<!--Data Dropdown-->
 					<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" id="dropdownData" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
-					<div class="dropdown-menu" aria-labelledby="dropdownData">
+					<a class="nav-link dropdown-toggle" href="#" id="dropdownDataThree" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Data</a>
+					<div class="dropdown-menu" aria-labelledby="dropdownDataThree">
 					<a class="dropdown-item" href="groundwater-data/index.html">
 					Groundwater Level Data</a>
-					<a class="dropdown-item" href="http://www.dnr.sc.gov/hydro/gl_home.html">
+					<a class="dropdown-item" href="geophysical-logs.html">
 					Geophysical Logs</a>
 					<a class="dropdown-item" href="well-database.html">
 					Coastal Plain Well Database</a>
 					<a class="dropdown-item" href="streamflow-and-lake-levels.html">
 					Streamflow and Lake Levels</a>
-					<a class="dropdown-item" href="swam-models.html">
-					Surface Water Models</a>
 					</div>
 					</li>
 					<!--Data Dropdown Done-->
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=tangnar123%40gmail.com&ctz=America%2FNew_York">Calendar</a>
+                     <li class="nav-item">
+                        <a class="nav-link" href="publications.html">Publications</a>
+                    </li>					
+                     <li class="nav-item">
+                        <a class="nav-link" href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a>
                     </li>
-
+                    
                 </ul>
             </div>
         </div>
@@ -86,7 +93,7 @@
             <div class="row">
                 <div class="col-lg-12 my-sm-4 pt-3 pt-sm-0 background-text">
                     <h1 class="page-header">Surface Water Models</h1>
-                    <p class="text-white lead">Surface Water Models do this and that so here you go. </p>
+                    <p class="text-white lead">Surface water models are used to simulate surface water conditions and to assess surface water availability.</p>
                 </div>
             </div>
         </div>
@@ -99,223 +106,231 @@
             <div class="row pb-3">
                 <div class="col-lg-7">
                     <h2>Overview</h2>
-                    <p>Effective water planning and management requires an accurate assessment of the State’s surface water resources.  To that end, the SCDNR has supported the development of surface-water quantity models that simulate the surface water system for each of the <a class="mt-2" href="http://www.dnr.sc.gov/water/waterplan/pdf/SCmajorbasins.pdf">eight major watersheds, or basins, in South Carolina</a>.  The modeling platform is the Simplified Water Allocation Model (SWAM), developed by CDM Smith, Inc. These models will be used to evaluate current and future water availability and will support the development of State and regional water plans. <p>
+                    <p>Effective water planning and management requires an accurate assessment of the State’s surface water resources.  To that end, the SCDNR has supported the development of surface-water quantity models that simulate the surface water system for each of the <a href="images/PlanningBasins.jpg" alt="SC Major Basins image" data-lightbox="basins">eight major river basins in South Carolina</a>.  The modeling platform is the Simplified Water Allocation Model (SWAM), developed by CDM Smith, Inc. These models will be used to evaluate current and future water availability and will support the development of State and regional water plans. Use the links below to access modeling reports and other documentation for each basin’s SWAM model and to learn more about how the SWAM models were developed.<p>
 
                 </div>
                 <div class="col-lg-4 ml-lg-5 mt-3" >
                     <div class="p-3" id="find-out-more">
-                    <h3 class="font-italic mb-2">Surface Water Models</h3>
-                        <p>The SCDNR is pleased to announce the public release of the Simplified Water Allocation Models (SWAM) for the Edisto, Saluda and Salkehatchie river basins.</p>
-                        <p class="mb-1"><a href="http://www.dnr.sc.gov/swam-models/index.html">Download SWAM Models</a></p>
+                    <h2 class="font-italic mb-2">Surface Water Models</h2>
+                        <p>SCDNR has publicly released the Simplified Water Allocation Models (SWAM) for the Edisto, Saluda, and Salkehatchie river basins.</p>
+                        <a class="btn btn-info text-white" href="swam-models.html">Download SWAM Models</a>
                     </div>    
                 </div>
             </div>
-        </div>    
+        </div> 
+
+        <div class="white-bg">
+            <h2>Stakeholder Engagement Process</h2>
+            <p>In collaboration with SCDNR, Clemson University led a stakeholder engagement process during the development of the SWAM models. Two stakeholder meetings were held in each basin and were designed to educate stakeholders on the purpose and functionality of the SWAM models, answer questions about the models, and solicit stakeholder feedback. For more information about the stakeholder engagement process, please visit <a href="https://www.clemson.edu/public/water-assessment/" target="_blank">Clemson’s stakeholder website</a>.<p>
+        </div> 		
 
         <div class="white-bg">
 
-            <h2>Project Documents</h2>
-            
-            <p>For information about stakeholder meetings, please visit <a href="http://www.clemson.edu/public/water-assessment/" target="_blank">Clemson's stakeholder website</a>.</p>
+            <h2>SWAM Model Documentation</h2>
 
         <div class="row ml-md-3"> 
             
             <div id="documents" class="my-4 col-md-6">
 
                 <p><a class="allDocsClose">Show</a> / <a class="allDocsOpen">Hide</a> All Documents </p>
+                
                 <div class="toggler">
-                    <h3 class="closed" style="text-decoration:underline;">Monthly Progress Reports</h3>
+                    <h4 class="closed" style="text-decoration:underline;">Technical Reports</h4>
                     <ul>
-                        <li><a href="swmpdfs/MonthlyReports/November2016.pdf">November 2016</a></li>
-                        <li><a href="swmpdfs/MonthlyReports/October2016.pdf">October 2016</a></li>
-                        <li><a href="swmpdfs/MonthlyReports/September2016.pdf">September 2016</a></li>
-                        <li><a href="swmpdfs/MonthlyReports/August2016.pdf">August 2016</a>
-                            <li><a href="swmpdfs/MonthlyReports/July2016.pdf">July 2016</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/June2016.pdf">June 2016</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/May2016.pdf">May 2016</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/April2016.pdf">April 2016</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/March2016.pdf">March 2016</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/February2016.pdf">February 2016</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/January2016.pdf">January 2016</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/December2015.pdf">December 2015</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/November2015.pdf">November 2015</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/October2015.pdf">October 2015</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/September2015.pdf">September 2015</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/August2015.pdf">August 2015</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/July2015.pdf">July 2015</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/June2015.pdf">June 2015</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/May2015.pdf">May 2015</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/April2015.pdf">April 2015</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/March2015.pdf">March 2015</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/February2015.pdf">February 2015</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/January2015.pdf">January 2015</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/December2014.pdf">December 2014</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/November2014.pdf">November 2014</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/October2014.pdf">October 2014</a></li>
-                            <li><a href="swmpdfs/MonthlyReports/September2014.pdf">September 2014</a></li>
+                        <li><a href="pdfs/swm/TechnicalReports/SWAMusermanv4dot0.pdf">SWAM User's Manual v4.0</a></li>
+                        <li><a href="pdfs/swm/TechnicalReports/ScSwqmModelingPlan.pdf">SC Surface Water Quantity Models Modeling Plan</a></li>
                     </ul>
                 </div>
+				
+                <div class="toggler">
+                    <h4 class="closed" style="text-decoration:underline;">Technical Memorandums</h4>
+                    <ul>
+                        <li><a href="pdfs/swm/TechnicalMemos/UIFextensionTest072215.pdf">UIF Extension Testing, 7-22-15</a></li>
+                        <li><a href="pdfs/swm/TechnicalMemos/HistoricAgUse.pdf">Methodology for Estimating Historic Agricultural Use</a></li>
+                        <li><a href="pdfs/swm/TechnicalMemos/SWAMAccessDeploy.pdf">SWAM Model Accessibility and Deployment Options</a></li>
+                        <li><a href="pdfs/swm/TechnicalMemos/UserVsPermitBased.pdf">User-based vs Permit-based SWAM Modeling</a></li>
+                        <li><a href="pdfs/swm/TechnicalMemos/WaterUserDemandsBaseline.pdf">Water User Demands in Baseline SWAM Models</a></li>
+                        <li><a href="pdfs/swm/TechnicalMemos/AddNodeSwam.pdf">Adding a node in an Established SWAM Network</a></li>
+                        <li><a href="pdfs/swm/TechnicalMemos/EvaporationMethodology.pdf">Evaporation Methodology</a></li>
+                        <li><a href="pdfs/swm/TechnicalMemos/RefBasinGuideUIFv3.pdf">Reference Basin Guidelines for UIFs V3</a></li>
+                        <li><a href="pdfs/swm/TechnicalMemos/OperationalGapFillingv8.pdf">Standardizing and Simplifying Operational Gap Filling V8</a></li>
+                    </ul>
+                </div>	
 
                 <div class="toggler">
-                    <h3 class="closed" style="text-decoration:underline;">Legislative Quarterly Reports</h3>
+                    <h4 class="closed" style="text-decoration:underline;">SWAM Documentation for each Basin</h4>
                     <ul>
-                        <li><a href="swmpdfs/LegislativeReports/qrlegislativereport2016aug.pdf">August 2016</a></li>
-                        <li><a href="swmpdfs/LegislativeReports/qrlegislativereport2016may.pdf">May 2016</a></li>
-                        <li><a href="swmpdfs/LegislativeReports/qrlegislativereport2016feb.pdf">February 2016</a></li>
-                        <li><a href="swmpdfs/LegislativeReports/qrlegislativereport2015nov.pdf">November 2015</a></li>
-                        <li><a href="swmpdfs/LegislativeReports/qrlegislativereport2015aug.pdf">August 2015</a></li>
-                        <li><a href="swmpdfs/LegislativeReports/qrlegislativereport2015may.pdf">May 2015</a></li>
-                        <li><a href="swmpdfs/LegislativeReports/qrlegislativereport2015feb.pdf">February 2015</a></li>
-                        <li><a href="swmpdfs/LegislativeReports/qrlegislativereport2014nov.pdf">November 2014</a></li>
-                        <li><a href="swmpdfs/LegislativeReports/qrlegislativereport2014july.pdf">July 2014</a></li>
-                        <li><a href="swmpdfs/LegislativeReports/qrlegislativereport2014apr.pdf">April 2014</a></li>
-                        <li><a href="swmpdfs/LegislativeReports/qrlegislativereport2014jan.pdf">January 2014</a></li>
+                        <li><strong>Savannah</strong></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SavannahModelReportFinal.pdf">Savannah Model Report - June 2017</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SavannahUIFResultsFinal.pdf">Savannah UIF Results - May 2017</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SavannahBasinUIFMethodology.pdf">Savannah UIF Development - September 2016</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SavannahStakeholderMtg1Aug2016.pdf">Savannah Stakeholder Meeting #1 (August 2016)</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/DraftSavannahFramework.pdf">Savannah - Draft Basin Framework</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/mapUpperSavannah.pdf">Savannah Basin Map - Upper</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/mapLowerSavannah.pdf">Savannah Basin Map - Lower</a></li>
+                        <li><strong>Santee</strong></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SanteeModelReportFinal.pdf">Santee Model Report - March 2017</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SanteeUIFResults.pdf">Santee UIF Results - November 2016</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SanteeUIFMethodology.pdf">Santee UIF Development - May 2016</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SanteeStakeholderMtg1.pdf">Santee - Stakeholder Meeting #1 (March 2016)</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/mapSantee.pdf">Santee Basin Map</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/santeeBasinFramework.pdf">Santee Basin Framework</a></li>
+                        <li><strong>Salkehatchie</strong></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SalkehatchieModelReportFinal.pdf">Salkehatchie Model Report - February 2017</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SalkStakeholderMtg1_2Aug2016.pdf">Salkehatchie Stakeholder Meeting #1 &amp; #2 (August 2016)</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/UIFmethodResultsDraftSalkJune2016.pdf">Draft Salkehatchie Basin UIF Methodology and Results – June 2016</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/DraftSalkehatchieFramework.pdf">Salkehatchie Basin Framework</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SalkehatchieBasinMap.pdf">Salkehatchie Basin Map</a></li>
+                        <li><strong>Saluda</strong></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SaludaModelReportFinal.pdf">Saluda Model Report - February 2017</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SaludaStakeholderMtg1.pdf">Saluda - Stakeholder Meeting #1 (April 2015)</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SaludaStakeholderMtg2.pdf">Saluda - Stakeholder Meeting #2 (December 2015)</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/SaludaUIFResultsSept2015.pdf">Saluda Basin UIF Results - September 2015</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/mapSaluda.pdf">Saluda Basin Map</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/UIFmethodSaluda.pdf">Saluda Basin UIF Methodology - January 2015</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/saludaBasinFramework.pdf">Saluda Basin Framework</a></li>
+                        <li><strong>Edisto</strong></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/EdistoModelReportFinal.pdf">Edisto Model Report - January 2017</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/EdistoStakeholderMtg1.pdf">Edisto - Stakeholder Meeting #1 (June 2015)</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/EdistoStakeholderMtg2.pdf">Edisto - Stakeholder Meeting #2 (December 2015)</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/UIFResultsEdistoMay2016.pdf">Edisto Basin UIF Results – May 2016.pdf</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/mapEdisto.pdf">Edisto Basin Map</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/UIFmethodEdisto.pdf">Edisto Basin UIF Methodology - August 2015</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/edistoBasinFramework.pdf">Edisto Basin Framework</a></li>
+                        <li><strong>Broad</strong></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/BroadModelReportFinal.pdf">Broad Model Report - February 2017</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/BroadStakeholderMtg2May2016.pdf">Broad - Stakeholder Meeting #2 (May 2016)</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/BroadStakeholderMtg1.pdf">Broad - Stakeholder Meeting #1 (August 2015)</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/BroadUIFResultsFinal.pdf">Broad UIF Results – July 2016 </a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/UIFmethodBroadJan16.pdf">Broad Basin UIF Methodology- January 2016</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/mapBroad.pdf">Broad Basin Map</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/broadBasinFramework.pdf">Broad Basin Framework</a></li>
+                        <li><strong>Pee Dee</strong></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/PeeDeeModelReportFinal.pdf">Pee Dee Model Report – February 2017</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/PeeDeeStakeholderMtg1.pdf">Pee Dee - Stakeholder Meeting #1 (November 2015)</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/PeeDeeStakeholderMtg2.pdf">Pee Dee - Stakeholder Meeting #2 (May 2016)</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/UIFmethodResultsDraftPeeDeeMarch2016.pdf">Pee Dee Basin UIF Methodology and Results – March 2016</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/peeDeeMap.pdf">Pee Dee Basin Map</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/PeeDeeFrameworkOct2015.pdf">Pee Dee Basin Framework</a></li>
+                        <li><strong>Catawba</strong></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/CatawbaModelReportFinal.pdf">Catawba Model Report - March 2017</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/CatawbaStakeholderMtg2Nov2016.pdf">Catawba - Stakeholder Meeting #2 (November 2016)</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/UIFmethodResultsDraftCatawbaJuly2016.pdf">Catawba Basin UIF Methodology and Results – July 2016</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/TechnicalMemos/CatawbaUIFApproach.pdf">Catawba - UIF Approach</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/CatawbaStakeholderMtg1.pdf">Catawba - Stakeholder Meeting #1 (November 2015)</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/mapCatawba.pdf">Catawba Basin Map</a></li>
+                        <li class="basinDocs"><a href="pdfs/swm/Basins/catawbaBasinFramework.pdf">Catawba Basin Framework</a></li>
+
                     </ul>
-                </div>
+                </div>	
 
                 <div class="toggler">
-                    <h3 class="closed" style="text-decoration:underline;">Technical Reports</h3>
+                    <h4 class="closed" style="text-decoration:underline;">Presentations</h4>
                     <ul>
-                        <li><a href="swmpdfs/TechnicalReports/SWAMusermanv4dot0.pdf">SWAM User's Manual v4.0</a></li>
-                        <li><a href="swmpdfs/TechnicalReports/ScSwqmModelingPlan.pdf">SC Surface Water Quantity Models Modeling Plan</a></li>
+                        <li><a href="pdfs/swm/Presentations/SCEnvConMarch2016.pdf">SC Environmental Conference (March 2016)</a></li>
+                        <li><a href="pdfs/swm/Presentations/dnrBoardMtgJan2016.pdf">DNR Board Meeting (January 2016)</a></li>
+                        <li><a href="pdfs/swm/Presentations/ConfluenceSept2015.pdf">Confluence (September 2015)</a></li>
+                        <li><a href="pdfs/swm/Presentations/SCEnvConferenceMarch2015.pdf">S.C. Environmental Conference (March 2015)</a></li>
+                        <li><a href="pdfs/swm/Presentations/ConfResearchWatershedsMarch2015.pdf">Conference on Research in Watersheds (March 2015)</a></li>
+                        <li><a href="pdfs/swm/Presentations/EnvGroups13Feb2015SWAM.pdf">Environmental Groups - SWAM Presentation (Feb. 13th 2015)</a></li>
+                        <li><a href="pdfs/swm/Presentations/SWAMoverviewDEC2014.pdf">Simplified Water Allocation Model Overview (December 2014)</a></li>
+                        <li><a href="pdfs/swm/Presentations/2014SCwaterconference.pdf">2014 S.C. Water Resources Conference (October 2014)</a></li>
+                        <li><a href="pdfs/swm/Presentations/KickoffMeeting.pdf">Kickoff Meeting (September 2014)</a></li>
                     </ul>
-                </div>
-                <div class="toggler">
-                    <h3 class="closed" style="text-decoration:underline;">Technical Memorandums</h3>
-                    <ul>
-                        <li><a href="swmpdfs/TechnicalMemos/UIFextensionTest072215.pdf">UIF Extension Testing, 7-22-15</a></li>
-                        <li><a href="swmpdfs/TechnicalMemos/HistoricAgUse.pdf">Methodology for Estimating Historic Agricultural Use</a></li>
-                        <li><a href="swmpdfs/TechnicalMemos/SWAMAccessDeploy.pdf">SWAM Model Accessibility and Deployment Options</a></li>
-                        <li><a href="swmpdfs/TechnicalMemos/UserVsPermitBased.pdf">User-based vs Permit-based SWAM Modeling</a></li>
-                        <li><a href="swmpdfs/TechnicalMemos/WaterUserDemandsBaseline.pdf">Water User Demands in Baseline SWAM Models</a></li>
-                        <li><a href="swmpdfs/TechnicalMemos/AddNodeSwam.pdf">Adding a node in an Established SWAM Network</a></li>
-                        <li><a href="swmpdfs/TechnicalMemos/EvaporationMethodology.pdf">Evaporation Methodology</a></li>
-                        <li><a href="swmpdfs/TechnicalMemos/RefBasinGuideUIFv3.pdf">Reference Basin Guidelines for UIFs V3</a></li>
-                        <li><a href="swmpdfs/TechnicalMemos/OperationalGapFillingv8.pdf">Standardizing and Simplifying Operational Gap Filling V8</a></li>
-                    </ul>
-                </div>
-                <div class="toggler">
-                    <h3 class="closed" style="text-decoration:underline;">Meeting Notes</h3>
-                    <ul>
-                        <li><a href="swmpdfs/Meetings/progressMeetingDec2016.pdf">Progress Meeting Notes (December 2016)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingNov2016.pdf">Progress Meeting Notes (November 2016)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingOct2016.pdf">Progress Meeting Notes (October 2016)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingSept2016.pdf">Progress Meeting Notes (September 2016)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingAug2016.pdf">Progress Meeting Notes (August 2016)</a></li>
-                        <li><a href="swmpdfs/Meetings/ProgressMeetingJuly2016.pdf">Progress Meeting Notes (July 2016)</a></li>
-                        <li><a href="swmpdfs/Meetings/ProgressMeetingJune2016.pdf">Progress Meeting Notes (June 2016)</a></li>
-                        <li><a href="swmpdfs/Meetings/ProgressMeetingMay2016.pdf">Progress Meeting Notes (May 2016)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingApril2016.pdf">Progress Meeting Notes (April 2016)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingMarch2016.pdf">Progress Meeting Notes (March 2016)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingFeb2016.pdf">Progress Meeting Notes (February 2016)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingJan2016.pdf">Progress Meeting Notes (January 2016)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingDec2015.pdf">Progress Meeting Notes (December 2015)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingNov2015.pdf">Progress Meeting Notes (November 2015)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingOct2015.pdf">Progress Meeting Notes (October 2015)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingSept2015.pdf">Progress Meeting Notes (September 2015)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingAugust2015.pdf">Progress Meeting Notes (August 2015)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingJuly2015.pdf">Progress Meeting Notes (July 2015)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingJune2015.pdf">Progress Meeting Notes (June 2015)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingMay2015.pdf">Progress Meeting Notes (May 2015)</a></li>
-                        <li><a href="swmpdfs/Meetings/progressMeetingApril2015.pdf">Progress Meeting Notes (April 2015)</a></li>
-                        <li><a href="swmpdfs/Meetings/kickoff10sept2014.pdf">Kickoff Meeting (September 2014)</a></li>
-                    </ul>
-                </div>
+                </div>	
 
                 <div class="toggler">
-                    <h3 class="closed" style="text-decoration:underline;">Presentations</h3>
-                    <ul>
-                        <li><a href="swmpdfs/Presentations/SCEnvConMarch3016.pdf">SC Environmental Conference (March 2016)</a></li>
-                        <li><a href="swmpdfs/Presentations/dnrBoardMtgJan2016.pdf">DNR Board Meeting (January 2016)</a></li>
-                        <li><a href="swmpdfs/Presentations/ConfluenceSept2015.pdf">Confluence (September 2015)</a></li>
-                        <li><a href="swmpdfs/Presentations/SCEnvConferenceMarch2015.pdf">S.C. Environmental Conference (March 2015)</a></li>
-                        <li><a href="swmpdfs/Presentations/ConfResearchWatershedsMarch2015.pdf">Conference on Research in Watersheds (March 2015)</a></li>
-                        <li><a href="swmpdfs/Presentations/EnvGroups13Feb2015SWAM.pdf">Environmental Groups - SWAM Presentation (Feb. 13th 2015)</a></li>
-                        <li><a href="swmpdfs/Presentations/SWAMoverviewDEC2014.pdf">Simplified Water Allocation Model Overview (December 2014)</a></li>
-                        <li><a href="swmpdfs/Presentations/2014SCwaterconference.pdf">2014 S.C. Water Resources Conference (October 2014)</a></li>
-                        <li><a href="swmpdfs/Presentations/KickoffMeeting.pdf">Kickoff Meeting (September 2014)</a></li>
-                    </ul>
-                </div>
-
-                <div class="toggler">
-                    <h3 class="closed" style="text-decoration:underline;">Videos</h3>
+                    <h4 class="closed" style="text-decoration:underline;">Videos</h4>
                     <ul>
                         <li><a href="https://www.youtube.com/watch?v=_TBss86UGNA" target="_blank">The SWAM Model - An Overview (YouTube)</a></li>
                         <li><a href="https://www.youtube.com/watch?v=WZHpGSaxoM0" target="_blank">The SWAM Model - Questions and Answers (YouTube)</a></li>
                     </ul>
+                </div>		
+
+                <div class="toggler">
+                    <h4 class="closed" style="text-decoration:underline;">Meeting Notes</h4>
+                    <ul>
+                        <li><a href="pdfs/swm/Meetings/Progress Meeting Notes (December 2016).pdf">Progress Meeting Notes (December 2016)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingNov2016.pdf">Progress Meeting Notes (November 2016)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingOct2016.pdf">Progress Meeting Notes (October 2016)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingSept2016.pdf">Progress Meeting Notes (September 2016)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingAug2016.pdf">Progress Meeting Notes (August 2016)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingJuly2016.pdf">Progress Meeting Notes (July 2016)</a></li>
+                        <li><a href="pdfs/swm/Meetings/ProgressMeetingJune2016.pdf">Progress Meeting Notes (June 2016)</a></li>
+                        <li><a href="pdfs/swm/Meetings/ProgressMeetingMay2016.pdf">Progress Meeting Notes (May 2016)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingApril2016.pdf">Progress Meeting Notes (April 2016)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingMarch2016.pdf">Progress Meeting Notes (March 2016)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingFeb2016.pdf">Progress Meeting Notes (February 2016)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingJan2016.pdf">Progress Meeting Notes (January 2016)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingDec2015.pdf">Progress Meeting Notes (December 2015)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingNov2015.pdf">Progress Meeting Notes (November 2015)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingOct2015.pdf">Progress Meeting Notes (October 2015)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingSept2015.pdf">Progress Meeting Notes (September 2015)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingAugust2015.pdf">Progress Meeting Notes (August 2015)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingJuly2015.pdf">Progress Meeting Notes (July 2015)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingJune2015.pdf">Progress Meeting Notes (June 2015)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingMay2015.pdf">Progress Meeting Notes (May 2015)</a></li>
+                        <li><a href="pdfs/swm/Meetings/progressMeetingApril2015.pdf">Progress Meeting Notes (April 2015)</a></li>
+                        <li><a href="pdfs/swm/Meetings/kickoff10sept2014.pdf">Kickoff Meeting (September 2014)</a></li>
+                    </ul>
+                </div>				
+				
+				<div class="toggler">
+                    <h4 class="closed" style="text-decoration:underline;">Monthly Progress Reports</h4>
+                    <ul>
+                        <li><a href="pdfs/swm/MonthlyReports/November2016.pdf">November 2016</a></li>
+                        <li><a href="pdfs/swm/MonthlyReports/October2016.pdf">October 2016</a></li>
+                        <li><a href="pdfs/swm/MonthlyReports/September2016.pdf">September 2016</a></li>
+                        <li><a href="pdfs/swm/MonthlyReports/August2016.pdf">August 2016</a>
+                            <li><a href="pdfs/swm/MonthlyReports/July2016.pdf">July 2016</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/June2016.pdf">June 2016</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/May2016.pdf">May 2016</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/April2016.pdf">April 2016</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/March2016.pdf">March 2016</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/February2016.pdf">February 2016</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/January2016.pdf">January 2016</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/December2015.pdf">December 2015</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/November2015.pdf">November 2015</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/October2015.pdf">October 2015</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/September2015.pdf">September 2015</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/August2015.pdf">August 2015</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/July2015.pdf">July 2015</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/June2015.pdf">June 2015</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/May2015.pdf">May 2015</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/April2015.pdf">April 2015</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/March2015.pdf">March 2015</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/February2015.pdf">February 2015</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/January2015.pdf">January 2015</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/December2014.pdf">December 2014</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/November2014.pdf">November 2014</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/October2014.pdf">October 2014</a></li>
+                            <li><a href="pdfs/swm/MonthlyReports/September2014.pdf">September 2014</a></li>
+                    </ul>
                 </div>
 
                 <div class="toggler">
-                    <h3 class="closed" style="text-decoration:underline;">River Basins</h3>
+                    <h4 class="closed" style="text-decoration:underline;">Legislative Quarterly Reports</h4>
                     <ul>
-                        <li><strong>Savannah</strong></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SavannahModelReportFinal.pdf">Savannah Model Report - June 2017</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SavannahUIFResultsFinal.pdf">Savannah UIF Results - May 2017</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SavannahBasinUIFMethodology.pdf">Savannah UIF Development - September 2016</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SavannahStakeholderMtg1Aug2016.pdf">Savannah Stakeholder Meeting #1 (August 2016)</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/DraftSavannahFramework.pdf">Savannah - Draft Basin Framework</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/mapUpperSavannah.pdf">Savannah Basin Map - Upper</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/mapLowerSavannah.pdf">Savannah Basin Map - Lower</a></li>
-                        <li><strong>Santee</strong></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SanteeModelReportFinal.pdf">Santee Model Report - March 2017</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SanteeUIFResults.pdf">Santee UIF Results - November 2016</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SanteeUIFMethodology.pdf">Santee UIF Development - May 2016</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SanteeStakeholderMtg1.pdf">Santee - Stakeholder Meeting #1 (March 2016)</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/mapSantee.pdf">Santee Basin Map</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/santeeBasinFramework.pdf">Santee Basin Framework</a></li>
-                        <li><strong>Salkehatchie</strong></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SalkehatchieModelReportFinal.pdf">Salkehatchie Model Report - February 2017</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SalkStakeholderMtg1_2Aug2016.pdf">Salkehatchie Stakeholder Meeting #1 &amp; #2 (August 2016)</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/UIFmethodResultsDraftSalkJune2016.pdf">Draft Salkehatchie Basin UIF Methodology and Results – June 2016</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/DraftSalkehatchieFramework.pdf">Salkehatchie Basin Framework</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SalkehatchieBasinMap.pdf">Salkehatchie Basin Map</a></li>
-                        <li><strong>Saluda</strong></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SaludaModelReportFinal.pdf">Saluda Model Report - February 2017</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SaludaStakeholderMtg1.pdf">Saluda - Stakeholder Meeting #1 (April 2015)</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SaludaStakeholderMtg2.pdf">Saluda - Stakeholder Meeting #2 (December 2015)</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/SaludaUIFResultsSept2015.pdf">Saluda Basin UIF Results - September 2015</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/mapSaluda.pdf">Saluda Basin Map</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/UIFmethodSaluda.pdf">Saluda Basin UIF Methodology - January 2015</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/saludaBasinFramework.pdf">Saluda Basin Framework</a></li>
-                        <li><strong>Edisto</strong></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/EdistoModelReportFinal.pdf">Edisto Model Report - January 2017</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/EdistoStakeholderMtg1.pdf">Edisto - Stakeholder Meeting #1 (June 2015)</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/EdistoStakeholderMtg2.pdf">Edisto - Stakeholder Meeting #2 (December 2015)</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/UIFResultsEdistoMay2016.pdf">Edisto Basin UIF Results – May 2016.pdf</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/mapEdisto.pdf">Edisto Basin Map</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/UIFmethodEdisto.pdf">Edisto Basin UIF Methodology - August 2015</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/edistoBasinFramework.pdf">Edisto Basin Framework</a></li>
-                        <li><strong>Broad</strong></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/BroadModelReportFinal.pdf">Broad Model Report - February 2017</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/BroadStakeholderMtg2May2016.pdf">Broad - Stakeholder Meeting #2 (May 2016)</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/BroadStakeholderMtg1.pdf">Broad - Stakeholder Meeting #1 (August 2015)</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/BroadUIFResultsFinal.pdf">Broad UIF Results – July 2016 </a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/UIFmethodBroadJan16.pdf">Broad Basin UIF Methodology- January 2016</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/mapBroad.pdf">Broad Basin Map</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/broadBasinFramework.pdf">Broad Basin Framework</a></li>
-                        <li><strong>Pee Dee</strong></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/PeeDeeModelReportFinal.pdf">Pee Dee Model Report – February 2017</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/PeeDeeStakeholderMtg1.pdf">Pee Dee - Stakeholder Meeting #1 (November 2015)</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/PeeDeeStakeholderMtg2.pdf">Pee Dee - Stakeholder Meeting #2 (May 2016)</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/UIFmethodResultsDraftPeeDeeMarch2016.pdf">Pee Dee Basin UIF Methodology and Results – March 2016</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/peeDeeMap.pdf">Pee Dee Basin Map</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/PeeDeeFrameworkOct2015.pdf">Pee Dee Basin Framework</a></li>
-                        <li><strong>Catawba</strong></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/CatawbaModelReportFinal.pdf">Catawba Model Report - March 2017</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/CatawbaStakeholderMtg2Nov2016.pdf">Catawba - Stakeholder Meeting #2 (November 2016)</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/UIFmethodResultsDraftCatawbaJuly2016.pdf">Catawba Basin UIF Methodology and Results – July 2016</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/TechnicalMemos/CatawbaUIFApproach.pdf">Catawba - UIF Approach</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/CatawbaStakeholderMtg1.pdf">Catawba - Stakeholder Meeting #1 (November 2015)</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/mapCatawba.pdf">Catawba Basin Map</a></li>
-                        <li class="basinDocs"><a href="swmpdfs/Basins/catawbaBasinFramework.pdf">Catawba Basin Framework</a></li>
-
+                        <li><a href="pdfs/swm/LegislativeReports/qrlegislativereport2016aug.pdf">August 2016</a></li>
+                        <li><a href="pdfs/swm/LegislativeReports/qrlegislativereport2016may.pdf">May 2016</a></li>
+                        <li><a href="pdfs/swm/LegislativeReports/qrlegislativereport2016feb.pdf">February 2016</a></li>
+                        <li><a href="pdfs/swm/LegislativeReports/qrlegislativereport2015nov.pdf">November 2015</a></li>
+                        <li><a href="pdfs/swm/LegislativeReports/qrlegislativereport2015aug.pdf">August 2015</a></li>
+                        <li><a href="pdfs/swm/LegislativeReports/qrlegislativereport2015may.pdf">May 2015</a></li>
+                        <li><a href="pdfs/swm/LegislativeReports/qrlegislativereport2015feb.pdf">February 2015</a></li>
+                        <li><a href="pdfs/swm/LegislativeReports/qrlegislativereport2014nov.pdf">November 2014</a></li>
+                        <li><a href="pdfs/swm/LegislativeReports/qrlegislativereport2014july.pdf">July 2014</a></li>
+                        <li><a href="pdfs/swm/LegislativeReports/qrlegislativereport2014apr.pdf">April 2014</a></li>
+                        <li><a href="pdfs/swm/LegislativeReports/qrlegislativereport2014jan.pdf">January 2014</a></li>
                     </ul>
                 </div>
 
             </div>
 
             <div class="col-md-6">
-                <img src="http://www.dnr.sc.gov/water/waterplan/assets/basins.JPG" class="img-fluid"/>
+				<a href="images/PlanningBasins.jpg" alt="SC Major Basins image" data-lightbox="basins">
+					<img src="images/PlanningBasins.jpg" class="img-fluid" alt="major basins in South Carolina" title="SC Major Basins">
+				</a>
             </div>    
         
         </div>    
@@ -329,36 +344,98 @@
     <!-- Footer -->
     <footer class="py-5 ">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>SC Department of Natural Resources
-                        <br> Land, Water, and Conservation Division
-                        <br> 1000 Assembly Street
-                        <br> Columbia, SC 29201
-                        <br>
-                        <a href="http://dnr.sc.gov/water/hydro">dnr.sc.gov/water/hydro</a>
+        <h5>SCDNR Hydrology Section</h5>
+            <div class="row mt-4">
+                
+                <div class="col-lg-4 pr-4 sitemap">
+                    <h6>Hydrology Home</h6>
+                    <ul>
+                        <li><a href="index.html">Home Page</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="hydrology-news.html">Hydrology News</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+						<li><a href="https://calendar.google.com/calendar/embed?src=scdnrhydrology%40gmail.com&ctz=America%2FNew_York">Calendar</a></li>
+                    </ul>
+                    <h6>Water Planning</h6>
+                    <ul>
+                        <li><a href="water-planning.html">Water Planning Home</a></li>
+                        <li><a href="surface-water-models.html">Surface Water Models</a></li>
+                        <li><a href="groundwater-models.html">Groundwater Models</a></li>
+                        <li><a href="water-demand.html">Water Demand Projections</a></li>
+                        <li><a href="swam-models.html">Simplified Water Allocation Models (SWAM)</a></li>
+                        <li><a href="state-and-river-basin-planning.html">State and River Basin Planning</a></li>
+                            <ul>
+                                <li><a href="ppac.html">Planning Process Advisory Committee</a></li>
+                                <li><a href="edisto-basin-planning.html">Edisto Basin Planning</a></li>
+                                <li><a href="faq.html">Frequently Asked Questions</a></li>
+                            </ul>						
+                    </ul>
+                    
+                    <h6>Data</h6>
+                    <ul>
+                        <li><a href="groundwater-data/index.html">Groundwater Level Data</a></li>
+                        <li><a href="geophysical-logs.html">Geophysical Logs</a></li>
+                        <li><a href="well-database.html">Coastal Plain Water Well Database</a></li>
+                        <li><a href="streamflow-and-lake-levels.html">Streamflow and Lake Level Data</a></li>						
+                    </ul>
+                    
+                </div>
+                <div class="col-lg-4 pl-lg-4 sitemap">
+                    <h6>Groundwater Program</h6>
+                    <ul>
+                        <li><a href="groundwater.html">Groundwater Program Home</a></li>
+                        <li><a href="groundwater-level-monitoring-network.html">Groundwater Level Monitoring Network</a></li>
+                        <li><a href="well-database.html">Coastal Plain Water Well Database</a></li>
+                        <li><a href="pot-mapping.html">Potentiometric Mapping</a></li>
+                        <li><a href="geophysical-logs.html">Geophysical Logs</a></li>
+                        <li><a href="aquifers.html">Aquifer Delineation</a></li>
+                        <li><a href="aquifer-properties.html">Aquifer Properties</a></li>
+                        <li><a href="groundwater-models.html">Groundwater Models</a></li>
+                        <li><a href="saltwater-intrusion-monitoring.html">Saltwater Intrusion Monitoring Network</a></li>
+                        <li><a href="groundwater-drought-monitoring-network.html">Groundwater Drought Monitoring Network</a></li>						
+                    </ul>
+                    <h6>Surface Water Program</h6>
+                    <ul>
+                        <li><a href="surface-water.html">Surface Water Home</a></li>
+                        <li><a href="surface-water-models.html">Surface Water Models</a></li>
+                        <li><a href="swam-models.html">Simplified Water Allocation Models (SWAM)</a></li>
+                        <li><a href="surface-water-monitoring.html">Surface Water Monitoring Initiatives</a></li>
+                            <ul>
+                                <li><a href="streamflow-and-lake-levels.html">Streamflow and Lake Level Data</a></li>
+                                <li><a href="streamflow-workshops.html">Streamflow Monitoring Workshops</a></li>
+                            </ul>
+                        	
+                        						
+                    </ul>
+                </div>
+                <div class="col-lg-4 pl-lg-5 ">                
+                    <p>South Carolina Department of<br /> Natural Resources<br>
+                    Land, Water, and Conservation Division<br>
+                        1000 Assembly Street<br>
+                        Columbia, SC 29201<br>
+                        <a href="http://hydrology.dnr.sc.gov/">http://hydrology.dnr.sc.gov/</a>
                     </p>
                     <a href="http://dnr.sc.gov/"><img src="images/dnr-logo-small.gif" alt="SC Department of Natural Resources logo." class="img-fluid my-3 footer-logo" id="dnr-logo"></a>
-                    <p class="mt-3">Copyright ©
+                    <p class="mt-3">Copyright © 
                         <script type="text/javascript">
                             document.write(new Date().getFullYear());
                         </script>
                     </p>
                 </div>
-
             </div>
-
-        </div>
+            
+        </div>        
     </footer>
 
     <!-- Bootstrap core JavaScript -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script src="js/lightbox.js"></script>
 
     <!-- JQUERY TOGGLE SCRIPT -->
     <script>
         $(function() {
-            $('.toggler h3').click(function() {
+            $('.toggler h4').click(function() {
                 $(this).next().slideToggle();
                 $(this).toggleClass("closed open");
             });
@@ -368,12 +445,12 @@
     <script>
         $(".allDocsClose").click(function() {
             $(".toggler ul").show("slow");
-            $(".toggler h3").removeClass("closed open").addClass("open");
+            $(".toggler h4").removeClass("closed open").addClass("open");
         });
 
         $(".allDocsOpen").click(function() {
             $(".toggler ul").hide("slow");
-            $(".toggler h3").removeClass("open closed").addClass("closed");
+            $(".toggler h4").removeClass("open closed").addClass("closed");
         });
     </script>
 
