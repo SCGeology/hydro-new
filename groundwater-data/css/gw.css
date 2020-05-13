@@ -73,9 +73,6 @@ h1, h2, h3, h4, h5, p, a {
 #navbarResponsive{
     text-align: center;
 }
-.nav-item {
-    margin-left: 8px;
-}
 #nav-logo{
     height:75px;
     width:auto;

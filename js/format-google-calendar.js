@@ -258,13 +258,13 @@ window.formatGoogleCalendar = function () {
             format[i] = format[i].toString();
 
             if (format[i] === '*summary*') {
-                output = output.concat('<a href = "' + html + '">'+'<span class="summary">' + summary + '</span></a>');
+                output = output.concat('<a title="Event details." href = "' + html + '">'+'<span class="summary">' + summary + '</span></a>');
             } else if (format[i] === '*date*') {
                 output = output.concat('<span class="date">' + dateFormatted + '</span>');
             } else if (format[i] === '*description*') {
                 output = output.concat('<span class="description">' + description + '</span>');
             } else if (format[i] === '*location*') {
-                output = output.concat('<span class="location">' + location + '</span>');
+                output = output.concat('<span class="location">'+location+' <a title="View location in Google Maps" href="https://www.google.com/maps/search/?api=1&query=' + location + '">(map)</a></span>');
             } else if (format[i] === '*html*') {
                 output = output.concat();
             } else {
