@@ -193,6 +193,27 @@
           </div>
         </div>
         
+        <!-- clear hydrograph Modal -->
+        <div class="modal fade" id="clear-modal" tabindex="-1" role="dialog" aria-labelledby="clear-modal-title" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="clear-modal-title">Clear Hydrograph</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Are you sure you want to clear the hydrograph? Doing so will remove data from graph and clear the selected well from the map.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="clear-hg-btn" type="button" class="btn btn-danger" data-dismiss="modal">Clear Hydrograph</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Return to Hydrograph</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
         <div id="main" class="row white-bg ">
             <div class="col-lg-12 m-0 p-0">
                 <div id="map">
@@ -260,7 +281,7 @@
                         <button class="btn btn-sm btn-outline-primary d-print-none m-2" title="Print hydrograph." role="button" id="print-hg-btn">
                             Print <i class="fas fa-print fa-lg mx-2"></i>
                         </button>
-                        <button class="btn btn-sm btn-outline-secondary d-print-none m-2" title="Clear hydrograph." role="button" id="clear-hg-btn">
+                        <button data-toggle="modal" data-target="#clear-modal" class="btn btn-sm btn-outline-secondary d-print-none m-2" title="Clear hydrograph." role="button" id="clear-hg">
                             Clear <i class="fas fa-times fa-lg mx-2"></i>
                         </button>
                     </div>
