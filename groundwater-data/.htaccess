@@ -1,0 +1,9 @@
+ExpiresActive On
+ExpiresByType img/photo.jpg "now plus 1 month"
+ExpiresByType img/logo.png "now plus 1 month"
+ExpiresByType img/banner.jpg "now plus 1 month"
+ExpiresByType img/icon.png "now plus 1 month"
+
+ExpiresActive On
+ExpiresByType text/css "now plus 2 days"
+ExpiresByType application/javascript "now plus 2 days"
