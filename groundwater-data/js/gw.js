@@ -52,10 +52,10 @@ function style(feature) {
 
 //start the highlight marker at 0,0 so it's out of sight. Then when a marker is clicked, all you have to do is setLatLng... def a workaround.
 var highlight = L.circleMarker([0, 0], {
-    color: "#fc031c",
-    radius: 9,
+    color: "#990000",
+    radius: 10,
     fillOpacity: 0,
-    weight: 5,
+    weight: 6,
     pane:'tooltipPane'
 }).addTo(map);
 
@@ -71,10 +71,10 @@ function oef(feature, layer) {
         $('#elev').text(feature.properties.elevation1);
         ll = layer.getLatLng();
         highlight.setLatLng(ll);
-
         wellID = feature.properties.well_id
         $('#getdata').prop('disabled', false);
     });
+    layer._leaflet_id = feature.well_id;
 };
 
  var clusterIcon = L.icon({
@@ -106,6 +106,64 @@ var wellsInd = L.esri.featureLayer({
     },
     onEachFeature: oef
 }).addTo(map);
+
+var scmask = L.esri.featureLayer({
+    url:'https://services.arcgis.com/acgZYxoN5Oj8pDLa/arcgis/rest/services/SC_Mask/FeatureServer/0',
+    style: {color:'#4d4d4d', fillOpacity: 0.35, stroke:0}
+}).addTo(map);
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+//URL PARAMETERS FOR CONFIGURING VIEWER BASED ON URL LINKED
+//do on load of wells feature classes
+
+var getUrlParam = function(){
+    let wellParam = new URLSearchParams(window.location.search)
+
+    //want to actually pass the well id as the url param
+    //query from the db to get feature id that goes with well id
+    //then run the code
+
+    var fakeMapClick = function (id) {
+        //get target layer by it's id
+        var clickthewell = wellsInd.getFeature(id);
+        if (clickthewell === undefined) {
+            clickthewell = wellsC.getFeature(id);
+        }
+        //fire event 'click' on target layer 
+        console.log(clickthewell)
+        clickthewell.fireEvent('click'); 
+        $("#getdata").trigger("click");
+    };
+    
+        if (wellParam.has('well')) {
+            var param = wellParam.get('well')
+            console.log("has it") 
+            var idquery = L.esri.query({url:data});
+
+            idquery.where("well_id = '"+param+"'").bounds(function(error, latLngBounds, response){
+                if (error) {
+                    console.log(error);
+                    return;
+                }
+                map.fitBounds(latLngBounds, {maxZoom: 16});
+            });
+
+            idquery.ids(function(error, ids, response) {
+                if (error) {
+                    console.log(error);
+                    return;
+                }
+                var fid = ids[0]
+                fakeMapClick(fid);
+
+                });  
+            }; 
+}
+
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+setTimeout(getUrlParam, 2000)
 
 var searchResults = L.layerGroup().addTo(map);
 
