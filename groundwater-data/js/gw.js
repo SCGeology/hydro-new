@@ -27,7 +27,7 @@ var wellID
 function aqColor(a) {
     return a == "Shallow Aquifer System (alluvium)" ? "#007200" :
         a == "Shallow Aquifer System (saprolite)" ? "#007200" :
-        a == "Shallow Aquifer System" ? "#007200" :
+        a == "Surficial Aquifer System" ? "#007200" :
         a == "Gordon" ? "#00007d" :
         a == "Crouch Branch" ? "#c20000" :
         a == "Upper Floridan" ? "#ff69c8" :
@@ -37,7 +37,7 @@ function aqColor(a) {
         a == "Gramling" ? "#fff300" :
         a == "Gramling confining unit" ? "#a4a475" :
         a == "Crystalline Rock" ? "#00b6fe" :
-        "#ffffff";
+        "#444444";
 }
 
 function style(feature) {
@@ -72,6 +72,8 @@ function oef(feature, layer) {
         ll = layer.getLatLng();
         highlight.setLatLng(ll);
         wellID = feature.properties.well_id
+        well_alert = feature.properties.comment
+        alert_url = feature.properties.ext_url
         $('#getdata').prop('disabled', false);
     });
     layer._leaflet_id = feature.well_id;
@@ -500,8 +502,20 @@ function drawGraph() {
 	$("#upper").val(upperVal)
 	$("#lower").val(lowerVal)
 	
-	$("#loading").hide();
-
+    $("#loading").hide();
+    
+    console.log(well_alert)
+    
+    if (well_alert !== null) {
+        $("#well_alert").show();
+        $("#alert").text(well_alert)
+        if (alert_url !== null){
+            $("#alert_link").attr("href",alert_url)
+            $("#alert_link").text("Link to USGS.")
+        }
+    } else {
+        $("#well_alert").hide();
+    }
 };
     
 // ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -564,6 +578,7 @@ $("#clear-hg-btn").click(function(){
     $("#enddate").val("");
 	$("#upper").val("");
 	$("#lower").val("");
+    $("#well_alert").hide();
 	clearTheMap();
 });
 

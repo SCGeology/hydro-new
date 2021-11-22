@@ -450,3 +450,18 @@ i {
 .form-control {
     color:  #051f38;
 }
+
+/*alert*/
+
+#well_alert {
+    background-color:#ffe6e6;
+    border-radius: 5px;
+    padding:10px;
+    width:auto;
+    display:none;
+}
+
+#alert_text {
+    color:#990000;
+    margin-bottom:0;
+}
