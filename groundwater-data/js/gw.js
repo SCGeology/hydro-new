@@ -506,15 +506,22 @@ function drawGraph() {
     
     console.log(well_alert)
     
-    if (well_alert !== null) {
+    if (well_alert !== null && alert_url !== null) {
         $("#well_alert").show();
-        $("#alert").text(well_alert)
-        if (alert_url !== null){
-            $("#alert_link").attr("href",alert_url)
-            $("#alert_link").text("Link to USGS.")
-        }
+        
+        let other_text = well_alert.substring(0,(well_alert.length - 14))
+        let html_str = '<p id="alert_text">'+other_text+' <a id="alert_link" href="'+alert_url+'">USGS Website</a>.</p>'
+        
+        $("#well_alert").html(html_str)
+      
+    } else if (well_alert !== null && alert_url === null) {
+        $("#well_alert").show();
+        
+        let html_str = '<p id="alert_text">'+well_alert+'</p>'
+        
+        $("#well_alert").html(html_str)
     } else {
-        $("#well_alert").hide();
+        $("#well_alert").hide()
     }
 };
     
