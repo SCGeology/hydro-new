@@ -10,10 +10,10 @@ L.control.zoom({
     position: 'topright'
 }).addTo(map);
 
-var data = "https://services.arcgis.com/acgZYxoN5Oj8pDLa/arcgis/rest/services/SCDNR_Groundwater_Monitoring_Public/FeatureServer/0"
+var data = "https://services.arcgis.com/acgZYxoN5Oj8pDLa/ArcGIS/rest/services/SCDNR_Groundwater_Data_Public_View/FeatureServer/0"
 
 var clusterPoly = L.esri.Cluster.featureLayer({
-    url: "https://services.arcgis.com/acgZYxoN5Oj8pDLa/arcgis/rest/services/SCDNR_Groundwater_Monitoring_Public/FeatureServer/1",
+    url: "https://services.arcgis.com/acgZYxoN5Oj8pDLa/ArcGIS/rest/services/SCDNR_Groundwater_Data_Public_View/FeatureServer/1",
     onEachFeature: function(feature, layer) {
         layer.bindTooltip("Cluster Site: " + feature.properties.cluster_name, {
             direction: 'right',
@@ -303,7 +303,7 @@ function getData(wellID) {
 // CODE BELOW FOR PARSING WEB SERVICE FROM ARCGIS PORTAL
 
 var dataQuery = L.esri.query({
-        url: 'https://services.arcgis.com/acgZYxoN5Oj8pDLa/arcgis/rest/services/SCDNR_Groundwater_Monitoring_Public/FeatureServer/2'
+        url: 'https://services.arcgis.com/acgZYxoN5Oj8pDLa/ArcGIS/rest/services/SCDNR_Groundwater_Data_Public_View/FeatureServer/2'
     });
 
 dataQuery.orderBy("Time_Stamp","DESC")
